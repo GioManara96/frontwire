@@ -1,0 +1,134 @@
+[
+  {
+    "id": "fafd2b5b0000",
+    "url": "https://github.com/nuxt/nuxt/releases/tag/v4.5.2",
+    "title": "Nuxt v4.5.2",
+    "sourceId": "nuxt-releases",
+    "publishedAt": "2026-08-05T16:19:44Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt",
+      "vue",
+      "release"
+    ],
+    "contentHtml": "<p>4.5.2 is the next patch release.</p>\n<h2>Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.5.1...v4.5.2\">compare changes</a></p>\n<h3>Performance</h3>\n<ul>\n<li><strong>nuxt,kit:</strong> Skip rewriting unchanged generated files (<a href=\"https://github.com/nuxt/nuxt/pull/35902\">#35902</a>)</li>\n<li><strong>kit,nuxt:</strong> Use lazy imports to improve parsing speed (<a href=\"https://github.com/nuxt/nuxt/pull/35901\">#35901</a>)</li>\n<li><strong>vite:</strong> Skip html entry probes in bare-import resolver (<a href=\"https://github.com/nuxt/nuxt/pull/35907\">#35907</a>)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li><strong>vite:</strong> Resolve client manifest path from resolved config (<a href=\"https://github.com/nuxt/nuxt/pull/35883\">#35883</a>)</li>\n<li><strong>nuxt:</strong> Use client-side navigation for links inside islands (<a href=\"https://github.com/nuxt/nuxt/pull/35806\">#35806</a>)</li>\n<li><strong>nuxt:</strong> Generate types for route params defined with <code>definePageMeta</code> (<a href=\"https://github.com/nuxt/nuxt/pull/35857\">#35857</a>)</li>\n</ul>"
+  },
+  {
+    "id": "9a3ba752b884",
+    "url": "https://github.com/nuxt/nuxt/releases/tag/v4.5.1",
+    "title": "Nuxt v4.5.1",
+    "sourceId": "nuxt-releases",
+    "publishedAt": "2026-07-27T10:21:39Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt",
+      "vue",
+      "release"
+    ],
+    "contentHtml": "<p><strong>This is a security release.</strong> We recommend upgrading as soon as possible with <code>npx nuxt upgrade --dedupe</code>.</p>\n<p>It fixes server-side RCE and unauthorized component instantiation via server island props, a route rule authorization bypass, server component DoS, cross-user payload disclosure on cached pages, and dev server path disclosure.</p>\n<p>If you use the <code>cache</code>, <code>swr</code> or <code>isr</code> route rules, purge any CDN or edge cache after upgrading.</p>\n<p>Full details: <a href=\"https://nuxt.com/blog/v4-5-security\">Nuxt Security Patch Releases</a> and <a href=\"https://github.com/nuxt/nuxt/security/advisories\">GitHub Security Advisories</a>.</p>\n<h2>Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.5.0...v4.5.1\">compare changes</a></p>\n<h3>Fixes</h3>\n<ul>\n<li><strong>nitro:</strong> Replace island teleports in a single html pass (<a href=\"https://github.com/nuxt/nuxt/pull/35515\">#35515</a>)</li>\n<li><strong>nuxt:</strong> Skip payload revival plugin when <code>ssr: false</code> (<a href=\"https://github.com/nuxt/nuxt/pull/35782\">#35782</a>)</li>\n</ul>"
+  },
+  {
+    "id": "968c32634dc2",
+    "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+    "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-14T00:00:00Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+  },
+  {
+    "id": "46fcf5bb7b99",
+    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-11T10:00:00Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
+  },
+  {
+    "id": "d170f8a96eea",
+    "url": "https://dev.to/faridteymouri/i-finally-built-my-developer-portfolio-5g5f",
+    "title": "I Finally Built My Developer Portfolio",
+    "sourceId": "devto",
+    "publishedAt": "2026-09-12T20:45:30Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt",
+      "vue",
+      "typescript"
+    ],
+    "excerpt": "After a lot of coding, learning, changing ideas, and rebuilding things, I finally launched my...",
+    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fah3mfzrokviq6fz3wcmb.png"
+  },
+  {
+    "id": "aed8d26cabf7",
+    "url": "https://bestpractic.org/blog/nuxt-weekly-useasyncdata-keys-dedupe",
+    "title": "useAsyncData Keys in Nuxt: Caching, Dedupe & the Sharing Bug",
+    "sourceId": "devto",
+    "publishedAt": "2026-09-13T11:26:27Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt"
+    ],
+    "excerpt": "Learn how Nuxt's useAsyncData and useFetch generate cache keys, how dedupe (cancel vs defer) really works, and why wrapper composables silently share data.",
+    "coverImageUrl": "https://bestpractic.org/media/covers/nuxt-weekly-useasyncdata-keys-dedupe.png"
+  },
+  {
+    "id": "595d6f50796e",
+    "url": "https://nuxtlabs.com/",
+    "title": "NuxtLabs is joining Vercel",
+    "sourceId": "hackernews",
+    "publishedAt": "2025-07-08T13:40:12Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=44499860"
+  },
+  {
+    "id": "2bd63232151d",
+    "url": "https://github.com/anuj0456/OpenArch",
+    "title": "OpenArch – PyTorch implementations of modern LLM architectures",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-14T07:55:19Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49693384"
+  },
+  {
+    "id": "4aeb82da9975",
+    "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+    "title": "Cognition helps Devin test its own work with GPT-6 Astra",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-11T16:00:00Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "GPT-6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.",
+    "summary": "Cognition is using GPT-6 Astra so Devin can test the software it writes, with the aim that engineers review less code before a change ships."
+  },
+  {
+    "id": "58820426fb6f",
+    "url": "https://dev.to/saurabhzaiswal/building-better-pdf-workflows-in-vue-3-with-vue-pdf-export-9ed",
+    "title": "Building Better PDF Workflows in Vue 3 with vue-pdf-export",
+    "sourceId": "devto",
+    "publishedAt": "2026-09-12T16:27:39Z",
+    "category": "frontend",
+    "tags": [
+      "vue",
+      "typescript"
+    ],
+    "excerpt": "Hey Vue developers 👋  I’ve been working on vue-pdf-export, a Vue 3 + TypeScript package for...",
+    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5g6iozoru9psk044t9y3.png",
+    "summary": "vue-pdf-export is a Vue 3 and TypeScript library for generating PDFs in the browser, aimed at real app layouts rather than handing the document off to the server."
+  }
+]

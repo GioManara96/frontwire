@@ -176,7 +176,7 @@ git add -A && git commit -m "chore: set up eslint, prettier and vitest"
 
 **File:** crea `test/unit/articles-data.test.ts`, `data/articles.json`. Richiede il Task 2.
 
-- [ ] **Passo 1: il test**
+- [x] **Passo 1: il test**
 
 ```ts
 import { describe, expect, it } from "vitest";
@@ -283,11 +283,11 @@ describe("data/articles.json", () => {
 });
 ```
 
-- [ ] **Passo 2: verificare che fallisca**
+- [x] **Passo 2: verificare che fallisca**
 
 Esegui: `npm test`. Atteso: FAIL, perché `data/articles.json` non esiste.
 
-- [ ] **Passo 3: scrivere `data/articles.json`**
+- [x] **Passo 3: scrivere `data/articles.json`**
 
 Dieci articoli basati su contenuti veri, recuperati al momento dalle fonti, che coprono i casi della specifica:
 
@@ -319,11 +319,11 @@ export function articleId(raw) {
 }
 ```
 
-- [ ] **Passo 4: verificare che passi**
+- [x] **Passo 4: verificare che passi**
 
 Esegui: `npm test`. Atteso: PASS.
 
-- [ ] **Passo 5: commit**
+- [x] **Passo 5: commit**
 
 ```bash
 git add data/articles.json test/unit/articles-data.test.ts && git commit -m "test(data): add mock articles and data integrity test"
