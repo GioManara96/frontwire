@@ -165,10 +165,10 @@ git add -A && git commit -m "chore: set up eslint, prettier and vitest"
 
 **Criteri di accettazione:**
 
-- [ ] `npm run typecheck` e `npm run lint` passano
-- [ ] tag e fonti corrispondono esattamente alle tabelle della specifica
-- [ ] commit: `feat(model): add article type, tag vocabulary and source registry`
-- [ ] **Claude:** code review e riscrittura dei commenti
+- [x] `npm run typecheck` e `npm run lint` passano
+- [x] tag e fonti corrispondono esattamente alle tabelle della specifica
+- [x] commit: `feat(model): add article type, tag vocabulary and source registry`
+- [x] **Claude:** code review e riscrittura dei commenti
 
 ---
 

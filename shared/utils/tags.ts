@@ -1,5 +1,11 @@
+/**
+ * One entry in the tag vocabulary.
+ * `label` is the readable name (also `aria-label`/`title` when only the icon shows).
+ * `icon` is an Iconify name (`collection:icon`).
+ */
 export type TagDefinition = { label: string; icon: string };
 
+// Keep keys literal so TagId stays a closed vocabulary; check the entry shape without widening it.
 export const TAGS = {
   nuxt: {
     label: "Nuxt",
@@ -55,4 +61,5 @@ export const TAGS = {
   },
 } as const satisfies Record<string, TagDefinition>;
 
+/** Closed vocabulary. An article's `tags` may only use these keys. */
 export type TagId = keyof typeof TAGS;
