@@ -331,7 +331,7 @@ git add data/articles.json test/unit/articles-data.test.ts && git commit -m "tes
 
 ---
 
-### Task 4 — Testo e data dell'articolo · **Claude (test) → Giovanni (codice)**
+### Task 4 — Testo e data dell'articolo · **Claude**
 
 **File:** crea `test/unit/article-text.test.ts`, `test/unit/format-date.test.ts` (Claude); `shared/utils/article-text.ts`, `shared/utils/format-date.ts` (Giovanni).
 
@@ -340,7 +340,7 @@ git add data/articles.json test/unit/articles-data.test.ts && git commit -m "tes
 - `getArticleText(article: Pick<Article, "summary" | "excerpt">): string | undefined`
 - `formatDate(iso: string): string`
 
-- [ ] **Passo 1 (Claude): i test**
+- [x] **Passo 1 (Claude): i test**
 
 `test/unit/article-text.test.ts`:
 
@@ -389,23 +389,23 @@ describe("formatDate", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che falliscano**
+- [x] **Passo 2 (Claude): verificare che falliscano**
 
 Esegui: `npm test`. Atteso: FAIL, perché i moduli non esistono. Il test di guardia sul fuso orario deve già passare.
 
-- [ ] **Passo 3 (Giovanni): implementare le due funzioni**
+- [x] **Passo 3 (Giovanni): implementare le due funzioni**
 
 Suggerimenti:
 
 - `getArticleText` è una riga: c'è un operatore che sceglie il primo valore non `undefined`.
 - `formatDate`: `Intl.DateTimeFormat` accetta la lingua e un'opzione `timeZone`. Il formato atteso (`Sep 14, 2026`) corrisponde a uno degli stili predefiniti per la data. Il formatter si può creare una sola volta, fuori dalla funzione.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 4 (Giovanni): far passare i test**
 
 Esegui: `npm test`. Atteso: PASS.
 
-- [ ] **Passo 5 (Giovanni): commit**: `feat(utils): add article text and date formatting helpers`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 5 (Giovanni): commit**: `feat(utils): add article text and date formatting helpers`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
