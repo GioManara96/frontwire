@@ -61,9 +61,14 @@ npm install        # esegue anche `nuxt prepare`, che genera .nuxt/
 npm run dev        # http://localhost:3000
 npm run generate   # build statica, quella usata in produzione
 npm run preview    # anteprima locale della build
+npm run lint
+npm run format
+npm run format:check
+npm run test
+npm run typecheck
 ```
 
-Da configurare, non ancora installati: ESLint con `@nuxt/eslint`, Prettier con `printWidth: 120`, Vitest. Aggiungere qui i comandi quando esistono.
+ESLint (`@nuxt/eslint`), Prettier (`printWidth: 120`) e Vitest (ambiente `node`) sono configurati.
 
 `tsconfig.json` rimanda ai file generati in `.nuxt/`: se i tipi sembrano rotti, eseguire `npx nuxt prepare`.
 
@@ -78,11 +83,11 @@ Deploy da configurare come nel portfolio (`~/Programmi/personali/portfolio/verce
 
 ### Commenti
 
-Si segue *A Philosophy of Software Design* (Ousterhout): il commento registra ciò che era nella mente di chi ha progettato il codice e che il codice da solo non può esprimere. Claude applica queste regole in code review, riscrivendo i commenti di Giovanni.
+Si segue _A Philosophy of Software Design_ (Ousterhout): il commento registra ciò che era nella mente di chi ha progettato il codice e che il codice da solo non può esprimere. Claude applica queste regole in code review, riscrivendo i commenti di Giovanni.
 
 - **Non ripetere il codice.** Se il commento si può scrivere guardando la riga accanto, non serve. Non riusare le parole del nome che si commenta.
 - **Commenti d'interfaccia** (TSDoc su funzioni, composable e tipi esportati): descrivono l'astrazione, cioè cosa deve sapere chi la usa: comportamento, significato di argomenti e valore di ritorno, effetti collaterali, errori, precondizioni. Niente dettagli d'implementazione. I tipi TypeScript dicono la forma, il commento dice il significato: formati, unità, casi limite, cosa vuol dire `null`.
-- **Commenti d'implementazione**: dicono *cosa* fa un blocco e *perché*, non *come*. Prima di un blocco o di un ciclo non ovvio, una frase che ne riassume l'intento.
+- **Commenti d'implementazione**: dicono _cosa_ fa un blocco e _perché_, non _come_. Prima di un blocco o di un ciclo non ovvio, una frase che ne riassume l'intento.
 - **Precisione e intuizione**: i commenti di livello basso aggiungono precisione (limiti inclusi o esclusi, invarianti), quelli di livello alto danno il quadro generale.
 - **Decisioni trasversali** a più moduli (per esempio lo schema dell'articolo condiviso tra pipeline e app): documentate in un solo punto e richiamate dagli altri.
 - **Aggiornarli insieme al codice**: un commento superato è peggio di nessun commento. Le spiegazioni stanno nel codice, non nei messaggi di commit.

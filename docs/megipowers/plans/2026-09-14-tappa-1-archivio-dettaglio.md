@@ -22,21 +22,21 @@
 
 ## Mappa dei file
 
-| File | Chi | Responsabilità |
-|---|---|---|
-| `eslint.config.mjs`, `.prettierrc`, `.prettierignore`, `vitest.config.ts`, script in `package.json` | Claude | Strumenti |
-| `shared/types/article.ts` | Giovanni | `Category`, `Article`, `ArticleListItem` |
-| `shared/utils/tags.ts` | Giovanni | `TagDefinition`, `TAGS`, `TagId` |
-| `shared/utils/sources.ts` | Giovanni | `SourceKind`, `SourceDefinition`, `SOURCES`, `SourceId` |
-| `shared/utils/article-text.ts` | Giovanni | `getArticleText` |
-| `shared/utils/format-date.ts` | Giovanni | `formatDate` |
-| `server/utils/articles.ts` | Giovanni | `listArticles`, `findArticle` (funzioni pure) |
-| `server/utils/article-data.ts` | Giovanni | `getArticles`: accesso tipizzato al JSON |
-| `server/api/articles.get.ts`, `server/api/articles/[id].get.ts` | Giovanni | Route |
-| `app/app.vue`, `app/pages/index.vue`, `app/pages/articles/[id].vue` | Giovanni | Pagine |
-| `data/articles.json` | Claude | Dati finti |
-| `test/unit/*.test.ts` | Claude | Test |
-| `vercel.json` | Claude | Build statica su Vercel |
+| File                                                                                                | Chi      | Responsabilità                                          |
+| --------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------- |
+| `eslint.config.mjs`, `.prettierrc`, `.prettierignore`, `vitest.config.ts`, script in `package.json` | Claude   | Strumenti                                               |
+| `shared/types/article.ts`                                                                           | Giovanni | `Category`, `Article`, `ArticleListItem`                |
+| `shared/utils/tags.ts`                                                                              | Giovanni | `TagDefinition`, `TAGS`, `TagId`                        |
+| `shared/utils/sources.ts`                                                                           | Giovanni | `SourceKind`, `SourceDefinition`, `SOURCES`, `SourceId` |
+| `shared/utils/article-text.ts`                                                                      | Giovanni | `getArticleText`                                        |
+| `shared/utils/format-date.ts`                                                                       | Giovanni | `formatDate`                                            |
+| `server/utils/articles.ts`                                                                          | Giovanni | `listArticles`, `findArticle` (funzioni pure)           |
+| `server/utils/article-data.ts`                                                                      | Giovanni | `getArticles`: accesso tipizzato al JSON                |
+| `server/api/articles.get.ts`, `server/api/articles/[id].get.ts`                                     | Giovanni | Route                                                   |
+| `app/app.vue`, `app/pages/index.vue`, `app/pages/articles/[id].vue`                                 | Giovanni | Pagine                                                  |
+| `data/articles.json`                                                                                | Claude   | Dati finti                                              |
+| `test/unit/*.test.ts`                                                                               | Claude   | Test                                                    |
+| `vercel.json`                                                                                       | Claude   | Build statica su Vercel                                 |
 
 ---
 
@@ -44,13 +44,13 @@
 
 **File:** crea `eslint.config.mjs`, `.prettierrc`, `.prettierignore`, `vitest.config.ts`; modifica `package.json`, `nuxt.config.ts` (lo modifica `nuxi`), `CLAUDE.md`.
 
-- [ ] **Passo 1: branch**
+- [x] **Passo 1: branch**
 
 ```bash
 git switch -c feat/archive-and-detail staging
 ```
 
-- [ ] **Passo 2: installare ESLint per Nuxt**
+- [x] **Passo 2: installare ESLint per Nuxt**
 
 ```bash
 npx nuxi module add eslint
@@ -58,13 +58,13 @@ npx nuxi module add eslint
 
 Atteso: `@nuxt/eslint` ed `eslint` tra le dipendenze, `'@nuxt/eslint'` in `modules` di `nuxt.config.ts`.
 
-- [ ] **Passo 3: le altre dipendenze di sviluppo**
+- [x] **Passo 3: le altre dipendenze di sviluppo**
 
 ```bash
 npm i -D prettier eslint-config-prettier vitest typescript vue-tsc
 ```
 
-- [ ] **Passo 4: `eslint.config.mjs`** (se `nuxi` l'ha già creato, sostituirne il contenuto)
+- [x] **Passo 4: `eslint.config.mjs`** (se `nuxi` l'ha già creato, sostituirne il contenuto)
 
 ```js
 // @ts-check
@@ -75,7 +75,7 @@ import withNuxt from "./.nuxt/eslint.config.mjs";
 export default withNuxt(prettier);
 ```
 
-- [ ] **Passo 5: Prettier**
+- [x] **Passo 5: Prettier**
 
 `.prettierrc`:
 
@@ -93,7 +93,7 @@ data/
 package-lock.json
 ```
 
-- [ ] **Passo 6: `vitest.config.ts`**
+- [x] **Passo 6: `vitest.config.ts`**
 
 ```ts
 import { defineConfig } from "vitest/config";
@@ -110,7 +110,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Passo 7: script in `package.json`**
+- [x] **Passo 7: script in `package.json`**
 
 ```json
 "lint": "eslint .",
@@ -120,7 +120,7 @@ export default defineConfig({
 "typecheck": "nuxt typecheck"
 ```
 
-- [ ] **Passo 8: verifica**
+- [x] **Passo 8: verifica**
 
 ```bash
 npm run format && npm run lint && npm run typecheck && npm test -- --passWithNoTests
@@ -128,9 +128,9 @@ npm run format && npm run lint && npm run typecheck && npm test -- --passWithNoT
 
 Atteso: nessun errore di lint o di tipi; Vitest esce con codice 0 e segnala che non ci sono ancora test.
 
-- [ ] **Passo 9: aggiornare `CLAUDE.md`**: nella sezione Stack i nuovi comandi prendono il posto della riga "Da configurare".
+- [x] **Passo 9: aggiornare `CLAUDE.md`**: nella sezione Stack i nuovi comandi prendono il posto della riga "Da configurare".
 
-- [ ] **Passo 10: commit**
+- [x] **Passo 10: commit**
 
 ```bash
 git add -A && git commit -m "chore: set up eslint, prettier and vitest"
@@ -144,25 +144,27 @@ git add -A && git commit -m "chore: set up eslint, prettier and vitest"
 
 **Obiettivo:** tradurre in TypeScript le tabelle della specifica (sezione "Modello dei dati"). I nomi qui sotto sono vincolanti, perché test e dati li usano:
 
-| Nome | Cos'è |
-|---|---|
-| `TagDefinition` | `{ label: string; icon: string }` |
-| `TAGS` | Oggetto costante con i 13 tag della specifica |
-| `TagId` | Unione delle chiavi di `TAGS` |
-| `SourceKind` | `'rss' \| 'github-release' \| 'hn' \| 'devto'` |
+| Nome               | Cos'è                                              |
+| ------------------ | -------------------------------------------------- |
+| `TagDefinition`    | `{ label: string; icon: string }`                  |
+| `TAGS`             | Oggetto costante con i 13 tag della specifica      |
+| `TagId`            | Unione delle chiavi di `TAGS`                      |
+| `SourceKind`       | `'rss' \| 'github-release' \| 'hn' \| 'devto'`     |
 | `SourceDefinition` | `{ name: string; kind: SourceKind; icon: string }` |
-| `SOURCES` | Oggetto costante con le 4 fonti della specifica |
-| `SourceId` | Unione delle chiavi di `SOURCES` |
-| `Category` | `'frontend' \| 'ai'` |
-| `Article` | I 12 campi della specifica, facoltativi con `?` |
-| `ArticleListItem` | `Article` senza `contentHtml` |
+| `SOURCES`          | Oggetto costante con le 4 fonti della specifica    |
+| `SourceId`         | Unione delle chiavi di `SOURCES`                   |
+| `Category`         | `'frontend' \| 'ai'`                               |
+| `Article`          | I 12 campi della specifica, facoltativi con `?`    |
+| `ArticleListItem`  | `Article` senza `contentHtml`                      |
 
 **Suggerimenti:**
+
 - `as const satisfies Record<string, TagDefinition>` fa due cose insieme: controlla la forma di ogni voce e conserva le chiavi letterali, che servono per ricavare `TagId` con `keyof typeof TAGS`.
 - Per `ArticleListItem` c'è un tipo di utilità di TypeScript che toglie un campo da un tipo esistente.
 - In `article.ts` importa `TagId` e `SourceId` con `import type` e percorso relativo.
 
 **Criteri di accettazione:**
+
 - [ ] `npm run typecheck` e `npm run lint` passano
 - [ ] tag e fonti corrispondono esattamente alle tabelle della specifica
 - [ ] commit: `feat(model): add article type, tag vocabulary and source registry`
@@ -289,13 +291,13 @@ Esegui: `npm test`. Atteso: FAIL, perché `data/articles.json` non esiste.
 
 Dieci articoli basati su contenuti veri, recuperati al momento dalle fonti, che coprono i casi della specifica:
 
-| # | Fonte | Caso |
-|---|---|---|
-| 1–2 | `nuxt-releases` | Release con `contentHtml` (HTML pulito: solo `p`, `h2`, `h3`, `ul`, `li`, `a`, `strong`, `code`) |
-| 3–4 | `openai-news` | Estratto, nessuna copertina; categoria `ai` |
-| 5–6 | `devto` | Copertina ed estratto; URL da `canonical_url` |
-| 7–8 | `hackernews` | `discussionUrl`, nessun testo |
-| 9–10 | uno qualsiasi | Con `summary` (scritto a mano, in inglese) |
+| #    | Fonte           | Caso                                                                                             |
+| ---- | --------------- | ------------------------------------------------------------------------------------------------ |
+| 1–2  | `nuxt-releases` | Release con `contentHtml` (HTML pulito: solo `p`, `h2`, `h3`, `ul`, `li`, `a`, `strong`, `code`) |
+| 3–4  | `openai-news`   | Estratto, nessuna copertina; categoria `ai`                                                      |
+| 5–6  | `devto`         | Copertina ed estratto; URL da `canonical_url`                                                    |
+| 7–8  | `hackernews`    | `discussionUrl`, nessun testo                                                                    |
+| 9–10 | uno qualsiasi   | Con `summary` (scritto a mano, in inglese)                                                       |
 
 Gli `id` si calcolano con l'algoritmo della specifica, tramite uno script usa e getta nella scratchpad di Claude (non va nel repo):
 
@@ -334,6 +336,7 @@ git add data/articles.json test/unit/articles-data.test.ts && git commit -m "tes
 **File:** crea `test/unit/article-text.test.ts`, `test/unit/format-date.test.ts` (Claude); `shared/utils/article-text.ts`, `shared/utils/format-date.ts` (Giovanni).
 
 **Firme:**
+
 - `getArticleText(article: Pick<Article, "summary" | "excerpt">): string | undefined`
 - `formatDate(iso: string): string`
 
@@ -393,6 +396,7 @@ Esegui: `npm test`. Atteso: FAIL, perché i moduli non esistono. Il test di guar
 - [ ] **Passo 3 (Giovanni): implementare le due funzioni**
 
 Suggerimenti:
+
 - `getArticleText` è una riga: c'è un operatore che sceglie il primo valore non `undefined`.
 - `formatDate`: `Intl.DateTimeFormat` accetta la lingua e un'opzione `timeZone`. Il formato atteso (`Sep 14, 2026`) corrisponde a uno degli stili predefiniti per la data. Il formatter si può creare una sola volta, fuori dalla funzione.
 
@@ -410,6 +414,7 @@ Esegui: `npm test`. Atteso: PASS.
 **File:** crea `test/unit/articles.test.ts` (Claude); `server/utils/articles.ts`, `server/utils/article-data.ts`, `server/api/articles.get.ts`, `server/api/articles/[id].get.ts` (Giovanni).
 
 **Firme:**
+
 - `listArticles(articles: Article[]): ArticleListItem[]`: dal più recente al più vecchio, senza `contentHtml`, senza modificare l'array ricevuto.
 - `findArticle(articles: Article[], id: string): Article | undefined`
 - `getArticles(): Article[]`: il contenuto di `data/articles.json` con il tipo giusto. Il cast avviene qui e solo qui; è sicuro perché il test di integrità valida il file.
@@ -476,7 +481,8 @@ Esegui: `npm test`. Atteso: FAIL, perché `server/utils/articles.ts` non esiste.
 - [ ] **Passo 3 (Giovanni): funzioni pure e accesso ai dati**
 
 Suggerimenti:
-- Attenzione a `Array.prototype.sort`: ordina l'array *sul posto*. Il terzo test esiste proprio per questo tranello.
+
+- Attenzione a `Array.prototype.sort`: ordina l'array _sul posto_. Il terzo test esiste proprio per questo tranello.
 - Le date ISO in UTC nello stesso formato si possono confrontare direttamente come stringhe.
 - Per togliere un campo senza toccare l'oggetto originale, pensa al destructuring con rest.
 - In `article-data.ts` il JSON si importa con l'alias `~~/data/articles.json` (`~~` è la radice del progetto).
@@ -512,16 +518,19 @@ Atteso: lista in JSON dal più recente, senza `contentHtml`; `HTTP/1.1 404` per 
 **Obiettivo:** le due pagine della specifica (sezione "Pagine"), in HTML semantico senza stile.
 
 **Requisiti:**
+
 - `app.vue` rende `<NuxtPage />` al posto di `<NuxtWelcome />`.
 - **Archivio:** per ogni articolo copertina (`<img>` con `alt`) oppure riquadro segnaposto con il nome della fonte; titolo con `<NuxtLink>` al dettaglio; nome della fonte; data in un `<time datetime="…">`; categoria; tag come testo (`label` dal vocabolario); testo da `getArticleText`, con il blocco omesso quando non c'è testo. Messaggio quando la lista è vuota.
 - **Dettaglio:** stessi dati; `contentHtml` con `v-html` solo quando presente; link "Read the original" con `target="_blank"` e `rel="noopener"`; link alla discussione quando presente. ID inesistente: errore bloccante 404.
 
 **Suggerimenti:**
+
 - `useFetch("/api/articles")` ricava il tipo della risposta direttamente dalla route Nitro: non serve dichiararlo a mano.
 - Nella pagina di dettaglio l'ID arriva da `useRoute().params`. Se `useFetch` restituisce un errore, `createError({ statusCode: 404, fatal: true })` mostra la pagina di errore di Nuxt.
 - Nome della fonte e label dei tag si leggono da `SOURCES` e `TAGS`, auto-importati nelle pagine.
 
 **Criteri di accettazione** (con `npm run dev`):
+
 - [ ] l'archivio mostra gli articoli dal più recente; ogni titolo porta al dettaglio
 - [ ] gli articoli HN non hanno blocco di testo e hanno il link alla discussione
 - [ ] il dettaglio di una release mostra le note di rilascio

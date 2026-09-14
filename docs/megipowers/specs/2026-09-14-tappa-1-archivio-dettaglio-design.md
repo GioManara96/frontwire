@@ -28,21 +28,21 @@ Oggetto costante `TAGS`; il tipo `TagId` è l'unione delle sue chiavi. Ogni voce
 
 Vocabolario iniziale (icone verificate sull'API Iconify):
 
-| Tag | Label | Icona |
-|---|---|---|
-| `nuxt` | Nuxt | `simple-icons:nuxt` |
-| `vue` | Vue | `simple-icons:vuedotjs` |
-| `react` | React | `simple-icons:react` |
-| `nextjs` | Next.js | `simple-icons:nextdotjs` |
-| `vite` | Vite | `simple-icons:vite` |
-| `svelte` | Svelte | `simple-icons:svelte` |
-| `typescript` | TypeScript | `simple-icons:typescript` |
-| `openai` | OpenAI | `simple-icons:openai` |
-| `anthropic` | Anthropic | `simple-icons:anthropic` |
-| `deepseek` | DeepSeek | `simple-icons:deepseek` |
-| `huggingface` | Hugging Face | `simple-icons:huggingface` |
-| `gemini` | Gemini | `simple-icons:googlegemini` |
-| `release` | Release | `material-symbols-light:rocket-launch-outline` |
+| Tag           | Label        | Icona                                          |
+| ------------- | ------------ | ---------------------------------------------- |
+| `nuxt`        | Nuxt         | `simple-icons:nuxt`                            |
+| `vue`         | Vue          | `simple-icons:vuedotjs`                        |
+| `react`       | React        | `simple-icons:react`                           |
+| `nextjs`      | Next.js      | `simple-icons:nextdotjs`                       |
+| `vite`        | Vite         | `simple-icons:vite`                            |
+| `svelte`      | Svelte       | `simple-icons:svelte`                          |
+| `typescript`  | TypeScript   | `simple-icons:typescript`                      |
+| `openai`      | OpenAI       | `simple-icons:openai`                          |
+| `anthropic`   | Anthropic    | `simple-icons:anthropic`                       |
+| `deepseek`    | DeepSeek     | `simple-icons:deepseek`                        |
+| `huggingface` | Hugging Face | `simple-icons:huggingface`                     |
+| `gemini`      | Gemini       | `simple-icons:googlegemini`                    |
+| `release`     | Release      | `material-symbols-light:rocket-launch-outline` |
 
 In questa tappa i tag si mostrano come testo (`label`); le icone arrivano con la grafica.
 
@@ -52,29 +52,29 @@ Oggetto costante `SOURCES`; il tipo `SourceId` è l'unione delle chiavi. Ogni vo
 
 Fonti necessarie per i dati finti:
 
-| Fonte | Nome | Tipo | Icona |
-|---|---|---|---|
-| `nuxt-releases` | Nuxt releases | `github-release` | `simple-icons:nuxt` |
-| `openai-news` | OpenAI News | `rss` | `simple-icons:openai` |
-| `devto` | DEV Community | `devto` | `simple-icons:devdotto` |
-| `hackernews` | Hacker News | `hn` | `simple-icons:ycombinator` |
+| Fonte           | Nome          | Tipo             | Icona                      |
+| --------------- | ------------- | ---------------- | -------------------------- |
+| `nuxt-releases` | Nuxt releases | `github-release` | `simple-icons:nuxt`        |
+| `openai-news`   | OpenAI News   | `rss`            | `simple-icons:openai`      |
+| `devto`         | DEV Community | `devto`          | `simple-icons:devdotto`    |
+| `hackernews`    | Hacker News   | `hn`             | `simple-icons:ycombinator` |
 
 ### `Article` — `shared/types/article.ts`
 
-| Campo | Tipo | Significato |
-|---|---|---|
-| `id` | `string` | Hash dell'URL originale normalizzato (vedi sotto). Compare nell'URL della pagina di dettaglio |
-| `title` | `string` | Per le release va composto dal nome del progetto e dal tag: `"Nuxt v4.5.2"` |
-| `url` | `string` | URL assoluto dell'originale. Per dev.to è `canonical_url` |
-| `sourceId` | `SourceId` | |
-| `publishedAt` | `string` | ISO 8601 in UTC (`2026-09-14T12:19:00Z`) |
-| `category` | `'frontend' \| 'ai'` | |
-| `tags` | `TagId[]` | Solo dal vocabolario |
-| `excerpt?` | `string` | Testo semplice fornito dalla fonte |
-| `summary?` | `string` | Riassunto AI in testo semplice |
-| `contentHtml?` | `string` | Solo per le release: note di rilascio già ripulite |
-| `discussionUrl?` | `string` | Solo per HN: la pagina della discussione |
-| `coverImageUrl?` | `string` | URL assoluto della copertina, se la fonte ce l'ha |
+| Campo            | Tipo                 | Significato                                                                                   |
+| ---------------- | -------------------- | --------------------------------------------------------------------------------------------- |
+| `id`             | `string`             | Hash dell'URL originale normalizzato (vedi sotto). Compare nell'URL della pagina di dettaglio |
+| `title`          | `string`             | Per le release va composto dal nome del progetto e dal tag: `"Nuxt v4.5.2"`                   |
+| `url`            | `string`             | URL assoluto dell'originale. Per dev.to è `canonical_url`                                     |
+| `sourceId`       | `SourceId`           |                                                                                               |
+| `publishedAt`    | `string`             | ISO 8601 in UTC (`2026-09-14T12:19:00Z`)                                                      |
+| `category`       | `'frontend' \| 'ai'` |                                                                                               |
+| `tags`           | `TagId[]`            | Solo dal vocabolario                                                                          |
+| `excerpt?`       | `string`             | Testo semplice fornito dalla fonte                                                            |
+| `summary?`       | `string`             | Riassunto AI in testo semplice                                                                |
+| `contentHtml?`   | `string`             | Solo per le release: note di rilascio già ripulite                                            |
+| `discussionUrl?` | `string`             | Solo per HN: la pagina della discussione                                                      |
+| `coverImageUrl?` | `string`             | URL assoluto della copertina, se la fonte ce l'ha                                             |
 
 Convenzioni:
 
@@ -118,6 +118,7 @@ Handler leggeri: la logica sta in funzioni pure in `server/utils/`, testabili se
 - `app/pages/index.vue`, archivio: per ogni articolo copertina o immagine sostitutiva, titolo con link al dettaglio, nome della fonte, data, categoria, tag (testo), testo dell'articolo. Messaggio dedicato se la lista è vuota.
 
 Immagine sostitutiva: in questa tappa è un semplice segnaposto in HTML (un riquadro con il nome della fonte); con la grafica diventerà l'icona della fonte, presa dal registro.
+
 - `app/pages/articles/[id].vue`, dettaglio: gli stessi dati, `contentHtml` con `v-html` quando presente, link "Read the original" (nuova scheda, `rel="noopener"`), link alla discussione quando presente. Se l'API risponde 404, errore bloccante con `createError` e pagina di errore predefinita di Nuxt.
 
 Funzioni di utilità in `shared/utils/`, usate da entrambe le pagine:
@@ -127,13 +128,13 @@ Funzioni di utilità in `shared/utils/`, usate da entrambe le pagine:
 
 ## Errori
 
-| Caso | Comportamento |
-|---|---|
-| ID inesistente | 404 dall'API, pagina di errore di Nuxt |
-| Campi facoltativi mancanti | Immagine sostitutiva per la copertina; nessun blocco di testo se mancano riassunto ed estratto |
-| Dati non validi nel JSON | Li intercetta il test di integrità (TypeScript non può: i JSON importati hanno tipi generici, i tag diventano `string[]`) |
-| `contentHtml` | Unico campo mostrato con `v-html`; affidabile perché ripulito a monte. Nei dati finti solo HTML pulito |
-| Errore durante `nuxt generate` | La build si ferma: su Vercel non va niente di rotto |
+| Caso                           | Comportamento                                                                                                             |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| ID inesistente                 | 404 dall'API, pagina di errore di Nuxt                                                                                    |
+| Campi facoltativi mancanti     | Immagine sostitutiva per la copertina; nessun blocco di testo se mancano riassunto ed estratto                            |
+| Dati non validi nel JSON       | Li intercetta il test di integrità (TypeScript non può: i JSON importati hanno tipi generici, i tag diventano `string[]`) |
+| `contentHtml`                  | Unico campo mostrato con `v-html`; affidabile perché ripulito a monte. Nei dati finti solo HTML pulito                    |
+| Errore durante `nuxt generate` | La build si ferma: su Vercel non va niente di rotto                                                                       |
 
 ## Test (Vitest, ambiente `node`)
 

@@ -1,0 +1,3 @@
+# Written by the import pipeline, not by hand.
+data/
+package-lock.json
