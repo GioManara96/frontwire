@@ -39,7 +39,7 @@ Niente database e niente server: il sito è statico e i dati vivono nel repo.
 3. Gli articoli sono salvati come **JSON nel repo** e l'Action fa commit.
 4. Il push fa partire il deploy statico su **Vercel** (piano Hobby).
 
-Lo schema dell'articolo è condiviso tra pipeline e app: è la fonte di verità, tenerlo tipizzato in un solo punto.
+Il tipo `Article`, il vocabolario dei tag e il registro delle fonti vivono in `shared/`: sono l'unica fonte di verità, comune ad app e pipeline. Il design di ogni tappa è in `docs/megipowers/specs/`.
 
 ### Fonti
 
