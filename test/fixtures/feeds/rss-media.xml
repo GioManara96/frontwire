@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Google DeepMind</title>
+    <link>https://deepmind.google/blog/</link>
+    <description>Covers in every shape the pipeline accepts</description>
+    <item>
+      <title>Cover from media content</title>
+      <link>https://deepmind.google/blog/media-content/</link>
+      <description>Media content wins over the other candidates.</description>
+      <pubDate>Mon, 14 Sep 2026 09:00:00 GMT</pubDate>
+      <media:content url="https://deepmind.google/img/content.jpg" medium="image" type="image/jpeg"/>
+      <media:thumbnail url="https://deepmind.google/img/thumbnail.jpg"/>
+      <enclosure url="https://deepmind.google/img/enclosure.png" type="image/png" length="1"/>
+    </item>
+    <item>
+      <title>Cover from thumbnail</title>
+      <link>https://deepmind.google/blog/thumbnail/</link>
+      <description>Only a thumbnail.</description>
+      <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
+      <media:thumbnail url="https://deepmind.google/img/thumbnail.jpg"/>
+    </item>
+    <item>
+      <title>Cover from enclosure</title>
+      <link>https://deepmind.google/blog/enclosure/</link>
+      <description>Only an image enclosure.</description>
+      <pubDate>Mon, 14 Sep 2026 07:00:00 GMT</pubDate>
+      <enclosure url="https://deepmind.google/img/enclosure.png" type="image/png" length="1"/>
+    </item>
+    <item>
+      <title>Audio enclosure</title>
+      <link>https://deepmind.google/blog/podcast/</link>
+      <description>An audio enclosure is not a cover.</description>
+      <pubDate>Mon, 14 Sep 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://deepmind.google/audio/episode.mp3" type="audio/mpeg" length="1"/>
+    </item>
+    <item>
+      <title>Relative media URL</title>
+      <link>https://deepmind.google/blog/relative-media/</link>
+      <description>The relative media URL is ignored, the enclosure is used.</description>
+      <pubDate>Mon, 14 Sep 2026 05:00:00 GMT</pubDate>
+      <media:content url="/img/relative.jpg" medium="image"/>
+      <enclosure url="https://deepmind.google/img/fallback.png" type="image/png" length="1"/>
+    </item>
+  </channel>
+</rss>

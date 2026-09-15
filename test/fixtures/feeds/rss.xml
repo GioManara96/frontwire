@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Next.js Blog</title>
+    <link>https://nextjs.org/blog</link>
+    <description>The latest Next.js news</description>
+    <item>
+      <title>Next.js 16.4</title>
+      <link>https://nextjs.org/blog/next-16-4</link>
+      <description>Next.js 16.4 improves Turbopack build times and stabilizes the new caching APIs.</description>
+      <pubDate>Fri, 04 Sep 2026 16:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Building with React Server Components</title>
+      <link>https://nextjs.org/blog/rsc-guide?utm_source=rss#intro</link>
+      <description>&lt;p&gt;Server Components &amp;amp; streaming change how data reaches the browser. This guide walks through fetching on the server, passing props to Client Components, and caching the results.&lt;/p&gt;&lt;p&gt;It also covers error boundaries, loading states, and how to move an existing page from the Pages Router without breaking deep links or analytics.&lt;/p&gt;</description>
+      <pubDate>Thu, 10 Sep 2026 09:30:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Old post</title>
+      <link>https://nextjs.org/blog/old-post</link>
+      <description>Published before the 30-day window.</description>
+      <pubDate>Wed, 01 Jul 2026 10:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>No link</title>
+      <description>This item has no link.</description>
+      <pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Relative link</title>
+      <link>/blog/relative-link</link>
+      <pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bad date</title>
+      <link>https://nextjs.org/blog/bad-date</link>
+      <pubDate>not a date</pubDate>
+    </item>
+    <item>
+      <title>Only encoded content</title>
+      <link>https://nextjs.org/blog/only-encoded</link>
+      <content:encoded><![CDATA[<p>Encoded body text.</p>]]></content:encoded>
+      <pubDate>Sat, 12 Sep 2026 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Title only</title>
+      <link>https://nextjs.org/blog/title-only</link>
+      <pubDate>Sun, 13 Sep 2026 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Echoed title</title>
+      <link>https://nextjs.org/blog/echoed-title</link>
+      <description>Echoed title</description>
+      <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

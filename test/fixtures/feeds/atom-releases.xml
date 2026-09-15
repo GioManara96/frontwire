@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/nuxt/nuxt/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/nuxt/nuxt/releases"/>
+  <title>Release notes from nuxt</title>
+  <updated>2026-09-14T10:00:00Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v4.5.2</id>
+    <updated>2026-09-05T16:19:44Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v4.5.2"/>
+    <title>v4.5.2</title>
+    <content type="html">&lt;h2&gt;👉 Changelog&lt;/h2&gt;&lt;p onclick="evil()"&gt;&lt;a href="https://github.com/nuxt/nuxt/compare/v4.5.1...v4.5.2"&gt;compare changes&lt;/a&gt;&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;h3&gt;🩹 Fixes&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;nuxt:&lt;/strong&gt; Keep route params when a page component is reused between navigations (&lt;a href="https://github.com/nuxt/nuxt/pull/33001"&gt;#33001&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;nuxt:&lt;/strong&gt; Avoid a hydration mismatch when &lt;code&gt;useState&lt;/code&gt; is read inside a layout (&lt;a href="https://github.com/nuxt/nuxt/pull/33002"&gt;#33002&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;vite:&lt;/strong&gt; Resolve aliases in server-only components during the build (&lt;a href="https://github.com/nuxt/nuxt/pull/33003"&gt;#33003&lt;/a&gt;)&lt;/li&gt;&lt;/ul&gt;&lt;img src="https://example.com/banner.png"&gt;</content>
+    <author><name>danielroe</name></author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/28706372?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v4.6.0-rc.1</id>
+    <updated>2026-09-04T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v4.6.0-rc.1"/>
+    <title>v4.6.0-rc.1</title>
+    <content type="html">&lt;p&gt;Release candidate.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v16.4.0-canary.31</id>
+    <updated>2026-09-03T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v16.4.0-canary.31"/>
+    <title>v16.4.0-canary.31</title>
+    <content type="html">&lt;p&gt;Canary.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/create-vite@9.2.1</id>
+    <updated>2026-09-02T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/create-vite%409.2.1"/>
+    <title>create-vite@9.2.1</title>
+    <content type="html">&lt;p&gt;Package release.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/dropped/page-tree-reuse</id>
+    <updated>2026-09-01T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/dropped%2Fpage-tree-reuse"/>
+    <title>dropped/page-tree-reuse</title>
+    <content type="html">&lt;p&gt;Stray tag.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v6.0-rc</id>
+    <updated>2026-08-31T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v6.0-rc"/>
+    <title>TypeScript 6.0.1 RC</title>
+    <content type="html">&lt;p&gt;Release candidate with a short tag.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v4.4.0</id>
+    <published>2026-09-09T18:00:00Z</published>
+    <updated>2026-09-10T08:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v4.4.0"/>
+    <title>4.4.0 (September 9, 2026)</title>
+    <content type="html">&lt;p&gt;Minor fixes.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v3.21.11</id>
+    <updated>2026-08-01T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v3.21.11"/>
+    <title>v3.21.11</title>
+    <content type="html">&lt;p&gt;Older than the window.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/80811932/v4.5.1</id>
+    <updated>2026-08-30T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/nuxt/nuxt/releases/tag/v4.5.1"/>
+    <title>v4.5.1</title>
+    <content type="html"></content>
+  </entry>
+</feed>
