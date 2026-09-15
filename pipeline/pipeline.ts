@@ -7,8 +7,8 @@ export type PipelineDeps = {
   /** The archive as currently stored. */
   existing: Article[];
   now: Date;
-  /** Body of the feed at a URL, or a rejection; injected so tests run without network. */
-  fetchFeed: (url: string) => Promise<string>;
+  /** Body of the response at a URL, or a rejection; injected so tests run without network. */
+  fetchText: (url: string) => Promise<string>;
 };
 
 export type PipelineResult = {
@@ -39,10 +39,10 @@ function errorMessage(error: unknown): string {
  * into `existing`. A failing source (network, HTTP status, unreadable feed) only produces a warning;
  * if every source fails the run throws, because writing the archive back would hide that it went stale.
  */
-export async function runPipeline({ existing, now, fetchFeed }: PipelineDeps): Promise<PipelineResult> {
+export async function runPipeline({ existing, now, fetchText }: PipelineDeps): Promise<PipelineResult> {
   // Parsing inside `.then` turns a broken feed into a rejection, handled like a network failure.
   const results = await Promise.allSettled(
-    FEED_SOURCE_IDS.map((id) => fetchFeed(SOURCES[id].feedUrl).then((xml) => normalizeFeed(xml, id, now))),
+    FEED_SOURCE_IDS.map((id) => fetchText(SOURCES[id].feedUrl).then((xml) => normalizeFeed(xml, id, now))),
   );
 
   // allSettled keeps request order, so `incoming` is in registry order: that gives the first source priority on duplicates.

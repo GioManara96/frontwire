@@ -24,13 +24,13 @@ function fixture(name: string): string {
 /** Serves the given bodies (or throws the given errors) and an empty feed for every other URL. */
 function fakeFetch(responses: Record<string, string | Error> = {}) {
   const requested: string[] = [];
-  const fetchFeed = async (url: string) => {
+  const fetchText = async (url: string) => {
     requested.push(url);
     const response = responses[url];
     if (response instanceof Error) throw response;
     return response ?? (url.endsWith(".atom") ? EMPTY_ATOM : EMPTY_RSS);
   };
-  return { fetchFeed, requested };
+  return { fetchText, requested };
 }
 
 // rss.xml yields 5 valid blog posts, of which the archive keeps the 3 newest; atom-releases.xml yields 3 releases.
@@ -38,15 +38,15 @@ const FIXTURES = { [NEXTJS_BLOG]: fixture("rss.xml"), [NUXT_RELEASES]: fixture("
 
 describe("runPipeline", () => {
   it("requests every feed source once and skips the API sources", async () => {
-    const { fetchFeed, requested } = fakeFetch();
-    await runPipeline({ existing: [], now: NOW, fetchFeed });
+    const { fetchText, requested } = fakeFetch();
+    await runPipeline({ existing: [], now: NOW, fetchText });
     expect(requested).toHaveLength(20);
     expect(new Set(requested).size).toBe(20);
   });
 
   it("imports the newest articles of every feed, newest first, and reports the counts", async () => {
-    const { fetchFeed } = fakeFetch(FIXTURES);
-    const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
+    const { fetchText } = fakeFetch(FIXTURES);
+    const result = await runPipeline({ existing: [], now: NOW, fetchText });
     expect(result.articles.map((article) => article.title)).toEqual([
       "Echoed title",
       "Title only",
@@ -74,8 +74,8 @@ describe("runPipeline", () => {
       title: "Expired",
       publishedAt: "2026-07-01T00:00:00.000Z",
     };
-    const { fetchFeed } = fakeFetch(FIXTURES);
-    const result = await runPipeline({ existing: [stored, expired], now: NOW, fetchFeed });
+    const { fetchText } = fakeFetch(FIXTURES);
+    const result = await runPipeline({ existing: [stored, expired], now: NOW, fetchText });
     expect(result.articles).toContainEqual(stored);
     expect(result.articles.map((article) => article.title)).not.toContain("Expired");
     expect(result).toMatchObject({ added: 5, removed: 1 });
@@ -86,31 +86,31 @@ describe("runPipeline", () => {
       '<?xml version="1.0"?><rss version="2.0"><channel><title>OpenAI</title><link>https://openai.com</link>' +
       "<description>News</description><item><title>Duplicate</title><link>https://nextjs.org/blog/echoed-title</link>" +
       "<category>Product</category><pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate></item></channel></rss>";
-    const { fetchFeed } = fakeFetch({ ...FIXTURES, [OPENAI_NEWS]: duplicate });
-    const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
+    const { fetchText } = fakeFetch({ ...FIXTURES, [OPENAI_NEWS]: duplicate });
+    const result = await runPipeline({ existing: [], now: NOW, fetchText });
     const matches = result.articles.filter((article) => article.url === "https://nextjs.org/blog/echoed-title");
     expect(matches).toHaveLength(1);
     expect(matches[0]?.sourceId).toBe("nextjs-blog");
   });
 
   it("turns a failing source into a warning and imports the others", async () => {
-    const { fetchFeed } = fakeFetch({ ...FIXTURES, [OPENAI_NEWS]: new Error("HTTP 503") });
-    const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
+    const { fetchText } = fakeFetch({ ...FIXTURES, [OPENAI_NEWS]: new Error("HTTP 503") });
+    const result = await runPipeline({ existing: [], now: NOW, fetchText });
     expect(result.warnings).toEqual(["openai-news: HTTP 503"]);
     expect(result.added).toBe(6);
   });
 
   it("turns a feed that cannot be parsed into a warning", async () => {
-    const { fetchFeed } = fakeFetch({ [NEXTJS_BLOG]: fixture("broken.xml") });
-    const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
+    const { fetchText } = fakeFetch({ [NEXTJS_BLOG]: fixture("broken.xml") });
+    const result = await runPipeline({ existing: [], now: NOW, fetchText });
     expect(result.warnings).toHaveLength(1);
     expect(result.warnings[0]).toMatch(/^nextjs-blog: /);
   });
 
   it("fails when every source fails", async () => {
-    const fetchFeed = async () => {
+    const fetchText = async () => {
       throw new Error("offline");
     };
-    await expect(runPipeline({ existing: [], now: NOW, fetchFeed })).rejects.toThrow(/every source failed/i);
+    await expect(runPipeline({ existing: [], now: NOW, fetchText })).rejects.toThrow(/every source failed/i);
   });
 });
