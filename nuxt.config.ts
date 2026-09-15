@@ -6,6 +6,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxt/fonts"],
   css: ["~/assets/css/main.css"],
+  runtimeConfig: {
+    public: {
+      // Evaluated when the site is built. Every bot commit on main redeploys, so this is when the archive last changed.
+      builtAt: new Date().toISOString(),
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

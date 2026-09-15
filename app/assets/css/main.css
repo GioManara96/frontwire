@@ -135,8 +135,16 @@
   }
 
   /* —— Archive —— */
+  .archive__intro {
+    @apply mb-6 flex flex-col gap-2;
+  }
+
   .archive__title {
-    @apply mb-6 font-display text-3xl font-extrabold tracking-tight text-text;
+    @apply text-balance font-display text-2xl font-extrabold tracking-tight text-text md:text-3xl;
+  }
+
+  .archive__updated {
+    @apply font-mono text-xs uppercase tracking-wide text-muted;
   }
 
   .archive__empty {

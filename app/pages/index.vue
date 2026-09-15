@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { data: articles } = await useFetch("/api/articles");
+const { builtAt } = useRuntimeConfig().public;
 
 // Some sources block hotlinking (cross-origin). A failed cover falls back to the source placeholder.
 const coverFailed = ref<Record<string, boolean>>({});
@@ -7,7 +8,12 @@ const coverFailed = ref<Record<string, boolean>>({});
 
 <template>
   <div>
-    <h1 class="archive__title">Articles</h1>
+    <header class="archive__intro">
+      <h1 class="archive__title">Web development and AI news for developers</h1>
+      <p class="archive__updated">
+        Updated <time :datetime="builtAt">{{ formatDate(builtAt) }}</time>
+      </p>
+    </header>
     <p v-if="!articles?.length" class="archive__empty">No articles yet.</p>
     <ul v-else class="archive__grid">
       <li v-for="article in articles" :key="article.id">
