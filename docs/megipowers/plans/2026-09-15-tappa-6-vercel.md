@@ -10,8 +10,8 @@
 
 ### Task 1 — Progetto e collegamento Git · **Claude**
 
-- [ ] `vercel link` crea il progetto `frontwire` e collega la cartella (`.vercel/` resta fuori da git).
-- [ ] `vercel git connect` verso `GioManara96/frontwire`; produzione su `main`.
+- [x] `vercel link` crea il progetto `frontwire` e collega la cartella (`.vercel/` resta fuori da git).
+- [x] `vercel git connect` verso `GioManara96/frontwire`; produzione su `main`. Il remote `origin` usa l'alias SSH `github-personale`, che la CLI non sa leggere: il collegamento si fa da una cartella usa e getta con un remote HTTPS.
 
 ### Task 2 — Primo deploy · **Claude**
 
@@ -19,14 +19,14 @@
 
 ### Task 3 — Dominio · **Claude**, poi **Giovanni**
 
-- [ ] **Claude:** `vercel domains add frontwire.giovannimanara.dev frontwire`, e il record richiesto.
+- [x] **Claude:** `vercel domains add frontwire.giovannimanara.dev frontwire`, e il record richiesto: `CNAME frontwire` → `3f1cdc9308962f7c.vercel-dns-017.com`, DNS only.
 - [ ] **Giovanni:** su Cloudflare, `CNAME frontwire` verso quel valore, **DNS only**.
 - [ ] **Claude:** dominio verificato, HTTPS valido.
 
 ### Task 4 — Meta social · **Claude**
 
-- [ ] `og:image` assoluto e `og:url` in `nuxt.config.ts`.
-- [ ] Commit: `feat(seo): use absolute URLs in the social meta tags`
+- [x] `og:image` assoluto e `og:url` in `nuxt.config.ts`.
+- [x] Commit: `feat(seo): use absolute URLs in the social meta tags`
 
 ### Task 5 — Documentazione · **Claude**
 

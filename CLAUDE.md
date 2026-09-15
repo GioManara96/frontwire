@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Frontwire
 
-Web app che raccoglie le notizie più interessanti sul web development, con focus su **frontend** (Nuxt, Next, Vue, React, Vite…) e **AI per chi sviluppa** (nuovi modelli, API e strumenti di Anthropic, OpenAI, DeepSeek…). Uso personale e caso studio per il portfolio di Giovanni, pubblicata su un sottodominio di `giovannimanara.dev` (probabilmente `frontwire.giovannimanara.dev`).
+Web app che raccoglie le notizie più interessanti sul web development, con focus su **frontend** (Nuxt, Next, Vue, React, Vite…) e **AI per chi sviluppa** (nuovi modelli, API e strumenti di Anthropic, OpenAI, DeepSeek…). Uso personale e caso studio per il portfolio di Giovanni, pubblicata su `https://frontwire.giovannimanara.dev`.
 
 Il focus è il web development: un articolo sull'AI entra solo se riguarda modelli, API o strumenti per sviluppatori. L'AI applicata ad altri campi (clima, genomica, finanza), la politica e la cronaca aziendale restano fuori.
 
@@ -32,7 +32,7 @@ Niente database e niente server: il sito è statico e i dati vivono nel repo. Il
 
 1. Una **GitHub Action pianificata** (`.github/workflows/ingest.yml`, ogni 6 ore) scarica le fonti, normalizza gli articoli, rimuove i duplicati, assegna le label e scarta gli articoli AI che non riguardano chi sviluppa.
 2. Gli articoli sono salvati come **JSON nel repo** (`data/articles.json`) e l'Action fa commit su `main`. L'archivio è fatto per essere letto per intero: al massimo **3 articoli per fonte**, i più recenti, entro gli **ultimi 30 giorni** (una trentina in tutto); da OpenAI entrano solo i post con categoria Product o Research.
-3. Il push su `main` fa partire il deploy statico su **Vercel** (piano Hobby; progetto ancora da collegare).
+3. Ogni push su `main`, compresi quelli del bot, fa partire il deploy statico su **Vercel**: progetto `frontwire` (piano Hobby), collegato al repo GitHub. Gli altri branch producono anteprime.
 
 Niente riassunti AI: GitHub Models, il provider previsto, è stato ritirato il 2026-07-30, e con i feed reali quasi nessun articolo ha abbastanza testo da riassumere (i blog portano una descrizione di una riga e non si fa scraping). Il ragionamento completo è nella spec della tappa 3. Per la stessa ragione (niente spese) il filtro di pertinenza è una regola sul titolo, non un classificatore AI.
 
@@ -114,7 +114,11 @@ ESLint (`@nuxt/eslint`), Prettier (`printWidth: 120`) e Vitest (ambiente `node`)
 
 `tsconfig.json` rimanda ai file generati in `.nuxt/` e a `pipeline/tsconfig.json`: se i tipi sembrano rotti, eseguire `npx nuxt prepare`.
 
-Deploy da configurare come nel portfolio (`~/Programmi/personali/portfolio/vercel.json`): `NITRO_PRESET=static nuxt generate` con output `.output/public`. DNS del dominio su Cloudflare (CNAME verso Vercel).
+Deploy su Vercel configurato da `vercel.json`, come nel portfolio: `NITRO_PRESET=static nuxt generate` con output `.output/public`. Dettagli in `docs/megipowers/specs/2026-09-15-tappa-6-vercel-design.md`.
+
+- DNS su Cloudflare: `CNAME frontwire` verso il valore indicato da Vercel, **DNS only** (col proxy di Cloudflare Vercel non emette il certificato).
+- Si pubblica solo tramite Git. La CLI (`vercel deploy`) non rispetta `.gitignore` e caricherebbe `.output`, `.nuxt` e le altre cartelle generate.
+- Il remote `origin` usa l'alias SSH `github-personale`, che la CLI di Vercel non sa leggere: i comandi `vercel git` vanno lanciati da una cartella con un remote HTTPS.
 
 ## Stile del codice
 
