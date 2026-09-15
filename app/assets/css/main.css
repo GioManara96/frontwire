@@ -47,7 +47,7 @@
   }
 
   .site-header__inner {
-    @apply mx-auto flex w-full items-center px-5 py-5 md:max-w-[992px] md:px-8 xl:max-w-[1200px];
+    @apply mx-auto flex w-full items-center justify-between px-5 py-5 md:max-w-[992px] md:px-8 xl:max-w-[1200px];
   }
 
   .site-header__brand {
@@ -60,6 +60,31 @@
 
   .site-header__brand-accent {
     @apply text-accent;
+  }
+
+  .site-header__github {
+    @apply flex items-center text-xl text-muted no-underline;
+  }
+
+  .site-header__github:hover {
+    @apply text-accent no-underline;
+  }
+
+  /* —— Site footer —— */
+  .site-footer {
+    @apply border-t border-border;
+  }
+
+  .site-footer__inner {
+    @apply mx-auto w-full px-5 py-6 text-center font-mono text-xs uppercase tracking-wide text-muted md:max-w-[992px] md:px-8 xl:max-w-[1200px];
+  }
+
+  .site-footer__link {
+    @apply text-muted no-underline;
+  }
+
+  .site-footer__link:hover {
+    @apply text-accent underline;
   }
 
   /* —— Meta line (mono, uppercase) shared by card and detail —— */
