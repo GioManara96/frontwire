@@ -1,7 +1,9 @@
 import type { Article } from "../shared/types/article";
 import { SOURCES, type FeedSourceId, type SourceId } from "../shared/utils/sources";
+import { hackerNewsUrl, normalizeHackerNews } from "./hackernews";
 import { mergeArticles } from "./merge";
-import { normalizeFeed } from "./normalize";
+import { normalizeFeed, type NormalizeResult } from "./normalize";
+import { isDeveloperRelevant } from "./relevance";
 
 export type PipelineDeps = {
   /** The archive as currently stored. */
@@ -18,32 +20,32 @@ export type PipelineResult = {
   added: number;
   /** Ids of `existing` that left the archive: expired, or pushed out by newer articles of the same source. */
   removed: number;
-  /** Feed items normalization dropped, summed over all sources. */
+  /** Source items the run dropped, normalization and relevance filter together. */
   skipped: number;
   /** One `"<sourceId>: <reason>"` line per source that failed. */
   warnings: string[];
 };
 
+const SOURCE_IDS = Object.keys(SOURCES) as SourceId[];
+
 function isFeedSource(id: SourceId): id is FeedSourceId {
   return "feedUrl" in SOURCES[id];
 }
 
-const FEED_SOURCE_IDS = (Object.keys(SOURCES) as SourceId[]).filter(isFeedSource);
-
-function errorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : String(error);
+// Parsing inside `.then` turns an unreadable response into a rejection, handled like a network failure.
+function importSource(id: SourceId, now: Date, fetchText: PipelineDeps["fetchText"]): Promise<NormalizeResult> {
+  if (isFeedSource(id)) return fetchText(SOURCES[id].feedUrl).then((xml) => normalizeFeed(xml, id, now));
+  return fetchText(hackerNewsUrl(now)).then((json) => normalizeHackerNews(json, now));
 }
 
 /**
- * One import run: fetches every feed source in parallel, normalizes the feeds and merges the result
- * into `existing`. A failing source (network, HTTP status, unreadable feed) only produces a warning;
- * if every source fails the run throws, because writing the archive back would hide that it went stale.
+ * One import run: fetches every source in parallel, normalizes what comes back, drops the AI articles
+ * that do not matter to a web developer and merges the rest into `existing`. A failing source (network,
+ * HTTP status, unreadable response) only produces a warning; if every source fails the run throws,
+ * because writing the archive back would hide that it went stale.
  */
 export async function runPipeline({ existing, now, fetchText }: PipelineDeps): Promise<PipelineResult> {
-  // Parsing inside `.then` turns a broken feed into a rejection, handled like a network failure.
-  const results = await Promise.allSettled(
-    FEED_SOURCE_IDS.map((id) => fetchText(SOURCES[id].feedUrl).then((xml) => normalizeFeed(xml, id, now))),
-  );
+  const results = await Promise.allSettled(SOURCE_IDS.map((id) => importSource(id, now, fetchText)));
 
   // allSettled keeps request order, so `incoming` is in registry order: that gives the first source priority on duplicates.
   const warnings: string[] = [];
@@ -54,12 +56,16 @@ export async function runPipeline({ existing, now, fetchText }: PipelineDeps): P
       incoming.push(...result.value.articles);
       skipped += result.value.skipped;
     } else {
-      warnings.push(`${FEED_SOURCE_IDS[index]}: ${errorMessage(result.reason)}`);
+      warnings.push(`${SOURCE_IDS[index]}: ${errorMessage(result.reason)}`);
     }
   });
-  if (warnings.length === FEED_SOURCE_IDS.length) throw new Error(`Every source failed. ${warnings.join("; ")}`);
+  if (warnings.length === SOURCE_IDS.length) throw new Error(`Every source failed. ${warnings.join("; ")}`);
 
-  const articles = mergeArticles(existing, incoming, now);
+  // Frontend sources are on topic by definition; AI articles have to earn their place (stage 4 spec).
+  const relevant = incoming.filter((article) => article.category !== "ai" || isDeveloperRelevant(article.title));
+  skipped += incoming.length - relevant.length;
+
+  const articles = mergeArticles(existing, relevant, now);
   const before = new Set(existing.map((article) => article.id));
   const after = new Set(articles.map((article) => article.id));
   return {
@@ -69,4 +75,8 @@ export async function runPipeline({ existing, now, fetchText }: PipelineDeps): P
     skipped,
     warnings,
   };
+}
+
+function errorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
 }
