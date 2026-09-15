@@ -40,8 +40,8 @@ describe("runPipeline", () => {
   it("requests every feed source once and skips the API sources", async () => {
     const { fetchFeed, requested } = fakeFetch();
     await runPipeline({ existing: [], now: NOW, fetchFeed });
-    expect(requested).toHaveLength(16);
-    expect(new Set(requested).size).toBe(16);
+    expect(requested).toHaveLength(20);
+    expect(new Set(requested).size).toBe(20);
   });
 
   it("imports the newest articles of every feed, newest first, and reports the counts", async () => {

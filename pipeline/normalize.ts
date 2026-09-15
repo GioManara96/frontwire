@@ -2,7 +2,7 @@ import { parseFeed } from "feedsmith";
 import type { Article } from "../shared/types/article";
 import { SOURCES, type FeedSourceId } from "../shared/utils/sources";
 import { articleId } from "./article-id";
-import { assignTags } from "./assign-tags";
+import { assignTags, topicOf } from "./assign-tags";
 import { EXCERPT_LENGTH } from "./config";
 import { htmlToText, sanitizeReleaseHtml, truncateText } from "./html";
 import { isWithinWindow } from "./merge";
@@ -79,7 +79,7 @@ export function normalizeFeed(xml: string, sourceId: FeedSourceId, now: Date): N
   const articles: Article[] = [];
   let skipped = 0;
 
-  if (source.kind === "rss") {
+  if (source.kind === "blog") {
     if (parsed.format !== "rss") throw new Error(`Expected an RSS feed, got ${parsed.format}`);
     const accepted: readonly string[] | undefined = "feedCategories" in source ? source.feedCategories : undefined;
     for (const item of parsed.feed.items ?? []) {
@@ -88,7 +88,8 @@ export function normalizeFeed(xml: string, sourceId: FeedSourceId, now: Date): N
       const publishedAt = toIsoDate(item.pubDate ?? item.dc?.date);
       // A source with feedCategories keeps only items tagged with one of them; uncategorized items don't qualify.
       const wanted = !accepted || (item.categories ?? []).some((category) => accepted.includes(category.name ?? ""));
-      if (!title || !url || !publishedAt || !isWithinWindow(publishedAt, now) || !wanted) {
+      const topic = title ? topicOf(title, source) : undefined;
+      if (!title || !url || !publishedAt || !isWithinWindow(publishedAt, now) || !wanted || !topic) {
         skipped++;
         continue;
       }
@@ -100,8 +101,7 @@ export function normalizeFeed(xml: string, sourceId: FeedSourceId, now: Date): N
         url,
         sourceId,
         publishedAt,
-        category: source.category,
-        tags: assignTags(title, source.tags),
+        ...topic,
         ...(excerpt ? { excerpt } : {}),
         ...(cover ? { coverImageUrl: cover } : {}),
       });

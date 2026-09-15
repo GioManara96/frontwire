@@ -35,6 +35,15 @@ export const TAGS = {
     label: "TypeScript",
     icon: "simple-icons:typescript",
   },
+  javascript: {
+    label: "JavaScript",
+    icon: "simple-icons:javascript",
+  },
+  // HTML, CSS, WebAssembly and browser APIs: the part of frontend that no framework owns.
+  "web-platform": {
+    label: "Web platform",
+    icon: "material-symbols-light:web",
+  },
   openai: {
     label: "OpenAI",
     icon: "simple-icons:openai",

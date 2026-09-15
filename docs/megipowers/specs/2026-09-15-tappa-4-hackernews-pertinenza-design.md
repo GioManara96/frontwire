@@ -74,7 +74,7 @@ Vale per **ogni articolo con categoria `ai`**, di qualunque fonte, dopo la norma
 
 Il titolo passa se contiene, per parola intera e senza distinzione di maiuscole, almeno uno di:
 
-- **un modello con la versione**: `GPT-6`, `GPT 5.6`, `GPT‑Live‑1` (trattino, trattino non separabile o spazio), `o3`; `Claude 5`, `Claude Opus 5`, `Fable 5`, `Opus 5` (anche Sonnet, Haiku, Mythos); `Gemini 3.8`, `Gemini Omni 1.1`; `Gemma 4`; `DeepSeek v4`, `DeepSeek-R2`; `Llama 5`; `Qwen 3.8`;
+- **un modello con la versione**: `GPT-6`, `GPT 5.6`, `GPT‑5.6` (trattino, spazio o il trattino non separabile di OpenAI), `o3`; `Claude 5`, `Claude Opus 5`, `Fable 5`, `Opus 5` (anche Sonnet, Haiku, Mythos); `Gemini 3.8`, `Gemini Omni 1.1`; `Gemma 4`; `DeepSeek v4`, `DeepSeek-R2`; `Llama 5`; `Qwen 3.8`;
 - **un termine da sviluppatore**: `API`/`APIs`, `SDK`/`SDKs`, `CLI`, `Codex`, `Claude Code`, `coding`, `developer`/`developers`, `MCP`, `WebGPU`, `JavaScript`, `TypeScript`, `open weights`/`open-weights`, e i nomi del vocabolario frontend (`React`, `Vue`, `Nuxt`, `Next.js`, `Vite`, `Svelte`).
 
 Prova sui feed reali (ultimi 30 giorni, 2026-09-15):

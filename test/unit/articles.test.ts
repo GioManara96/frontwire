@@ -7,7 +7,7 @@ function makeArticle(overrides: Partial<Article>): Article {
     id: "000000000000",
     title: "Title",
     url: "https://example.com/post",
-    sourceId: "devto",
+    sourceId: "nuxt-blog",
     publishedAt: "2026-09-01T00:00:00Z",
     category: "frontend",
     tags: ["vue"],
