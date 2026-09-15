@@ -4,26 +4,28 @@ Data: 2026-09-15
 
 ## Obiettivo e confini
 
-Sostituire i dati finti con articoli veri. Una GitHub Action pianificata legge i feed, normalizza le voci, elimina i duplicati, assegna tag e riassunti AI, scrive `data/articles.json` e fa commit su `main`. L'app non cambia: legge lo stesso file con le stesse funzioni di `server/utils/articles.ts`.
+Sostituire i dati finti con articoli veri. Una GitHub Action pianificata legge i feed, normalizza le voci, elimina i duplicati, assegna i tag, scrive `data/articles.json` e fa commit su `main`. L'app legge lo stesso file con le stesse funzioni di `server/utils/articles.ts`.
 
-**Dentro:** registro delle fonti esteso, adapter RSS/Atom (che copre anche le GitHub Releases), normalizzazione e `id`, deduplica, tag, riassunti via Vercel AI Gateway, finestra di 30 giorni, workflow dell'Action, fixture e test, primo merge `staging` → `main` che attiva l'Action.
+**Dentro:** registro delle fonti esteso, adapter RSS/Atom (che copre anche le GitHub Releases), normalizzazione e `id`, deduplica, tag, finestra di 30 giorni, rimozione del campo `summary`, workflow dell'Action, fixture e test, primo merge `staging` → `main` che attiva l'Action.
 
 **Fuori (tappe successive):** Hacker News e dev.to (tappa breve subito dopo, a pipeline già in funzione), rifiniture grafiche (tappa a sé, sui dati veri), barra dei filtri, preferiti, progetto Vercel e sottodominio.
 
 ## Decisioni che cambiano `CLAUDE.md`
 
-- **GitHub Models non esiste più.** La documentazione GitHub dice che dal 30 luglio 2026 "the playground, model catalog, inference API, and bring your own key (BYOK) are no longer available to any customer"; l'endpoint `models.github.ai` risponde `410`. Il provider diventa **Vercel AI Gateway**, solo nel free tier: account Vercel già esistente, una chiave nei secret del repo, il modello è una stringa `provider/model`. Se il modello gratuito non convince, i riassunti AI escono dal prodotto (sezione [Riassunti](#riassunti)).
-- **Finestra di 30 giorni.** L'archivio tiene solo gli articoli pubblicati negli ultimi 30 giorni; la stessa regola limita il primo import (OpenAI ha 1.193 voci nel feed, Vercel 1.575). I preferiti sopravvivono perché salvano titolo e URL.
-- **I dati vivono su `main`.** I workflow pianificati girano sempre sul branch di default, quindi l'Action committa su `main` e il push fa partire il deploy. `staging` si riallinea con un merge di `main` prima di aprire un nuovo branch; dopo questa tappa `data/` lo scrive solo il bot, quindi i conflitti sono improbabili.
+- **Niente riassunti AI.** GitHub Models, il provider previsto, non esiste più: la documentazione GitHub dice che dal 30 luglio 2026 "the playground, model catalog, inference API, and bring your own key (BYOK) are no longer available to any customer" (l'endpoint `models.github.ai` risponde `410`). L'unica alternativa gratuita valutata (il free tier di Vercel AI Gateway) avrebbe riassunto pochissimo: i feed dei blog portano una descrizione di una riga e la pipeline non legge le pagine (niente scraping), quindi resterebbero le sole release con note lunghe, circa 3–5 al mese nella prova sui feed reali, che nel dettaglio mostrano già le note complete. Il progetto non spende soldi, quindi la funzione esce dal prodotto: il campo `summary` lascia `Article` e le card mostrano l'estratto della fonte.
+- **Finestra di 30 giorni.** L'archivio tiene solo gli articoli pubblicati negli ultimi 30 giorni; la stessa regola limita il primo import (OpenAI ha 1.193 voci nel feed). I preferiti sopravvivono perché salvano titolo e URL.
+- **I dati vivono su `main`.** I workflow pianificati girano sempre sul branch di default, quindi l'Action committa su `main`. `staging` si riallinea con un merge di `main` prima di aprire un nuovo branch; dopo questa tappa `data/` lo scrive solo il bot, quindi i conflitti sono improbabili.
 
 ## Chi fa cosa
 
-- **Giovanni:** il codice in `pipeline/`, l'estensione di `shared/utils/sources.ts` e `shared/utils/tags.ts`, il workflow YAML, l'installazione delle dipendenze, la chiave AI Gateway e il secret GitHub, la valutazione dei riassunti.
-- **Claude:** questa spec e il piano, fixture e test, l'aggiornamento di `CLAUDE.md` (concordato con Giovanni), la revisione dei commenti in code review.
+- **Giovanni:** il codice in `pipeline/`; `shared/utils/sources.ts`, `shared/utils/tags.ts` e `shared/types/article.ts`; le pagine che oggi usano `getArticleText`; il workflow YAML; l'installazione delle librerie della pipeline.
+- **Claude:** questa spec e il piano; strumenti (`tsconfig` della pipeline, script npm); fixture, test e dati finti; l'aggiornamento di `CLAUDE.md` (concordato con Giovanni); la revisione dei commenti in code review.
 
 ## Fonti (v1)
 
 Solo feed verificati il 2026-09-15 (tutti rispondono `200`). Il feed del blog di Vue è fermo a marzo 2024, quindi Vue entra solo con le release. Vercel (circa 100 voci al mese, blog e changelog mescolati) e le release di Claude Code (quasi quotidiane) restano fuori per non sommergere il resto.
+
+Una prova con l'implementazione di riferimento sui feed reali, lo stesso giorno, ha prodotto 112 articoli nella finestra senza errori; OpenAI News da sola ne porta 63.
 
 ### Blog e news (`rss`)
 
@@ -57,14 +59,14 @@ Feed Atom pubblico `https://github.com/<owner>/<repo>/releases.atom`. Tutte le f
 
 ### Registro (`shared/utils/sources.ts`)
 
-Ogni fonte aggiunge ai campi attuali:
+Le fonti con un feed (`rss` e `github-release`) aggiungono ai campi attuali:
 
-- `category`: la categoria di tutti i suoi articoli.
+- `feedUrl`: l'indirizzo del feed.
+- `category`: la categoria di tutti i loro articoli.
 - `tags`: i tag di default, almeno uno (il test d'integrità richiede almeno un tag per articolo).
-- `feedUrl`: obbligatorio per `rss` e `github-release`.
 - `project`: solo per `github-release`, il prefisso del titolo.
 
-`devto` e `hackernews` restano nel registro senza `feedUrl`: la pipeline elabora solo i tipi che sa leggere e li salta fino alla tappa successiva. Come esprimere "obbligatorio per certi tipi" nei tipi TypeScript (unione discriminata su `kind` o altro) lo decide Giovanni.
+L'ordine delle chiavi è quello delle tabelle, con `devto` e `hackernews` in fondo: conta, perché quando due fonti portano lo stesso URL vince la prima. `devto` e `hackernews` restano come sono, senza feed: la pipeline li salta fino alla tappa successiva, che deciderà anche categoria e tag dei loro articoli. Come esprimere nei tipi TypeScript che questi campi esistono solo per certi `kind` (unione discriminata o altro) lo decide Giovanni.
 
 ### Vocabolario (`shared/utils/tags.ts`)
 
@@ -74,35 +76,31 @@ Nuovo tag `deepmind` (label "DeepMind", icona `simple-icons:deepmind`, presente 
 
 Script TypeScript in `pipeline/`, eseguiti con `tsx` (`npm run pipeline` = `tsx pipeline/run.ts`). Importano `shared/` con percorsi relativi, come fa già `server/utils/articles.ts`: il modello resta uno solo per app e pipeline.
 
-| File             | Responsabilità                                                                                        |
-| ---------------- | ----------------------------------------------------------------------------------------------------- |
-| `run.ts`         | Punto d'ingresso: orchestra i passi, legge e scrive il JSON, log e annotazioni dell'Action, exit code |
-| `config.ts`      | Costanti: modello, finestra, limiti, timeout, user-agent                                              |
-| `fetch-feed.ts`  | Scarica un feed con timeout e user-agent; restituisce il testo o un errore                            |
-| `normalize.ts`   | Voce di feed (da `feedsmith`) → `Article` candidato, oppure scarto con il motivo                      |
-| `article-id.ts`  | Algoritmo dell'`id` fissato in tappa 1                                                                |
-| `html.ts`        | Sanitize di `contentHtml`, HTML → testo semplice, troncamento dell'estratto                           |
-| `assign-tags.ts` | Tag di default della fonte più quelli ricavati da parole chiave nel titolo                            |
-| `merge.ts`       | Unione con l'archivio, deduplica, finestra di 30 giorni, ordinamento                                  |
-| `summarize.ts`   | Unico punto che conosce il provider AI                                                                |
-| `tsconfig.json`  | `strict`, include `pipeline/**` e `shared/**`                                                         |
+| File             | Responsabilità                                                                                  |
+| ---------------- | ----------------------------------------------------------------------------------------------- |
+| `run.ts`         | Punto d'ingresso: legge e scrive il JSON, stampa riepilogo e annotazioni dell'Action, exit code |
+| `pipeline.ts`    | Orchestra un run: scarica le fonti, normalizza, unisce; riceve la funzione di fetch da fuori    |
+| `config.ts`      | Costanti: finestra, lunghezza dell'estratto, timeout, user-agent                                |
+| `fetch-feed.ts`  | Scarica un feed con timeout e user-agent; restituisce il testo o un errore                      |
+| `normalize.ts`   | Feed di una fonte → `Article` candidati, più il numero di voci scartate                         |
+| `article-id.ts`  | Algoritmo dell'`id` fissato in tappa 1                                                          |
+| `html.ts`        | Sanitize di `contentHtml`, HTML → testo semplice, troncamento dell'estratto                     |
+| `assign-tags.ts` | Tag di default della fonte più quelli ricavati da parole chiave nel titolo                      |
+| `merge.ts`       | Unione con l'archivio, deduplica, finestra di 30 giorni, ordinamento                            |
+| `tsconfig.json`  | `strict`, include `pipeline/**` e `shared/**`                                                   |
 
-Tutti i moduli tranne `run.ts`, `fetch-feed.ts` e `summarize.ts` sono **funzioni pure**: ricevono dati e restituiscono dati, senza rete né file. L'istante "adesso" è un parametro, così finestra e date si testano senza orologio.
+Tutto tranne `run.ts` e `fetch-feed.ts` è testabile senza rete né file: le funzioni ricevono dati e restituiscono dati, `pipeline.ts` riceve il fetch come parametro e l'istante "adesso" è sempre un parametro, così finestra e date si testano senza orologio.
 
-Nessun `tsconfig` generato da Nuxt include `pipeline/`: il `tsconfig.json` della cartella va aggiunto ai `references` di quello radice, così `npm run typecheck` controlla anche la pipeline.
+Nessun `tsconfig` generato da Nuxt include `pipeline/`: il `tsconfig.json` della cartella va aggiunto ai `references` di quello radice, così `npm run typecheck` controlla anche la pipeline (verificato: `nuxt typecheck` segue il riferimento e segnala gli errori in `pipeline/`).
 
 ### Costanti (`config.ts`)
 
-| Costante                | Valore                                                  |
-| ----------------------- | ------------------------------------------------------- |
-| `SUMMARY_MODEL`         | `inclusionai/ling-3.0-flash-vl`                         |
-| `RETENTION_DAYS`        | `30`                                                    |
-| `MAX_SUMMARIES_PER_RUN` | `40`                                                    |
-| `MIN_SUMMARY_INPUT`     | `200` caratteri di testo semplice                       |
-| `MAX_SUMMARY_INPUT`     | `4000` caratteri di testo semplice                      |
-| `EXCERPT_LENGTH`        | circa `300` caratteri                                   |
-| `FETCH_TIMEOUT_MS`      | `15000`                                                 |
-| `USER_AGENT`            | `frontwire (+https://github.com/GioManara96/frontwire)` |
+| Costante           | Valore                                                  |
+| ------------------ | ------------------------------------------------------- |
+| `RETENTION_DAYS`   | `30`                                                    |
+| `EXCERPT_LENGTH`   | `300` caratteri, ellissi compresa                       |
+| `FETCH_TIMEOUT_MS` | `15000`                                                 |
+| `USER_AGENT`       | `frontwire (+https://github.com/GioManara96/frontwire)` |
 
 ### Dipendenze nuove
 
@@ -110,20 +108,19 @@ In `devDependencies`, perché il sito non le usa:
 
 - `feedsmith`: parser RSS/Atom con i namespace `media:` e `content:` (`rss-parser` è fermo al 2023).
 - `sanitize-html` (+ `@types/sanitize-html`): funziona in Node senza DOM.
-- `ai`: AI SDK 7; con una stringa `provider/model` passa da AI Gateway e legge `AI_GATEWAY_API_KEY` da solo.
 - `tsx`: esegue TypeScript senza build.
+- `@types/node`: oggi arriva solo come dipendenza indiretta; la pipeline usa `node:fs` e `node:crypto`.
 
 ## Flusso di un run
 
 1. **Carica** `data/articles.json`.
-2. **Scarica** tutte le fonti in parallelo. Una fonte che fallisce (timeout, stato HTTP, XML non valido) diventa un `::warning::` nell'Action e viene saltata. Il run fallisce solo se falliscono **tutte**.
+2. **Scarica** tutte le fonti con feed, in parallelo. Una fonte che fallisce (timeout, stato HTTP, XML non valido) diventa un `::warning::` nell'Action e viene saltata. Il run fallisce solo se falliscono **tutte**.
 3. **Normalizza** ogni voce in un `Article` candidato (regole sotto). Scarta le voci più vecchie della finestra, le release non stabili e quelle senza link, titolo o data validi.
 4. **Unisce** con l'archivio:
-   - un `id` già presente non si tocca mai: il record è immutabile, riassunto compreso;
+   - un `id` già presente non si tocca mai: il record è immutabile;
    - lo stesso URL da due fonti produce lo stesso `id`: vince la prima fonte nell'ordine del registro.
-5. **Riassume** (sezione successiva).
-6. **Pota** gli articoli più vecchi di 30 giorni.
-7. **Scrive** gli articoli dal più recente, con formattazione stabile (2 spazi, newline finale). Se niente è cambiato il file è identico byte per byte e l'Action non committa.
+5. **Pota** gli articoli più vecchi di 30 giorni.
+6. **Scrive** gli articoli dal più recente (a parità di data, per `id`), con formattazione stabile (2 spazi, newline finale). Se niente è cambiato il file è identico byte per byte e l'Action non committa.
 
 ### Regole di normalizzazione
 
@@ -132,50 +129,34 @@ In `devDependencies`, perché il sito non le usa:
 - `id`: algoritmo della tappa 1 applicato all'URL (host minuscolo senza `www.`, niente frammento, niente `utm_*`/`ref`, parametri ordinati, niente `/` finale, primi 12 caratteri esadecimali dello SHA-256).
 - `publishedAt`: la data della voce convertita in ISO 8601 UTC (`toISOString()`).
 - `category` e `tags`: da registro più parole chiave (sotto).
-- `coverImageUrl`: solo se il feed ne fornisce una (`media:content`, `media:thumbnail` o `enclosure` immagine) con URL assoluto `http(s)`. Nei feed verificati capita quasi solo con DeepMind: l'immagine sostitutiva della tappa 2 diventa il caso normale.
+- `excerpt`: testo semplice (tag tolti, entità decodificate, spazi compattati), troncato a 300 caratteri al massimo su un confine di parola, con `…` e senza punteggiatura lasciata a penzolare. Omesso se vuoto o uguale al titolo (il mirror Anthropic ripete il titolo nella descrizione).
 - Campi mancanti omessi, mai `null`.
 
 **Blog (`rss`)**
 
-- `url`: il `link` della voce.
-- `excerpt`: testo semplice della descrizione (o di `content:encoded`), troncato a circa 300 caratteri su un confine di parola con `…`. Omesso se vuoto o uguale al titolo (il mirror Anthropic ripete il titolo nella descrizione).
+- `url`: il `link` della voce, solo se è un URL assoluto `http(s)`.
+- `excerpt`: dalla descrizione o, se manca, da `content:encoded`.
+- `coverImageUrl`: solo se il feed ne fornisce una con URL assoluto `http(s)`, in quest'ordine: immagine di `media:content`, `media:thumbnail`, `enclosure` di tipo immagine. Nei feed verificati capita quasi solo con DeepMind: l'immagine sostitutiva della tappa 2 diventa il caso normale.
 
 **Release (`github-release`)**
 
-- Il tag si legge dal link della voce (`…/releases/tag/<tag>`).
+- Il tag si legge dal link della voce (`…/releases/tag/<tag>`, decodificato).
 - **Stabile** se il tag è una versione semplice: `^v?\d+\.\d+(\.\d+)?$`. Così si scartano canary, beta e rc, e anche i tag spuri visti nei feed (`create-vite@9.2.1`, `dropped/page-tree-reuse`, `v6.0-rc`).
 - `title`: `<project> <tag>`, per esempio `Nuxt v4.5.2`, `React v19.3.0`. Il titolo del feed si ignora perché ogni repo lo scrive a modo suo (`v4.5.2`, `19.3.0 (September 9, 2026)`, `TypeScript 7.0.2`).
 - `publishedAt`: `published` se c'è, altrimenti `updated`.
-- `contentHtml`: il contenuto della voce passato per `sanitize-html` con una allowlist ristretta (titoli, paragrafi, liste, link, `code`/`pre`, enfasi); via script, stili, attributi `on*` e immagini.
-- `excerpt`: testo semplice di `contentHtml`, troncato come sopra.
+- `contentHtml`: il contenuto della voce passato per `sanitize-html` con una allowlist ristretta (titoli, paragrafi, liste, citazioni, link con il solo `href` e schemi `http`/`https`/`mailto`, `code`/`pre`, enfasi); via script e stili con il loro contenuto, tutti gli altri attributi e le immagini. Omesso se vuoto.
+- `excerpt`: dal testo semplice di `contentHtml`.
+- Nessuna copertina: l'unico `media:thumbnail` dei feed di GitHub è l'avatar di chi pubblica.
 
 ### Tag da parole chiave (`assign-tags.ts`)
 
-Ai tag di default si aggiungono quelli trovati nel titolo con regole per parola intera, senza distinzione di maiuscole: per esempio `Nuxt`, `Vue`, `React`, `Next.js`, `Vite`, `Svelte`/`SvelteKit`, `TypeScript`, `OpenAI`/`GPT`/`ChatGPT`, `Anthropic`/`Claude`, `DeepSeek`, `Hugging Face`, `Gemini`, `DeepMind`. Un tag compare una volta sola. La categoria resta quella della fonte. L'elenco preciso delle regole è nel piano.
+Ai tag di default si aggiungono, in ordine di vocabolario, quelli trovati nel titolo con regole per parola intera e senza distinzione di maiuscole: `Nuxt`; `Vue`/`Vue.js`; `React`; `Next.js`; `Vite`; `Svelte`/`SvelteKit`; `TypeScript`; `OpenAI`/`ChatGPT`/`GPT-<cifra>` (anche con il trattino non separabile che usa OpenAI); `Anthropic`/`Claude`; `DeepSeek`; `Hugging Face`/`HuggingFace`; `Gemini`; `DeepMind`. Un tag compare una volta sola. La categoria resta quella della fonte.
 
-## Riassunti
+## Rimozione di `summary`
 
-**Interfaccia.** `summarize.ts` espone una funzione che riceve titolo, nome della fonte e testo, e restituisce il riassunto. Dentro chiama `generateText` dell'AI SDK. Il modello è un parametro con default `SUMMARY_MODEL`: cambiare modello è una riga in `config.ts`, cambiare provider è una modifica a questo solo file, e i test passano un modello finto.
-
-**Chi riceve un riassunto.** Ogni articolo **senza** `summary` il cui testo semplice (descrizione intera per i blog, `contentHtml` per le release) arriva ad almeno 200 caratteri. Si parte dai più recenti, massimo 40 per run. Un articolo saltato per il limite o per un errore riprova al run successivo, finché resta nella finestra. Quando un riassunto riesce, è definitivo.
-
-Nei feed verificati le descrizioni dei blog sono di una riga (circa 90–130 caratteri) e la pipeline non legge le pagine degli articoli (niente scraping): in pratica i riassunti riguardano soprattutto le **release**, dove trasformano changelog da migliaia di caratteri in tre frasi. I post dei blog mostrano la descrizione dell'editore.
-
-**Prompt.** Fisso, in inglese: 2–3 frasi, al massimo 60 parole, testo semplice senza markdown, solo fatti presenti nel testo, nessun tono promozionale, niente formule come "This article…". Il testo in ingresso è troncato a 4.000 caratteri.
-
-**Validazione.** L'output si ripulisce (spazi, virgolette o markdown attorno). Vuoto o più lungo di 600 caratteri conta come fallimento.
-
-**Errori.**
-
-- Chiave `AI_GATEWAY_API_KEY` assente (run locale senza chiave): nessun riassunto, un warning, il run continua.
-- Rate limit (`429`) dopo i retry dell'SDK: stop ai riassunti per questo run.
-- Altri errori: l'articolo resta senza riassunto, si passa al successivo.
-
-**Modello.** Si parte da `inclusionai/ling-3.0-flash-vl`, l'unico modello generalista nel free tier di AI Gateway (le varianti `-fin` e `-sante` sono specializzate in finanza e salute, `poolside/laguna-s-2.1` in codice). Il free tier vale solo per i modelli marcati `free` e ha rate limit più bassi. Il progetto non spende soldi: niente crediti a pagamento, niente modelli fuori dal free tier.
-
-**Valutazione, prima di rifinire la feature.** Appena la normalizzazione produce testi veri, il piano prevede una versione minima di `summarize.ts` e un run locale con la chiave. Giovanni legge una decina di riassunti veri e controlla fedeltà al testo, lunghezza, inglese, niente markdown. Limite per run, retry, validazione e test di `summarize` arrivano solo se la valutazione passa, così un esito negativo non butta via lavoro.
-
-**Se la valutazione non passa, la feature si elimina.** Niente passo 5 nel flusso, niente `summarize.ts`, niente dipendenza `ai`, niente chiave né secret. Il campo `summary` esce dal modello condiviso (`Article`) e da `getArticleText` (Giovanni); Claude aggiorna test e fixture che lo usano. Le card mostrano l'estratto dell'editore o, per le release, l'inizio delle note di rilascio.
+- `Article` perde `summary` (e il suo commento).
+- `getArticleText` (`shared/utils/article-text.ts`) sceglieva tra riassunto ed estratto: senza riassunto non serve più. Il file si elimina e le pagine usano `excerpt` direttamente.
+- Claude toglie `summary` dai dati finti e dal test d'integrità, ed elimina il test di `getArticleText`.
 
 ## Workflow (`.github/workflows/ingest.yml`)
 
@@ -185,18 +166,16 @@ Lo scrive Giovanni. Forma attesa:
 - **Permessi:** `contents: write`, nient'altro.
 - **Concorrenza:** un gruppo `ingest` senza cancellazione, così due run non si sovrappongono.
 - **Job** su `ubuntu-latest` con un timeout di 15 minuti:
-  1. checkout;
-  2. `actions/setup-node` con Node 24 e cache npm;
+  1. `actions/checkout@v7`;
+  2. `actions/setup-node@v7` con Node 24 e cache npm;
   3. `npm ci`;
-  4. `npm run pipeline` con `AI_GATEWAY_API_KEY` dal secret;
+  4. `npm run pipeline`;
   5. il test d'integrità dei dati (`test/unit/articles-data.test.ts`) come cancello: se il JSON non è valido l'Action diventa rossa e non committa;
   6. commit e push solo se `data/articles.json` è cambiato, come `github-actions[bot]`, messaggio `chore(data): update articles`.
 
 Il push fatto con il `GITHUB_TOKEN` non avvia altri workflow. Il deploy Vercel partirà comunque, quando il progetto sarà collegato (fuori tappa): l'integrazione Git di Vercel reagisce a ogni push, non ai workflow.
 
-**Secret.** Giovanni crea una chiave in Vercel (AI Gateway → API Keys) e la salva nel repo come `AI_GATEWAY_API_KEY` (Settings → Secrets and variables → Actions).
-
-**Sviluppo e primo run.** Durante lo sviluppo la pipeline gira in locale con `npm run pipeline`. L'Action può girare solo quando il workflow è su `main`: il primo run manuale arriva dopo il merge `staging` → `main` di fine tappa, il primo da `init` in poi. I dati finti si eliminano nel primo run reale: si parte da un archivio vuoto, nello stesso commit che introduce il primo JSON vero.
+**Sviluppo e primo run.** Durante lo sviluppo la pipeline gira in locale con `npm run pipeline`. L'Action può girare solo quando il workflow è su `main`: il primo run manuale arriva dopo il merge `staging` → `main` di fine tappa, il primo da `init` in poi. I dati finti si eliminano nel primo run reale in locale: si parte da un archivio vuoto, nello stesso commit che introduce il primo JSON vero.
 
 Se il repo resta 60 giorni senza attività, GitHub sospende i workflow pianificati; si riattivano dalla tab Actions.
 
@@ -206,49 +185,45 @@ Se il repo resta 60 giorni senza attività, GitHub sospende i workflow pianifica
 | ----------------------------------------------- | ---------------------------------------------------------------- |
 | Fonte che non risponde, timeout, XML non valido | Warning, fonte saltata; il run fallisce solo se falliscono tutte |
 | Mirror Anthropic sparito                        | Come sopra                                                       |
-| Voce senza link, titolo o data validi           | Scartata e contata nel log                                       |
+| Feed di un formato diverso da quello atteso     | Come sopra (una fonte `rss` che risponde con Atom, o viceversa)  |
+| Voce senza link assoluto, titolo o data validi  | Scartata e contata nel riepilogo                                 |
 | Release non stabile o tag spurio                | Scartata                                                         |
 | Stesso URL da due fonti                         | Stesso `id`: vince la prima fonte nell'ordine del registro       |
 | Articolo già in archivio                        | Non modificato                                                   |
-| Descrizione uguale al titolo                    | `excerpt` omesso                                                 |
-| Testo sotto i 200 caratteri                     | Nessun riassunto: la card mostra l'estratto o solo il titolo     |
-| Chiave AI assente                               | Nessun riassunto, warning, run riuscito                          |
-| Rate limit (`429`)                              | Stop ai riassunti per il run; ripresa al successivo              |
-| Output del modello vuoto o troppo lungo         | Scartato; riprova al run successivo                              |
+| Descrizione vuota o uguale al titolo            | `excerpt` omesso: la card mostra solo il titolo                  |
 | Nessun articolo nuovo né scaduto                | File identico, nessun commit                                     |
 | JSON prodotto non valido                        | Il test d'integrità fallisce, niente commit, Action rossa        |
 
 ## Test (Claude, Vitest, ambiente `node`)
 
-Nessuna chiamata di rete. Le fixture stanno in `test/fixtures/feeds/` e sono ritagli di feed veri:
+Nessuna chiamata di rete. Le fixture stanno in `test/fixtures/feeds/` e riproducono le forme dei feed veri:
 
-- RSS con descrizione breve (Next.js) e senza testo (Hugging Face);
-- RSS con copertina `media:` (DeepMind);
-- mirror Anthropic con descrizione uguale al titolo;
-- Atom di release con versioni stabili, canary, beta e tag spuri (`create-vite@…`);
+- RSS con descrizioni brevi e lunghe, `content:encoded`, voci senza testo, con descrizione uguale al titolo, senza link, con link relativo, con data non valida o fuori finestra;
+- RSS con copertine `media:` ed `enclosure` in tutte le varianti;
+- Atom di release con versioni stabili, canary, beta, rc e tag spuri, un avatar e una release senza note;
 - un XML rotto.
 
 Test unitari:
 
+- `sources`: il registro corrisponde alle tabelle di questa spec (ordine compreso); le icone di fonti e tag esistono nelle collezioni Iconify installate;
 - `article-id`: ogni passo della normalizzazione dell'URL e l'hash;
-- `html`: la sanitize toglie script, stili e `on*` e tiene l'allowlist; testo semplice; troncamento su confine di parola;
-- `normalize`: voci RSS e release, titolo da tag, filtro delle stabili, regole di `excerpt` e copertina, scarti;
-- `assign-tags`: tag di default, parole chiave, niente doppioni;
+- `html`: la sanitize toglie script, stili, attributi, link `javascript:` e immagini e tiene l'allowlist; testo semplice; troncamento;
+- `assign-tags`: tag di default, parole chiave, ordine, niente doppioni;
 - `merge`: immutabilità dei record esistenti, ordine di vittoria tra fonti, finestra, ordinamento, output identico a parità di dati;
-- `summarize`: modello finto dell'AI SDK; validazione dell'output, chiave assente, stop sul `429`, limite per run;
-- `run`: fetch e riassunti finti; una fonte che fallisce produce un warning, tutte che falliscono producono un errore.
+- `normalize`: voci RSS e release, titolo da tag, filtro delle stabili, regole di `excerpt` e copertina, scarti, formato sbagliato;
+- `pipeline`: fetch finto; conteggi, immutabilità, deduplica tra fonti, una fonte che fallisce produce un warning, tutte che falliscono producono un errore.
 
-Il test d'integrità esistente resta com'è e diventa il cancello dell'Action.
+Il test d'integrità esistente perde `summary` e diventa il cancello dell'Action. Prima di finire nel piano, i test sono stati eseguiti su un'implementazione di riferimento (fuori dal repo) e passano; la stessa implementazione sui feed reali produce un JSON che supera il test d'integrità.
 
 ## Documentazione
 
-`CLAUDE.md`, concordato con Giovanni: architettura (AI Gateway al posto di GitHub Models, finestra di 30 giorni), fonti reali, nuova sezione "Pipeline (tappa 3)" con i file di `pipeline/`, flusso Git (il bot committa su `main`, `staging` si riallinea).
+`CLAUDE.md`, concordato con Giovanni: prodotto (il dettaglio mostra l'estratto, niente riassunti AI), architettura (niente GitHub Models né provider AI, finestra di 30 giorni, i dati su `main`), fonti reali, nuova sezione "Pipeline (tappa 3)" con i file di `pipeline/`, flusso Git (il bot committa su `main`, `staging` si riallinea).
 
 ## Criteri di accettazione
 
 - `npm run pipeline` in locale produce un `data/articles.json` reale che passa il test d'integrità.
 - Un secondo run subito dopo lascia il file identico.
-- Giovanni ha valutato una decina di riassunti: la feature è confermata con il modello gratuito, oppure è rimossa del tutto.
-- `npm run lint`, `npm run typecheck` (che copre anche `pipeline/`) e `npm test` passano.
+- Nessuna traccia di `summary` e `getArticleText` nel codice.
+- `npm run lint`, `npm run format:check`, `npm run typecheck` (che copre anche `pipeline/`) e `npm test` passano; `nuxt generate` produce il sito con i dati veri.
 - Su `main`: il run manuale dell'Action è verde e il bot committa; poi partono i run pianificati.
 - `CLAUDE.md` aggiornato.
