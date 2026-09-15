@@ -41,6 +41,16 @@ Niente database e niente server: il sito è statico e i dati vivono nel repo.
 
 Il tipo `Article`, il vocabolario dei tag e il registro delle fonti vivono in `shared/`: sono l'unica fonte di verità, comune ad app e pipeline. Il design di ogni tappa è in `docs/megipowers/specs/`.
 
+### Flusso dei dati (tappa 1)
+
+- `shared/types/article.ts`: `Article`, `ArticleListItem`, `Category`.
+- `shared/utils/tags.ts`, `shared/utils/sources.ts`: vocabolari `TAGS` e `SOURCES` con i tipi `TagId`/`SourceId`.
+- `shared/utils/article-text.ts`, `shared/utils/format-date.ts`: testo dell'articolo (riassunto o estratto) e data in UTC.
+- `data/articles.json`: gli articoli; per ora dati finti, più avanti li scrive la pipeline.
+- `server/utils/articles.ts`: `getArticles` (unico cast del JSON), `listArticles`, `findArticle` (funzioni pure).
+- `server/api/articles.get.ts`, `server/api/articles/[id].get.ts`: le due route.
+- `app/pages/index.vue`, `app/pages/articles/[id].vue`: archivio e dettaglio, che leggono le route con `useFetch`.
+
 ### Fonti
 
 Solo **RSS/Atom e API ufficiali, niente scraping.**
