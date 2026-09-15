@@ -546,7 +546,7 @@ Atteso: lista in JSON dal più recente, senza `contentHtml`; `HTTP/1.1 404` per 
 
 **File:** crea `vercel.json`.
 
-- [ ] **Passo 1: `vercel.json`** (come nel portfolio)
+- [x] **Passo 1: `vercel.json`** (come nel portfolio)
 
 ```json
 {
@@ -556,7 +556,7 @@ Atteso: lista in JSON dal più recente, senza `contentHtml`; `HTTP/1.1 404` per 
 }
 ```
 
-- [ ] **Passo 2: build locale**
+- [x] **Passo 2: build locale**
 
 ```bash
 NITRO_PRESET=static npx nuxt generate
@@ -566,7 +566,7 @@ node -e "console.log(require('./data/articles.json').length)"
 
 Atteso: build senza errori; i due numeri coincidono, cioè il crawler ha trovato una pagina di dettaglio per ogni articolo.
 
-- [ ] **Passo 3: prova del sito statico**
+- [x] **Passo 3: prova del sito statico**
 
 ```bash
 npx serve .output/public
@@ -574,7 +574,7 @@ npx serve .output/public
 
 Atteso: archivio e dettaglio funzionano anche navigando senza server Nuxt.
 
-- [ ] **Passo 4: commit**
+- [x] **Passo 4: commit**
 
 ```bash
 git add vercel.json && git commit -m "chore: add vercel static build config"
