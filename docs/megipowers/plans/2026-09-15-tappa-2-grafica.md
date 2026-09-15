@@ -35,32 +35,32 @@
 
 **Obiettivo:** montare Tailwind v4, le icone e i font, senza ancora ridisegnare nulla. Alla fine il sito è identico ma la pipeline CSS è attiva.
 
-- [ ] **Passo 1: branch**
+- [x] **Passo 1: branch**
 
 ```bash
 git switch -c feat/visual-design staging
 ```
 
-- [ ] **Passo 2: dipendenze**
+- [x] **Passo 2: dipendenze**
 
 ```bash
 npm i tailwindcss @tailwindcss/vite @nuxt/icon @nuxt/fonts
 npm i -D @iconify-json/simple-icons @iconify-json/material-symbols-light
 ```
 
-- [ ] **Passo 3: `nuxt.config.ts`**
+- [x] **Passo 3: `nuxt.config.ts`**
 
 - aggiungere il plugin Vite di Tailwind (`import tailwindcss from "@tailwindcss/vite"`, poi `vite: { plugins: [tailwindcss()] }`);
 - aggiungere ai `modules`: `'@nuxt/icon'`, `'@nuxt/fonts'` (accanto a `'@nuxt/eslint'`);
 - registrare il CSS globale: `css: ['~/assets/css/main.css']`.
 
-- [ ] **Passo 4: `app/assets/css/main.css`**
+- [x] **Passo 4: `app/assets/css/main.css`**
 
 - `@import "tailwindcss";`
 - blocco `@theme` con i token della spec (palette e font);
 - `@layer base` minimo: sfondo `bg`, testo `text`, colore dei link su `accent`.
 
-- [ ] **Passo 5: verifica**
+- [x] **Passo 5: verifica**
 
 ```bash
 npm run dev
@@ -68,8 +68,8 @@ npm run dev
 
 Atteso: il sito carica con il fondo carbonio e i font nuovi; nessun errore in console. Poi `npm run lint && npm run typecheck`.
 
-- [ ] **Passo 6: commit**: `chore: set up tailwind, icons and fonts`
-- [ ] **Claude:** code review
+- [x] **Passo 6: commit**: `chore: set up tailwind, icons and fonts`
+- [x] **Claude:** code review
 
 ---
 
@@ -77,12 +77,12 @@ Atteso: il sito carica con il fondo carbonio e i font nuovi; nessun errore in co
 
 **Obiettivo:** container, header e scheletro responsive, prima delle card.
 
-- [ ] **Passo 1**: classe semantica `.page` (container centrato, padding mobile, `max-width` ai breakpoint), applicata in `app.vue` o nelle pagine.
-- [ ] **Passo 2**: header minimale con il nome del sito che linka alla home.
-- [ ] **Passo 3**: `app/error.vue` di base, che usa `.page` e i token; mostra codice e messaggio, con link alla home.
-- [ ] **Passo 4**: verifica a 360px e da desktop; `lint` e `typecheck`.
-- [ ] **Passo 5: commit**: `style: add page container, header and error page`
-- [ ] **Claude:** code review
+- [x] **Passo 1**: classe semantica `.page` (container centrato, padding mobile, `max-width` ai breakpoint), applicata in `app.vue` o nelle pagine.
+- [x] **Passo 2**: header minimale con il nome del sito che linka alla home.
+- [x] **Passo 3**: `app/error.vue` di base, che usa `.page` e i token; mostra codice e messaggio, con link alla home.
+- [x] **Passo 4**: verifica a 360px e da desktop; `lint` e `typecheck`.
+- [x] **Passo 5: commit**: `style: add page container, header and error page`
+- [x] **Claude:** code review
 
 ---
 
@@ -90,14 +90,14 @@ Atteso: il sito carica con il fondo carbonio e i font nuovi; nessun errore in co
 
 **Obiettivo:** la griglia di card della spec.
 
-- [ ] **Passo 1**: griglia responsive (1 colonna, 2 da `md`, 3 da `xl`) con gap uniforme.
-- [ ] **Passo 2**: card con classi semantiche: copertura o segnaposto, meta (fonte con icona, data, categoria), titolo-link in `display`, tag come pill con icona + label, testo con `line-clamp`.
-- [ ] **Passo 3**: immagine sostitutiva quando manca `coverImageUrl`: riquadro `surface` con l'icona della fonte (`SOURCES[sourceId].icon`) e il nome.
-- [ ] **Passo 4**: stato hover (bordo `accent`), rispettando `prefers-reduced-motion`.
-- [ ] **Passo 5**: messaggio "No articles yet." vestito.
-- [ ] **Passo 6**: verifica a 360px e desktop; controllare gli articoli HN (senza testo) e quelli senza copertina; `lint` e `typecheck`.
-- [ ] **Passo 7: commit**: `style: build the article archive grid`
-- [ ] **Claude:** code review
+- [x] **Passo 1**: griglia responsive (1 colonna, 2 da `md`, 3 da `xl`) con gap uniforme.
+- [x] **Passo 2**: card con classi semantiche: copertura o segnaposto, meta (fonte con icona, data, categoria), titolo-link in `display`, tag come pill con icona + label, testo con `line-clamp`.
+- [x] **Passo 3**: immagine sostitutiva quando manca `coverImageUrl`: riquadro `surface` con l'icona della fonte (`SOURCES[sourceId].icon`) e il nome.
+- [x] **Passo 4**: stato hover (bordo `accent`), rispettando `prefers-reduced-motion`.
+- [x] **Passo 5**: messaggio "No articles yet." vestito.
+- [x] **Passo 6**: verifica a 360px e desktop; controllare gli articoli HN (senza testo) e quelli senza copertina; `lint` e `typecheck`.
+- [x] **Passo 7: commit**: `style: build the article archive grid`
+- [x] **Claude:** code review
 
 ---
 
@@ -105,12 +105,12 @@ Atteso: il sito carica con il fondo carbonio e i font nuovi; nessun errore in co
 
 **Obiettivo:** vestire la pagina di dettaglio e le note di rilascio.
 
-- [ ] **Passo 1**: colonna singola centrata con larghezza di lettura contenuta; copertura, meta, `h1` in `display`, tag, testo intero.
-- [ ] **Passo 2**: stili "prose" per `contentHtml` (`h2`/`h3`, `p`, `ul`/`li`, `a` in accento, `code`, `strong`), applicati al blocco `v-html`.
-- [ ] **Passo 3**: azioni: "Read the original" come pulsante-accento; "Discussion" quando presente; "Back to articles".
-- [ ] **Passo 4**: verifica su una release (con `contentHtml`), un post con copertina, un link HN; ricaricando il dettaglio, niente avvisi di hydration in console; `lint` e `typecheck`.
-- [ ] **Passo 5: commit**: `style: build the article detail page`
-- [ ] **Claude:** code review
+- [x] **Passo 1**: colonna singola centrata con larghezza di lettura contenuta; copertura, meta, `h1` in `display`, tag, testo intero.
+- [x] **Passo 2**: stili "prose" per `contentHtml` (`h2`/`h3`, `p`, `ul`/`li`, `a` in accento, `code`, `strong`), applicati al blocco `v-html`.
+- [x] **Passo 3**: azioni: "Read the original" come pulsante-accento; "Discussion" quando presente; "Back to articles".
+- [x] **Passo 4**: verifica su una release (con `contentHtml`), un post con copertina, un link HN; ricaricando il dettaglio, niente avvisi di hydration in console; `lint` e `typecheck`.
+- [x] **Passo 5: commit**: `style: build the article detail page`
+- [x] **Claude:** code review
 
 ---
 
@@ -118,22 +118,22 @@ Atteso: il sito carica con il fondo carbonio e i font nuovi; nessun errore in co
 
 **Obiettivo:** identità coerente con la famiglia.
 
-- [ ] **Passo 1**: produrre gli asset in `public/`: `favicon.ico`, `apple-touch-icon.png` (180×180), `og.png` (title + accento su fondo carbonio).
-- [ ] **Passo 2**: registrarli in `nuxt.config.ts` (`app.head`) insieme ai `<meta>` di base: `title`, `description`, `og:*`, `twitter:card`.
-- [ ] **Passo 3**: verifica: favicon nel tab; anteprima OG controllata sul file generato.
-- [ ] **Passo 4: commit**: `chore: add favicon and social meta`
-- [ ] **Claude:** code review
+- [x] **Passo 1**: produrre gli asset in `public/`: `favicon.ico`, `apple-touch-icon.png` (180×180), `og.png` (title + accento su fondo carbonio).
+- [x] **Passo 2**: registrarli in `nuxt.config.ts` (`app.head`) insieme ai `<meta>` di base: `title`, `description`, `og:*`, `twitter:card`.
+- [x] **Passo 3**: verifica: favicon nel tab; anteprima OG controllata sul file generato.
+- [x] **Passo 4: commit**: `chore: add favicon and social meta`
+- [x] **Claude:** code review
 
 ---
 
 ### Task 6 — Chiusura · **Giovanni**, poi **Claude**
 
-- [ ] **Giovanni:** verifica completa:
+- [x] **Giovanni:** verifica completa:
 
 ```bash
 npm run lint && npm run format:check && npm run typecheck && npm test && NITRO_PRESET=static npx nuxt generate
 ```
 
-- [ ] **Giovanni:** giro finale a 360px e desktop su archivio, dettaglio, 404.
-- [ ] **Claude:** aggiornare `CLAUDE.md` (Stack e flusso dati con il CSS e i moduli nuovi) e committare: `docs: update CLAUDE.md after stage 2`.
-- [ ] **Giovanni:** merge di `feat/visual-design` in `staging`.
+- [x] **Giovanni:** giro finale a 360px e desktop su archivio, dettaglio, 404.
+- [x] **Claude:** aggiornare `CLAUDE.md` (Stack e flusso dati con il CSS e i moduli nuovi) e committare: `docs: update CLAUDE.md after stage 2`.
+- [x] **Giovanni:** merge di `feat/visual-design` in `staging`.

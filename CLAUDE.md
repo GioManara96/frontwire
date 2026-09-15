@@ -51,6 +51,13 @@ Il tipo `Article`, il vocabolario dei tag e il registro delle fonti vivono in `s
 - `server/api/articles.get.ts`, `server/api/articles/[id].get.ts`: le due route.
 - `app/pages/index.vue`, `app/pages/articles/[id].vue`: archivio e dettaglio, che leggono le route con `useFetch`.
 
+### Grafica (tappa 2)
+
+- `app/assets/css/main.css`: import di Tailwind, i design token in `@theme` (palette carbonio, accento lime `#b8e83a`, font Syne/Source Sans 3/IBM Plex Mono) e le classi semantiche composte con `@apply`.
+- `app/app.vue`, `app/error.vue`: header del sito e pagina di errore.
+- Le icone di tag e fonti arrivano da `@nuxt/icon` usando i nomi Iconify già in `TAGS`/`SOURCES`; i font sono self-hosted da `@nuxt/fonts`.
+- Stack e token seguono `docs/megipowers/specs/2026-09-15-tappa-2-grafica-design.md`.
+
 ### Fonti
 
 Solo **RSS/Atom e API ufficiali, niente scraping.**
@@ -64,7 +71,7 @@ Verificare che ogni feed esista e risponda prima di aggiungerlo.
 
 ## Stack
 
-Nuxt 4 (sorgenti in `app/`), Vue 3, TypeScript `strict`, Tailwind CSS v4 (niente Nuxt UI per ora), deploy statico su Vercel. npm è il package manager (`package-lock.json` versionato).
+Nuxt 4 (sorgenti in `app/`), Vue 3, TypeScript `strict`, Tailwind CSS v4 con `@nuxt/icon` (Iconify) e `@nuxt/fonts` (niente Nuxt UI per ora), deploy statico su Vercel. npm è il package manager (`package-lock.json` versionato).
 
 ```bash
 npm install        # esegue anche `nuxt prepare`, che genera .nuxt/
