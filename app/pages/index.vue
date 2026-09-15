@@ -4,23 +4,42 @@ const { data: articles } = await useFetch("/api/articles");
 
 <template>
   <div>
-    <h1>Articles</h1>
-    <p v-if="!articles?.length">No articles yet.</p>
-    <ul v-else>
+    <h1 class="archive__title">Articles</h1>
+    <p v-if="!articles?.length" class="archive__empty">No articles yet.</p>
+    <ul v-else class="archive__grid">
       <li v-for="article in articles" :key="article.id">
-        <article>
-          <img v-if="article.coverImageUrl" :src="article.coverImageUrl" :alt="article.title" />
-          <div v-else>{{ SOURCES[article.sourceId].name }}</div>
-          <h2>
-            <NuxtLink :to="`/articles/${article.id}`">{{ article.title }}</NuxtLink>
-          </h2>
-          <p>{{ SOURCES[article.sourceId].name }}</p>
-          <time :datetime="article.publishedAt">{{ formatDate(article.publishedAt) }}</time>
-          <p>{{ article.category }}</p>
-          <ul>
-            <li v-for="tag in article.tags" :key="tag">{{ TAGS[tag].label }}</li>
-          </ul>
-          <p v-if="getArticleText(article)">{{ getArticleText(article) }}</p>
+        <article class="card">
+          <img
+            v-if="article.coverImageUrl"
+            class="cover cover__image"
+            :src="article.coverImageUrl"
+            :alt="article.title"
+            loading="lazy"
+          />
+          <div v-else class="cover cover--placeholder">
+            <Icon class="cover__placeholder-icon" :name="SOURCES[article.sourceId].icon" />
+            <span class="cover__placeholder-name">{{ SOURCES[article.sourceId].name }}</span>
+          </div>
+          <div class="card__body">
+            <div class="meta">
+              <span class="meta__source"
+                ><Icon :name="SOURCES[article.sourceId].icon" />{{ SOURCES[article.sourceId].name }}</span
+              >
+              <span class="meta__dot">/</span>
+              <time :datetime="article.publishedAt">{{ formatDate(article.publishedAt) }}</time>
+              <span class="meta__dot">/</span>
+              <span class="card__category">{{ article.category }}</span>
+            </div>
+            <h2 class="card__title">
+              <NuxtLink :to="`/articles/${article.id}`">{{ article.title }}</NuxtLink>
+            </h2>
+            <ul class="tag-list">
+              <li v-for="tag in article.tags" :key="tag" class="tag">
+                <Icon class="tag__icon" :name="TAGS[tag].icon" :aria-label="TAGS[tag].label" />{{ TAGS[tag].label }}
+              </li>
+            </ul>
+            <p v-if="getArticleText(article)" class="card__excerpt">{{ getArticleText(article) }}</p>
+          </div>
         </article>
       </li>
     </ul>
