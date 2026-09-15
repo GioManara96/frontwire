@@ -1368,9 +1368,9 @@ npm run lint && npm run format:check && npm run typecheck && npm test && NITRO_P
 ```
 
 - [x] **Claude:** aggiornare `CLAUDE.md`, concordandolo con Giovanni (vedi la sezione "Documentazione" della spec), e committare: `docs: update CLAUDE.md after stage 3`
-- [ ] **Giovanni:** merge di `feat/import-pipeline` in `staging`, poi di `staging` in `main`, e push di entrambi.
-- [ ] **Giovanni:** su GitHub, Actions → "Ingest articles" → "Run workflow". Atteso: run verde e, se sono usciti articoli dal momento del primo import, un commit `chore(data): update articles` di `github-actions[bot]` su `main`.
-- [ ] **Giovanni:** riallineare `staging`:
+- [x] **Giovanni:** merge di `feat/import-pipeline` in `staging`, poi di `staging` in `main`, e push di entrambi.
+- [x] **Giovanni:** su GitHub, Actions → "Ingest articles" → "Run workflow". Atteso: run verde e, se sono usciti articoli dal momento del primo import, un commit `chore(data): update articles` di `github-actions[bot]` su `main`.
+- [x] **Giovanni:** riallineare `staging`:
 
 ```bash
 git switch staging && git pull && git merge main && git push
