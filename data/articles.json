@@ -1,38 +1,22 @@
 [
   {
-    "id": "fafd2b5b0000",
-    "url": "https://github.com/nuxt/nuxt/releases/tag/v4.5.2",
-    "title": "Nuxt v4.5.2",
-    "sourceId": "nuxt-releases",
-    "publishedAt": "2026-08-05T16:19:44Z",
-    "category": "frontend",
+    "id": "7f82d995c515",
+    "title": "How Fyxer built an AI executive assistant people trust",
+    "url": "https://openai.com/index/fyxer",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-14T12:00:00.000Z",
+    "category": "ai",
     "tags": [
-      "nuxt",
-      "vue",
-      "release"
+      "openai"
     ],
-    "contentHtml": "<p>4.5.2 is the next patch release.</p>\n<h2>Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.5.1...v4.5.2\">compare changes</a></p>\n<h3>Performance</h3>\n<ul>\n<li><strong>nuxt,kit:</strong> Skip rewriting unchanged generated files (<a href=\"https://github.com/nuxt/nuxt/pull/35902\">#35902</a>)</li>\n<li><strong>kit,nuxt:</strong> Use lazy imports to improve parsing speed (<a href=\"https://github.com/nuxt/nuxt/pull/35901\">#35901</a>)</li>\n<li><strong>vite:</strong> Skip html entry probes in bare-import resolver (<a href=\"https://github.com/nuxt/nuxt/pull/35907\">#35907</a>)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li><strong>vite:</strong> Resolve client manifest path from resolved config (<a href=\"https://github.com/nuxt/nuxt/pull/35883\">#35883</a>)</li>\n<li><strong>nuxt:</strong> Use client-side navigation for links inside islands (<a href=\"https://github.com/nuxt/nuxt/pull/35806\">#35806</a>)</li>\n<li><strong>nuxt:</strong> Generate types for route params defined with <code>definePageMeta</code> (<a href=\"https://github.com/nuxt/nuxt/pull/35857\">#35857</a>)</li>\n</ul>"
-  },
-  {
-    "id": "9a3ba752b884",
-    "url": "https://github.com/nuxt/nuxt/releases/tag/v4.5.1",
-    "title": "Nuxt v4.5.1",
-    "sourceId": "nuxt-releases",
-    "publishedAt": "2026-07-27T10:21:39Z",
-    "category": "frontend",
-    "tags": [
-      "nuxt",
-      "vue",
-      "release"
-    ],
-    "contentHtml": "<p><strong>This is a security release.</strong> We recommend upgrading as soon as possible with <code>npx nuxt upgrade --dedupe</code>.</p>\n<p>It fixes server-side RCE and unauthorized component instantiation via server island props, a route rule authorization bypass, server component DoS, cross-user payload disclosure on cached pages, and dev server path disclosure.</p>\n<p>If you use the <code>cache</code>, <code>swr</code> or <code>isr</code> route rules, purge any CDN or edge cache after upgrading.</p>\n<p>Full details: <a href=\"https://nuxt.com/blog/v4-5-security\">Nuxt Security Patch Releases</a> and <a href=\"https://github.com/nuxt/nuxt/security/advisories\">GitHub Security Advisories</a>.</p>\n<h2>Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.5.0...v4.5.1\">compare changes</a></p>\n<h3>Fixes</h3>\n<ul>\n<li><strong>nitro:</strong> Replace island teleports in a single html pass (<a href=\"https://github.com/nuxt/nuxt/pull/35515\">#35515</a>)</li>\n<li><strong>nuxt:</strong> Skip payload revival plugin when <code>ssr: false</code> (<a href=\"https://github.com/nuxt/nuxt/pull/35782\">#35782</a>)</li>\n</ul>"
+    "excerpt": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice."
   },
   {
     "id": "968c32634dc2",
-    "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
     "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+    "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
     "sourceId": "openai-news",
-    "publishedAt": "2026-09-14T00:00:00Z",
+    "publishedAt": "2026-09-14T00:00:00.000Z",
     "category": "ai",
     "tags": [
       "openai"
@@ -40,11 +24,37 @@
     "excerpt": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
   },
   {
-    "id": "46fcf5bb7b99",
-    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+    "id": "77e3de73fcba",
+    "title": "Next.js v16.3.5",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.3.5",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-09-11T19:15:50.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "The following bug fixes have been backported. It does not include all pending features/changes on canary. next/image: Skip 0-byte entries when initializing disk LRU cache (#98185) next/image: Reject empty images when reading/writing to the disk cache (#98186) Emit whole-app server NFTs when…",
+    "contentHtml": "<p>The following bug fixes have been backported. It does not include all pending features/changes on canary.</p>\n<ul>\n<li>next/image: Skip 0-byte entries when initializing disk LRU cache (<a href=\"https://github.com/vercel/next.js/pull/98185\">#98185</a>)</li>\n<li>next/image: Reject empty images when reading/writing to the disk cache (<a href=\"https://github.com/vercel/next.js/pull/98186\">#98186</a>)</li>\n<li>Emit whole-app server NFTs when <code>output: 'standalone'</code> is used with an adapter (<a href=\"https://github.com/vercel/next.js/pull/98167\">#98167</a>)</li>\n<li>Add CSP nonce to script tags of loading and template files (<a href=\"https://github.com/vercel/next.js/pull/98403\">#98403</a>)</li>\n<li>Fix <code>use cache</code> prerender signal retention (<a href=\"https://github.com/vercel/next.js/pull/98448\">#98448</a>)</li>\n</ul>"
+  },
+  {
+    "id": "4aeb82da9975",
+    "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+    "url": "https://openai.com/index/cognition-devin-testing-with-astra",
     "sourceId": "openai-news",
-    "publishedAt": "2026-09-11T10:00:00Z",
+    "publishedAt": "2026-09-11T16:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more."
+  },
+  {
+    "id": "46fcf5bb7b99",
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-11T10:00:00.000Z",
     "category": "ai",
     "tags": [
       "openai"
@@ -52,208 +62,1274 @@
     "excerpt": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
   },
   {
-    "id": "d170f8a96eea",
-    "url": "https://dev.to/faridteymouri/i-finally-built-my-developer-portfolio-5g5f",
-    "title": "I Finally Built My Developer Portfolio",
-    "sourceId": "devto",
-    "publishedAt": "2026-09-12T20:45:30Z",
-    "category": "frontend",
+    "id": "39842fa0b34b",
+    "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+    "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-10T16:00:00.000Z",
+    "category": "ai",
     "tags": [
-      "nuxt",
-      "vue",
-      "typescript"
+      "openai"
     ],
-    "excerpt": "After a lot of coding, learning, changing ideas, and rebuilding things, I finally launched my...",
-    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fah3mfzrokviq6fz3wcmb.png"
+    "excerpt": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections."
   },
   {
-    "id": "aed8d26cabf7",
-    "url": "https://bestpractic.org/blog/nuxt-weekly-useasyncdata-keys-dedupe",
-    "title": "useAsyncData Keys in Nuxt: Caching, Dedupe & the Sharing Bug",
-    "sourceId": "devto",
-    "publishedAt": "2026-09-13T11:26:27Z",
-    "category": "frontend",
+    "id": "6a886414536a",
+    "title": "Now everyone can put data to work",
+    "url": "https://openai.com/index/put-data-to-work",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-10T15:00:00.000Z",
+    "category": "ai",
     "tags": [
-      "nuxt"
+      "openai"
     ],
-    "excerpt": "Learn how Nuxt's useAsyncData and useFetch generate cache keys, how dedupe (cancel vs defer) really works, and why wrapper composables silently share data.",
-    "coverImageUrl": "https://bestpractic.org/media/covers/nuxt-weekly-useasyncdata-keys-dedupe.png"
+    "excerpt": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language."
   },
   {
-    "id": "595d6f50796e",
-    "url": "https://nuxtlabs.com/",
-    "title": "NuxtLabs is joining Vercel",
-    "sourceId": "hackernews",
-    "publishedAt": "2025-07-08T13:40:12Z",
+    "id": "27d92b9e24d1",
+    "title": "Vite v8.3.0",
+    "url": "https://github.com/vitejs/vite/releases/tag/v8.3.0",
+    "sourceId": "vite-releases",
+    "publishedAt": "2026-09-10T11:25:16.000Z",
     "category": "frontend",
     "tags": [
-      "nuxt"
+      "vite",
+      "release"
     ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=44499860"
+    "excerpt": "Features build: avoid settling seen preload dependencies for performance (#23446) (e6f6b3e) Bug Fixes handle CRLF line endings in code frame positions (#23219) (9913672) only treat whole node_modules path segments as dependencies (fix #17467) (#23437) (ef0dc17) Performance Improvements proxy…",
+    "contentHtml": "<h3>Features</h3>\n<ul>\n<li><strong>build:</strong> avoid settling seen preload dependencies for performance (<a href=\"https://github.com/vitejs/vite/issues/23446\">#23446</a>) (<a href=\"https://github.com/vitejs/vite/commit/e6f6b3e3119256daa837b2dc399058c8aa45b470\">e6f6b3e</a>)</li>\n</ul>\n<h3>Bug Fixes</h3>\n<ul>\n<li>handle CRLF line endings in code frame positions (<a href=\"https://github.com/vitejs/vite/issues/23219\">#23219</a>) (<a href=\"https://github.com/vitejs/vite/commit/9913672bee9c34a2df7fff4c2538783cd4f43b4e\">9913672</a>)</li>\n<li>only treat whole <code>node_modules</code> path segments as dependencies (fix <a href=\"https://github.com/vitejs/vite/issues/17467\">#17467</a>) (<a href=\"https://github.com/vitejs/vite/issues/23437\">#23437</a>) (<a href=\"https://github.com/vitejs/vite/commit/ef0dc17ada53d1169ae5a89cb8f6482831466755\">ef0dc17</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>proxy:</strong> pre-compile context matchers at server creation (<a href=\"https://github.com/vitejs/vite/issues/23263\">#23263</a>) (<a href=\"https://github.com/vitejs/vite/commit/8abf700eeb2411d8402d08f8e2696effafdbe774\">8abf700</a>)</li>\n</ul>"
   },
   {
-    "id": "2bd63232151d",
-    "url": "https://github.com/anuj0456/OpenArch",
-    "title": "OpenArch – PyTorch implementations of modern LLM architectures",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-14T07:55:19Z",
+    "id": "0bb946f0c421",
+    "title": "Introducing ChatGPT for Financial Services",
+    "url": "https://openai.com/index/introducing-chatgpt-financial-services",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-10T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials."
+  },
+  {
+    "id": "3802aa15c4b6",
+    "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
+    "url": "https://openai.com/index/expanding-ai-access-us-government",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-10T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
+  },
+  {
+    "id": "075fed980e67",
+    "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
+    "url": "https://huggingface.co/blog/gradio-workflow-1111",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-10T00:00:00.000Z",
     "category": "ai",
     "tags": [
       "huggingface"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49693384"
+    ]
   },
   {
-    "id": "4aeb82da9975",
-    "url": "https://openai.com/index/cognition-devin-testing-with-astra",
-    "title": "Cognition helps Devin test its own work with GPT-6 Astra",
+    "id": "85052f9befba",
+    "title": "Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL",
+    "url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-10T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "b32e9b847135",
+    "title": "Introducing the Agents API",
+    "url": "https://openai.com/index/introducing-the-agents-api",
     "sourceId": "openai-news",
-    "publishedAt": "2026-09-11T16:00:00Z",
+    "publishedAt": "2026-09-10T00:00:00.000Z",
     "category": "ai",
     "tags": [
       "openai"
     ],
-    "excerpt": "GPT-6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more."
+    "excerpt": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
   },
   {
-    "id": "58820426fb6f",
-    "url": "https://dev.to/saurabhzaiswal/building-better-pdf-workflows-in-vue-3-with-vue-pdf-export-9ed",
-    "title": "Building Better PDF Workflows in Vue 3 with vue-pdf-export",
-    "sourceId": "devto",
-    "publishedAt": "2026-09-12T16:27:39Z",
-    "category": "frontend",
+    "id": "b8a75fb67d81",
+    "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+    "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-10T00:00:00.000Z",
+    "category": "ai",
     "tags": [
-      "vue",
-      "typescript"
+      "openai"
     ],
-    "excerpt": "Hey Vue developers 👋  I’ve been working on vue-pdf-export, a Vue 3 + TypeScript package for...",
-    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5g6iozoru9psk044t9y3.png"
+    "excerpt": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support."
   },
   {
-    "id": "c3f1a7d2e5b0",
-    "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.0",
-    "title": "Nuxt v4.6.0",
-    "sourceId": "nuxt-releases",
-    "publishedAt": "2026-09-02T09:12:00Z",
-    "category": "frontend",
-    "tags": [
-      "nuxt",
-      "vue",
-      "release"
-    ],
-    "contentHtml": "<p>4.6.0 is a minor release with new features and performance work.</p>\n<h2>Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.5.2...v4.6.0\">compare changes</a></p>\n<h3>Features</h3>\n<ul>\n<li><strong>nuxt:</strong> Add <code>useRouteQuery</code> composable (<a href=\"https://github.com/nuxt/nuxt/pull/36010\">#36010</a>)</li>\n<li><strong>kit:</strong> Expose <code>addServerScanDir</code> for module authors (<a href=\"https://github.com/nuxt/nuxt/pull/36044\">#36044</a>)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li><strong>vite:</strong> Preserve query params on prefetched chunks (<a href=\"https://github.com/nuxt/nuxt/pull/36071\">#36071</a>)</li>\n</ul>"
-  },
-  {
-    "id": "b90e4c17af23",
-    "url": "https://nextjs.org/blog/next-16",
-    "title": "Next.js 16",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-09T14:30:00Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "react"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49712233"
-  },
-  {
-    "id": "7d21e8b4c6a9",
-    "url": "https://dev.to/reactteam/react-compiler-is-now-stable-1a2b",
-    "title": "The React Compiler Is Now Stable",
-    "sourceId": "devto",
-    "publishedAt": "2026-09-08T12:00:00Z",
+    "id": "8a7cf4293a31",
+    "title": "React v19.3.0",
+    "url": "https://github.com/react/react/releases/tag/v19.3.0",
+    "sourceId": "react-releases",
+    "publishedAt": "2026-09-09T18:01:33.000Z",
     "category": "frontend",
     "tags": [
       "react",
-      "typescript"
+      "release"
     ],
-    "excerpt": "The React Compiler reached its first stable release. Here is what it optimizes, how to adopt it incrementally, and what to watch out for in large codebases.",
-    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk8p2n3q4r5s6t7u8v9w0.png"
+    "excerpt": "Below is a list of all new features, APIs, and bug fixes. Read the React 19.3 release post for more information. New React Features <ViewTransition />: Adds <ViewTransition /> and addTransitionType APIs to power View Transition animations in React (@sebmarkbage, @jackpope, @gaearon: #31975…",
+    "contentHtml": "<p>Below is a list of all new features, APIs, and bug fixes.</p>\n<p>Read the <a href=\"https://react.dev/blog/2026/09/09/react-19-3\">React 19.3 release post</a> for more information.</p>\n<h2>New React Features</h2>\n<ul>\n<li><code>&lt;ViewTransition /&gt;</code>: Adds <code>&lt;ViewTransition /&gt;</code> and <code>addTransitionType</code> APIs to power View Transition animations in React (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a>, <a href=\"https://github.com/jackpope\">@jackpope</a>, <a href=\"https://github.com/gaearon\">@gaearon</a>: <a href=\"https://github.com/facebook/react/pull/31975\">#31975</a>, <a href=\"https://github.com/facebook/react/pull/31987\">#31987</a>, <a href=\"https://github.com/facebook/react/pull/31996\">#31996</a>, <a href=\"https://github.com/facebook/react/pull/31999\">#31999</a>, <a href=\"https://github.com/facebook/react/pull/32001\">#32001</a>, <a href=\"https://github.com/facebook/react/pull/32002\">#32002</a>, <a href=\"https://github.com/facebook/react/pull/32028\">#32028</a>, <a href=\"https://github.com/facebook/react/pull/32029\">#32029</a>, <a href=\"https://github.com/facebook/react/pull/32031\">#32031</a>, <a href=\"https://github.com/facebook/react/pull/32034\">#32034</a>, <a href=\"https://github.com/facebook/react/pull/32038\">#32038</a>, <a href=\"https://github.com/facebook/react/pull/32041\">#32041</a>, <a href=\"https://github.com/facebook/react/pull/32050\">#32050</a>, <a href=\"https://github.com/facebook/react/pull/32090\">#32090</a>, <a href=\"https://github.com/facebook/react/pull/32105\">#32105</a>, <a href=\"https://github.com/facebook/react/pull/32254\">#32254</a>, <a href=\"https://github.com/facebook/react/pull/32379\">#32379</a>, <a href=\"https://github.com/facebook/react/pull/32422\">#32422</a>, <a href=\"https://github.com/facebook/react/pull/32462\">#32462</a>, <a href=\"https://github.com/facebook/react/pull/32540\">#32540</a>, <a href=\"https://github.com/facebook/react/pull/32545\">#32545</a>, <a href=\"https://github.com/facebook/react/pull/32585\">#32585</a>, <a href=\"https://github.com/facebook/react/pull/32599\">#32599</a>, <a href=\"https://github.com/facebook/react/pull/32611\">#32611</a>, <a href=\"https://github.com/facebook/react/pull/32612\">#32612</a>, <a href=\"https://github.com/facebook/react/pull/32617\">#32617</a>, <a href=\"https://github.com/facebook/react/pull/32651\">#32651</a>, <a href=\"https://github.com/facebook/react/pull/32653\">#32653</a>, <a href=\"https://github.com/facebook/react/pull/32656\">#32656</a>, <a href=\"https://github.com/facebook/react/pull/32664\">#32664</a>, <a href=\"https://github.com/facebook/react/pull/32699\">#32699</a>, <a href=\"https://github.com/facebook/react/pull/32723\">#32723</a>, <a href=\"https://github.com/facebook/react/pull/32734\">#32734</a>, <a href=\"https://github.com/facebook/react/pull/32751\">#32751</a>, <a href=\"https://github.com/facebook/react/pull/32752\">#32752</a>, <a href=\"https://github.com/facebook/react/pull/32760\">#32760</a>, <a href=\"https://github.com/facebook/react/pull/32761\">#32761</a>, <a href=\"https://github.com/facebook/react/pull/32764\">#32764</a>, <a href=\"https://github.com/facebook/react/pull/32772\">#32772</a>, <a href=\"https://github.com/facebook/react/pull/32790\">#32790</a>, <a href=\"https://github.com/facebook/react/pull/32819\">#32819</a>, <a href=\"https://github.com/facebook/react/pull/32820\">#32820</a>, <a href=\"https://github.com/facebook/react/pull/32822\">#32822</a>, <a href=\"https://github.com/facebook/react/pull/32833\">#32833</a>, <a href=\"https://github.com/facebook/react/pull/32849\">#32849</a>, <a href=\"https://github.com/facebook/react/pull/33094\">#33094</a>, <a href=\"https://github.com/facebook/react/pull/33191\">#33191</a>, <a href=\"https://github.com/facebook/react/pull/33200\">#33200</a>, <a href=\"https://github.com/facebook/react/pull/33206\">#33206</a>, <a href=\"https://github.com/facebook/react/pull/33293\">#33293</a>, <a href=\"https://github.com/facebook/react/pull/33330\">#33330</a>, <a href=\"https://github.com/facebook/react/pull/33331\">#33331</a>, <a href=\"https://github.com/facebook/react/pull/33332\">#33332</a>, <a href=\"https://github.com/facebook/react/pull/33357\">#33357</a>, <a href=\"https://github.com/facebook/react/pull/33362\">#33362</a>, <a href=\"https://github.com/facebook/react/pull/33433\">#33433</a>, <a href=\"https://github.com/facebook/react/pull/33576\">#33576</a>, <a href=\"https://github.com/facebook/react/pull/34374\">#34374</a>, <a href=\"https://github.com/facebook/react/pull/34450\">#34450</a>, <a href=\"https://github.com/facebook/react/pull/34481\">#34481</a>, <a href=\"https://github.com/facebook/react/pull/34500\">#34500</a>, <a href=\"https://github.com/facebook/react/pull/34502\">#34502</a>, <a href=\"https://github.com/facebook/react/pull/34510\">#34510</a>, <a href=\"https://github.com/facebook/react/pull/34511\">#34511</a>, <a href=\"https://github.com/facebook/react/pull/34539\">#34539</a>, <a href=\"https://github.com/facebook/react/pull/35567\">#35567</a>, <a href=\"https://github.com/facebook/react/pull/35564\">#35564</a>, <a href=\"https://github.com/facebook/react/pull/35485\">#35485</a>, <a href=\"https://github.com/facebook/react/pull/35380\">#35380</a>, <a href=\"https://github.com/facebook/react/pull/35063\">#35063</a>, <a href=\"https://github.com/facebook/react/pull/35060\">#35060</a>, <a href=\"https://github.com/facebook/react/pull/34676\">#34676</a>, <a href=\"https://github.com/facebook/react/pull/36917\">#36917</a>, <a href=\"https://github.com/facebook/react/pull/35337\">#35337</a>, <a href=\"https://github.com/facebook/react/pull/35520\">#35520</a>)</li>\n<li>Fragment Refs: Add Refs to <code>&lt;Fragment /&gt;</code> to support composable platform behavior (<a href=\"https://github.com/jackpope\">@jackpope</a>, <a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a>, <a href=\"https://github.com/eps1lon\">@eps1lon</a>, <a href=\"https://github.com/Dhakshin2007\">@Dhakshin2007</a>, <a href=\"https://github.com/chirokas\">@chirokas</a>, <a href=\"https://github.com/teamleaderleo\">@teamleaderleo</a>, <a href=\"https://github.com/fallintoplace\">@fallintoplace</a>: <a href=\"https://github.com/facebook/react/pull/32465\">#32465</a>, <a href=\"https://github.com/facebook/react/pull/32613\">#32613</a>, <a href=\"https://github.com/facebook/react/pull/32619\">#32619</a>, <a href=\"https://github.com/facebook/react/pull/32654\">#32654</a>, <a href=\"https://github.com/facebook/react/pull/32660\">#32660</a>, <a href=\"https://github.com/facebook/react/pull/32682\">#32682</a>, <a href=\"https://github.com/facebook/react/pull/32722\">#32722</a>, <a href=\"https://github.com/facebook/react/pull/32813\">#32813</a>, <a href=\"https://github.com/facebook/react/pull/32814\">#32814</a>, <a href=\"https://github.com/facebook/react/pull/33056\">#33056</a>, <a href=\"https://github.com/facebook/react/pull/33058\">#33058</a>, <a href=\"https://github.com/facebook/react/pull/33093\">#33093</a>, <a href=\"https://github.com/facebook/react/pull/34069\">#34069</a>, <a href=\"https://github.com/facebook/react/pull/34103\">#34103</a>, <a href=\"https://github.com/facebook/react/pull/34544\">#34544</a>, <a href=\"https://github.com/facebook/react/pull/34545\">#34545</a>, <a href=\"https://github.com/facebook/react/pull/37062\">#37062</a>, <a href=\"https://github.com/facebook/react/pull/37061\">#37061</a>, <a href=\"https://github.com/facebook/react/pull/37060\">#37060</a>, <a href=\"https://github.com/facebook/react/pull/36047\">#36047</a>, <a href=\"https://github.com/facebook/react/pull/36010\">#36010</a>, <a href=\"https://github.com/facebook/react/pull/35642\">#35642</a>, <a href=\"https://github.com/facebook/react/pull/35641\">#35641</a>, <a href=\"https://github.com/facebook/react/pull/35637\">#35637</a>, <a href=\"https://github.com/facebook/react/pull/35630\">#35630</a>, <a href=\"https://github.com/facebook/react/pull/34935\">#34935</a>, <a href=\"https://github.com/facebook/react/pull/37457\">#37457</a>, <a href=\"https://github.com/facebook/react/pull/37408\">#37408</a>, <a href=\"https://github.com/facebook/react/pull/37326\">#37326</a>, <a href=\"https://github.com/facebook/react/pull/37251\">#37251</a>, <a href=\"https://github.com/facebook/react/pull/37171\">#37171</a>, <a href=\"https://github.com/facebook/react/pull/37169\">#37169</a>, <a href=\"https://github.com/facebook/react/pull/37168\">#37168</a>, <a href=\"https://github.com/facebook/react/pull/37167\">#37167</a>, <a href=\"https://github.com/facebook/react/pull/37166\">#37166</a>, <a href=\"https://github.com/facebook/react/pull/37165\">#37165</a>, <a href=\"https://github.com/facebook/react/pull/37164\">#37164</a>, <a href=\"https://github.com/facebook/react/pull/37163\">#37163</a>, <a href=\"https://github.com/facebook/react/pull/37162\">#37162</a>, <a href=\"https://github.com/facebook/react/pull/37161\">#37161</a>, <a href=\"https://github.com/facebook/react/pull/37160\">#37160</a>, <a href=\"https://github.com/facebook/react/pull/37125\">#37125</a>, <a href=\"https://github.com/facebook/react/pull/37063\">#37063</a>)</li>\n</ul>\n<h2>New React DOM Features</h2>\n<ul>\n<li><code>browser()</code>: a new <code>react-dom</code> API that returns a usable which errors during server rendering and resolves in the browser. <code>use(browser())</code> inside a <code>&lt;Suspense&gt;</code> boundary marks a subtree as browser-only without reporting a recoverable error (<a href=\"https://github.com/gnoff\">@gnoff</a>: <a href=\"https://github.com/facebook/react/pull/37143\">#37143</a>, <a href=\"https://github.com/facebook/react/pull/37241\">#37241</a>)\n<ul>\n<li>Added an <code>onBrowserBailout</code> option to the <code>react-dom/server</code> APIs to observe when a subtree defers to the browser (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/37193\">#37193</a>)</li>\n</ul>\n</li>\n</ul>\n<h2>Notable changes</h2>\n<ul>\n<li>Enable Trusted Types API integration (<a href=\"https://github.com/rickhanlonii\">@rickhanlonii</a> <a href=\"https://github.com/facebook/react/pull/35816\">#35816</a>)</li>\n<li>Transitions now render independently instead of being entangled into a single render, so a slow transition no longer holds up unrelated ones (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/37290\">#37290</a>)</li>\n<li>Added a DEV-only warning when a component appears to have been unblocked by calling <code>use()</code> conditionally (<a href=\"https://github.com/hoxyq\">@hoxyq</a>, <a href=\"https://github.com/eps1lon\">@eps1lon</a>: <a href=\"https://github.com/facebook/react/pull/37104\">#37104</a>, <a href=\"https://github.com/facebook/react/pull/37203\">#37203</a>, <a href=\"https://github.com/facebook/react/pull/37491\">#37491</a>)</li>\n</ul>\n<h2>All Changes</h2>\n<h3>React</h3>\n<ul>\n<li>Fast Refresh Fixes\n<ul>\n<li>Fix Fast Refresh to find and remount edits to components wrapped behind <code>lazy()</code> (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36965\">#36965</a>)</li>\n<li>Fix Fast Refresh so edits to a <code>memo()</code> comparison function take effect (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36964\">#36964</a>)</li>\n<li>Fix Fast Refresh crash when an edit changes the kind of a component's type (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36963\">#36963</a>)</li>\n<li>Unify hot reload type resolution for Fast Refresh (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36962\">#36962</a>)</li>\n<li>Fix Fast Refresh to remount correctly when an edit changes the component kind (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36950\">#36950</a>)</li>\n<li>Double invoke effects in StrictMode after Fast Refresh (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35962\">#35962</a>)</li>\n</ul>\n</li>\n<li>Performance Track Fixes\n<ul>\n<li>Prevent crash when accessing <code>$$typeof</code> in Performance Tracks (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35679\">#35679</a>)</li>\n<li>Handle non-string function names in Performance Tracks (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35659\">#35659</a>)</li>\n<li>Use minus (<code>-</code>) instead of en dash for removed props in Performance Tracks (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35649\">#35649</a>)</li>\n<li>Handle arrays with bigints in deep objects in Performance Tracks (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35648\">#35648</a>)</li>\n<li>Don't enumerate typed array props in Performance Tracks in DEV (<a href=\"https://github.com/UditDewan\">@UditDewan</a> <a href=\"https://github.com/facebook/react/pull/36913\">#36913</a>)</li>\n<li>Bail out of diffing wide objects and arrays in Performance Tracks (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/34742\">#34742</a>)</li>\n<li>Clear potentially large performance measures in DEV (<a href=\"https://github.com/hoxyq\">@hoxyq</a> <a href=\"https://github.com/facebook/react/pull/34803\">#34803</a>)</li>\n<li>Fix missing else branch for renders with no props change in Performance Tracks (<a href=\"https://github.com/hoxyq\">@hoxyq</a> <a href=\"https://github.com/facebook/react/pull/34837\">#34837</a>)</li>\n</ul>\n</li>\n<li>Activity Fixes\n<ul>\n<li>Fix <code>useSyncExternalStore</code> missing store mutations that happened while an Activity tree was hidden (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36947\">#36947</a>)</li>\n<li>Hide portal contents when an Activity is hidden (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/35091\">#35091</a>)</li>\n<li>Prevent metadata hoisting in hidden <code>&lt;Activity&gt;</code> trees (<a href=\"https://github.com/ronnakamoto\">@ronnakamoto</a> <a href=\"https://github.com/facebook/react/pull/34983\">#34983</a>)</li>\n<li>Prevent errors thrown inside a hidden Activity from escaping to the visible UI (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/35074\">#35074</a>)</li>\n<li>Don't unhide a node if a direct parent Offscreen is still hidden (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34821\">#34821</a>)</li>\n<li>Don't show internal <code>&lt;Offscreen&gt;</code> component in error messages (<a href=\"https://github.com/rickhanlonii\">@rickhanlonii</a> <a href=\"https://github.com/facebook/react/pull/35763\">#35763</a>)</li>\n</ul>\n</li>\n<li>Warn in DEV when a component appears to have been unblocked by a conditional <code>use()</code> (<a href=\"https://github.com/hoxyq\">@hoxyq</a>, <a href=\"https://github.com/eps1lon\">@eps1lon</a>: <a href=\"https://github.com/facebook/react/pull/37104\">#37104</a>, <a href=\"https://github.com/facebook/react/pull/37203\">#37203</a>, <a href=\"https://github.com/facebook/react/pull/37491\">#37491</a>)</li>\n<li>Render transitions independently instead of entangling them into a single render (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/37290\">#37290</a>)</li>\n<li>Fix hang when updating a dehydrated boundary inside a hidden tree (<a href=\"https://github.com/gaearon\">@gaearon</a> <a href=\"https://github.com/facebook/react/pull/37135\">#37135</a>)</li>\n<li>Don't reacquire Host Singletons during dev effect validation (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/37113\">#37113</a>)</li>\n<li>Only remove properties from Host Singletons on release (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/37112\">#37112</a>)</li>\n<li>Don't invoke effects on moved children in StrictMode (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36948\">#36948</a>)</li>\n<li>Throw a clearer error when a rejected Promise is incorrectly instrumented (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36328\">#36328</a>)</li>\n<li>Fix context propagation into Suspense fallbacks (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/36160\">#36160</a>)</li>\n<li>Fix context propagation through suspended Suspense boundaries (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/35839\">#35839</a>)</li>\n<li>Fix <code>useDeferredValue</code> getting stuck (<a href=\"https://github.com/gaearon\">@gaearon</a> <a href=\"https://github.com/facebook/react/pull/36134\">#36134</a>)</li>\n<li>Update <code>useActionState</code> error message to say \"action state\" instead of \"form state\" (<a href=\"https://github.com/rickhanlonii\">@rickhanlonii</a> <a href=\"https://github.com/facebook/react/pull/35790\">#35790</a>)</li>\n<li>Don't warn when rendering data block scripts (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35953\">#35953</a>)</li>\n<li>Treat fibers with alternates as mounted in <code>getNearestMountedFiber</code> (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35578\">#35578</a>)</li>\n<li>Always instrument the lazy initializer thenable (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/35521\">#35521</a>)</li>\n<li>Annotate cascading updates for DevTools performance tracks in DEV (<a href=\"https://github.com/huntie\">@huntie</a> <a href=\"https://github.com/facebook/react/pull/34961\">#34961</a>)</li>\n<li>Resolve the <code>.default</code> export of a <code>React.lazy</code> as the canonical value (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34906\">#34906</a>)</li>\n<li>Limit owner stacks to 10 frames (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/34864\">#34864</a>)</li>\n<li>Ensure <code>useEffectEvent</code> reads latest values in <code>forwardRef</code> and <code>memo()</code> components (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/34831\">#34831</a>)</li>\n</ul>\n<h3>React DOM</h3>\n<ul>\n<li>Copy <code>source</code> onto the synthetic <code>toggle</code> event (<a href=\"https://github.com/lazerg\">@lazerg</a> <a href=\"https://github.com/facebook/react/pull/37389\">#37389</a>)</li>\n<li>Update HTML parser rules for the new <code>&lt;select&gt;</code> parser (<a href=\"https://github.com/josepharhar\">@josepharhar</a> <a href=\"https://github.com/facebook/react/pull/34804\">#34804</a>)</li>\n<li>Update <code>defaultValue</code> for <code>type=\"number\"</code> inputs to match other input types (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36980\">#36980</a>)</li>\n<li>Avoid setting <code>innerHTML</code> when it hasn't changed (<a href=\"https://github.com/sophiebits\">@sophiebits</a> <a href=\"https://github.com/facebook/react/pull/36949\">#36949</a>)</li>\n<li>Forward the <code>nonce</code> option in <code>ReactDOM.preloadModule()</code> (<a href=\"https://github.com/UditDewan\">@UditDewan</a> <a href=\"https://github.com/facebook/react/pull/36851\">#36851</a>)</li>\n<li>Support <code>fetchPriority</code> for module resources (<a href=\"https://github.com/TheAlexLichter\">@TheAlexLichter</a> <a href=\"https://github.com/facebook/react/pull/36835\">#36835</a>)</li>\n<li>Track stylesheet preloads when explicitly preloaded to avoid unnecessary suspension (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36386\">#36386</a>)</li>\n<li>Suggest correct casing for the misspelled <code>credentialless</code> iframe attribute (<a href=\"https://github.com/vmx906\">@vmx906</a> <a href=\"https://github.com/facebook/react/pull/36322\">#36322</a>)</li>\n<li>Add <code>credentialless</code> as a recognized boolean attribute for iframes (<a href=\"https://github.com/vmx906\">@vmx906</a> <a href=\"https://github.com/facebook/react/pull/36148\">#36148</a>)</li>\n<li>Prevent reentrant <code>finishedTask</code> from calling <code>completeAll</code> multiple times (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36287\">#36287</a>)</li>\n<li>Update the CSS shorthand property list (<a href=\"https://github.com/kidonng\">@kidonng</a> <a href=\"https://github.com/facebook/react/pull/35636\">#35636</a>)</li>\n<li>Support the <code>maskType</code> SVG prop (<a href=\"https://github.com/sleitor\">@sleitor</a> <a href=\"https://github.com/facebook/react/pull/35921\">#35921</a>)</li>\n<li>Add support for <code>onFullscreenChange</code> and <code>onFullscreenError</code> events (<a href=\"https://github.com/chirokas\">@chirokas</a> <a href=\"https://github.com/facebook/react/pull/34621\">#34621</a>)</li>\n<li>Include <code>submitter</code> in <code>submit</code> events (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35590\">#35590</a>)</li>\n<li>Fire <code>onReset</code> when automatically resetting forms (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35176\">#35176</a>)</li>\n<li>Use the <code>FormData</code> <code>submitter</code> parameter (<a href=\"https://github.com/jenseng\">@jenseng</a> <a href=\"https://github.com/facebook/react/pull/29028\">#29028</a>)</li>\n<li>Fix form status reset when component state is updated (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/34075\">#34075</a>)</li>\n<li>Batch updates from <code>resize</code> events until the next frame (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35117\">#35117</a>)</li>\n</ul>\n<h3>React Server</h3>\n<ul>\n<li>Add <code>nonce</code> to rendered import maps (<a href=\"https://github.com/mattcosta7\">@mattcosta7</a> <a href=\"https://github.com/facebook/react/pull/37339\">#37339</a>)</li>\n<li>Add an <code>onBrowserBailout</code> option to observe subtrees that defer to the browser (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/37193\">#37193</a>)</li>\n<li>Stop the caller's signal from retaining a finished render (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/37315\">#37315</a>)</li>\n<li>Construct the render lifetime controller only when it is needed (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/37357\">#37357</a>)</li>\n<li>Fix <code>react-dom/server</code> hanging on Deno (<a href=\"https://github.com/fraidev\">@fraidev</a> <a href=\"https://github.com/facebook/react/pull/35235\">#35235</a>)</li>\n<li>Extend stack overflow recovery to retries in SSR (<a href=\"https://github.com/jackpope\">@jackpope</a> <a href=\"https://github.com/facebook/react/pull/36977\">#36977</a>)</li>\n<li>Fix false-positive hydration mismatch on <code>nonce</code> attributes (<a href=\"https://github.com/MaxwellCohen\">@MaxwellCohen</a> <a href=\"https://github.com/facebook/react/pull/37030\">#37030</a>)</li>\n<li>Guard shell-error callbacks instead of nulling them out on the request (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36916\">#36916</a>)</li>\n<li>Stop firing <code>onAllReady</code> after the shell errored (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36903\">#36903</a>)</li>\n<li>Treat an incomplete tree as an error during error recovery (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/36911\">#36911</a>)</li>\n<li>Fix non-script <code>modulepreload</code> tracking (<a href=\"https://github.com/fallintoplace\">@fallintoplace</a> <a href=\"https://github.com/facebook/react/pull/36564\">#36564</a>)</li>\n<li>Finalize postponed <code>nextSegmentId</code> after the prelude flush (<a href=\"https://github.com/gaojude\">@gaojude</a> <a href=\"https://github.com/facebook/react/pull/36779\">#36779</a>)</li>\n<li>Preserve <code>referrerPolicy</code> in image preload headers (<a href=\"https://github.com/ulises-jeremias\">@ulises-jeremias</a> <a href=\"https://github.com/facebook/react/pull/36803\">#36803</a>)</li>\n<li>Allow pending work to specialize abort reasons (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36586\">#36586</a>)</li>\n<li>Abort tasks that suspend after aborting during render (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36585\">#36585</a>)</li>\n<li>Finish abort in a scheduled task (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36580\">#36580</a>)</li>\n<li>Fix aborts during resumed rendering (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36584\">#36584</a>)</li>\n<li>Track abort state on the request (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36583\">#36583</a>)</li>\n<li>Model external work scheduling explicitly in the fb bundle (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36576\">#36576</a>)</li>\n<li>Continue reporting aborted task errors after a fatal abort (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36575\">#36575</a>)</li>\n<li>Disallow abort reentrancy (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36574\">#36574</a>)</li>\n<li>Stop transpiling computed property names (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36542\">#36542</a>)</li>\n<li>Fix crash when capturing the callsite of a stalled <code>use()</code> of a rejected Flight chunk (<a href=\"https://github.com/lubieowoce\">@lubieowoce</a> <a href=\"https://github.com/facebook/react/pull/36544\">#36544</a>)</li>\n<li>Double invoke effects in Strict Mode during hydration (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35961\">#35961</a>)</li>\n<li>Add additional task reentrancy protections in Fizz (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36291\">#36291</a>)</li>\n<li>Don't outline Suspense boundaries with suspensey CSS during shell flush (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/35824\">#35824</a>)</li>\n<li>Push a stalled <code>use()</code> to the owner stack and debug task (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35226\">#35226</a>)</li>\n<li>Fix <code>useId</code> tracking on replay (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/35518\">#35518</a>)</li>\n<li>Correctly handle replaying when hydrating (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/35494\">#35494</a>)</li>\n<li>Simplify the <code>createSuspenseBoundary</code> path (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35087\">#35087</a>)</li>\n<li>Unify preamble-only fields to save a field on Suspense boundaries (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35068\">#35068</a>)</li>\n<li>Unify prerender-only fields to save a field on Suspense boundaries (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35067\">#35067</a>)</li>\n<li>Push halted awaits to the owner stack for late-arriving I/O info (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35019\">#35019</a>)</li>\n<li>Include all Node.js APIs in the Bun entrypoint for <code>react-dom/server</code> (<a href=\"https://github.com/RiskyMH\">@RiskyMH</a> <a href=\"https://github.com/facebook/react/pull/34193\">#34193</a>)</li>\n<li>Detach a Suspense boundary after flushing its segment (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/34694\">#34694</a>)</li>\n</ul>\n<h3>React Server Components</h3>\n<ul>\n<li>Keep an element pending while a referenced row is resolving (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/37542\">#37542</a>)</li>\n<li>Fix <code>RangeError</code> from exponential debug info growth (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/37481\">#37481</a>)</li>\n<li>Abort the cache signal when debug objects are retained (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/37342\">#37342</a>)</li>\n<li>Transfer key validation of lazy nodes when they are unwrapped (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/37258\">#37258</a>)</li>\n<li>Add <code>pending_weak</code> to the Flight thenable protocol (<a href=\"https://github.com/acdlite\">@acdlite</a> <a href=\"https://github.com/facebook/react/pull/37154\">#37154</a>)</li>\n<li>Outline and dedupe repeated strings (<a href=\"https://github.com/gaearon\">@gaearon</a> <a href=\"https://github.com/facebook/react/pull/37147\">#37147</a>)</li>\n<li>Port Reply Server traversal guards to the Flight Client (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/37144\">#37144</a>)</li>\n<li>Define Flight chunk <code>.then</code> with <code>Object.defineProperty</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/37109\">#37109</a>)</li>\n<li>Support Turbopack's experimental array format for chunks (<a href=\"https://github.com/sampoder\">@sampoder</a> <a href=\"https://github.com/facebook/react/pull/37095\">#37095</a>)</li>\n<li>Limit fake JSX call site stacks to 10 frames (<a href=\"https://github.com/timneutkens\">@timneutkens</a> <a href=\"https://github.com/facebook/react/pull/37086\">#37086</a>)</li>\n<li>Improve performance when decoding Flight replies (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/37090\">#37090</a>)</li>\n<li>Recognize Node 22+ V8 frames for <code>Promise</code> statics in debug info (<a href=\"https://github.com/gaearon\">@gaearon</a> <a href=\"https://github.com/facebook/react/pull/36969\">#36969</a>)</li>\n<li>Tailor the warning for binary data serialized through <code>toJSON</code> (Node <code>Buffer</code>) (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/36873\">#36873</a>)</li>\n<li>Resolve models before <code>JSON.stringify</code> for faster serialization (<a href=\"https://github.com/mhart\">@mhart</a> <a href=\"https://github.com/facebook/react/pull/36795\">#36795</a>)</li>\n<li>Prune debug info when chunks error (<a href=\"https://github.com/gnoff\">@gnoff</a> <a href=\"https://github.com/facebook/react/pull/36782\">#36782</a>)</li>\n<li>Avoid main-thread stalls from large debug strings (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/36570\">#36570</a>)</li>\n<li>Fix stranded row content under Node stream backpressure (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/36516\">#36516</a>)</li>\n<li>Fix dropped <code>FormData</code> entries in <code>decodeReplyFromBusboy</code> (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/36468\">#36468</a>)</li>\n<li>Harden types and improve performance of Flight replies (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36425\">#36425</a>)</li>\n<li>Add more cycle protections to Flight replies (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36236\">#36236</a>)</li>\n<li>Transport <code>AggregateError.errors</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36156\">#36156</a>)</li>\n<li>Bail out early when a backing entry for <code>Blob</code> deserialization is not a <code>Blob</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/36055\">#36055</a>)</li>\n<li>Clear chunk reason after successful module initialization (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/36024\">#36024</a>)</li>\n<li>Add support for transporting <code>Error.cause</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35810\">#35810</a>)</li>\n<li>Walk parsed JSON instead of using a reviver for faster RSC payload parsing (<a href=\"https://github.com/timneutkens\">@timneutkens</a> <a href=\"https://github.com/facebook/react/pull/35776\">#35776</a>)</li>\n<li>Skip <code>transferReferencedDebugInfo</code> during debug info resolution (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35795\">#35795</a>)</li>\n<li>Add <code>unstable_allowPartialStream</code> option to Flight Client (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35731\">#35731</a>)</li>\n<li>Fix <code>encodeReply</code> for JSX with temporary references (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35730\">#35730</a>)</li>\n<li>Fix debug channel flag in Node.js <code>renderToPipeableStream</code> (<a href=\"https://github.com/feedthejim\">@feedthejim</a> <a href=\"https://github.com/facebook/react/pull/35724\">#35724</a>)</li>\n<li>Fix stack overflow in <code>visitAsyncNode</code> with deep async chains (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35612\">#35612</a>)</li>\n<li>Allow Server Components to render context providers from client modules (<a href=\"https://github.com/rickhanlonii\">@rickhanlonii</a> <a href=\"https://github.com/facebook/react/pull/35675\">#35675</a>)</li>\n<li>Allow overriding <code>request.timeOrigin</code> via <code>options.startTime</code> (<a href=\"https://github.com/lubieowoce\">@lubieowoce</a> <a href=\"https://github.com/facebook/react/pull/35598\">#35598</a>)</li>\n<li>Warn once if <code>eval</code> is disabled in the dev environment (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35661\">#35661</a>)</li>\n<li>Restore original function name in dev server callstacks served with <code>unsafe-eval</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35650\">#35650</a>)</li>\n<li>Fix <code>react-markup</code> types for server references (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35634\">#35634</a>)</li>\n<li>Add more DoS mitigations to Flight replies and harden Flight (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35632\">#35632</a>)</li>\n<li>Allow cyclic references to be serialized when unwrapping lazy elements (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35471\">#35471</a>)</li>\n<li>Improve cyclic thenable detection in Flight reply server (<a href=\"https://github.com/cvan20191\">@cvan20191</a> <a href=\"https://github.com/facebook/react/pull/35369\">#35369</a>)</li>\n<li>Add extra loop protection to Flight reply server (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35351\">#35351</a>)</li>\n<li>Patch Promise cycles and <code>toString</code> on Server Functions (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35345\">#35345</a>)</li>\n<li>Move <code>react-server-dom-webpack/*.unbundled</code> to private <code>react-server-dom-unbundled</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35290\">#35290</a>)</li>\n<li>Never parse <code>then</code> functions in Flight replies (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35289\">#35289</a>)</li>\n<li>Patch Flight reply server with fixes from Flight Client (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35277\">#35277</a>)</li>\n<li>Complete the list of Node.js internal Promise awaits (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35161\">#35161</a>)</li>\n<li>Reduce risk of maximum call stack exceeded when emitting async sequences (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/35159\">#35159</a>)</li>\n<li>Fix pending chunks count for streams and async iterables in DEV (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35143\">#35143</a>)</li>\n<li>Fix broken byte stream parsing caused by buffer detachment (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35127\">#35127</a>)</li>\n<li>Fix <code>hasReadable</code> flag in Node.js clients' debug channel (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35039\">#35039</a>)</li>\n<li>Fix debug info filtering to include later resolved I/O (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/35036\">#35036</a>)</li>\n<li>Cache the value when visiting the same I/O or Promise along different paths (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35005\">#35005</a>)</li>\n<li>Clone subsequent I/O nodes when resolved more than once (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/35003\">#35003</a>)</li>\n<li>Fix hang after resolving cyclic references (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/34988\">#34988</a>)</li>\n<li>Allow passing DEV-only <code>startTime</code> as an option (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34912\">#34912</a>)</li>\n<li>Ignore bound-anonymous-fn resources as they're not considered I/O (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34911\">#34911</a>)</li>\n<li>Fix detached <code>ArrayBuffer</code> error when streaming typed arrays (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/34849\">#34849</a>)</li>\n<li>Exclude RSC stream if the stream resolves in a task (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34838\">#34838</a>)</li>\n<li>Forward the current environment when forwarding I/O entries (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34836\">#34836</a>)</li>\n<li>Look for moved debug info when logging component performance track (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34839\">#34839</a>)</li>\n<li>Respect <code>displayName</code> of Promise instances on the server (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34825\">#34825</a>)</li>\n<li>Avoid unnecessary indirection when serializing debug info (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/34797\">#34797</a>)</li>\n<li>Fix preload <code>as</code> attribute for stylesheets (<a href=\"https://github.com/unstubbable\">@unstubbable</a> <a href=\"https://github.com/facebook/react/pull/34760\">#34760</a>)</li>\n<li>Don't serialize <code>toJSON</code> in debug path and omit wide arrays (<a href=\"https://github.com/sebmarkbage\">@sebmarkbage</a> <a href=\"https://github.com/facebook/react/pull/34759\">#34759</a>)</li>\n<li>Add support for <code>&lt;Activity&gt;</code> (<a href=\"https://github.com/eps1lon\">@eps1lon</a> <a href=\"https://github.com/facebook/react/pull/34697\">#34697</a>)</li>\n</ul>"
   },
   {
-    "id": "e4a9d3b17c52",
-    "url": "https://vite.dev/blog/announcing-vite7",
-    "title": "Announcing Vite 7",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-08-28T08:45:00Z",
-    "category": "frontend",
-    "tags": [
-      "vite"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49655120"
-  },
-  {
-    "id": "1f6b2c8e9a04",
-    "url": "https://www.anthropic.com/news/claude-opus-4-5",
-    "title": "Claude Opus 4.5",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-10T17:20:00Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49720411"
-  },
-  {
-    "id": "a2c7f04b9d81",
-    "url": "https://blog.google/technology/google-deepmind/gemini-3",
-    "title": "Gemini 3: our most capable model yet",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-05T15:00:00Z",
-    "category": "ai",
-    "tags": [
-      "gemini"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49690033"
-  },
-  {
-    "id": "6b0d9e21f4c7",
-    "url": "https://api-docs.deepseek.com/news/deepseek-v4",
-    "title": "DeepSeek-V4 released with stronger reasoning",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-08-31T06:10:00Z",
-    "category": "ai",
-    "tags": [
-      "deepseek"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49668077"
-  },
-  {
-    "id": "9c3a1d7e40b6",
-    "url": "https://openai.com/index/gpt-6-astra-api",
-    "title": "GPT-6 Astra is now available in the API",
+    "id": "3eb3e9557eb7",
+    "title": "Paul Christiano joins OpenAI Foundation Board",
+    "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
     "sourceId": "openai-news",
-    "publishedAt": "2026-09-13T18:00:00Z",
+    "publishedAt": "2026-09-09T17:00:00.000Z",
     "category": "ai",
     "tags": [
       "openai"
     ],
-    "excerpt": "GPT-6 Astra is rolling out to all paid API tiers, with a larger context window, lower latency, and improved tool use for agentic workflows."
+    "excerpt": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards."
   },
   {
-    "id": "0e5b8a2c17f3",
-    "url": "https://dev.to/typedev/5-typescript-5-8-features-you-should-know-3f4g",
-    "title": "5 TypeScript 5.8 Features You Should Know",
-    "sourceId": "devto",
-    "publishedAt": "2026-09-07T09:30:00Z",
-    "category": "frontend",
+    "id": "46660cb2ea43",
+    "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+    "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-09T15:36:24.000Z",
+    "category": "ai",
     "tags": [
-      "typescript"
-    ],
-    "excerpt": "TypeScript 5.8 shipped some quality-of-life improvements. Here are five that changed how I write everyday code, from narrowing to module resolution.",
-    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx1y2z3a4b5c6d7e8f9g0.png"
+      "huggingface"
+    ]
   },
   {
-    "id": "d8f3b6019e2a",
-    "url": "https://dev.to/svelteteam/whats-new-in-svelte-6-2h3j",
-    "title": "What's New in Svelte 6",
-    "sourceId": "devto",
-    "publishedAt": "2026-09-06T13:15:00Z",
+    "id": "a7c183de5112",
+    "title": "The AI policy window is open. We need to act.",
+    "url": "https://openai.com/index/ai-policy-window",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-09T13:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Chris Lehane argues that stronger AI capabilities require stronger safety evidence, shared standards, and durable policy action while the policy window remains open."
+  },
+  {
+    "id": "333ccaae8148",
+    "title": "GPT-6 Astra: The next generation in intelligence for work",
+    "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-09T11:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Meet GPT-6 Astra, OpenAI’s most capable model for business, with advanced reasoning, computer use, and stronger writing and design judgment."
+  },
+  {
+    "id": "c45550bed620",
+    "title": "React 19.3",
+    "url": "https://react.dev/blog/2026/09/09/react-19-3",
+    "sourceId": "react-blog",
+    "publishedAt": "2026-09-09T00:00:00.000Z",
     "category": "frontend",
     "tags": [
-      "svelte",
-      "typescript"
+      "react"
     ],
-    "excerpt": "Svelte 6 refines runes, improves TypeScript support, and speeds up hydration. A tour of the changes and how to migrate an existing app."
+    "excerpt": "React 19.3 adds new features like View Transitions, Fragment Refs, browser(), Trusted Types, and more."
+  },
+  {
+    "id": "503e9c2326e7",
+    "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+    "url": "https://openai.com/index/codex-quantum-computing-experiments",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T17:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits."
+  },
+  {
+    "id": "5cbcf08e2888",
+    "title": "Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic",
+    "url": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-08T14:23:07.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "825546b9e9e1",
+    "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+    "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-08T14:00:15.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind"
+    ],
+    "excerpt": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+    "coverImageUrl": "https://lh3.googleusercontent.com/vOjFcTcdX2GCEB9yk-tJ7GAfyhTAMo-zW7scq3TrT9qk1mYw5qE0BdUqI8XQclMuUchZr7pYUFdVt3ZzrXc1NGFFJOqi7kIUX_QuAXZR7lkVzxjk=w528-h297-n-nu-rw-lo"
+  },
+  {
+    "id": "a00fc889a2dd",
+    "title": "The Work Now Within Reach",
+    "url": "https://openai.com/index/the-work-now-within-reach",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T13:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish—and make growth more economical."
+  },
+  {
+    "id": "1dcea8b0f8ac",
+    "title": "Introducing ChatGPT Images 2.5",
+    "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T11:30:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ChatGPT Images 2.5 helps turn your ideas, sketches, and reference photos into more personalized, polished images that better reflect your ideas."
+  },
+  {
+    "id": "2c827cba158d",
+    "title": "On the Navier–Stokes Millennium Prize Problem",
+    "url": "https://openai.com/index/navier-stokes-solution",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T10:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean."
+  },
+  {
+    "id": "7948c39493cb",
+    "title": "Funding grants for new research into AI and teen development",
+    "url": "https://openai.com/index/teen-development-research-grants",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T09:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Apply now for OpenAI’s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety."
+  },
+  {
+    "id": "4a36ea7ba6bb",
+    "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
+    "url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI is expanding support for journalism with tools, training, and partnerships for students, educators, journalists, and news organizations."
+  },
+  {
+    "id": "a1b72811dd25",
+    "title": "1Password increases engineering productivity 21% with Codex",
+    "url": "https://openai.com/index/1password",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-08T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Engineers at 1Password use Codex to rapidly build new features and internal tools, reaching production-readiness while maintaining rigorous security policies."
+  },
+  {
+    "id": "073b13b14ae0",
+    "title": "Supporting independent journalism in Ukraine",
+    "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-07T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism."
+  },
+  {
+    "id": "e0f75446731d",
+    "title": "An Alien Mind",
+    "url": "https://openai.com/index/an-alien-mind",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-06T09:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination."
+  },
+  {
+    "id": "3784d7aba971",
+    "title": "Research acceleration: The view inside OpenAI",
+    "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-06T08:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration."
+  },
+  {
+    "id": "2bc63ecd7ddc",
+    "title": "How we closed 1,500 GitHub issues in one month",
+    "url": "https://nextjs.org/blog/how-we-closed-1500-github-issues",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-09-04T04:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "How the Next.js team used an agent to research old reports and work through the issue backlog."
+  },
+  {
+    "id": "3ae8e203920a",
+    "title": "How Turbopack chunks your JavaScript",
+    "url": "https://nextjs.org/blog/turbopack-chunking",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-09-03T16:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Turbopack’s chunking speeds up page loads and enables sharing code across pages. We shipped new experimental features to improve chunking in Next.js 16.3."
+  },
+  {
+    "id": "d5ea4bcadd66",
+    "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+    "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-03T15:02:08.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind"
+    ],
+    "coverImageUrl": "https://lh3.googleusercontent.com/I3SASQw4etgOOVbcWS0lr7J14HFqWcee_ln6M0TBOWlvVg2XYCi3kpz4eAi81cAkyq47YvgU1FLzAlaiCNMLcsx9sFA3ufURiSg76Yz8hVm1-u_fYEY=w528-h297-n-nu-rw-lo"
+  },
+  {
+    "id": "fc40ddafdd41",
+    "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
+    "url": "https://openai.com/index/daybreak-for-frontline-defenders",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-03T13:15:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, training, and support for essential services."
+  },
+  {
+    "id": "fffbcba03b0b",
+    "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
+    "url": "https://huggingface.co/blog/Hcompany/neomme",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-03T13:13:48.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "325e9dcd840a",
+    "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
+    "url": "https://openai.com/index/playco-game-prototyping-with-astra",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-03T12:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
+  },
+  {
+    "id": "9281d6906e83",
+    "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
+    "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-03T12:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
+  },
+  {
+    "id": "039a4975e102",
+    "title": "GPT-6 Astra: A new generation of intelligence",
+    "url": "https://openai.com/index/gpt-6-astra",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-03T11:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science."
+  },
+  {
+    "id": "39210f987919",
+    "title": "Safety overview: GPT-6 Astra",
+    "url": "https://openai.com/index/safety-overview-gpt-6-astra",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-03T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "GPT-6 Astra is our most capable broadly deployed model and our first to reach the Critical level of cybersecurity capability under our Preparedness Framework."
+  },
+  {
+    "id": "a139f80b1592",
+    "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
+    "url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-03T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "b5500bc65035",
+    "title": "Training a coding model to paint watercolours with TRL and OpenEnv",
+    "url": "https://huggingface.co/blog/train-to-paint-with-code",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-03T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "cdd1118267ee",
+    "title": "Give Your Coding Agents a Memory You Own",
+    "url": "https://huggingface.co/blog/funes",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-03T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "bf94848b24bf",
+    "title": "Proactive cyber defense for governments and enterprises",
+    "url": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-02T16:24:24.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind"
+    ]
+  },
+  {
+    "id": "355be2cf6d2d",
+    "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-02T16:18:31.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "3bda12e16fd3",
+    "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+    "url": "https://openai.com/index/atv-big-air-tour",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-02T12:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ATV Big Air Tour uses ChatGPT Work to speed up marketing, merchandising, and more. It even turned merchandise photos into an inventory website in 15 minutes."
+  },
+  {
+    "id": "ad90e6779ea3",
+    "title": "BenchMIRT: What are LLM benchmarks actually measuring?",
+    "url": "https://huggingface.co/blog/allenai/benchmirt",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-01T21:39:07.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "6bf5b05134dd",
+    "title": "Introducing agentic video understanding with Gemini",
+    "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-01T17:08:51.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "b0cbef382238",
+    "title": "How AI-native companies turn workflows into operating capability",
+    "url": "https://openai.com/index/ai-native-company-workflows",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-01T17:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Basis, Clay, and Exa Labs use AI agents to improve onboarding, account management, and developer integrations. See what enterprise leaders can apply."
+  },
+  {
+    "id": "f2694bfa96c4",
+    "title": "Path to Astra: critical capabilities and frontier safeguards",
+    "url": "https://openai.com/index/path-to-astra",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-01T13:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Astra is the first OpenAI model to meet the Critical cybersecurity capability threshold under the Preparedness Framework, with stronger safeguards for release."
+  },
+  {
+    "id": "c0364833b410",
+    "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT",
+    "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-01T12:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ChatGPT can now connect to trusted healthcare data, helping clinicians securely access patient context, medical research, and more."
+  },
+  {
+    "id": "330fba64551d",
+    "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+    "url": "https://openai.com/index/gilbert-tobin",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-01T01:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "See how Gilbert + Tobin combines CEO-led commitment, rigorous governance, and human accountability to scale ChatGPT Enterprise and Codex across the firm."
+  },
+  {
+    "id": "91dad0068ec2",
+    "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+    "url": "https://huggingface.co/blog/webgpu-kernels",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-01T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "d4e02ca9a1a1",
+    "title": "Developing Enterprise Frontier Safeguards with our customers",
+    "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-09-01T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ]
+  },
+  {
+    "id": "f4b81d01d240",
+    "title": "What’s new in Svelte: September 2026",
+    "url": "https://svelte.dev/blog/whats-new-in-svelte-september-2026",
+    "sourceId": "svelte-blog",
+    "publishedAt": "2026-09-01T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "svelte"
+    ],
+    "excerpt": "This month, Svelte 5.57 shipped with new SvelteMap methods and a few quality-of-life additions while SvelteKit 3 got closer to the finish line with its Release Candidate. The sv CLI also got a new ai-tools add-on that replaces the old mcp one, and sv@next now ships a task-based sveltekit-3…"
+  },
+  {
+    "id": "0b5a688ac445",
+    "title": "Polimill builds Japan's next-generation public AI infrastructure",
+    "url": "https://openai.com/index/polimill",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-31T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development."
+  },
+  {
+    "id": "4862f3d2c68f",
+    "title": "OpenAI supports California’s bill to advance youth AI safety",
+    "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-31T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore."
+  },
+  {
+    "id": "8a7cdd78fd48",
+    "title": "A milestone in expanding access to AI",
+    "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-31T04:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options."
+  },
+  {
+    "id": "3e30bfe41fa1",
+    "title": "Improving our alignment and security efforts",
+    "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-08-31T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ]
+  },
+  {
+    "id": "b42ac281ecaf",
+    "title": "Our decision on Cursor following its acquisition by SpaceX",
+    "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-28T06:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
+  },
+  {
+    "id": "cb1db0d5c74b",
+    "title": "Supporting Thailand’s next generation of AI startups",
+    "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-28T02:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products."
+  },
+  {
+    "id": "4d3b17a749f4",
+    "title": "The Open ASR Leaderboard Adds Its First Global South Language",
+    "url": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-28T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "90ba20dc32b5",
+    "title": "Gemini Omni 1.1 Flash lets you build with more control",
+    "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-08-27T16:11:32.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "f0dc85dcc6d3",
+    "title": "Piloting the world's first double-blind AI evaluations",
+    "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-08-27T12:59:16.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind"
+    ],
+    "coverImageUrl": "https://lh3.googleusercontent.com/fHN8sOK3p7BTKR4s-3lpYYnq5IEadmVKnqssJO4OmfL6remdC7E8voV-IEue8NPviKWUR7WtCtNTfsKZpld6y2jjwVhNAiqYL9-9EQzj5OURGXCCuug=w528-h297-n-nu-rw-lo"
+  },
+  {
+    "id": "5c8d75ef9c12",
+    "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+    "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-27T09:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment."
+  },
+  {
+    "id": "f84615aa36ca",
+    "title": "Vue v3.5.42",
+    "url": "https://github.com/vuejs/core/releases/tag/v3.5.42",
+    "sourceId": "vue-releases",
+    "publishedAt": "2026-08-27T05:47:42.000Z",
+    "category": "frontend",
+    "tags": [
+      "vue",
+      "release"
+    ],
+    "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
+    "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
+  },
+  {
+    "id": "fe23f369e01d",
+    "title": "Expanding OpenAI’s presence in Brazil",
+    "url": "https://openai.com/index/expanding-our-presence-in-brazil",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-27T03:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country."
+  },
+  {
+    "id": "179d0e954e35",
+    "title": "Expanding our support for scientists",
+    "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-08-27T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ]
+  },
+  {
+    "id": "4fc8c1a37b88",
+    "title": "Previewing the Model Hardware Standard",
+    "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-08-27T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ]
+  },
+  {
+    "id": "737331cbffc8",
+    "title": "Intelligent transcription with Gemini 3.5 Transcribe",
+    "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-08-26T17:01:00.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ],
+    "excerpt": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe."
+  },
+  {
+    "id": "832a12c8f33a",
+    "title": "Learning never stops: How AI makes learning continuous",
+    "url": "https://openai.com/index/learning-never-stops",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-26T10:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom."
+  },
+  {
+    "id": "fa2791fbc9af",
+    "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+    "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-26T10:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff."
+  },
+  {
+    "id": "17177c100c91",
+    "title": "Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers",
+    "url": "https://huggingface.co/blog/train-multi-vector-encoder",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-26T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "34e62ff4c7cf",
+    "title": "The Hugging Face incident and the road ahead",
+    "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-26T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai",
+      "huggingface"
+    ],
+    "excerpt": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment."
+  },
+  {
+    "id": "76c95cd85298",
+    "title": "How loveholidays is making everyone a builder with Codex",
+    "url": "https://openai.com/index/loveholidays",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-26T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster."
+  },
+  {
+    "id": "55b063bea3c1",
+    "title": "August 2026 Security Release",
+    "url": "https://nextjs.org/blog/august-2026-security-release",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-08-25T18:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "The August 2026 security release for Next.js is now available"
+  },
+  {
+    "id": "d21068479952",
+    "title": "Granite 4.2 LLMs: How They're Built",
+    "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-25T15:14:14.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "c8e4a8147d50",
+    "title": "Update: August Next.js Security Release",
+    "url": "https://nextjs.org/blog/nextjs-security-release-august-2026-update",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-08-25T15:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Next.js is moving the August security release forward to August 25, 2026."
+  },
+  {
+    "id": "f1c76f23a788",
+    "title": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original",
+    "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-25T11:39:24.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "51cfe3db04ed",
+    "title": "The full stack behind abundant intelligence",
+    "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-25T07:05:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost."
+  },
+  {
+    "id": "b9406ae170bd",
+    "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+    "url": "https://openai.com/index/jalapeno-first-results",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-25T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models."
+  },
+  {
+    "id": "33eae878317d",
+    "title": "Introducing the Admin plugin for ChatGPT Work and Codex",
+    "url": "https://openai.com/index/introducing-admin-plugin",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-25T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests."
+  },
+  {
+    "id": "62003111f3b5",
+    "title": "Disrupting a new covert influence campaign from Russia",
+    "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-25T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West."
+  },
+  {
+    "id": "9b54a38fa1b1",
+    "title": "Wire It, Run It, Deploy It: AI Workflows in Gradio",
+    "url": "https://huggingface.co/blog/gradio-workflow-guide",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-25T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "d3faffdf2e16",
+    "title": "Funding better evaluations of AI’s impact on wellbeing",
+    "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-08-25T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ]
+  },
+  {
+    "id": "abd52c9f1dde",
+    "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+    "url": "https://openai.com/index/gpt-5-6-in-kiro",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-24T12:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance."
+  },
+  {
+    "id": "76900827bd8b",
+    "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+    "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-08-21T11:59:48.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind"
+    ],
+    "excerpt": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+    "coverImageUrl": "https://lh3.googleusercontent.com/ymmK0Dgovn-_MGlnQJffYxKdTe5LAnkAZr-GNnIjiFzsGOAAmOmUDuVACbNgIy-tqrJhGBdaQ_PaElc8EKRKRWtYg4eWx8HVcaVzdYy7hg7Q_8k=w528-h297-n-nu-rw-lo"
+  },
+  {
+    "id": "966123ef613d",
+    "title": "How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code",
+    "url": "https://huggingface.co/blog/pwc-search",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-21T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "e3ddd7a65cd3",
+    "title": "Measuring benchmark optimization in speech recognition",
+    "url": "https://huggingface.co/blog/asr-benchmark-optimization",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-21T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "4145f88bfc5e",
+    "title": "TypeScript v7.0.2",
+    "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.0.2",
+    "sourceId": "typescript-releases",
+    "publishedAt": "2026-08-20T18:09:49.000Z",
+    "category": "frontend",
+    "tags": [
+      "typescript",
+      "release"
+    ],
+    "excerpt": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/ This tag was originally released at: https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2",
+    "contentHtml": "<p><a href=\"https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/\">https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/</a></p>\n<p>This tag was originally released at: <a href=\"https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2\">https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2</a></p>"
+  },
+  {
+    "id": "e05e0244ddaf",
+    "title": "Upcoming Next.js August Security Release",
+    "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-august-2026",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-08-20T18:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Next.js is preparing a scheduled August security release for August 26, 2026."
+  },
+  {
+    "id": "eab5285cfdeb",
+    "title": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+    "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-20T16:52:57.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "68bd2e32c095",
+    "title": "Introducing Intelligence Age",
+    "url": "https://openai.com/index/introducing-intelligence-age",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-20T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
+  },
+  {
+    "id": "b2265837e4df",
+    "title": "Vite v8.2.2",
+    "url": "https://github.com/vitejs/vite/releases/tag/v8.2.2",
+    "sourceId": "vite-releases",
+    "publishedAt": "2026-08-20T04:08:13.000Z",
+    "category": "frontend",
+    "tags": [
+      "vite",
+      "release"
+    ],
+    "excerpt": "Please refer to CHANGELOG.md for details.",
+    "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v8.2.2/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
+  },
+  {
+    "id": "ad89fb510e3c",
+    "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+    "url": "https://openai.com/index/stampli",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-20T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days."
+  },
+  {
+    "id": "df8f12302a5b",
+    "title": "Offering Zero Data Retention for frontier models",
+    "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-19T19:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy."
+  },
+  {
+    "id": "2f00013902a2",
+    "title": "Replit expands access to software creation with GPT-5.6 Luna",
+    "url": "https://openai.com/index/replit",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-19T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs."
+  },
+  {
+    "id": "8393c843a171",
+    "title": "ChatGPT Ads expands across Europe",
+    "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T22:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions."
+  },
+  {
+    "id": "f0aa91974e0a",
+    "title": "Strengthening democratic oversight in national security",
+    "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T19:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI launches an initiative to strengthen democratic oversight of AI in national security, supporting government institutions with tools, training, and expertise."
+  },
+  {
+    "id": "5ba78b757300",
+    "title": "How Much Memory Does Your Agent Actually Need?",
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-18T18:09:38.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "18482354e589",
+    "title": "Building App-like Experiences with Next.js 16.3",
+    "url": "https://nextjs.org/blog/building-app-like-experiences-with-nextjs-16-3",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-08-18T16:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Build app-like experiences with Instant Navigations, server-rendered data, optimistic updates, and live client state in Next.js 16.3."
+  },
+  {
+    "id": "6d4ec902c728",
+    "title": "Partnering with CodeAI to prepare the first AI generation",
+    "url": "https://openai.com/index/partnering-with-codeai",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T11:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI and CodeAI are partnering to help students build AI literacy, think critically about AI, and develop the skills to use and shape it responsibly."
+  },
+  {
+    "id": "9c25f4ae7a18",
+    "title": "Pacing model development in an era of cyber-critical capabilities",
+    "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T11:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI is strengthening monitoring, alignment, and security for frontier AI models. See how new safeguards are guiding the pace of model development."
+  },
+  {
+    "id": "c3b0ed374d41",
+    "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+    "url": "https://openai.com/index/chatgpt-for-teens",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T11:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents."
+  },
+  {
+    "id": "6023038a8912",
+    "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+    "url": "https://openai.com/index/asana",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T07:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Asana used OpenAI Codex to replace an outdated testing system in two weeks, completing work expected to take five years for about $12K."
+  },
+  {
+    "id": "baf07daff59f",
+    "title": "How NVIDIA scales expertise with ChatGPT Work",
+    "url": "https://openai.com/index/nvidia/chatgpt-work",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "NVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally."
+  },
+  {
+    "id": "d9524ab76177",
+    "title": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+    "url": "https://huggingface.co/blog/multi-vector-encoder",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "bf50ec5ce617",
+    "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
+    "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-08-17T19:46:21.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "1380f7766171",
+    "title": "The Defender’s Window",
+    "url": "https://openai.com/index/the-defenders-window",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-17T05:30:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now."
+  },
+  {
+    "id": "22405ea1e27b",
+    "title": "OpenAI joins PORTS-Pike project",
+    "url": "https://openai.com/index/openai-joins-ports-pike-project",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-17T05:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs"
+  },
+  {
+    "id": "3ff02964da6b",
+    "title": "New policy ideas for the Intelligence Age",
+    "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-08-17T03:15:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age."
   }
 ]
