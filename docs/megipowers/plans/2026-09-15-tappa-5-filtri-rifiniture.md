@@ -16,6 +16,7 @@
 
 - Branch `feat/filters-and-polish` da `staging` (allineato con `main` a `408f1b9`), un commit per task.
 - Test prima del codice per la logica pura; markup e CSS verificati con screenshot a 390px e 1280px (Chrome headless dentro un iframe della larghezza giusta: la finestra headless ha una larghezza minima di circa 500px).
+- I task 3 e 4 finiscono in un solo commit: la card emette il clic sul tag e serve il composable della barra per gestirlo.
 - Verifica a ogni task: `npx vitest run`, `npm run typecheck`, `npm run lint`, `npm run format:check`.
 
 ---
