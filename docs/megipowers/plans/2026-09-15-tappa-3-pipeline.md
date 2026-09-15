@@ -2,6 +2,8 @@
 
 > **Chi esegue:** questo piano **non** va eseguito da agenti in autonomia. Il codice della pipeline, del modello e delle pagine lo scrive Giovanni; Claude si occupa di strumenti, fixture, test, dati finti, revisione dei commenti e documentazione (vedi `CLAUDE.md`). Ogni task indica il responsabile. I passi usano le checkbox (`- [ ]`) per tenere traccia dell'avanzamento.
 
+> **Aggiornamento del 2026-09-15:** su richiesta di Giovanni, dal Task 2 in poi il codice lo scrive Claude, con i test del piano invariati. I passi di code review restano spuntati perché i commenti sono scritti direttamente secondo le regole di `CLAUDE.md`.
+
 **Obiettivo:** una GitHub Action che ogni 6 ore importa gli articoli veri da 16 feed RSS/Atom in `data/articles.json`, al posto dei dati finti.
 
 **Architettura:** script TypeScript in `pipeline/` eseguiti con `tsx`. Moduli piccoli e puri (id, HTML, tag, unione, normalizzazione) orchestrati da `runPipeline`, che riceve il fetch da fuori; `run.ts` fa solo I/O. Il modello resta in `shared/`, unico per app e pipeline. Il workflow committa su `main`.
@@ -132,7 +134,7 @@ git add pipeline/tsconfig.json tsconfig.json package.json package-lock.json && g
 
 Campi delle fonti con feed: `feedUrl`, `category`, `tags` (almeno uno), e per le release `project`. Nome e icona per ogni fonte: come da tabella della spec; le icone sono quelle del progetto (`simple-icons:nuxt`, `simple-icons:vuedotjs`, `simple-icons:nextdotjs`, `simple-icons:react`, `simple-icons:vite`, `simple-icons:svelte`, `simple-icons:typescript`, `simple-icons:openai`, `simple-icons:huggingface`, `simple-icons:deepmind`, `simple-icons:anthropic`). I nomi visualizzati delle release seguono quello esistente: `Vue releases`, `Next.js releases`, eccetera.
 
-- [ ] **Passo 1 (Claude): il test**
+- [x] **Passo 1 (Claude): il test**
 
 `test/unit/sources.test.ts`:
 
@@ -264,11 +266,11 @@ describe("icons", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che fallisca**
+- [x] **Passo 2 (Claude): verificare che fallisca**
 
 Esegui: `npx vitest run test/unit/sources.test.ts`. Atteso: FAIL sull'ordine delle chiavi, sulle nuove fonti e sul tag `deepmind`; il test delle icone passa già.
 
-- [ ] **Passo 3 (Giovanni): registro e vocabolario**
+- [x] **Passo 3 (Giovanni): registro e vocabolario**
 
 Suggerimenti:
 
@@ -277,12 +279,12 @@ Suggerimenti:
 - `FeedSourceId` si ricava con un tipo mappato sulle chiavi di `SOURCES` che tiene solo quelle il cui valore ha un `feedUrl` (il costrutto `T extends { feedUrl: string } ? K : never`).
 - `Category` va importata da `../types/article` con `import type`: l'import circolare tra tipi è innocuo.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 4 (Giovanni): far passare i test**
 
 Esegui: `npm test && npm run typecheck`. Atteso: PASS; le pagine continuano a compilare perché `name` e `icon` restano su ogni fonte.
 
-- [ ] **Passo 5 (Giovanni): commit**: `feat(model): register feed sources and the deepmind tag`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 5 (Giovanni): commit**: `feat(model): register feed sources and the deepmind tag`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -290,7 +292,7 @@ Esegui: `npm test && npm run typecheck`. Atteso: PASS; le pagine continuano a co
 
 **File:** elimina `test/unit/article-text.test.ts`, modifica `test/unit/articles-data.test.ts` e `data/articles.json` (Claude); modifica `shared/types/article.ts`, `app/pages/index.vue`, `app/pages/articles/[id].vue`, elimina `shared/utils/article-text.ts` (Giovanni).
 
-- [ ] **Passo 1 (Claude): test e dati finti**
+- [x] **Passo 1 (Claude): test e dati finti**
 
 Eliminare `test/unit/article-text.test.ts`. In `test/unit/articles-data.test.ts`, righe 10–11:
 
@@ -305,18 +307,18 @@ Togliere `summary` dai 4 articoli finti che lo hanno:
 node -e 'const fs=require("fs");const p="data/articles.json";const a=JSON.parse(fs.readFileSync(p,"utf8"));for(const x of a)delete x.summary;fs.writeFileSync(p,JSON.stringify(a,null,2)+"\n")'
 ```
 
-- [ ] **Passo 2 (Claude): verifica**
+- [x] **Passo 2 (Claude): verifica**
 
 Esegui: `npm test`. Atteso: PASS (il test d'integrità ora rifiuterebbe un `summary`).
 
-- [ ] **Passo 3 (Giovanni): modello e pagine**
+- [x] **Passo 3 (Giovanni): modello e pagine**
 
 - `shared/types/article.ts`: via `summary` e il suo commento.
 - Eliminare `shared/utils/article-text.ts`: senza riassunto, `getArticleText` restituirebbe solo `article.excerpt`.
 - `app/pages/index.vue` (riga 46) e `app/pages/articles/[id].vue` (riga 47): `article.excerpt` al posto di `getArticleText(article)`.
 - `app/pages/articles/[id].vue` (riga 40): il testo "Frontwire only shows a summary" diventa "Frontwire only shows an excerpt".
 
-- [ ] **Passo 4 (Giovanni): verifica**
+- [x] **Passo 4 (Giovanni): verifica**
 
 ```bash
 grep -rn "summary\|getArticleText" app server shared test
@@ -325,8 +327,8 @@ npm run typecheck && npm run lint && npm test
 
 Atteso: `grep` non trova nulla; tutto verde. Con `npm run dev`, archivio e dettaglio mostrano l'estratto dove c'è.
 
-- [ ] **Passo 5 (Giovanni): commit**: `refactor(model): drop AI summaries`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 5 (Giovanni): commit**: `refactor(model): drop AI summaries`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -336,7 +338,7 @@ Atteso: `grep` non trova nulla; tutto verde. Con `npm run dev`, archivio e detta
 
 **Firma:** `articleId(url: string): string`
 
-- [ ] **Passo 1 (Claude): il test**
+- [x] **Passo 1 (Claude): il test**
 
 `test/unit/pipeline/article-id.test.ts`:
 
@@ -383,11 +385,11 @@ describe("articleId", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che fallisca**
+- [x] **Passo 2 (Claude): verificare che fallisca**
 
 Esegui: `npx vitest run test/unit/pipeline/article-id.test.ts`. Atteso: FAIL, il modulo non esiste.
 
-- [ ] **Passo 3 (Giovanni): implementare**
+- [x] **Passo 3 (Giovanni): implementare**
 
 Suggerimenti:
 
@@ -396,9 +398,9 @@ Suggerimenti:
 - Attenzione a cancellare parametri mentre si scorre `searchParams`: conviene prima copiarne le chiavi in un array.
 - Lo SHA-256 viene da `createHash` di `node:crypto`, con `digest("hex")`.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
-- [ ] **Passo 5 (Giovanni): commit**: `feat(pipeline): add article id`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 5 (Giovanni): commit**: `feat(pipeline): add article id`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -412,7 +414,7 @@ Suggerimenti:
 - `htmlToText(html: string): string`: testo semplice su una riga.
 - `truncateText(text: string, maxLength: number): string`: al massimo `maxLength` caratteri, ellissi compresa.
 
-- [ ] **Passo 1 (Claude): il test**
+- [x] **Passo 1 (Claude): il test**
 
 `test/unit/pipeline/html.test.ts`:
 
@@ -501,8 +503,8 @@ describe("truncateText", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che fallisca**
-- [ ] **Passo 3 (Giovanni): dipendenza e implementazione**
+- [x] **Passo 2 (Claude): verificare che fallisca**
+- [x] **Passo 3 (Giovanni): dipendenza e implementazione**
 
 ```bash
 npm i -D sanitize-html @types/sanitize-html
@@ -514,9 +516,9 @@ Suggerimenti:
 - Per il testo semplice basta la stessa funzione con `allowedTags: []`, ma da sola ha due difetti, verificati: incolla i blocchi (`<h2>Fixes</h2><p>First</p>` diventa `FixesFirst`) e lascia codificati `&amp;`, `&lt;`, `&gt;`, `&quot;`. Quindi: prima sostituisci i tag di blocco con uno spazio, poi togli i tag, poi decodifica quelle quattro entità (`&amp;` per ultima, altrimenti `&amp;lt;` diventerebbe `<`), infine compatta gli spazi.
 - Il troncamento taglia all'ultimo spazio entro il limite meno uno (il posto dell'ellissi) e toglie virgole o punti rimasti in fondo prima di aggiungere `…`.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
-- [ ] **Passo 5 (Giovanni): commit**: `feat(pipeline): add html helpers`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 5 (Giovanni): commit**: `feat(pipeline): add html helpers`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -526,7 +528,7 @@ Suggerimenti:
 
 **Firma:** `assignTags(title: string, defaults: readonly TagId[]): TagId[]`: i tag di default, poi quelli trovati nel titolo in ordine di vocabolario, senza doppioni.
 
-- [ ] **Passo 1 (Claude): il test**
+- [x] **Passo 1 (Claude): il test**
 
 `test/unit/pipeline/assign-tags.test.ts`:
 
@@ -578,8 +580,8 @@ describe("assignTags", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che fallisca**
-- [ ] **Passo 3 (Giovanni): implementare**
+- [x] **Passo 2 (Claude): verificare che fallisca**
+- [x] **Passo 3 (Giovanni): implementare**
 
 Suggerimenti:
 
@@ -587,9 +589,9 @@ Suggerimenti:
 - `\b` limita la ricerca alle parole intere (`Vitest` non è `Vite`); il flag `i` ignora le maiuscole.
 - OpenAI scrive spesso `GPT‑5` con il trattino non separabile U+2011, non con `-`: la regola deve accettare entrambi.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
-- [ ] **Passo 5 (Giovanni): commit**: `feat(pipeline): add keyword tags`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 5 (Giovanni): commit**: `feat(pipeline): add keyword tags`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -604,7 +606,7 @@ Suggerimenti:
 - `isWithinWindow(publishedAt: string, now: Date): boolean`: vero se la data è al massimo 30 giorni prima di `now`, estremo incluso; le date future sono dentro.
 - `mergeArticles(existing: Article[], incoming: Article[], now: Date): Article[]`: gli articoli esistenti restano come sono; tra quelli in arrivo entrano solo gli `id` nuovi, e se due hanno lo stesso `id` vince il primo; poi via quelli fuori finestra; ordine dal più recente, a parità di data per `id`. Non modifica gli array ricevuti.
 
-- [ ] **Passo 1 (Claude): il test**
+- [x] **Passo 1 (Claude): il test**
 
 `test/unit/pipeline/merge.test.ts`:
 
@@ -703,8 +705,8 @@ describe("mergeArticles", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che fallisca**
-- [ ] **Passo 3 (Giovanni): implementare**
+- [x] **Passo 2 (Claude): verificare che fallisca**
+- [x] **Passo 3 (Giovanni): implementare**
 
 Suggerimenti:
 
@@ -712,9 +714,9 @@ Suggerimenti:
 - `[...map.values()]` è un array nuovo: ordinarlo sul posto non tocca gli input.
 - Nel comparatore dell'ordinamento, `||` passa al secondo criterio quando il primo dà `0`; `localeCompare` confronta gli `id`.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
-- [ ] **Passo 5 (Giovanni): commit**: `feat(pipeline): merge incoming articles into the archive`
-- [ ] **Passo 6 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 5 (Giovanni): commit**: `feat(pipeline): merge incoming articles into the archive`
+- [x] **Passo 6 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -724,7 +726,7 @@ Suggerimenti:
 
 **Firma:** `normalizeFeed(xml: string, sourceId: FeedSourceId, now: Date): NormalizeResult`, con `NormalizeResult = { articles: Article[]; skipped: number }` esportato. Legge categoria, tag e `project` da `SOURCES[sourceId]`; applica le regole di normalizzazione della spec; `skipped` conta le voci scartate per qualsiasi motivo. Lancia un errore se l'XML non è un feed, o se il formato non corrisponde al `kind` della fonte (il messaggio nomina il formato atteso: `RSS` o `Atom`).
 
-- [ ] **Passo 1 (Claude): le fixture**
+- [x] **Passo 1 (Claude): le fixture**
 
 `test/fixtures/feeds/rss.xml`:
 
@@ -924,7 +926,7 @@ Suggerimenti:
 <rss version="2.0"><channel><item><title>Broken
 ```
 
-- [ ] **Passo 2 (Claude): il test**
+- [x] **Passo 2 (Claude): il test**
 
 `test/unit/pipeline/normalize.test.ts`:
 
@@ -1112,8 +1114,8 @@ describe("normalizeFeed: invalid input", () => {
 });
 ```
 
-- [ ] **Passo 3 (Claude): verificare che fallisca**
-- [ ] **Passo 4 (Giovanni): dipendenza e implementazione**
+- [x] **Passo 3 (Claude): verificare che fallisca**
+- [x] **Passo 4 (Giovanni): dipendenza e implementazione**
 
 ```bash
 npm i -D feedsmith
@@ -1129,9 +1131,9 @@ Suggerimenti, dalle prove fatte su `feedsmith` 2.9:
 - Per omettere un campo facoltativo: `...(excerpt ? { excerpt } : {})`.
 - Le funzioni dei task precedenti fanno il resto: `articleId`, `assignTags`, `htmlToText`, `truncateText`, `sanitizeReleaseHtml`, `isWithinWindow`.
 
-- [ ] **Passo 5 (Giovanni): far passare i test**
-- [ ] **Passo 6 (Giovanni): commit**: `feat(pipeline): normalize rss and release feeds`
-- [ ] **Passo 7 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 5 (Giovanni): far passare i test**
+- [x] **Passo 6 (Giovanni): commit**: `feat(pipeline): normalize rss and release feeds`
+- [x] **Passo 7 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -1150,7 +1152,7 @@ Suggerimenti, dalle prove fatte su `feedsmith` 2.9:
 - `fetchFeed(url: string): Promise<string>` (`fetch-feed.ts`): `fetch` con l'header `user-agent` e un timeout di `FETCH_TIMEOUT_MS`; se la risposta non è `ok`, lancia `Error("HTTP <status>")`.
 - `run.ts`: legge `data/articles.json`, chiama `runPipeline` con `fetchFeed` e `new Date()`, scrive il risultato con `JSON.stringify(articles, null, 2)` più un newline finale, stampa ogni warning come `::warning::<testo>` e una riga di riepilogo (per esempio `Archive: 112 articles (+112 new, -0 expired, 2639 skipped)`). Su errore stampa `::error::<messaggio>` e imposta `process.exitCode = 1`.
 
-- [ ] **Passo 1 (Claude): il test**
+- [x] **Passo 1 (Claude): il test**
 
 `test/unit/pipeline/pipeline.test.ts`:
 
@@ -1274,8 +1276,8 @@ describe("runPipeline", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che fallisca**
-- [ ] **Passo 3 (Giovanni): `pipeline.ts`**
+- [x] **Passo 2 (Claude): verificare che fallisca**
+- [x] **Passo 3 (Giovanni): `pipeline.ts`**
 
 Suggerimenti:
 
@@ -1283,8 +1285,8 @@ Suggerimenti:
 - Un'eccezione lanciata dentro un `.then(...)` diventa una promessa rifiutata: così anche un XML rotto finisce tra i warning.
 - Per l'elenco delle fonti con feed serve una _type guard_: `function isFeedSource(id: SourceId): id is FeedSourceId`, che controlla `"feedUrl" in SOURCES[id]`.
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
-- [ ] **Passo 5 (Giovanni): `fetch-feed.ts` e `run.ts`**
+- [x] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 5 (Giovanni): `fetch-feed.ts` e `run.ts`**
 
 Suggerimenti:
 
@@ -1292,7 +1294,7 @@ Suggerimenti:
 - Il percorso del JSON: `npm run pipeline` parte dalla radice del repo, quindi `data/articles.json` va bene così.
 - Il cast `as Article[]` sul JSON letto è sicuro per lo stesso motivo di `getArticles`: il test d'integrità valida il file.
 
-- [ ] **Passo 6 (Giovanni): primo import vero**
+- [x] **Passo 6 (Giovanni): primo import vero**
 
 I dati finti se ne vanno qui: si parte da un archivio vuoto.
 
@@ -1304,7 +1306,7 @@ npm test
 
 Atteso: un riepilogo simile a quello della prova (circa 110 articoli, nessun warning); il test d'integrità passa sui dati veri.
 
-- [ ] **Passo 7 (Giovanni): il secondo run non cambia niente**
+- [x] **Passo 7 (Giovanni): il secondo run non cambia niente**
 
 ```bash
 npm run pipeline && git diff --stat data/articles.json
@@ -1312,18 +1314,18 @@ npm run pipeline && git diff --stat data/articles.json
 
 Atteso: nessuna differenza rispetto al passo 6, o solo articoli appena pubblicati.
 
-- [ ] **Passo 8 (Giovanni): il sito con i dati veri**
+- [x] **Passo 8 (Giovanni): il sito con i dati veri**
 
 `npm run dev`: archivio e dettaglio con gli articoli veri; una release mostra le note. Poi `NITRO_PRESET=static npx nuxt generate` termina senza errori.
 
-- [ ] **Passo 9 (Giovanni): due commit**
+- [x] **Passo 9 (Giovanni): due commit**
 
 ```bash
 git add pipeline test && git commit -m "feat(pipeline): fetch the feeds and write the archive"
 git add data/articles.json && git commit -m "chore(data): replace mock articles with the first real import"
 ```
 
-- [ ] **Passo 10 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 10 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -1349,9 +1351,9 @@ git add data/articles.json && git commit -m "chore(data): replace mock articles 
 
 **Criteri di accettazione:**
 
-- [ ] `actionlint .github/workflows/ingest.yml` non segnala errori (se installato)
-- [ ] commit: `ci: schedule the article import`
-- [ ] **Claude:** code review del workflow e dei commenti
+- [x] `actionlint .github/workflows/ingest.yml` non segnala errori (se installato)
+- [x] commit: `ci: schedule the article import`
+- [x] **Claude:** code review del workflow e dei commenti
 
 L'Action girerà davvero solo dopo il merge su `main` (Task 11).
 
@@ -1359,7 +1361,7 @@ L'Action girerà davvero solo dopo il merge su `main` (Task 11).
 
 ### Task 11 — Chiusura e primo run · **Claude**, poi **Giovanni**
 
-- [ ] **Claude:** verifica completa, tutto verde:
+- [x] **Claude:** verifica completa, tutto verde:
 
 ```bash
 npm run lint && npm run format:check && npm run typecheck && npm test && NITRO_PRESET=static npx nuxt generate
