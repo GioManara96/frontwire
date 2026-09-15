@@ -59,14 +59,14 @@
 
 ### Task 6 — Verifica visiva e build
 
-- [ ] `npm run generate`; screenshot a 390px e 1280px: home, home filtrata, dettaglio di una release, dettaglio con estratto.
-- [ ] Controllo da tastiera della barra (focus visibile, ordine).
-- [ ] Correzioni emerse, commit `style: …` se servono.
+- [x] `npm run generate`; screenshot a 390px e 1280px: home, home filtrata, dettaglio di una release, dettaglio con estratto.
+- [x] Controllo da tastiera della barra (focus visibile, ordine).
+- [x] Correzioni emerse, commit `style: …` se servono. Emersa una: con Tab, un tag mezzo tagliato al bordo della riga che scorre prendeva il focus senza entrare in vista; ora la barra lo porta in vista per intero (`fix(archive): …`).
 
 ### Task 7 — Documentazione
 
-- [ ] `CLAUDE.md`: prodotto (barra dei filtri, card senza testo), sezione della tappa 5 con i file.
-- [ ] Commit: `docs: update CLAUDE.md after stage 5`
+- [x] `CLAUDE.md`: prodotto (barra dei filtri, card senza testo), sezione della tappa 5 con i file.
+- [x] Commit: `docs: update CLAUDE.md after stage 5`
 
 ### Task 8 — Rilascio · con il via di Giovanni
 
