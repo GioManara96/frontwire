@@ -584,11 +584,11 @@ git add vercel.json && git commit -m "chore: add vercel static build config"
 
 ### Task 8 — Chiusura · **Claude**, poi **Giovanni**
 
-- [ ] **Claude:** verifica completa, tutto verde:
+- [x] **Claude:** verifica completa, tutto verde:
 
 ```bash
 npm run lint && npm run format:check && npm run typecheck && npm test && NITRO_PRESET=static npx nuxt generate
 ```
 
-- [ ] **Claude:** aggiornare `CLAUDE.md` con quanto esiste ora davvero (file principali del flusso dei dati, comandi) e committare: `docs: update CLAUDE.md after stage 1`
+- [x] **Claude:** aggiornare `CLAUDE.md` con quanto esiste ora davvero (file principali del flusso dei dati, comandi) e committare: `docs: update CLAUDE.md after stage 1`
 - [ ] **Giovanni:** merge di `feat/archive-and-detail` in `staging`
