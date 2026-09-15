@@ -6,14 +6,14 @@ Data: 2026-09-15
 
 Sostituire i dati finti con articoli veri. Una GitHub Action pianificata legge i feed, normalizza le voci, elimina i duplicati, assegna i tag, scrive `data/articles.json` e fa commit su `main`. L'app legge lo stesso file con le stesse funzioni di `server/utils/articles.ts`.
 
-**Dentro:** registro delle fonti esteso, adapter RSS/Atom (che copre anche le GitHub Releases), normalizzazione e `id`, deduplica, tag, finestra di 30 giorni, rimozione del campo `summary`, workflow dell'Action, fixture e test, primo merge `staging` → `main` che attiva l'Action.
+**Dentro:** registro delle fonti esteso, adapter RSS/Atom (che copre anche le GitHub Releases), normalizzazione e `id`, deduplica, tag, finestra di 30 giorni e tetto di 3 articoli per fonte, rimozione del campo `summary`, workflow dell'Action, fixture e test, primo merge `staging` → `main` che attiva l'Action.
 
 **Fuori (tappe successive):** Hacker News e dev.to (tappa breve subito dopo, a pipeline già in funzione), rifiniture grafiche (tappa a sé, sui dati veri), barra dei filtri, preferiti, progetto Vercel e sottodominio.
 
 ## Decisioni che cambiano `CLAUDE.md`
 
 - **Niente riassunti AI.** GitHub Models, il provider previsto, non esiste più: la documentazione GitHub dice che dal 30 luglio 2026 "the playground, model catalog, inference API, and bring your own key (BYOK) are no longer available to any customer" (l'endpoint `models.github.ai` risponde `410`). L'unica alternativa gratuita valutata (il free tier di Vercel AI Gateway) avrebbe riassunto pochissimo: i feed dei blog portano una descrizione di una riga e la pipeline non legge le pagine (niente scraping), quindi resterebbero le sole release con note lunghe, circa 3–5 al mese nella prova sui feed reali, che nel dettaglio mostrano già le note complete. Il progetto non spende soldi, quindi la funzione esce dal prodotto: il campo `summary` lascia `Article` e le card mostrano l'estratto della fonte.
-- **Finestra di 30 giorni.** L'archivio tiene solo gli articoli pubblicati negli ultimi 30 giorni; la stessa regola limita il primo import (OpenAI ha 1.193 voci nel feed). I preferiti sopravvivono perché salvano titolo e URL.
+- **Un archivio da leggere per intero: al massimo 3 articoli per fonte, entro 30 giorni.** La finestra di 30 giorni limita il primo import (OpenAI ha 1.193 voci nel feed); il tetto per fonte porta l'archivio a una ventina di articoli. Senza, il primo import vero ne ha portati 112, di cui 63 da OpenAI: troppi da leggere (decisione del 2026-09-15, dopo quel primo import). Da OpenAI entrano solo i post con categoria Product o Research, cioè le notizie: il resto del feed sono storie di clienti, policy e annunci aziendali. I preferiti sopravvivono perché salvano titolo e URL.
 - **I dati vivono su `main`.** I workflow pianificati girano sempre sul branch di default, quindi l'Action committa su `main`. `staging` si riallinea con un merge di `main` prima di aprire un nuovo branch; dopo questa tappa `data/` lo scrive solo il bot, quindi i conflitti sono improbabili.
 
 ## Chi fa cosa
@@ -65,6 +65,7 @@ Le fonti con un feed (`rss` e `github-release`) aggiungono ai campi attuali:
 - `category`: la categoria di tutti i loro articoli.
 - `tags`: i tag di default, almeno uno (il test d'integrità richiede almeno un tag per articolo).
 - `project`: solo per `github-release`, il prefisso del titolo.
+- `feedCategories`: facoltativo, solo per `rss`. Se c'è, entrano solo le voci con almeno una di queste categorie del feed; quelle senza categoria no. Oggi lo usa solo `openai-news` (`Product`, `Research`).
 
 L'ordine delle chiavi è quello delle tabelle, con `devto` e `hackernews` in fondo: conta, perché quando due fonti portano lo stesso URL vince la prima. `devto` e `hackernews` restano come sono, senza feed: la pipeline li salta fino alla tappa successiva, che deciderà anche categoria e tag dei loro articoli. Come esprimere nei tipi TypeScript che questi campi esistono solo per certi `kind` (unione discriminata o altro) lo decide Giovanni.
 
@@ -80,13 +81,13 @@ Script TypeScript in `pipeline/`, eseguiti con `tsx` (`npm run pipeline` = `tsx 
 | ---------------- | ----------------------------------------------------------------------------------------------- |
 | `run.ts`         | Punto d'ingresso: legge e scrive il JSON, stampa riepilogo e annotazioni dell'Action, exit code |
 | `pipeline.ts`    | Orchestra un run: scarica le fonti, normalizza, unisce; riceve la funzione di fetch da fuori    |
-| `config.ts`      | Costanti: finestra, lunghezza dell'estratto, timeout, user-agent                                |
+| `config.ts`      | Costanti: finestra, tetto per fonte, lunghezza dell'estratto, timeout, user-agent               |
 | `fetch-feed.ts`  | Scarica un feed con timeout e user-agent; restituisce il testo o un errore                      |
 | `normalize.ts`   | Feed di una fonte → `Article` candidati, più il numero di voci scartate                         |
 | `article-id.ts`  | Algoritmo dell'`id` fissato in tappa 1                                                          |
 | `html.ts`        | Sanitize di `contentHtml`, HTML → testo semplice, troncamento dell'estratto                     |
 | `assign-tags.ts` | Tag di default della fonte più quelli ricavati da parole chiave nel titolo                      |
-| `merge.ts`       | Unione con l'archivio, deduplica, finestra di 30 giorni, ordinamento                            |
+| `merge.ts`       | Unione con l'archivio, deduplica, finestra di 30 giorni, tetto per fonte, ordinamento           |
 | `tsconfig.json`  | `strict`, include `pipeline/**` e `shared/**`                                                   |
 
 Tutto tranne `run.ts` e `fetch-feed.ts` è testabile senza rete né file: le funzioni ricevono dati e restituiscono dati, `pipeline.ts` riceve il fetch come parametro e l'istante "adesso" è sempre un parametro, così finestra e date si testano senza orologio.
@@ -98,6 +99,7 @@ Nessun `tsconfig` generato da Nuxt include `pipeline/`: il `tsconfig.json` della
 | Costante           | Valore                                                  |
 | ------------------ | ------------------------------------------------------- |
 | `RETENTION_DAYS`   | `30`                                                    |
+| `MAX_PER_SOURCE`   | `3` articoli, i più recenti                             |
 | `EXCERPT_LENGTH`   | `300` caratteri, ellissi compresa                       |
 | `FETCH_TIMEOUT_MS` | `15000`                                                 |
 | `USER_AGENT`       | `frontwire (+https://github.com/GioManara96/frontwire)` |
@@ -115,11 +117,11 @@ In `devDependencies`, perché il sito non le usa:
 
 1. **Carica** `data/articles.json`.
 2. **Scarica** tutte le fonti con feed, in parallelo. Una fonte che fallisce (timeout, stato HTTP, XML non valido) diventa un `::warning::` nell'Action e viene saltata. Il run fallisce solo se falliscono **tutte**.
-3. **Normalizza** ogni voce in un `Article` candidato (regole sotto). Scarta le voci più vecchie della finestra, le release non stabili e quelle senza link, titolo o data validi.
+3. **Normalizza** ogni voce in un `Article` candidato (regole sotto). Scarta le voci più vecchie della finestra, le release non stabili, quelle senza link, titolo o data validi e, per le fonti con `feedCategories`, quelle senza una categoria ammessa.
 4. **Unisce** con l'archivio:
    - un `id` già presente non si tocca mai: il record è immutabile;
    - lo stesso URL da due fonti produce lo stesso `id`: vince la prima fonte nell'ordine del registro.
-5. **Pota** gli articoli più vecchi di 30 giorni.
+5. **Pota** gli articoli più vecchi di 30 giorni, poi tiene i 3 più recenti di ogni fonte. Il tetto vale anche per gli articoli già in archivio: quando ne arriva uno più nuovo, il più vecchio della stessa fonte esce.
 6. **Scrive** gli articoli dal più recente (a parità di data, per `id`), con formattazione stabile (2 spazi, newline finale). Se niente è cambiato il file è identico byte per byte e l'Action non committa.
 
 ### Regole di normalizzazione
@@ -181,24 +183,26 @@ Se il repo resta 60 giorni senza attività, GitHub sospende i workflow pianifica
 
 ## Errori e casi limite
 
-| Caso                                            | Comportamento                                                    |
-| ----------------------------------------------- | ---------------------------------------------------------------- |
-| Fonte che non risponde, timeout, XML non valido | Warning, fonte saltata; il run fallisce solo se falliscono tutte |
-| Mirror Anthropic sparito                        | Come sopra                                                       |
-| Feed di un formato diverso da quello atteso     | Come sopra (una fonte `rss` che risponde con Atom, o viceversa)  |
-| Voce senza link assoluto, titolo o data validi  | Scartata e contata nel riepilogo                                 |
-| Release non stabile o tag spurio                | Scartata                                                         |
-| Stesso URL da due fonti                         | Stesso `id`: vince la prima fonte nell'ordine del registro       |
-| Articolo già in archivio                        | Non modificato                                                   |
-| Descrizione vuota o uguale al titolo            | `excerpt` omesso: la card mostra solo il titolo                  |
-| Nessun articolo nuovo né scaduto                | File identico, nessun commit                                     |
-| JSON prodotto non valido                        | Il test d'integrità fallisce, niente commit, Action rossa        |
+| Caso                                                        | Comportamento                                                                                                                                                    |
+| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fonte che non risponde, timeout, XML non valido             | Warning, fonte saltata; il run fallisce solo se falliscono tutte                                                                                                 |
+| Mirror Anthropic sparito                                    | Come sopra                                                                                                                                                       |
+| Feed di un formato diverso da quello atteso                 | Come sopra (una fonte `rss` che risponde con Atom, o viceversa)                                                                                                  |
+| Voce senza link assoluto, titolo o data validi              | Scartata e contata nel riepilogo                                                                                                                                 |
+| Release non stabile o tag spurio                            | Scartata                                                                                                                                                         |
+| Stesso URL da due fonti                                     | Stesso `id`: vince la prima fonte nell'ordine del registro                                                                                                       |
+| Articolo già in archivio                                    | Non modificato                                                                                                                                                   |
+| Filtri di una fonte cambiati (per esempio `feedCategories`) | I record già importati restano, perché sono immutabili, finché escono per età o per il tetto; per applicare subito le nuove regole si rigenera da archivio vuoto |
+| Descrizione vuota o uguale al titolo                        | `excerpt` omesso: la card mostra solo il titolo                                                                                                                  |
+| Nessun articolo nuovo né scaduto                            | File identico, nessun commit                                                                                                                                     |
+| JSON prodotto non valido                                    | Il test d'integrità fallisce, niente commit, Action rossa                                                                                                        |
 
 ## Test (Claude, Vitest, ambiente `node`)
 
 Nessuna chiamata di rete. Le fixture stanno in `test/fixtures/feeds/` e riproducono le forme dei feed veri:
 
 - RSS con descrizioni brevi e lunghe, `content:encoded`, voci senza testo, con descrizione uguale al titolo, senza link, con link relativo, con data non valida o fuori finestra;
+- RSS con categorie del feed ammesse, non ammesse e assenti;
 - RSS con copertine `media:` ed `enclosure` in tutte le varianti;
 - Atom di release con versioni stabili, canary, beta, rc e tag spuri, un avatar e una release senza note;
 - un XML rotto.
@@ -209,8 +213,8 @@ Test unitari:
 - `article-id`: ogni passo della normalizzazione dell'URL e l'hash;
 - `html`: la sanitize toglie script, stili, attributi, link `javascript:` e immagini e tiene l'allowlist; testo semplice; troncamento;
 - `assign-tags`: tag di default, parole chiave, ordine, niente doppioni;
-- `merge`: immutabilità dei record esistenti, ordine di vittoria tra fonti, finestra, ordinamento, output identico a parità di dati;
-- `normalize`: voci RSS e release, titolo da tag, filtro delle stabili, regole di `excerpt` e copertina, scarti, formato sbagliato;
+- `merge`: immutabilità dei record esistenti, ordine di vittoria tra fonti, finestra, tetto per fonte, ordinamento, output identico a parità di dati;
+- `normalize`: voci RSS e release, titolo da tag, filtro delle stabili, filtro per categorie del feed, regole di `excerpt` e copertina, scarti, formato sbagliato;
 - `pipeline`: fetch finto; conteggi, immutabilità, deduplica tra fonti, una fonte che fallisce produce un warning, tutte che falliscono producono un errore.
 
 Il test d'integrità esistente perde `summary` e diventa il cancello dell'Action. Prima di finire nel piano, i test sono stati eseguiti su un'implementazione di riferimento (fuori dal repo) e passano; la stessa implementazione sui feed reali produce un JSON che supera il test d'integrità.

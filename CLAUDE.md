@@ -29,7 +29,7 @@ Web app che raccoglie le notizie più interessanti sul web development, con focu
 Niente database e niente server: il sito è statico e i dati vivono nel repo. Il progetto non usa servizi a pagamento.
 
 1. Una **GitHub Action pianificata** (`.github/workflows/ingest.yml`, ogni 6 ore) scarica le fonti, normalizza gli articoli, rimuove i duplicati e assegna le label.
-2. Gli articoli sono salvati come **JSON nel repo** (`data/articles.json`) e l'Action fa commit su `main`. L'archivio tiene solo gli articoli degli **ultimi 30 giorni**.
+2. Gli articoli sono salvati come **JSON nel repo** (`data/articles.json`) e l'Action fa commit su `main`. L'archivio è fatto per essere letto per intero: al massimo **3 articoli per fonte**, i più recenti, entro gli **ultimi 30 giorni** (una ventina in tutto); da OpenAI entrano solo i post con categoria Product o Research.
 3. Il push su `main` fa partire il deploy statico su **Vercel** (piano Hobby; progetto ancora da collegare).
 
 Niente riassunti AI: GitHub Models, il provider previsto, è stato ritirato il 2026-07-30, e con i feed reali quasi nessun articolo ha abbastanza testo da riassumere (i blog portano una descrizione di una riga e non si fa scraping). Il ragionamento completo è nella spec della tappa 3.
@@ -60,7 +60,8 @@ Script TypeScript in `pipeline/`, eseguiti con `tsx`; importano `shared/` con pe
 - `pipeline/run.ts` (`npm run pipeline`): punto d'ingresso; legge e riscrive `data/articles.json`, stampa warning ed errori come annotazioni dell'Action.
 - `pipeline/pipeline.ts`: `runPipeline`, un run completo con la funzione di fetch ricevuta da fuori, così si testa senza rete.
 - `pipeline/normalize.ts`: feed di una fonte → `Article`. Si appoggia a `article-id.ts` (id dall'URL normalizzato), `html.ts` (sanitize delle note di rilascio, testo semplice, troncamento), `assign-tags.ts` (tag da parole chiave nel titolo).
-- `pipeline/merge.ts`: unione con l'archivio (i record esistenti non cambiano mai), finestra di 30 giorni, ordinamento stabile.
+- `pipeline/merge.ts`: unione con l'archivio (i record esistenti non cambiano mai), finestra di 30 giorni, tetto di 3 articoli per fonte, ordinamento stabile.
+- Se cambiano i filtri di una fonte (per esempio `feedCategories`), gli articoli già importati restano finché escono per età o per il tetto. Per applicare subito le nuove regole, rigenerare da archivio vuoto: `echo '[]' > data/articles.json && npm run pipeline`.
 - `pipeline/config.ts`, `pipeline/fetch-feed.ts`: costanti e rete.
 - `pipeline/tsconfig.json`: referenziato dal `tsconfig.json` radice, così `npm run typecheck` controlla anche la pipeline.
 - Test in `test/unit/pipeline/` con fixture in `test/fixtures/feeds/`. Il test d'integrità `test/unit/articles-data.test.ts` fa anche da cancello nell'Action: se fallisce, niente commit.
@@ -69,7 +70,7 @@ Script TypeScript in `pipeline/`, eseguiti con `tsx`; importano `shared/` con pe
 
 Solo **RSS/Atom e API ufficiali, niente scraping.** Il registro è `SOURCES` in `shared/utils/sources.ts`: l'ordine delle chiavi decide quale fonte tiene un articolo che arriva da due fonti.
 
-- Blog: Nuxt, Next.js, React, Vite, Svelte, TypeScript, OpenAI, Hugging Face, Google DeepMind, Anthropic. Anthropic non ha un feed ufficiale: si usa un mirror della community, che è una dipendenza esterna e può sparire.
+- Blog: Nuxt, Next.js, React, Vite, Svelte, TypeScript, OpenAI (solo le categorie Product e Research), Hugging Face, Google DeepMind, Anthropic. Anthropic non ha un feed ufficiale: si usa un mirror della community, che è una dipendenza esterna e può sparire.
 - GitHub Releases, solo le versioni stabili, di Nuxt, Vue, Next.js, React, Vite e TypeScript, tramite il feed Atom pubblico `github.com/<owner>/<repo>/releases.atom`.
 - Prossima tappa: Hacker News tramite l'API Algolia, filtrando per parole chiave e punteggio minimo; dev.to tramite API, filtrando per tag.
 - Esclusi per ora: il blog di Vue (fermo dal 2024), Vercel e le release di Claude Code (troppe voci, sommergerebbero il resto).
