@@ -1,5 +1,8 @@
 import tailwindcss from "@tailwindcss/vite";
 
+// Production address, served by the Vercel project `frontwire`.
+const SITE_URL = "https://frontwire.giovannimanara.dev";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -32,7 +35,9 @@ export default defineNuxtConfig({
           property: "og:description",
           content: "The most interesting news in web development and AI, from frontend frameworks to new models.",
         },
-        { property: "og:image", content: "/og.png" },
+        // Social previews don't resolve relative paths, so these point at the production site.
+        { property: "og:url", content: SITE_URL },
+        { property: "og:image", content: `${SITE_URL}/og.png` },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       link: [
