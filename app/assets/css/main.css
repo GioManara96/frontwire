@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+/* Design tokens. Names are semantic (surface, muted), not "the color they are". */
+@theme {
+  --color-bg: #12161c;
+  --color-surface: #1a2028;
+  --color-border: #2a313c;
+  --color-text: #eceef2;
+  --color-muted: #8a93a0;
+  --color-accent: #b8e83a;
+  /* Text drawn on top of a solid accent fill: light lime can't carry white text. */
+  --color-accent-ink: #12161c;
+
+  --font-display: "Syne", ui-sans-serif, sans-serif;
+  --font-body: "Source Sans 3", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-body leading-relaxed;
+  }
+
+  a {
+    @apply text-accent no-underline;
+  }
+
+  a:hover,
+  a:focus-visible {
+    @apply underline;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer components {
+  /* Centered container: full width with side padding on mobile, capped from md up. */
+  .page {
+    @apply mx-auto w-full px-5 py-8 md:max-w-[992px] md:px-8 xl:max-w-[1200px];
+  }
+
+  /* —— Site header —— */
+  .site-header {
+    @apply border-b border-border;
+  }
+
+  .site-header__inner {
+    @apply mx-auto flex w-full items-center px-5 py-5 md:max-w-[992px] md:px-8 xl:max-w-[1200px];
+  }
+
+  .site-header__brand {
+    @apply font-display text-xl font-extrabold tracking-tight text-text no-underline;
+  }
+
+  .site-header__brand:hover {
+    @apply no-underline;
+  }
+
+  .site-header__brand-accent {
+    @apply text-accent;
+  }
+
+  /* —— Meta line (mono, uppercase) shared by card and detail —— */
+  .meta {
+    @apply flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs uppercase tracking-wide text-muted;
+  }
+
+  .meta__source {
+    @apply inline-flex items-center gap-1.5;
+  }
+
+  .meta__dot {
+    @apply text-border;
+  }
+
+  /* —— Tags —— */
+  .tag-list {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-xs text-muted;
+  }
+
+  .tag__icon {
+    @apply text-sm;
+  }
+
+  /* —— Cover / placeholder —— */
+  .cover {
+    @apply aspect-[16/9] w-full overflow-hidden rounded-lg border border-border bg-surface;
+  }
+
+  .cover__image {
+    @apply h-full w-full object-cover;
+  }
+
+  .cover--placeholder {
+    @apply flex flex-col items-center justify-center gap-2 text-muted;
+  }
+
+  .cover__placeholder-icon {
+    @apply text-4xl;
+  }
+
+  .cover__placeholder-name {
+    @apply font-mono text-xs uppercase tracking-wide;
+  }
+
+  /* —— Archive —— */
+  .archive__title {
+    @apply mb-6 font-display text-3xl font-extrabold tracking-tight text-text;
+  }
+
+  .archive__empty {
+    @apply rounded-lg border border-border bg-surface p-8 text-center text-muted;
+  }
+
+  .archive__grid {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3;
+  }
+
+  /* —— Card —— */
+  .card {
+    @apply flex flex-col gap-3 rounded-xl border border-border bg-surface p-4 transition-colors;
+  }
+
+  .card:hover {
+    @apply border-accent;
+  }
+
+  .card__body {
+    @apply flex flex-col gap-3;
+  }
+
+  .card__title {
+    @apply font-display text-lg font-bold leading-snug text-text;
+  }
+
+  .card__title a {
+    @apply text-text no-underline;
+  }
+
+  .card__title a:hover {
+    @apply text-accent no-underline;
+  }
+
+  .card__category {
+    @apply text-accent;
+  }
+
+  .card__excerpt {
+    @apply line-clamp-3 text-sm text-muted;
+  }
+
+  /* —— Detail —— */
+  .detail {
+    @apply mx-auto flex max-w-[70ch] flex-col gap-5;
+  }
+
+  .detail__cover {
+    @apply aspect-[16/9] w-full overflow-hidden rounded-lg border border-border bg-surface;
+  }
+
+  .detail__title {
+    @apply font-display text-3xl font-extrabold leading-tight tracking-tight text-text;
+  }
+
+  .detail__text {
+    @apply text-pretty text-lg leading-relaxed text-text;
+  }
+
+  .detail__actions {
+    @apply flex flex-wrap items-center gap-3 border-t border-border pt-5;
+  }
+
+  .detail__back {
+    @apply font-mono text-xs uppercase tracking-wide;
+  }
+
+  /* —— Buttons —— */
+  .button {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-mono text-sm no-underline transition-colors;
+  }
+
+  .button--primary {
+    @apply bg-accent text-accent-ink;
+  }
+
+  .button--primary:hover {
+    @apply bg-accent text-accent-ink no-underline opacity-90;
+  }
+
+  .button--ghost {
+    @apply border border-border bg-transparent text-text;
+  }
+
+  .button--ghost:hover {
+    @apply border-accent text-text no-underline;
+  }
+
+  /* —— Prose: rendered release notes (the only v-html) —— */
+  .prose {
+    @apply flex flex-col gap-4 text-text;
+  }
+
+  .prose :where(h2) {
+    @apply mt-2 font-display text-xl font-bold text-text;
+  }
+
+  .prose :where(h3) {
+    @apply mt-1 font-display text-lg font-semibold text-text;
+  }
+
+  .prose :where(p) {
+    @apply leading-relaxed text-text;
+  }
+
+  .prose :where(a) {
+    @apply text-accent underline underline-offset-2;
+  }
+
+  .prose :where(ul) {
+    @apply flex list-disc flex-col gap-2 ps-5 text-text;
+  }
+
+  .prose :where(strong) {
+    @apply font-semibold text-text;
+  }
+
+  .prose :where(code) {
+    @apply rounded bg-bg px-1.5 py-0.5 font-mono text-sm text-accent;
+  }
+
+  /* —— Error page —— */
+  .error {
+    @apply flex flex-col items-start gap-4 py-16;
+  }
+
+  .error__code {
+    @apply font-mono text-sm uppercase tracking-wide text-accent;
+  }
+
+  .error__title {
+    @apply font-display text-3xl font-extrabold tracking-tight text-text;
+  }
+
+  .error__message {
+    @apply text-muted;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .button,
+  .button--ghost {
+    @apply transition-none;
+  }
+}
