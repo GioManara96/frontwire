@@ -44,8 +44,8 @@
 
 ### Task 0 — Branch · **Giovanni**
 
-- [ ] **Passo 1:** merge in `staging` di `docs/stage-3-pipeline` (spec e piano) e push.
-- [ ] **Passo 2:** il branch della tappa.
+- [x] **Passo 1:** merge in `staging` di `docs/stage-3-pipeline` (spec e piano) e push.
+- [x] **Passo 2:** il branch della tappa.
 
 ```bash
 git switch staging && git pull && git switch -c feat/import-pipeline
@@ -57,15 +57,15 @@ git switch staging && git pull && git switch -c feat/import-pipeline
 
 **File:** crea `pipeline/tsconfig.json`; modifica `tsconfig.json`, `package.json`.
 
-- [ ] **Passo 1: dipendenze di sviluppo**
+- [x] **Passo 1: dipendenze di sviluppo**
 
 ```bash
 npm i -D tsx @types/node@24
 ```
 
-- [ ] **Passo 2: `pipeline/tsconfig.json`**
+- [x] **Passo 2: `pipeline/tsconfig.json`**
 
-Stesse regole di rigore che Nuxt usa per `shared/`. Include anche `shared/**`: la pipeline ne importa i tipi, e così il progetto ha file da controllare fin da subito (un `include` vuoto farebbe fallire `tsc -b`).
+Stesse regole di rigore che Nuxt usa per `shared/`. Include anche `shared/**`: la pipeline ne importa i tipi, e così il progetto ha file da controllare fin da subito (un `include` vuoto farebbe fallire `tsc -b`). `tsBuildInfoFile` manda la cache incrementale di `vue-tsc -b` in `node_modules/.cache/`, accanto a quelle di Nuxt e Vite: senza, finirebbe in `pipeline/` come file non tracciato.
 
 ```json
 {
@@ -81,13 +81,14 @@ Stesse regole di rigore che Nuxt usa per `shared/`. Include anche `shared/**`: l
     "skipLibCheck": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "tsBuildInfoFile": "../node_modules/.cache/pipeline.tsbuildinfo"
   },
   "include": ["./**/*.ts", "../shared/**/*.ts"]
 }
 ```
 
-- [ ] **Passo 3: il riferimento in `tsconfig.json`**, dopo quello a `tsconfig.node.json`:
+- [x] **Passo 3: il riferimento in `tsconfig.json`**, dopo quello a `tsconfig.node.json`:
 
 ```json
 {
@@ -95,13 +96,13 @@ Stesse regole di rigore che Nuxt usa per `shared/`. Include anche `shared/**`: l
 }
 ```
 
-- [ ] **Passo 4: lo script in `package.json`**
+- [x] **Passo 4: lo script in `package.json`**
 
 ```json
 "pipeline": "tsx pipeline/run.ts"
 ```
 
-- [ ] **Passo 5: verifica**
+- [x] **Passo 5: verifica**
 
 ```bash
 npm run typecheck && npm run lint && npm test
@@ -109,7 +110,7 @@ npm run typecheck && npm run lint && npm test
 
 Atteso: tutto verde. Prova già fatta durante la stesura del piano: con il riferimento, un errore di tipo in `pipeline/` fa fallire `npm run typecheck`.
 
-- [ ] **Passo 6: commit**
+- [x] **Passo 6: commit**
 
 ```bash
 git add pipeline/tsconfig.json tsconfig.json package.json package-lock.json && git commit -m "chore: set up the pipeline workspace"

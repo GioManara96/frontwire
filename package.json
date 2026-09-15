@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "pipeline": "tsx pipeline/run.ts"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.17.0",
@@ -28,8 +29,10 @@
   "devDependencies": {
     "@iconify-json/material-symbols-light": "^1.2.92",
     "@iconify-json/simple-icons": "^1.2.96",
+    "@types/node": "^24.13.4",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
+    "tsx": "^4.23.13",
     "typescript": "^6.0.3",
     "vitest": "^5.0.0",
     "vue-tsc": "^3.3.11"
