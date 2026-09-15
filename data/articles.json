@@ -130,5 +130,109 @@
     "excerpt": "Hey Vue developers 👋  I’ve been working on vue-pdf-export, a Vue 3 + TypeScript package for...",
     "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5g6iozoru9psk044t9y3.png",
     "summary": "vue-pdf-export is a Vue 3 and TypeScript library for generating PDFs in the browser, aimed at real app layouts rather than handing the document off to the server."
+  },
+  {
+    "id": "c3f1a7d2e5b0",
+    "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.0",
+    "title": "Nuxt v4.6.0",
+    "sourceId": "nuxt-releases",
+    "publishedAt": "2026-09-02T09:12:00Z",
+    "category": "frontend",
+    "tags": ["nuxt", "vue", "release"],
+    "contentHtml": "<p>4.6.0 is a minor release with new features and performance work.</p>\n<h2>Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.5.2...v4.6.0\">compare changes</a></p>\n<h3>Features</h3>\n<ul>\n<li><strong>nuxt:</strong> Add <code>useRouteQuery</code> composable (<a href=\"https://github.com/nuxt/nuxt/pull/36010\">#36010</a>)</li>\n<li><strong>kit:</strong> Expose <code>addServerScanDir</code> for module authors (<a href=\"https://github.com/nuxt/nuxt/pull/36044\">#36044</a>)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li><strong>vite:</strong> Preserve query params on prefetched chunks (<a href=\"https://github.com/nuxt/nuxt/pull/36071\">#36071</a>)</li>\n</ul>"
+  },
+  {
+    "id": "b90e4c17af23",
+    "url": "https://nextjs.org/blog/next-16",
+    "title": "Next.js 16",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-09T14:30:00Z",
+    "category": "frontend",
+    "tags": ["nextjs", "react"],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49712233"
+  },
+  {
+    "id": "7d21e8b4c6a9",
+    "url": "https://dev.to/reactteam/react-compiler-is-now-stable-1a2b",
+    "title": "The React Compiler Is Now Stable",
+    "sourceId": "devto",
+    "publishedAt": "2026-09-08T12:00:00Z",
+    "category": "frontend",
+    "tags": ["react", "typescript"],
+    "excerpt": "The React Compiler reached its first stable release. Here is what it optimizes, how to adopt it incrementally, and what to watch out for in large codebases.",
+    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk8p2n3q4r5s6t7u8v9w0.png"
+  },
+  {
+    "id": "e4a9d3b17c52",
+    "url": "https://vite.dev/blog/announcing-vite7",
+    "title": "Announcing Vite 7",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-08-28T08:45:00Z",
+    "category": "frontend",
+    "tags": ["vite"],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49655120"
+  },
+  {
+    "id": "1f6b2c8e9a04",
+    "url": "https://www.anthropic.com/news/claude-opus-4-5",
+    "title": "Claude Opus 4.5",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-10T17:20:00Z",
+    "category": "ai",
+    "tags": ["anthropic"],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49720411"
+  },
+  {
+    "id": "a2c7f04b9d81",
+    "url": "https://blog.google/technology/google-deepmind/gemini-3",
+    "title": "Gemini 3: our most capable model yet",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-05T15:00:00Z",
+    "category": "ai",
+    "tags": ["gemini"],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49690033"
+  },
+  {
+    "id": "6b0d9e21f4c7",
+    "url": "https://api-docs.deepseek.com/news/deepseek-v4",
+    "title": "DeepSeek-V4 released with stronger reasoning",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-08-31T06:10:00Z",
+    "category": "ai",
+    "tags": ["deepseek"],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49668077"
+  },
+  {
+    "id": "9c3a1d7e40b6",
+    "url": "https://openai.com/index/gpt-6-astra-api",
+    "title": "GPT-6 Astra is now available in the API",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-13T18:00:00Z",
+    "category": "ai",
+    "tags": ["openai"],
+    "excerpt": "GPT-6 Astra is rolling out to all paid API tiers, with a larger context window, lower latency, and improved tool use for agentic workflows.",
+    "summary": "OpenAI made GPT-6 Astra generally available in the API for paid tiers, highlighting a bigger context window, lower latency, and better tool use for agents."
+  },
+  {
+    "id": "0e5b8a2c17f3",
+    "url": "https://dev.to/typedev/5-typescript-5-8-features-you-should-know-3f4g",
+    "title": "5 TypeScript 5.8 Features You Should Know",
+    "sourceId": "devto",
+    "publishedAt": "2026-09-07T09:30:00Z",
+    "category": "frontend",
+    "tags": ["typescript"],
+    "excerpt": "TypeScript 5.8 shipped some quality-of-life improvements. Here are five that changed how I write everyday code, from narrowing to module resolution.",
+    "coverImageUrl": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx1y2z3a4b5c6d7e8f9g0.png"
+  },
+  {
+    "id": "d8f3b6019e2a",
+    "url": "https://dev.to/svelteteam/whats-new-in-svelte-6-2h3j",
+    "title": "What's New in Svelte 6",
+    "sourceId": "devto",
+    "publishedAt": "2026-09-06T13:15:00Z",
+    "category": "frontend",
+    "tags": ["svelte", "typescript"],
+    "excerpt": "Svelte 6 refines runes, improves TypeScript support, and speeds up hydration. A tour of the changes and how to migrate an existing app.",
+    "summary": "Svelte 6 refines the runes reactivity model, improves TypeScript support, and speeds up hydration; the post walks through the changes and migration steps."
   }
 ]
