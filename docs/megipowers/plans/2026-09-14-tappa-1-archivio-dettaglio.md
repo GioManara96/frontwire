@@ -419,7 +419,7 @@ Esegui: `npm test`. Atteso: PASS.
 - `findArticle(articles: Article[], id: string): Article | undefined`
 - `getArticles(): Article[]`: il contenuto di `data/articles.json` con il tipo giusto. Il cast avviene qui e solo qui; è sicuro perché il test di integrità valida il file.
 
-- [ ] **Passo 1 (Claude): i test**
+- [x] **Passo 1 (Claude): i test**
 
 `test/unit/articles.test.ts`:
 
@@ -474,11 +474,11 @@ describe("findArticle", () => {
 });
 ```
 
-- [ ] **Passo 2 (Claude): verificare che falliscano**
+- [x] **Passo 2 (Claude): verificare che falliscano**
 
 Esegui: `npm test`. Atteso: FAIL, perché `server/utils/articles.ts` non esiste.
 
-- [ ] **Passo 3 (Giovanni): funzioni pure e accesso ai dati**
+- [x] **Passo 3 (Giovanni): funzioni pure e accesso ai dati**
 
 Suggerimenti:
 
@@ -487,15 +487,15 @@ Suggerimenti:
 - Per togliere un campo senza toccare l'oggetto originale, pensa al destructuring con rest.
 - In `article-data.ts` il JSON si importa con l'alias `~~/data/articles.json` (`~~` è la radice del progetto).
 
-- [ ] **Passo 4 (Giovanni): far passare i test**
+- [x] **Passo 4 (Giovanni): far passare i test**
 
 Esegui: `npm test`. Atteso: PASS.
 
-- [ ] **Passo 5 (Giovanni): gli handler**
+- [x] **Passo 5 (Giovanni): gli handler**
 
 `articles.get.ts` restituisce `listArticles(getArticles())`. `[id].get.ts` legge il parametro con `getRouterParam`, cerca con `findArticle` e, se non trova niente, lancia `createError` con `statusCode: 404`. Negli handler gli auto-import vanno bene.
 
-- [ ] **Passo 6 (Giovanni): verifica manuale**
+- [x] **Passo 6 (Giovanni): verifica manuale**
 
 Con `npm run dev` attivo:
 
@@ -506,8 +506,8 @@ curl -si localhost:3000/api/articles/ffffffffffff | head -1
 
 Atteso: lista in JSON dal più recente, senza `contentHtml`; `HTTP/1.1 404` per l'ID inesistente. Un ID reale preso da `data/articles.json` risponde 200 con l'articolo completo.
 
-- [ ] **Passo 7 (Giovanni): commit**: `feat(api): add article list and detail routes`
-- [ ] **Passo 8 (Claude): code review e riscrittura dei commenti**
+- [x] **Passo 7 (Giovanni): commit**: `feat(api): add article list and detail routes`
+- [x] **Passo 8 (Claude): code review e riscrittura dei commenti**
 
 ---
 
@@ -531,14 +531,14 @@ Atteso: lista in JSON dal più recente, senza `contentHtml`; `HTTP/1.1 404` per 
 
 **Criteri di accettazione** (con `npm run dev`):
 
-- [ ] l'archivio mostra gli articoli dal più recente; ogni titolo porta al dettaglio
-- [ ] gli articoli HN non hanno blocco di testo e hanno il link alla discussione
-- [ ] il dettaglio di una release mostra le note di rilascio
+- [x] l'archivio mostra gli articoli dal più recente; ogni titolo porta al dettaglio
+- [x] gli articoli HN non hanno blocco di testo e hanno il link alla discussione
+- [x] il dettaglio di una release mostra le note di rilascio
 - [ ] ricaricando direttamente una pagina di dettaglio, la console del browser non mostra avvisi di hydration
-- [ ] `/articles/ffffffffffff` mostra la pagina 404
-- [ ] `npm run lint` e `npm run typecheck` passano
-- [ ] commit: `feat(pages): add archive and article detail pages`
-- [ ] **Claude:** code review e riscrittura dei commenti
+- [x] `/articles/ffffffffffff` mostra la pagina 404
+- [x] `npm run lint` e `npm run typecheck` passano
+- [x] commit: `feat(pages): add archive and article detail pages`
+- [x] **Claude:** code review e riscrittura dei commenti
 
 ---
 
