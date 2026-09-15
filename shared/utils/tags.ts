@@ -55,6 +55,10 @@ export const TAGS = {
     label: "Gemini",
     icon: "simple-icons:googlegemini",
   },
+  deepmind: {
+    label: "DeepMind",
+    icon: "simple-icons:deepmind",
+  },
   release: {
     label: "Release",
     icon: "material-symbols-light:rocket-launch-outline",
