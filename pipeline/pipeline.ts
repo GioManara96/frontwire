@@ -16,7 +16,7 @@ export type PipelineResult = {
   articles: Article[];
   /** Ids in the new archive that were not in `existing`. */
   added: number;
-  /** Ids of `existing` that left the archive (expired). */
+  /** Ids of `existing` that left the archive: expired, or pushed out by newer articles of the same source. */
   removed: number;
   /** Feed items normalization dropped, summed over all sources. */
   skipped: number;

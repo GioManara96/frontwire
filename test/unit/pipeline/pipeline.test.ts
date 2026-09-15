@@ -33,6 +33,7 @@ function fakeFetch(responses: Record<string, string | Error> = {}) {
   return { fetchFeed, requested };
 }
 
+// rss.xml yields 5 valid blog posts, of which the archive keeps the 3 newest; atom-releases.xml yields 3 releases.
 const FIXTURES = { [NEXTJS_BLOG]: fixture("rss.xml"), [NUXT_RELEASES]: fixture("atom-releases.xml") };
 
 describe("runPipeline", () => {
@@ -43,31 +44,29 @@ describe("runPipeline", () => {
     expect(new Set(requested).size).toBe(16);
   });
 
-  it("imports the articles of every feed, newest first, and reports the counts", async () => {
+  it("imports the newest articles of every feed, newest first, and reports the counts", async () => {
     const { fetchFeed } = fakeFetch(FIXTURES);
     const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
     expect(result.articles.map((article) => article.title)).toEqual([
       "Echoed title",
       "Title only",
       "Only encoded content",
-      "Building with React Server Components",
       "Nuxt v4.4.0",
       "Nuxt v4.5.2",
-      "Next.js 16.4",
       "Nuxt v4.5.1",
     ]);
-    expect(result).toMatchObject({ added: 8, removed: 0, skipped: 10, warnings: [] });
+    expect(result).toMatchObject({ added: 6, removed: 0, skipped: 10, warnings: [] });
   });
 
   it("keeps stored articles untouched and drops the ones outside the window", async () => {
     const stored: Article = {
-      id: articleId("https://nextjs.org/blog/next-16-4"),
+      id: articleId("https://github.com/nuxt/nuxt/releases/tag/v4.5.2"),
       title: "Stored title",
-      url: "https://nextjs.org/blog/next-16-4",
-      sourceId: "nextjs-blog",
-      publishedAt: "2026-09-04T16:00:00.000Z",
+      url: "https://github.com/nuxt/nuxt/releases/tag/v4.5.2",
+      sourceId: "nuxt-releases",
+      publishedAt: "2026-09-05T16:19:44.000Z",
       category: "frontend",
-      tags: ["nextjs"],
+      tags: ["nuxt", "release"],
     };
     const expired: Article = {
       ...stored,
@@ -79,17 +78,17 @@ describe("runPipeline", () => {
     const result = await runPipeline({ existing: [stored, expired], now: NOW, fetchFeed });
     expect(result.articles).toContainEqual(stored);
     expect(result.articles.map((article) => article.title)).not.toContain("Expired");
-    expect(result).toMatchObject({ added: 7, removed: 1 });
+    expect(result).toMatchObject({ added: 5, removed: 1 });
   });
 
   it("keeps the article of the first source in registry order when two sources share a URL", async () => {
     const duplicate =
       '<?xml version="1.0"?><rss version="2.0"><channel><title>OpenAI</title><link>https://openai.com</link>' +
-      "<description>News</description><item><title>Duplicate</title><link>https://nextjs.org/blog/next-16-4</link>" +
-      "<pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate></item></channel></rss>";
+      "<description>News</description><item><title>Duplicate</title><link>https://nextjs.org/blog/echoed-title</link>" +
+      "<category>Product</category><pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate></item></channel></rss>";
     const { fetchFeed } = fakeFetch({ ...FIXTURES, [OPENAI_NEWS]: duplicate });
     const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
-    const matches = result.articles.filter((article) => article.url === "https://nextjs.org/blog/next-16-4");
+    const matches = result.articles.filter((article) => article.url === "https://nextjs.org/blog/echoed-title");
     expect(matches).toHaveLength(1);
     expect(matches[0]?.sourceId).toBe("nextjs-blog");
   });
@@ -98,7 +97,7 @@ describe("runPipeline", () => {
     const { fetchFeed } = fakeFetch({ ...FIXTURES, [OPENAI_NEWS]: new Error("HTTP 503") });
     const result = await runPipeline({ existing: [], now: NOW, fetchFeed });
     expect(result.warnings).toEqual(["openai-news: HTTP 503"]);
-    expect(result.added).toBe(8);
+    expect(result.added).toBe(6);
   });
 
   it("turns a feed that cannot be parsed into a warning", async () => {

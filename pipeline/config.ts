@@ -1,6 +1,9 @@
 /** Articles older than this leave the archive, and older feed items are never imported. */
 export const RETENTION_DAYS = 30;
 
+/** Articles each source keeps in the archive, the newest ones: the archive is meant to be read in full, about twenty articles. */
+export const MAX_PER_SOURCE = 3;
+
 /** Maximum excerpt length in characters, ellipsis included. */
 export const EXCERPT_LENGTH = 300;
 

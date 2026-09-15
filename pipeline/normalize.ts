@@ -66,8 +66,9 @@ function releaseTag(url: string): string | undefined {
 /**
  * Articles from one source's feed, following the normalization rules of the stage 3 spec: category,
  * default tags and release title prefix come from the registry, excerpts are plain text, release notes
- * are sanitized. Items outside the retention window, unstable releases and items without an absolute
- * link, a title or a valid date are left out and counted in `skipped`.
+ * are sanitized. Items outside the retention window, unstable releases, items without one of the
+ * source's `feedCategories` and items without an absolute link, a title or a valid date are left out
+ * and counted in `skipped`.
  *
  * Throws if `xml` is not a feed, or not the format the source's kind expects (RSS for `rss`, Atom for
  * `github-release`).
@@ -80,11 +81,14 @@ export function normalizeFeed(xml: string, sourceId: FeedSourceId, now: Date): N
 
   if (source.kind === "rss") {
     if (parsed.format !== "rss") throw new Error(`Expected an RSS feed, got ${parsed.format}`);
+    const accepted: readonly string[] | undefined = "feedCategories" in source ? source.feedCategories : undefined;
     for (const item of parsed.feed.items ?? []) {
       const title = item.title?.trim();
       const url = absoluteHttpUrl(item.link);
       const publishedAt = toIsoDate(item.pubDate ?? item.dc?.date);
-      if (!title || !url || !publishedAt || !isWithinWindow(publishedAt, now)) {
+      // A source with feedCategories keeps only items tagged with one of them; uncategorized items don't qualify.
+      const wanted = !accepted || (item.categories ?? []).some((category) => accepted.includes(category.name ?? ""));
+      if (!title || !url || !publishedAt || !isWithinWindow(publishedAt, now) || !wanted) {
         skipped++;
         continue;
       }

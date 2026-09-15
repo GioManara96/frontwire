@@ -15,7 +15,7 @@ try {
   writeFileSync(ARCHIVE_PATH, `${JSON.stringify(result.articles, null, 2)}\n`);
   for (const warning of result.warnings) console.log(`::warning::${warning}`);
   console.log(
-    `Archive: ${result.articles.length} articles (+${result.added} new, -${result.removed} expired, ${result.skipped} feed items skipped)`,
+    `Archive: ${result.articles.length} articles (+${result.added} new, -${result.removed} dropped, ${result.skipped} feed items skipped)`,
   );
 } catch (error) {
   console.log(`::error::${error instanceof Error ? error.message : String(error)}`);

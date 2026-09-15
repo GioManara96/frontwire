@@ -60,11 +60,24 @@ describe("mergeArticles", () => {
     expect(mergeArticles([oldStored], [oldIncoming, recent], NOW)).toEqual([recent]);
   });
 
+  it("keeps only the 3 newest articles of each source, stored or incoming", () => {
+    const nextjs = (id: string, day: string) => makeArticle({ id, publishedAt: `2026-09-${day}T00:00:00.000Z` });
+    const openai = makeArticle({
+      id: "eeeeeeeeeeee",
+      sourceId: "openai-news",
+      publishedAt: "2026-09-01T00:00:00.000Z",
+    });
+    const stored = [nextjs("aaaaaaaaaaaa", "01"), nextjs("bbbbbbbbbbbb", "03")];
+    const incoming = [nextjs("cccccccccccc", "02"), nextjs("dddddddddddd", "04"), openai];
+    const ids = mergeArticles(stored, incoming, NOW).map((article) => article.id);
+    expect(ids).toEqual(["dddddddddddd", "bbbbbbbbbbbb", "cccccccccccc", "eeeeeeeeeeee"]);
+  });
+
   it("orders from newest to oldest, then by id when dates are equal", () => {
-    const older = makeArticle({ id: "aaaaaaaaaaaa", publishedAt: "2026-09-01T00:00:00.000Z" });
-    const newest = makeArticle({ id: "bbbbbbbbbbbb", publishedAt: "2026-09-14T00:00:00.000Z" });
-    const tieB = makeArticle({ id: "dddddddddddd", publishedAt: "2026-09-10T00:00:00.000Z" });
-    const tieA = makeArticle({ id: "cccccccccccc", publishedAt: "2026-09-10T00:00:00.000Z" });
+    const older = makeArticle({ id: "aaaaaaaaaaaa", sourceId: "react-blog", publishedAt: "2026-09-01T00:00:00.000Z" });
+    const newest = makeArticle({ id: "bbbbbbbbbbbb", sourceId: "vite-blog", publishedAt: "2026-09-14T00:00:00.000Z" });
+    const tieB = makeArticle({ id: "dddddddddddd", sourceId: "openai-news", publishedAt: "2026-09-10T00:00:00.000Z" });
+    const tieA = makeArticle({ id: "cccccccccccc", sourceId: "nuxt-blog", publishedAt: "2026-09-10T00:00:00.000Z" });
     const ids = mergeArticles([older, tieB], [newest, tieA], NOW).map((article) => article.id);
     expect(ids).toEqual(["bbbbbbbbbbbb", "cccccccccccc", "dddddddddddd", "aaaaaaaaaaaa"]);
   });

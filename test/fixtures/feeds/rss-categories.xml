@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>OpenAI News</title>
+    <link>https://openai.com/news/</link>
+    <description>Only Product and Research posts are news</description>
+    <item>
+      <title>Introducing a new model</title>
+      <link>https://openai.com/index/new-model</link>
+      <description>A product launch.</description>
+      <category>Product</category>
+      <pubDate>Mon, 14 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>A research result</title>
+      <link>https://openai.com/index/research-result</link>
+      <category>Research</category>
+      <pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Research and company news</title>
+      <link>https://openai.com/index/mixed</link>
+      <category>Company</category>
+      <category>Research</category>
+      <pubDate>Sat, 12 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How a startup uses the API</title>
+      <link>https://openai.com/index/customer-story</link>
+      <category>Startup</category>
+      <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Uncategorized post</title>
+      <link>https://openai.com/index/uncategorized</link>
+      <pubDate>Thu, 10 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

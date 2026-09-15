@@ -19,7 +19,14 @@ const FEEDS = {
     category: "frontend",
     tags: ["typescript"],
   },
-  "openai-news": { kind: "rss", feedUrl: "https://openai.com/news/rss.xml", category: "ai", tags: ["openai"] },
+  "openai-news": {
+    kind: "rss",
+    feedUrl: "https://openai.com/news/rss.xml",
+    category: "ai",
+    tags: ["openai"],
+    // Product and Research are the news; the rest of the feed is customer stories, policy and company posts.
+    feedCategories: ["Product", "Research"],
+  },
   "huggingface-blog": {
     kind: "rss",
     feedUrl: "https://huggingface.co/blog/feed.xml",

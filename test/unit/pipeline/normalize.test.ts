@@ -179,3 +179,24 @@ describe("normalizeFeed: invalid input", () => {
     expect(() => normalizeFeed(fixture("rss.xml"), "nuxt-releases", NOW)).toThrow(/Atom/);
   });
 });
+
+describe("normalizeFeed: feed categories (rss)", () => {
+  const categorized = fixture("rss-categories.xml");
+
+  it("keeps only the items tagged with one of the source's feed categories", () => {
+    const { articles } = normalizeFeed(categorized, "openai-news", NOW);
+    expect(articles.map((article) => article.title)).toEqual([
+      "Introducing a new model",
+      "A research result",
+      "Research and company news",
+    ]);
+  });
+
+  it("skips items with other categories or none, and counts them", () => {
+    expect(normalizeFeed(categorized, "openai-news", NOW).skipped).toBe(2);
+  });
+
+  it("ignores feed categories for sources that do not filter by them", () => {
+    expect(normalizeFeed(categorized, "nextjs-blog", NOW).articles).toHaveLength(5);
+  });
+});

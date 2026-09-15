@@ -21,7 +21,12 @@ type FeedFields = {
 };
 
 export type SourceDefinition =
-  | (SourceBase & FeedFields & { kind: "rss" })
+  | (SourceBase &
+      FeedFields & {
+        kind: "rss";
+        /** If set, only items with at least one of these feed categories are imported; uncategorized items are skipped. */
+        feedCategories?: readonly string[];
+      })
   | (SourceBase &
       FeedFields & {
         kind: "github-release";
@@ -89,6 +94,8 @@ export const SOURCES = {
     feedUrl: "https://openai.com/news/rss.xml",
     category: "ai",
     tags: ["openai"],
+    // The news; the rest of the feed is customer stories, policy and company posts (about 3 in 4).
+    feedCategories: ["Product", "Research"],
   },
   "huggingface-blog": {
     name: "Hugging Face blog",
