@@ -22,8 +22,8 @@ Il focus è il web development: un articolo sull'AI entra solo se riguarda model
 
 ## Prodotto
 
-- **Archivio** degli articoli con label e barra di filtri in alto.
-- **Dettaglio articolo**: estratto della fonte e link all'originale. Mai ripubblicare l'articolo intero (diritti d'autore); eccezione le note di rilascio di GitHub, che si possono mostrare complete. Niente riassunti AI (vedi [Architettura](#architettura)).
+- **Archivio** con intestazione ("Updated" = data della build) e barra dei filtri fissa in cima: categoria (Frontend/AI) e tag, più tag insieme in "o", stato nella query della home (`/?category=ai&tags=react,vue`). I tag delle card sono filtri. Le card senza estratto (HN, newsletter) aprono direttamente l'originale.
+- **Dettaglio articolo**: estratto della fonte e link all'originale; l'avviso in testa dice cosa mostra la pagina (note complete, estratto). Mai ripubblicare l'articolo intero (diritti d'autore); eccezione le note di rilascio di GitHub, che si possono mostrare complete. Niente riassunti AI (vedi [Architettura](#architettura)).
 - **Preferiti** salvati in `localStorage`, niente account né database. Il `localStorage` esiste solo nel browser: va letto lato client per evitare errori di hydration. Salvare anche titolo e URL, non solo l'ID, così il preferito sopravvive se l'articolo esce dall'archivio.
 
 ## Architettura
@@ -54,6 +54,16 @@ Il tipo `Article`, il vocabolario dei tag e il registro delle fonti vivono in `s
 - `app/app.vue`, `app/error.vue`: header del sito e pagina di errore.
 - Le icone di tag e fonti arrivano da `@nuxt/icon` usando i nomi Iconify già in `TAGS`/`SOURCES`; i font sono self-hosted da `@nuxt/fonts`.
 - Stack e token seguono `docs/megipowers/specs/2026-09-15-tappa-2-grafica-design.md`.
+
+### Archivio e filtri (tappa 5)
+
+Design: `docs/megipowers/specs/2026-09-15-tappa-5-filtri-rifiniture-design.md`.
+
+- `app/utils/article-filters.ts`: logica pura (query ⇄ filtri, filtro, conteggio dei tag, dettaglio o originale), senza auto-import di Nuxt; test in `test/unit/article-filters.test.ts`.
+- `app/composables/useArticleFilters.ts`: filtri legati alla query della home. Restano vuoti fino al montaggio: la home prerenderizzata non ha query, e filtrare durante l'hydration farebbe divergere l'HTML del client da quello del server (un link filtrato aperto direttamente mostra per un attimo l'archivio intero).
+- `app/components/FilterBar.vue`, `app/components/ArticleCard.vue`: barra e card; le pagine restano leggere.
+- `runtimeConfig.public.builtAt` in `nuxt.config.ts`: la data della build, mostrata come "Updated". Ogni commit del bot su `main` fa ripartire il deploy.
+- Gli articoli senza estratto non hanno una pagina di dettaglio: nessun link ci porta, quindi `nuxt generate` non la prerenderizza.
 
 ### Pipeline (tappe 3 e 4)
 

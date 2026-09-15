@@ -1,6 +1,6 @@
 # Tappa 5 — Piano di lavoro
 
-> **Chi esegue:** Claude scrive codice, test e documentazione (vedi `CLAUDE.md`). Push, merge in `staging`/`main` e lancio dell'Action solo con il via di Giovanni. I passi usano le checkbox (`- [ ]`) per tenere traccia dell'avanzamento.
+> **Chi esegue:** Claude scrive codice, test e documentazione (vedi `CLAUDE.md`). Push, merge in `staging`/`main` e lancio dell'Action solo con il via di Giovanni. I passi usano le checkbox (`- [x]`) per tenere traccia dell'avanzamento.
 
 **Obiettivo:** archivio con intestazione e barra dei filtri (categoria e tag, nell'URL), tag cliccabili, card senza testo che aprono l'originale, dettaglio senza doppioni.
 
@@ -25,37 +25,37 @@
 
 **File:** `app/utils/article-filters.ts`, `test/unit/article-filters.test.ts`.
 
-- [ ] Test: `parseFilters`, `filtersToQuery`, `filterArticles`, `countTags`, `toggleTag`, `opensOriginal` (casi della spec).
-- [ ] Implementazione.
-- [ ] Commit: `feat(archive): add article filter logic`
+- [x] Test: `parseFilters`, `filtersToQuery`, `filterArticles`, `countTags`, `toggleTag`, `opensOriginal` (casi della spec).
+- [x] Implementazione.
+- [x] Commit: `feat(archive): add article filter logic`
 
 ### Task 2 — Intestazione
 
 **File:** `nuxt.config.ts`, `app/pages/index.vue`, `app/assets/css/main.css`.
 
-- [ ] `runtimeConfig.public.builtAt` fissato alla build; titolo e "Updated <data>".
-- [ ] Commit: `feat(archive): describe the site and show when it was updated`
+- [x] `runtimeConfig.public.builtAt` fissato alla build; titolo e "Updated <data>".
+- [x] Commit: `feat(archive): describe the site and show when it was updated`
 
 ### Task 3 — Card
 
 **File:** `app/components/ArticleCard.vue`, `app/pages/index.vue`, `app/assets/css/main.css`.
 
-- [ ] Card estratta da `index.vue`; tag come pulsanti con stato attivo (evento verso la pagina); card senza estratto verso l'originale con icona esterna; "Discussion" per HN; tag e link sopra il link allargato.
-- [ ] Commit: `feat(archive): link text-less cards to the original and make tags filter`
+- [x] Card estratta da `index.vue`; tag come pulsanti con stato attivo (evento verso la pagina); card senza estratto verso l'originale con icona esterna; "Discussion" per HN; tag e link sopra il link allargato.
+- [x] Commit: `feat(archive): link text-less cards to the original and make tags filter`
 
 ### Task 4 — Barra dei filtri
 
 **File:** `app/composables/useArticleFilters.ts`, `app/components/FilterBar.vue`, `app/pages/index.vue`, `app/assets/css/main.css`.
 
-- [ ] Composable (filtri dalla route, azioni che navigano, `ready` dopo il montaggio); barra fissa in cima con categoria, tag con conteggio, `Clear`; riga dei tag che scorre su mobile; stato vuoto.
-- [ ] Commit: `feat(archive): add the filter bar`
+- [x] Composable (filtri dalla route, azioni che navigano, `ready` dopo il montaggio); barra fissa in cima con categoria, tag con conteggio, `Clear`; riga dei tag che scorre su mobile; stato vuoto.
+- [x] Commit: `feat(archive): add the filter bar`
 
 ### Task 5 — Dettaglio
 
 **File:** `app/pages/articles/[id].vue`, `app/assets/css/main.css`.
 
-- [ ] Niente estratto con `contentHtml`; avviso sulla fonte per caso; tag come link a `/?tags=<tag>`.
-- [ ] Commit: `feat(detail): tell what the page shows and link tags to the archive`
+- [x] Niente estratto con `contentHtml`; avviso sulla fonte per caso; tag come link a `/?tags=<tag>`.
+- [x] Commit: `feat(detail): tell what the page shows and link tags to the archive`
 
 ### Task 6 — Verifica visiva e build
 
