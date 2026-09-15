@@ -93,6 +93,6 @@
 
 ### Task 10 — Rilascio · con il via di Giovanni
 
-- [ ] Merge in `staging` e in `main`, push.
-- [ ] `gh workflow run ingest.yml --ref main`, run verde.
-- [ ] `staging` riallineato con `main` se il bot ha committato.
+- [x] Merge in `staging` e in `main`, push.
+- [x] `gh workflow run ingest.yml --ref main`, run verde (run #3 su `408f1b9`).
+- [x] `staging` riallineato con `main` se il bot ha committato (non serviva: nessun commit del bot).
