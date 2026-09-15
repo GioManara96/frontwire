@@ -23,6 +23,12 @@ const CATEGORY_OPTIONS: ReadonlyArray<{ value: Category | undefined; label: stri
 
 const hasFilters = computed(() => props.filters.category !== undefined || props.filters.tags.length > 0);
 
+// On mobile the tag row scrolls sideways, and the browser leaves a focused tag half cut off at the edge.
+// Bring it fully into view; scroll-margin in the CSS keeps it off the edge.
+function revealFocused(event: FocusEvent) {
+  (event.target as HTMLElement).scrollIntoView({ block: "nearest", inline: "nearest" });
+}
+
 function tagLabel(tag: TagId, count: number): string {
   return `${TAGS[tag].label}, ${count} ${count === 1 ? "article" : "articles"}`;
 }
@@ -43,7 +49,7 @@ function tagLabel(tag: TagId, count: number): string {
       </button>
       <button v-if="hasFilters" type="button" class="filter-bar__clear" @click="emit('clear')">Clear</button>
     </div>
-    <ul class="filter-bar__tags">
+    <ul class="filter-bar__tags" @focusin="revealFocused">
       <li v-for="{ tag, count } in tagCounts" :key="tag">
         <button
           type="button"

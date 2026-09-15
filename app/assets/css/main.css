@@ -186,6 +186,10 @@
     @apply shrink-0;
   }
 
+  .filter-bar__tags .filter {
+    @apply scroll-mx-5;
+  }
+
   .filter-bar__clear {
     @apply ms-auto min-h-11 px-2 font-mono text-xs uppercase tracking-wide text-accent;
   }
