@@ -123,16 +123,19 @@
   }
 
   /* —— Card —— */
+  /* h-full + the grid's default stretch make every card in a row the same height. */
+  /* relative anchors the title's stretched link (::after) that makes the whole card clickable. */
   .card {
-    @apply flex flex-col gap-3 rounded-xl border border-border bg-surface p-4 transition-colors;
+    @apply relative flex h-full flex-col gap-3 rounded-xl border border-border bg-surface p-4 transition-colors;
+  }
+
+  /* Push the excerpt's baseline down so cards align even when tag rows differ. */
+  .card__body {
+    @apply flex flex-1 flex-col gap-3;
   }
 
   .card:hover {
     @apply border-accent;
-  }
-
-  .card__body {
-    @apply flex flex-col gap-3;
   }
 
   .card__title {
@@ -141,6 +144,12 @@
 
   .card__title a {
     @apply text-text no-underline;
+  }
+
+  /* Stretch the title link over the whole card so clicking anywhere opens the detail. */
+  .card__title a::after {
+    @apply absolute inset-0;
+    content: "";
   }
 
   .card__title a:hover {
@@ -166,6 +175,15 @@
 
   .detail__title {
     @apply font-display text-3xl font-extrabold leading-tight tracking-tight text-text;
+  }
+
+  /* Attribution to the original publisher, shown before the body. */
+  .detail__credit {
+    @apply rounded-lg border border-border bg-surface px-4 py-3 font-mono text-xs text-muted;
+  }
+
+  .detail__credit a {
+    @apply text-accent;
   }
 
   .detail__text {

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { data: articles } = await useFetch("/api/articles");
+
+// Some sources block hotlinking (cross-origin). A failed cover falls back to the source placeholder.
+const coverFailed = ref<Record<string, boolean>>({});
 </script>
 
 <template>
@@ -10,11 +13,13 @@ const { data: articles } = await useFetch("/api/articles");
       <li v-for="article in articles" :key="article.id">
         <article class="card">
           <img
-            v-if="article.coverImageUrl"
+            v-if="article.coverImageUrl && !coverFailed[article.id]"
             class="cover cover__image"
             :src="article.coverImageUrl"
             :alt="article.title"
             loading="lazy"
+            referrerpolicy="no-referrer"
+            @error="coverFailed[article.id] = true"
           />
           <div v-else class="cover cover--placeholder">
             <Icon class="cover__placeholder-icon" :name="SOURCES[article.sourceId].icon" />
