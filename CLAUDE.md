@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Frontwire
 
-Web app che raccoglie le notizie più interessanti sul web development, con focus su **frontend** (Nuxt, Next, Vue, React, Vite…) e **AI** (nuovi modelli e novità di Anthropic, OpenAI, DeepSeek…). Uso personale e caso studio per il portfolio di Giovanni, pubblicata su un sottodominio di `giovannimanara.dev` (probabilmente `frontwire.giovannimanara.dev`).
+Web app che raccoglie le notizie più interessanti sul web development, con focus su **frontend** (Nuxt, Next, Vue, React, Vite…) e **AI per chi sviluppa** (nuovi modelli, API e strumenti di Anthropic, OpenAI, DeepSeek…). Uso personale e caso studio per il portfolio di Giovanni, pubblicata su un sottodominio di `giovannimanara.dev` (probabilmente `frontwire.giovannimanara.dev`).
+
+Il focus è il web development: un articolo sull'AI entra solo se riguarda modelli, API o strumenti per sviluppatori. L'AI applicata ad altri campi (clima, genomica, finanza), la politica e la cronaca aziendale restano fuori.
 
 ## Ruolo di Claude
 
@@ -28,11 +30,11 @@ Web app che raccoglie le notizie più interessanti sul web development, con focu
 
 Niente database e niente server: il sito è statico e i dati vivono nel repo. Il progetto non usa servizi a pagamento.
 
-1. Una **GitHub Action pianificata** (`.github/workflows/ingest.yml`, ogni 6 ore) scarica le fonti, normalizza gli articoli, rimuove i duplicati e assegna le label.
-2. Gli articoli sono salvati come **JSON nel repo** (`data/articles.json`) e l'Action fa commit su `main`. L'archivio è fatto per essere letto per intero: al massimo **3 articoli per fonte**, i più recenti, entro gli **ultimi 30 giorni** (una ventina in tutto); da OpenAI entrano solo i post con categoria Product o Research.
+1. Una **GitHub Action pianificata** (`.github/workflows/ingest.yml`, ogni 6 ore) scarica le fonti, normalizza gli articoli, rimuove i duplicati, assegna le label e scarta gli articoli AI che non riguardano chi sviluppa.
+2. Gli articoli sono salvati come **JSON nel repo** (`data/articles.json`) e l'Action fa commit su `main`. L'archivio è fatto per essere letto per intero: al massimo **3 articoli per fonte**, i più recenti, entro gli **ultimi 30 giorni** (una trentina in tutto); da OpenAI entrano solo i post con categoria Product o Research.
 3. Il push su `main` fa partire il deploy statico su **Vercel** (piano Hobby; progetto ancora da collegare).
 
-Niente riassunti AI: GitHub Models, il provider previsto, è stato ritirato il 2026-07-30, e con i feed reali quasi nessun articolo ha abbastanza testo da riassumere (i blog portano una descrizione di una riga e non si fa scraping). Il ragionamento completo è nella spec della tappa 3.
+Niente riassunti AI: GitHub Models, il provider previsto, è stato ritirato il 2026-07-30, e con i feed reali quasi nessun articolo ha abbastanza testo da riassumere (i blog portano una descrizione di una riga e non si fa scraping). Il ragionamento completo è nella spec della tappa 3. Per la stessa ragione (niente spese) il filtro di pertinenza è una regola sul titolo, non un classificatore AI.
 
 Il tipo `Article`, il vocabolario dei tag e il registro delle fonti vivono in `shared/`: sono l'unica fonte di verità, comune ad app e pipeline. Il design di ogni tappa è in `docs/megipowers/specs/`.
 
@@ -53,16 +55,18 @@ Il tipo `Article`, il vocabolario dei tag e il registro delle fonti vivono in `s
 - Le icone di tag e fonti arrivano da `@nuxt/icon` usando i nomi Iconify già in `TAGS`/`SOURCES`; i font sono self-hosted da `@nuxt/fonts`.
 - Stack e token seguono `docs/megipowers/specs/2026-09-15-tappa-2-grafica-design.md`.
 
-### Pipeline (tappa 3)
+### Pipeline (tappe 3 e 4)
 
-Script TypeScript in `pipeline/`, eseguiti con `tsx`; importano `shared/` con percorsi relativi, senza auto-import di Nuxt. Regole di normalizzazione e casi limite: `docs/megipowers/specs/2026-09-15-tappa-3-pipeline-design.md`.
+Script TypeScript in `pipeline/`, eseguiti con `tsx`; importano `shared/` con percorsi relativi, senza auto-import di Nuxt. Regole di normalizzazione e casi limite: `docs/megipowers/specs/2026-09-15-tappa-3-pipeline-design.md` e `docs/megipowers/specs/2026-09-15-tappa-4-hackernews-pertinenza-design.md`.
 
 - `pipeline/run.ts` (`npm run pipeline`): punto d'ingresso; legge e riscrive `data/articles.json`, stampa warning ed errori come annotazioni dell'Action.
-- `pipeline/pipeline.ts`: `runPipeline`, un run completo con la funzione di fetch ricevuta da fuori, così si testa senza rete.
-- `pipeline/normalize.ts`: feed di una fonte → `Article`. Si appoggia a `article-id.ts` (id dall'URL normalizzato), `html.ts` (sanitize delle note di rilascio, testo semplice, troncamento), `assign-tags.ts` (tag da parole chiave nel titolo).
+- `pipeline/pipeline.ts`: `runPipeline`, un run completo con la funzione di fetch ricevuta da fuori, così si testa senza rete. Ogni fonte passa dall'adattatore del suo tipo, poi gli articoli AI passano dal filtro di pertinenza.
+- `pipeline/normalize.ts`: feed RSS o Atom di una fonte → `Article`. Si appoggia a `article-id.ts` (id dall'URL normalizzato), `html.ts` (sanitize delle note di rilascio, testo semplice, troncamento), `assign-tags.ts` (tag da parole chiave nel titolo; per le fonti senza categoria fissa, anche la categoria).
+- `pipeline/hackernews.ts`: URL della ricerca su Algolia e risultati → `Article`.
+- `pipeline/relevance.ts`: il filtro di pertinenza. Un articolo AI entra solo se il titolo cita un modello con la versione o un termine da sviluppatore; le regole si tarano qui.
 - `pipeline/merge.ts`: unione con l'archivio (i record esistenti non cambiano mai), finestra di 30 giorni, tetto di 3 articoli per fonte, ordinamento stabile.
-- Se cambiano i filtri di una fonte (per esempio `feedCategories`), gli articoli già importati restano finché escono per età o per il tetto. Per applicare subito le nuove regole, rigenerare da archivio vuoto: `echo '[]' > data/articles.json && npm run pipeline`.
-- `pipeline/config.ts`, `pipeline/fetch-feed.ts`: costanti e rete.
+- Se cambiano i filtri di una fonte (per esempio `feedCategories` o il filtro di pertinenza), gli articoli già importati restano finché escono per età o per il tetto. Per applicare subito le nuove regole, rigenerare da archivio vuoto: `echo '[]' > data/articles.json && npm run pipeline`.
+- `pipeline/config.ts`, `pipeline/fetch-text.ts`: costanti (anche la soglia di punti di HN) e rete.
 - `pipeline/tsconfig.json`: referenziato dal `tsconfig.json` radice, così `npm run typecheck` controlla anche la pipeline.
 - Test in `test/unit/pipeline/` con fixture in `test/fixtures/feeds/`. Il test d'integrità `test/unit/articles-data.test.ts` fa anche da cancello nell'Action: se fallisce, niente commit.
 
@@ -71,11 +75,13 @@ Script TypeScript in `pipeline/`, eseguiti con `tsx`; importano `shared/` con pe
 Solo **RSS/Atom e API ufficiali, niente scraping.** Il registro è `SOURCES` in `shared/utils/sources.ts`: l'ordine delle chiavi decide quale fonte tiene un articolo che arriva da due fonti.
 
 - Blog: Nuxt, Next.js, React, Vite, Svelte, TypeScript, OpenAI (solo le categorie Product e Research), Hugging Face, Google DeepMind, Anthropic. Anthropic non ha un feed ufficiale: si usa un mirror della community, che è una dipendenza esterna e può sparire.
+- Newsletter settimanali: This Week In React, JavaScript Weekly, Frontend Focus. Niente estratto: la descrizione del feed è il numero intero o un saluto.
+- Simon Willison (feed Atom) e Hacker News (API Algolia, almeno 300 punti): categoria e tag vengono dal titolo e le voci senza parole del vocabolario si scartano.
 - GitHub Releases, solo le versioni stabili, di Nuxt, Vue, Next.js, React, Vite e TypeScript, tramite il feed Atom pubblico `github.com/<owner>/<repo>/releases.atom`.
-- Prossima tappa: Hacker News tramite l'API Algolia, filtrando per parole chiave e punteggio minimo; dev.to tramite API, filtrando per tag.
-- Esclusi per ora: il blog di Vue (fermo dal 2024), Vercel e le release di Claude Code (troppe voci, sommergerebbero il resto).
+- Esclusi: il blog di Vue (fermo dal 2024); Vercel (circa 100 voci al mese, quasi tutte changelog e storie di clienti); le release di Claude Code (quasi quotidiane); dev.to (i post a tema hanno poco seguito e sono soprattutto opinioni ed esercizi); Smashing Magazine (saggi di UX, non notizie); Node.js e Bun (quasi solo patch release). Fermi da mesi a settembre 2026: web.dev, Chrome for Developers, MDN, Deno, Google Developers.
+- Candidati per più avanti: Astro, Tailwind, WebKit (senza le note di Safari Technology Preview).
 
-Verificare che ogni feed esista e risponda prima di aggiungerlo.
+Verificare che ogni feed esista e risponda prima di aggiungerlo, e simulare sui dati veri quali articoli porterebbe.
 
 ## Stack
 
