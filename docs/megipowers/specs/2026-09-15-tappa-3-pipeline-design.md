@@ -12,7 +12,7 @@ Sostituire i dati finti con articoli veri. Una GitHub Action pianificata legge i
 
 ## Decisioni che cambiano `CLAUDE.md`
 
-- **GitHub Models non esiste più.** La documentazione GitHub dice che dal 30 luglio 2026 "the playground, model catalog, inference API, and bring your own key (BYOK) are no longer available to any customer"; l'endpoint `models.github.ai` risponde `410`. Il provider diventa **Vercel AI Gateway**: account Vercel già esistente, una chiave nei secret del repo, il modello è una stringa `provider/model`.
+- **GitHub Models non esiste più.** La documentazione GitHub dice che dal 30 luglio 2026 "the playground, model catalog, inference API, and bring your own key (BYOK) are no longer available to any customer"; l'endpoint `models.github.ai` risponde `410`. Il provider diventa **Vercel AI Gateway**, solo nel free tier: account Vercel già esistente, una chiave nei secret del repo, il modello è una stringa `provider/model`. Se il modello gratuito non convince, i riassunti AI escono dal prodotto (sezione [Riassunti](#riassunti)).
 - **Finestra di 30 giorni.** L'archivio tiene solo gli articoli pubblicati negli ultimi 30 giorni; la stessa regola limita il primo import (OpenAI ha 1.193 voci nel feed, Vercel 1.575). I preferiti sopravvivono perché salvano titolo e URL.
 - **I dati vivono su `main`.** I workflow pianificati girano sempre sul branch di default, quindi l'Action committa su `main` e il push fa partire il deploy. `staging` si riallinea con un merge di `main` prima di aprire un nuovo branch; dopo questa tappa `data/` lo scrive solo il bot, quindi i conflitti sono improbabili.
 
@@ -171,7 +171,11 @@ Nei feed verificati le descrizioni dei blog sono di una riga (circa 90–130 car
 - Rate limit (`429`) dopo i retry dell'SDK: stop ai riassunti per questo run.
 - Altri errori: l'articolo resta senza riassunto, si passa al successivo.
 
-**Modello.** Si parte da `inclusionai/ling-3.0-flash-vl`, l'unico modello generalista nel free tier di AI Gateway (le varianti `-fin` e `-sante` sono specializzate in finanza e salute, `poolside/laguna-s-2.1` in codice). Il free tier vale solo per i modelli marcati `free` e ha rate limit più bassi. Nel piano c'è un passo di valutazione: run locale con la chiave, Giovanni legge una decina di riassunti veri e controlla fedeltà al testo, lunghezza, inglese, niente markdown. Se non reggono: ricarica di crediti (5 $ bastano per anni a questo volume) e `google/gemini-2.5-flash-lite` (circa 0,13 $/mese). Comprare crediti fa uscire dal free tier.
+**Modello.** Si parte da `inclusionai/ling-3.0-flash-vl`, l'unico modello generalista nel free tier di AI Gateway (le varianti `-fin` e `-sante` sono specializzate in finanza e salute, `poolside/laguna-s-2.1` in codice). Il free tier vale solo per i modelli marcati `free` e ha rate limit più bassi. Il progetto non spende soldi: niente crediti a pagamento, niente modelli fuori dal free tier.
+
+**Valutazione, prima di rifinire la feature.** Appena la normalizzazione produce testi veri, il piano prevede una versione minima di `summarize.ts` e un run locale con la chiave. Giovanni legge una decina di riassunti veri e controlla fedeltà al testo, lunghezza, inglese, niente markdown. Limite per run, retry, validazione e test di `summarize` arrivano solo se la valutazione passa, così un esito negativo non butta via lavoro.
+
+**Se la valutazione non passa, la feature si elimina.** Niente passo 5 nel flusso, niente `summarize.ts`, niente dipendenza `ai`, niente chiave né secret. Il campo `summary` esce dal modello condiviso (`Article`) e da `getArticleText` (Giovanni); Claude aggiorna test e fixture che lo usano. Le card mostrano l'estratto dell'editore o, per le release, l'inizio delle note di rilascio.
 
 ## Workflow (`.github/workflows/ingest.yml`)
 
@@ -244,7 +248,7 @@ Il test d'integrità esistente resta com'è e diventa il cancello dell'Action.
 
 - `npm run pipeline` in locale produce un `data/articles.json` reale che passa il test d'integrità.
 - Un secondo run subito dopo lascia il file identico.
-- Giovanni ha valutato una decina di riassunti; il modello è confermato o sostituito.
+- Giovanni ha valutato una decina di riassunti: la feature è confermata con il modello gratuito, oppure è rimossa del tutto.
 - `npm run lint`, `npm run typecheck` (che copre anche `pipeline/`) e `npm test` passano.
 - Su `main`: il run manuale dell'Action è verde e il bot committa; poi partono i run pianificati.
 - `CLAUDE.md` aggiornato.
