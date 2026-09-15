@@ -1,5 +1,28 @@
 [
   {
+    "id": "6aae488b1bb6",
+    "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-15T17:05:57.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "f2779a1c6c12",
+    "title": "Functional programming jargon, mapped out",
+    "url": "https://javascriptweekly.com/issues/802",
+    "sourceId": "javascript-weekly",
+    "publishedAt": "2026-09-15T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ]
+  },
+  {
     "id": "e0bb328294c6",
     "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
     "url": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
@@ -327,19 +350,6 @@
     "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
   },
   {
-    "id": "737331cbffc8",
-    "title": "Intelligent transcription with Gemini 3.5 Transcribe",
-    "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-08-26T17:01:00.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ],
-    "excerpt": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe."
-  },
-  {
     "id": "33e5a07a6003",
     "title": "The asteroid hitting frontend development",
     "url": "https://frontendfoc.us/issues/755",
@@ -361,17 +371,6 @@
       "nextjs"
     ],
     "excerpt": "The August 2026 security release for Next.js is now available"
-  },
-  {
-    "id": "afd0cdad8f76",
-    "title": "Bun 1.4 is (finally) fresh out of the oven",
-    "url": "https://javascriptweekly.com/issues/799",
-    "sourceId": "javascript-weekly",
-    "publishedAt": "2026-08-25T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript"
-    ]
   },
   {
     "id": "4145f88bfc5e",
