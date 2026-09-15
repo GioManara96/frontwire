@@ -34,17 +34,33 @@ const coverFailed = ref(false);
       <span class="card__category">{{ article.category }}</span>
     </div>
     <h1 class="detail__title">{{ article.title }}</h1>
-    <p class="detail__credit">
+    <!-- Says what this page holds of the original: the full release notes, an excerpt, or nothing but the link. -->
+    <p v-if="article.contentHtml" class="detail__credit">
+      Release notes from <a :href="article.url" target="_blank" rel="noopener">{{ SOURCES[article.sourceId].name }}</a
+      >, shown in full.
+    </p>
+    <p v-else-if="article.excerpt" class="detail__credit">
       Originally published on
       <a :href="article.url" target="_blank" rel="noopener">{{ SOURCES[article.sourceId].name }}</a
       >. Frontwire only shows an excerpt — read the full piece at the source.
     </p>
+    <p v-else class="detail__credit">
+      Originally published on
+      <a :href="article.url" target="_blank" rel="noopener">{{ SOURCES[article.sourceId].name }}</a
+      >.
+    </p>
     <ul class="tag-list">
-      <li v-for="tag in article.tags" :key="tag" class="tag">
-        <Icon class="tag__icon" :name="TAGS[tag].icon" :aria-label="TAGS[tag].label" />{{ TAGS[tag].label }}
+      <li v-for="tag in article.tags" :key="tag">
+        <NuxtLink
+          class="tag tag--link"
+          :to="{ path: '/', query: { tags: tag } }"
+          :title="`More ${TAGS[tag].label} articles`"
+          ><Icon class="tag__icon" :name="TAGS[tag].icon" />{{ TAGS[tag].label }}</NuxtLink
+        >
       </li>
     </ul>
-    <p v-if="article.excerpt" class="detail__text">{{ article.excerpt }}</p>
+    <!-- A release's excerpt is the start of its notes, which follow in full. -->
+    <p v-if="article.excerpt && !article.contentHtml" class="detail__text">{{ article.excerpt }}</p>
     <!-- eslint-disable-next-line vue/no-v-html -- sanitized release notes; the only HTML we render -->
     <div v-if="article.contentHtml" class="prose" v-html="article.contentHtml"></div>
     <div class="detail__actions">
