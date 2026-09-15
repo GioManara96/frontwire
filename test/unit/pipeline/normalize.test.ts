@@ -174,9 +174,69 @@ describe("normalizeFeed: invalid input", () => {
     expect(() => normalizeFeed(fixture("broken.xml"), "nextjs-blog", NOW)).toThrow();
   });
 
-  it("throws when the feed format does not match the kind of source", () => {
-    expect(() => normalizeFeed(fixture("atom-releases.xml"), "nextjs-blog", NOW)).toThrow(/RSS/);
+  it("throws when a release source gets anything but Atom", () => {
     expect(() => normalizeFeed(fixture("rss.xml"), "nuxt-releases", NOW)).toThrow(/Atom/);
+  });
+
+  it("throws when a blog source gets a feed that is neither RSS nor Atom", () => {
+    const jsonFeed = '{"version":"https://jsonfeed.org/version/1.1","title":"JSON","items":[]}';
+    expect(() => normalizeFeed(jsonFeed, "nextjs-blog", NOW)).toThrow(/RSS or Atom/);
+  });
+});
+
+describe("normalizeFeed: Atom blogs", () => {
+  const atom = fixture("atom-blog.xml");
+
+  it("turns an entry into an article, with tags and category from the title for a title-only source", () => {
+    expect(byTitle(atom, "simon-willison").get("Claude Fable 5.1 made me a really nice animated pelican")).toEqual({
+      id: articleId("https://simonwillison.net/2026/Sep/1/claude-fable-5-1/"),
+      title: "Claude Fable 5.1 made me a really nice animated pelican",
+      url: "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
+      sourceId: "simon-willison",
+      publishedAt: "2026-09-01T18:20:00.000Z",
+      category: "ai",
+      tags: ["anthropic"],
+      excerpt: "Anthropic released Claude Fable 5.1 today & I tried it.",
+    });
+  });
+
+  it("falls back to the content for the excerpt and treats a link without rel as the page", () => {
+    const article = byTitle(atom, "simon-willison").get("Generating running routes with GPT-6 Astra");
+    expect(article?.url).toBe("https://simonwillison.net/2026/Sep/12/astra-running-routes/");
+    expect(article?.excerpt).toBe("I asked GPT-6 Astra for 5K running routes.");
+  });
+
+  it("falls back to the updated date and omits a missing excerpt", () => {
+    const article = byTitle(atom, "simon-willison").get("Building a Vue app with Gemini");
+    expect(article?.publishedAt).toBe("2026-09-10T09:00:00.000Z");
+    expect(article).not.toHaveProperty("excerpt");
+    expect(article).toMatchObject({ category: "ai", tags: ["vue", "gemini"] });
+  });
+
+  it("skips entries without a vocabulary keyword, outside the window or without a page, and counts them", () => {
+    const { articles, skipped } = normalizeFeed(atom, "simon-willison", NOW);
+    expect(articles.map((article) => article.title)).toEqual([
+      "Claude Fable 5.1 made me a really nice animated pelican",
+      "Generating running routes with GPT-6 Astra",
+      "Building a Vue app with Gemini",
+    ]);
+    expect(skipped).toBe(3);
+  });
+});
+
+describe("normalizeFeed: newsletters", () => {
+  const articles = byTitle(fixture("rss.xml"), "javascript-weekly");
+
+  it("never gives their articles an excerpt", () => {
+    expect(articles.size).toBeGreaterThan(0);
+    for (const article of articles.values()) expect(article).not.toHaveProperty("excerpt");
+  });
+
+  it("uses the newsletter's category and default tags", () => {
+    expect(articles.get("Building with React Server Components")).toMatchObject({
+      category: "frontend",
+      tags: ["javascript", "react"],
+    });
   });
 });
 
