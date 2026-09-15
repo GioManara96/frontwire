@@ -24,10 +24,8 @@ export type Article = {
   publishedAt: string;
   category: Category;
   tags: TagId[];
-  /** Plain-text excerpt supplied by the source. */
+  /** Plain-text excerpt supplied by the source, at most 300 characters. */
   excerpt?: string;
-  /** Plain-text AI summary, generated once at ingest. */
-  summary?: string;
   /** Sanitized release notes. Only GitHub releases have this field. */
   contentHtml?: string;
   /** HN discussion page. Only Hacker News items have this field. */

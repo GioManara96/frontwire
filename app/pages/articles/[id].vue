@@ -37,14 +37,14 @@ const coverFailed = ref(false);
     <p class="detail__credit">
       Originally published on
       <a :href="article.url" target="_blank" rel="noopener">{{ SOURCES[article.sourceId].name }}</a
-      >. Frontwire only shows a summary — read the full piece at the source.
+      >. Frontwire only shows an excerpt — read the full piece at the source.
     </p>
     <ul class="tag-list">
       <li v-for="tag in article.tags" :key="tag" class="tag">
         <Icon class="tag__icon" :name="TAGS[tag].icon" :aria-label="TAGS[tag].label" />{{ TAGS[tag].label }}
       </li>
     </ul>
-    <p v-if="getArticleText(article)" class="detail__text">{{ getArticleText(article) }}</p>
+    <p v-if="article.excerpt" class="detail__text">{{ article.excerpt }}</p>
     <!-- eslint-disable-next-line vue/no-v-html -- sanitized release notes; the only HTML we render -->
     <div v-if="article.contentHtml" class="prose" v-html="article.contentHtml"></div>
     <div class="detail__actions">

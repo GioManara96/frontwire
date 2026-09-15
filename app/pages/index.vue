@@ -43,7 +43,7 @@ const coverFailed = ref<Record<string, boolean>>({});
                 <Icon class="tag__icon" :name="TAGS[tag].icon" :aria-label="TAGS[tag].label" />{{ TAGS[tag].label }}
               </li>
             </ul>
-            <p v-if="getArticleText(article)" class="card__excerpt">{{ getArticleText(article) }}</p>
+            <p v-if="article.excerpt" class="card__excerpt">{{ article.excerpt }}</p>
           </div>
         </article>
       </li>

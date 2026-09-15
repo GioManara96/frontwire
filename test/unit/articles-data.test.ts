@@ -7,8 +7,8 @@ import { TAGS } from "../../shared/utils/tags";
 const articles = rawArticles as Array<Record<string, unknown>>;
 
 const REQUIRED_FIELDS = ["id", "title", "url", "sourceId", "publishedAt", "category", "tags"];
-const OPTIONAL_FIELDS = ["excerpt", "summary", "contentHtml", "discussionUrl", "coverImageUrl"];
-const TEXT_FIELDS = ["excerpt", "summary", "contentHtml"];
+const OPTIONAL_FIELDS = ["excerpt", "contentHtml", "discussionUrl", "coverImageUrl"];
+const TEXT_FIELDS = ["excerpt", "contentHtml"];
 const URL_FIELDS = ["url", "discussionUrl", "coverImageUrl"];
 const CATEGORIES = ["frontend", "ai"];
 const ISO_UTC = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/;
