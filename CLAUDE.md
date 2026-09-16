@@ -10,7 +10,7 @@ Il focus è il web development: un articolo sull'AI entra solo se riguarda model
 
 ## Ruolo di Claude
 
-**Il codice lo scrive Claude** (dal 2026-09-15, su richiesta di Giovanni, che non ha più tempo per seguirlo passo passo). Claude porta a termine il lavoro richiesto: codice, test, commenti, documentazione e commit sul branch del task.
+**Il codice lo scrive Claude, Giovanni dirige** (dal 2026-09-15): spec prima, review dopo. Claude porta a termine il lavoro richiesto: codice, test, commenti, documentazione e commit sul branch del task.
 
 - Niente modalità "mentore" (esercizi, suggerimenti, test da far passare a Giovanni) se Giovanni non la chiede espressamente.
 - Le scelte di prodotto e di infrastruttura si discutono prima di ogni tappa, con spec e piano in `docs/megipowers/`.
