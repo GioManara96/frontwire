@@ -1,5 +1,16 @@
 [
   {
+    "id": "38c7a610095f",
+    "title": "This Week In React #297: DevTools, Motion, Apollo, React Router, Hook Form, shadcn lint | Shopify, Expo 58 beta, ExecuTorch, Screenmap, Voltra, SPM, Stim, Lynx, Metro, AI | pnpm, oj, Zod, Devframe, Safari, Webpack",
+    "url": "https://thisweekinreact.com/newsletter/297",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-09-16T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react"
+    ]
+  },
+  {
     "id": "7609be22d808",
     "title": "When CSS could run JavaScript",
     "url": "https://frontendfoc.us/issues/758",
@@ -400,18 +411,5 @@
     ],
     "excerpt": "Please refer to CHANGELOG.md for details.",
     "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v8.2.2/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
-  },
-  {
-    "id": "a4c684622951",
-    "title": "This Week In React #294: React Compiler, TanStack, Next.js, GTKX, Effect, shadcn, Preact, Unhead, RHF  | RN 0.87, Screens, RNGH, Worklets, Skia, Tuft, Enriched Markdown, Pager View, Firebase | Node, Astro, pnpm, Vitest, Solid, SvelteKit",
-    "url": "https://thisweekinreact.com/newsletter/294",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-08-19T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs",
-      "svelte"
-    ]
   }
 ]
