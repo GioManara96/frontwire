@@ -101,11 +101,8 @@
     @apply mx-auto w-full px-5 py-6 text-center font-mono text-xs uppercase tracking-wide text-muted md:max-w-[992px] md:px-8 xl:max-w-[1200px];
   }
 
+  /* Reads as a link at rest: in a line of muted mono text, colour alone was not enough to notice. */
   .site-footer__link {
-    @apply text-muted no-underline;
-  }
-
-  .site-footer__link:hover {
     @apply text-accent underline;
   }
 
