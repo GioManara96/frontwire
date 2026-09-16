@@ -49,9 +49,9 @@ Interfaccia, sul modello di `article-filters.ts` (import relativi, niente auto-i
 
 **File:** `app/components/FavoriteButton.vue` (nuovo), `app/components/ArticleCard.vue`, `app/pages/articles/[id].vue`, `app/assets/css/main.css`.
 
-- [ ] `FavoriteButton` con prop `article: ArticleListItem`: icona piena o vuota, `aria-pressed`, etichetta "Save this article" / "Remove from saved".
-- [ ] Nella card sta sopra la copertina, in alto a destra, sopra il link allargato (stesso `relative z-10` di `.tag--button`); nel dettaglio accanto al titolo.
-- [ ] Commit: `feat(favorites): let a card or the detail page save an article`
+- [x] `FavoriteButton` con prop `article: ArticleListItem`: icona piena o vuota, `aria-pressed`, etichetta "Save this article" / "Remove from saved".
+- [x] Nella card sta sopra la copertina, in alto a destra, sopra il link allargato (stesso `relative z-10` di `.tag--button`); nel dettaglio accanto al titolo.
+- [x] Commit: `feat(favorites): let a card or the detail page save an article`
 
 ### Task 4 — Pagina e header
 

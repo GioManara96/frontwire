@@ -33,6 +33,7 @@ const coverFailed = ref(false);
       <Icon class="cover__placeholder-icon" :name="source.icon" />
       <span class="cover__placeholder-name">{{ source.name }}</span>
     </div>
+    <FavoriteButton class="card__favorite" :article="article" />
     <div class="card__body">
       <div class="meta">
         <span class="meta__source"><Icon :name="source.icon" />{{ source.name }}</span>

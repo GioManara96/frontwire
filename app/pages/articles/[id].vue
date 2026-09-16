@@ -33,7 +33,10 @@ const coverFailed = ref(false);
       <span class="meta__dot">/</span>
       <span class="card__category">{{ article.category }}</span>
     </div>
-    <h1 class="detail__title">{{ article.title }}</h1>
+    <div class="detail__heading">
+      <h1 class="detail__title">{{ article.title }}</h1>
+      <FavoriteButton :article="article" />
+    </div>
     <!-- Says what this page holds of the original: the full release notes, an excerpt, or nothing but the link. -->
     <p v-if="article.contentHtml" class="detail__credit">
       Release notes from <a :href="article.url" target="_blank" rel="noopener">{{ SOURCES[article.sourceId].name }}</a
