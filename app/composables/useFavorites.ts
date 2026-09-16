@@ -48,6 +48,8 @@ export function useFavorites() {
     count: computed(() => favorites.value.length),
     /** Whether the article `id` is saved. Reactive: reading it in a template follows the list. */
     isSaved: (id: string) => isFavorite(favorites.value, id),
+    /** Forgets every saved article. */
+    clear: () => write([]),
     /** Saves `article` as it is now, or removes it when it is already saved. */
     toggle: (article: ArticleListItem) =>
       write(

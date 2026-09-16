@@ -11,6 +11,9 @@
   /* Text drawn on top of a solid accent fill: light lime can't carry white text. */
   --color-accent-ink: #12161c;
 
+  /* Height of the site header (its content plus py-5), so the filter bar can stick right under it. */
+  --spacing-header: 4.6875rem;
+
   --font-display: "Syne", ui-sans-serif, sans-serif;
   --font-body: "Source Sans 3", ui-sans-serif, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -42,8 +45,10 @@
   }
 
   /* —— Site header —— */
+  /* Sticky from md up only: on a phone the header plus the filter bar would eat a quarter of the screen,
+     so there the saved link travels in the floating button instead. */
   .site-header {
-    @apply border-b border-border;
+    @apply border-b border-border bg-bg md:sticky md:top-0 md:z-30;
   }
 
   .site-header__inner {
@@ -66,17 +71,17 @@
     @apply flex items-center gap-4;
   }
 
+  /* Same circle as the button on a card's cover, so the two read as the same thing. */
   .site-header__saved {
-    @apply relative flex items-center text-xl text-muted no-underline;
+    @apply relative inline-flex items-center justify-center rounded-full border border-border p-1.5 text-xl text-muted no-underline;
   }
 
   .site-header__saved:hover {
-    @apply text-accent no-underline;
+    @apply border-accent text-accent no-underline;
   }
 
-  /* Sits on the bookmark's notch, where the icon is empty. */
   .site-header__count {
-    @apply absolute -right-2 -top-1 font-mono text-[0.625rem] leading-none text-accent;
+    @apply absolute -right-1 -top-1 rounded-full bg-bg px-1 font-mono text-[0.625rem] leading-none text-accent;
   }
 
   .site-header__github {
@@ -181,7 +186,7 @@
   /* Sticks to the top while the archive scrolls. The negative margin and matching padding stretch its
      background over the page padding, so cards never show through at the sides. */
   .filter-bar {
-    @apply sticky top-0 z-20 -mx-5 mb-6 flex flex-col gap-3 border-b border-border bg-bg/95 px-5 py-3 backdrop-blur md:-mx-8 md:px-8;
+    @apply sticky top-0 z-20 -mx-5 mb-6 flex flex-col gap-3 border-b border-border bg-bg/95 px-5 py-3 backdrop-blur md:-mx-8 md:top-header md:px-8;
   }
 
   .filter-bar__categories {
@@ -331,6 +336,23 @@
   /* Same corner of the cover whatever the title's length. */
   .card__favorite {
     @apply absolute right-6 top-6;
+  }
+
+  .saved__actions {
+    @apply flex flex-wrap items-center gap-2;
+  }
+
+  /* Mobile only: the way back to the saved articles once the header has scrolled away. */
+  .saved-fab {
+    @apply fixed bottom-5 right-5 z-30 inline-flex items-center gap-1.5 rounded-full border border-accent bg-surface px-3 py-2 text-xl text-accent no-underline shadow-lg md:hidden;
+  }
+
+  .saved-fab:hover {
+    @apply no-underline;
+  }
+
+  .saved-fab__count {
+    @apply font-mono text-xs leading-none;
   }
 
   /* —— Detail —— */

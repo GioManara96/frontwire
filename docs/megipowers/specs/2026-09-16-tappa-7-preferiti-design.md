@@ -49,9 +49,17 @@ Stessa impaginazione dell'archivio: intestazione e griglia delle stesse `Article
 - **I tag** delle card qui non filtrano la pagina: portano all'archivio filtrato su quel tag (`/?tags=react`), come già fanno i tag nel dettaglio. Nella pagina dei preferiti nessun tag risulta attivo.
 - Togliere il segnalibro fa sparire subito la card dalla lista, senza conferma. Il gesto è reversibile solo risalvando l'articolo dall'archivio, ma è lo stesso gesto che l'ha messo lì: chiedere conferma darebbe peso a un'azione che non ne ha.
 
+### Rimuovere tutto
+
+In testa alla pagina, quando c'è almeno un salvato, un pulsante "Remove all". Il primo clic non cancella: al suo posto compaiono "Remove all 3?" e "Keep them". A differenza di un singolo segnalibro, questo gesto non si può rifare: gli articoli già usciti dall'archivio non si ritrovano da nessuna parte.
+
 ### Accesso
 
-Nell'header, accanto al link di GitHub, un segnalibro con il numero dei salvati. Il numero compare solo dopo il montaggio e solo se è maggiore di zero: prima non c'è nulla da mostrare e mostrare uno zero al caricamento di ogni pagina sarebbe rumore.
+Nell'header, accanto al link di GitHub, un segnalibro **nello stesso cerchio** del pulsante sulle copertine: sono la stessa cosa e devono somigliarsi. Il numero dei salvati sta appoggiato in alto a destra del cerchio, e compare solo dopo il montaggio e solo se è maggiore di zero: prima non c'è nulla da mostrare e uno zero a ogni caricamento sarebbe rumore.
+
+**Da `md` in su l'header è fisso** in cima e la barra dei filtri si incolla sotto di lui (`--spacing-header`, l'altezza dell'header). Così i preferiti restano a portata mentre si scorre l'archivio.
+
+**Su mobile no:** header (75px) e barra dei filtri (125px) insieme prenderebbero 200px su 844, un quarto dello schermo. Lì l'header scorre via e al suo posto compare un **pulsante flottante** in basso a destra, col numero: più comodo per il pollice della cima dello schermo. Compare solo quando l'header è uscito, quando c'è almeno un salvato e quando non si è già in `/favorites`.
 
 ## Stato e hydration
 
@@ -68,6 +76,7 @@ Niente sincronizzazione fra schede (l'evento `storage`): due schede aperte conte
 - `app/utils/favorites.ts` — logica pura, importata per percorso relativo e senza auto-import di Nuxt, come `article-filters.ts`: il tipo `SavedArticle`, la conversione da articolo a salvato, lettura e scrittura della stringa JSON con la validazione, aggiunta, rimozione, verifica di appartenenza.
 - `app/composables/useFavorites.ts` — lo stato condiviso e il dialogo con il `localStorage`. Espone la lista, il numero, `isSaved(id)` e `toggle(article)`.
 - `app/components/FavoriteButton.vue` — il segnalibro, usato dalla card e dal dettaglio.
+- `app/app.vue` — il link nell'header e il pulsante flottante di mobile, con l'ascolto dello scroll.
 - `app/pages/favorites.vue` — la pagina.
 - `app/components/ArticleCard.vue`, `app/pages/articles/[id].vue`, `app/app.vue` — il pulsante e il link nell'header.
 

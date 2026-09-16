@@ -24,7 +24,7 @@ Il focus è il web development: un articolo sull'AI entra solo se riguarda model
 
 - **Archivio** con intestazione ("Updated" = data della build) e barra dei filtri fissa in cima: categoria (Frontend/AI) e tag, più tag insieme in "o", stato nella query della home (`/?category=ai&tags=react,vue`). I tag delle card sono filtri. Le card senza estratto (HN, newsletter) aprono direttamente l'originale.
 - **Dettaglio articolo**: estratto della fonte e link all'originale; l'avviso in testa dice cosa mostra la pagina (note complete, estratto). Mai ripubblicare l'articolo intero (diritti d'autore); eccezione le note di rilascio di GitHub, che si possono mostrare complete. Niente riassunti AI (vedi [Architettura](#architettura)).
-- **Preferiti** salvati in `localStorage`, niente account né database: il segnalibro sulla copertina della card e in testa al dettaglio, la lista in `/favorites` (ultimi salvati per primi) e il numero nell'header. Si salva una copia dell'articolo, non il suo id, così il preferito resta leggibile quando l'articolo esce dall'archivio.
+- **Preferiti** salvati in `localStorage`, niente account né database: il segnalibro sulla copertina della card e in testa al dettaglio, la lista in `/favorites` (ultimi salvati per primi, con "Remove all" a due clic) e il numero nell'header. Si salva una copia dell'articolo, non il suo id, così il preferito resta leggibile quando l'articolo esce dall'archivio.
 
 ## Architettura
 
@@ -72,7 +72,8 @@ Design: `docs/megipowers/specs/2026-09-16-tappa-7-preferiti-design.md`.
 - `app/utils/favorites.ts`: logica pura (copia dell'articolo, lettura e scrittura della stringa JSON, aggiunta, rimozione), senza auto-import di Nuxt; test in `test/unit/favorites.test.ts`.
 - `app/composables/useFavorites.ts`: la lista condivisa (`useState`) e il dialogo con il `localStorage`, chiave `frontwire.favorites`. Legge al montaggio, per la stessa ragione dei filtri; un browser che rifiuta lo storage tiene la lista per la sessione.
 - Quello che si legge dal `localStorage` non è di fiducia: si modifica a mano e sopravvive ai rilasci. Ogni voce passa da un controllo di forma contro `SOURCES` e `TAGS` e le voci che non lo superano si scartano; un `sourceId` inventato manderebbe la card a cercare l'icona di una fonte che non esiste.
-- `app/components/FavoriteButton.vue`, `app/pages/favorites.vue`, il link nell'header in `app/app.vue`.
+- `app/components/FavoriteButton.vue`, `app/pages/favorites.vue`, e in `app/app.vue` il link nell'header più il pulsante flottante di mobile.
+- L'header è fisso solo da `md` in su, con la barra dei filtri incollata sotto (`--spacing-header`): su un telefono i due insieme prenderebbero un quarto dello schermo, quindi lì il ritorno ai preferiti è il pulsante flottante in basso, che compare quando l'header è uscito.
 
 ### Pipeline (tappe 3 e 4)
 
