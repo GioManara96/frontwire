@@ -1,5 +1,17 @@
 [
   {
+    "id": "25823e681aab",
+    "title": "Gemini 3.8 Live and 3.8 Live Extended Thinking",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-15T17:38:18.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49715947"
+  },
+  {
     "id": "6aae488b1bb6",
     "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
     "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
@@ -85,18 +97,6 @@
     ],
     "excerpt": "Features build: avoid settling seen preload dependencies for performance (#23446) (e6f6b3e) Bug Fixes handle CRLF line endings in code frame positions (#23219) (9913672) only treat whole node_modules path segments as dependencies (fix #17467) (#23437) (ef0dc17) Performance Improvements proxy…",
     "contentHtml": "<h3>Features</h3>\n<ul>\n<li><strong>build:</strong> avoid settling seen preload dependencies for performance (<a href=\"https://github.com/vitejs/vite/issues/23446\">#23446</a>) (<a href=\"https://github.com/vitejs/vite/commit/e6f6b3e3119256daa837b2dc399058c8aa45b470\">e6f6b3e</a>)</li>\n</ul>\n<h3>Bug Fixes</h3>\n<ul>\n<li>handle CRLF line endings in code frame positions (<a href=\"https://github.com/vitejs/vite/issues/23219\">#23219</a>) (<a href=\"https://github.com/vitejs/vite/commit/9913672bee9c34a2df7fff4c2538783cd4f43b4e\">9913672</a>)</li>\n<li>only treat whole <code>node_modules</code> path segments as dependencies (fix <a href=\"https://github.com/vitejs/vite/issues/17467\">#17467</a>) (<a href=\"https://github.com/vitejs/vite/issues/23437\">#23437</a>) (<a href=\"https://github.com/vitejs/vite/commit/ef0dc17ada53d1169ae5a89cb8f6482831466755\">ef0dc17</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>proxy:</strong> pre-compile context matchers at server creation (<a href=\"https://github.com/vitejs/vite/issues/23263\">#23263</a>) (<a href=\"https://github.com/vitejs/vite/commit/8abf700eeb2411d8402d08f8e2696effafdbe774\">8abf700</a>)</li>\n</ul>"
-  },
-  {
-    "id": "7ba51a4b17fc",
-    "title": "DeepSeek v4.1 Flash",
-    "url": "https://twitter.com/deepseek_ai/status/2097930608790167907",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-10T06:11:05.000Z",
-    "category": "ai",
-    "tags": [
-      "deepseek"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49639090"
   },
   {
     "id": "b32e9b847135",
