@@ -124,7 +124,9 @@ ESLint (`@nuxt/eslint`), Prettier (`printWidth: 120`) e Vitest (ambiente `node`)
 
 `tsconfig.json` rimanda ai file generati in `.nuxt/` e a `pipeline/tsconfig.json`: se i tipi sembrano rotti, eseguire `npx nuxt prepare`.
 
-Deploy su Vercel configurato da `vercel.json`, come nel portfolio: `NITRO_PRESET=static nuxt generate` con output `.output/public`. Dettagli in `docs/megipowers/specs/2026-09-15-tappa-6-vercel-design.md`.
+Deploy su Vercel configurato da `vercel.json`: `NITRO_PRESET=static nuxt generate` con output `.output/public`. Dettagli in `docs/megipowers/specs/2026-09-15-tappa-6-vercel-design.md`.
+
+- Il comando di build cancella prima `.nuxt` e `node_modules/.cache/nuxt`. Vercel ripristina `node_modules/.cache` dal deploy precedente e una cartella di build vecchia fa fallire il prerender con `RollupError: Could not resolve "../../../../shared/utils/tags.ts"`: è successo due volte sulle preview di `staging` il 2026-09-16, mentre la produzione, con la sua catena di cache, passava. Meglio qualche secondo di build in più che un deploy che si ferma.
 
 - DNS su Cloudflare: `CNAME frontwire` verso il valore indicato da Vercel, **DNS only** (col proxy di Cloudflare Vercel non emette il certificato).
 - Si pubblica solo tramite Git. La CLI (`vercel deploy`) non rispetta `.gitignore` e caricherebbe `.output`, `.nuxt` e le altre cartelle generate.

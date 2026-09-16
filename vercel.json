@@ -1,5 +1,5 @@
 {
-  "buildCommand": "NITRO_PRESET=static nuxt generate",
+  "buildCommand": "rm -rf .nuxt node_modules/.cache/nuxt && NITRO_PRESET=static nuxt generate",
   "outputDirectory": ".output/public",
   "framework": null
 }
