@@ -63,17 +63,17 @@ Interfaccia, sul modello di `article-filters.ts` (import relativi, niente auto-i
 
 ### Task 5 — Verifica
 
-- [ ] `npx vitest run`, `npm run typecheck`, `npm run lint`, `npm run format:check`.
-- [ ] `npm run generate`: `/favorites` prerenderizzata, nessun errore di build.
-- [ ] Prova nel browser (CDP): salvo dalla card, il numero nell'header sale, la pagina mostra la card, ricarico e resta, tolgo il segnalibro e sparisce; nessun avviso di hydration in console.
-- [ ] Screenshot a 390px e 1280px di archivio e pagina preferiti.
+- [x] `npx vitest run`, `npm run typecheck`, `npm run lint`, `npm run format:check`.
+- [x] `npm run generate`: `/favorites` prerenderizzata, nessun errore di build.
+- [x] Prova nel browser (CDP): salvo dalla card, il numero nell'header sale, la pagina mostra la card, ricarico e resta, tolgo il segnalibro e sparisce; nessun avviso di hydration in console.
+- [x] Screenshot a 390px e 1280px di archivio e pagina preferiti.
 
 ### Task 6 — Documentazione
 
 **File:** `CLAUDE.md`.
 
-- [ ] Sezione dei preferiti aggiornata con i file veri e la chiave del `localStorage`.
-- [ ] Commit: `docs: update CLAUDE.md after stage 7`
+- [x] Sezione dei preferiti aggiornata con i file veri e la chiave del `localStorage`.
+- [x] Commit: `docs: update CLAUDE.md after stage 7`
 
 ### Task 7 — Rilascio · con il via di Giovanni
 
