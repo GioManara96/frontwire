@@ -57,9 +57,9 @@ Interfaccia, sul modello di `article-filters.ts` (import relativi, niente auto-i
 
 **File:** `app/pages/favorites.vue` (nuovo), `app/app.vue`, `app/assets/css/main.css`.
 
-- [ ] Pagina: titolo "Saved articles", conteggio, griglia di `ArticleCard` senza tag attivi, tag che portano a `/?tags=<tag>`, stato vuoto con link all'archivio.
-- [ ] Header: link segnalibro accanto a GitHub, col numero solo dopo il montaggio e solo se maggiore di zero.
-- [ ] Commit: `feat(favorites): add the saved articles page`
+- [x] Pagina: titolo "Saved articles", conteggio, griglia di `ArticleCard` senza tag attivi, tag che portano a `/?tags=<tag>`, stato vuoto con link all'archivio.
+- [x] Header: link segnalibro accanto a GitHub, col numero solo dopo il montaggio e solo se maggiore di zero.
+- [x] Commit: `feat(favorites): add the saved articles page`
 
 ### Task 5 — Verifica
 

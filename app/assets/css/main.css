@@ -62,6 +62,23 @@
     @apply text-accent;
   }
 
+  .site-header__links {
+    @apply flex items-center gap-4;
+  }
+
+  .site-header__saved {
+    @apply relative flex items-center text-xl text-muted no-underline;
+  }
+
+  .site-header__saved:hover {
+    @apply text-accent no-underline;
+  }
+
+  /* Sits on the bookmark's notch, where the icon is empty. */
+  .site-header__count {
+    @apply absolute -right-2 -top-1 font-mono text-[0.625rem] leading-none text-accent;
+  }
+
   .site-header__github {
     @apply flex items-center text-xl text-muted no-underline;
   }
