@@ -34,16 +34,16 @@ Interfaccia, sul modello di `article-filters.ts` (import relativi, niente auto-i
 - `removeFavorite(list, id): SavedArticle[]`
 - `isFavorite(list, id): boolean`
 
-- [ ] Test: i casi elencati nella spec (voce valida che si rilegge identica, campi opzionali assenti, `sourceId` e tag fuori vocabolario, campi mancanti o di tipo sbagliato, JSON illeggibile, JSON non-array, ordine, doppioni, rimozione).
-- [ ] Implementazione: la validazione controlla `sourceId` contro `SOURCES` e ogni tag contro `TAGS`.
-- [ ] Commit: `feat(favorites): add the saved articles logic`
+- [x] Test: i casi elencati nella spec (voce valida che si rilegge identica, campi opzionali assenti, `sourceId` e tag fuori vocabolario, campi mancanti o di tipo sbagliato, JSON illeggibile, JSON non-array, ordine, doppioni, rimozione).
+- [x] Implementazione: la validazione controlla `sourceId` contro `SOURCES` e ogni tag contro `TAGS`.
+- [x] Commit: `feat(favorites): add the saved articles logic`
 
 ### Task 2 — Stato condiviso
 
 **File:** `app/composables/useFavorites.ts` (nuovo).
 
-- [ ] `useFavorites()` con `useState<SavedArticle[]>("favorites")`: legge il `localStorage` in `onMounted` (chiave `frontwire.favorites`), riscrive a ogni cambio, espone `favorites`, `count`, `isSaved(id)`, `toggle(article)`. Commento d'interfaccia sul perché la lista resta vuota fino al montaggio, come in `useArticleFilters`.
-- [ ] Commit: `feat(favorites): keep the saved articles in one shared list`
+- [x] `useFavorites()` con `useState<SavedArticle[]>("favorites")`: legge il `localStorage` in `onMounted` (chiave `frontwire.favorites`), riscrive a ogni cambio, espone `favorites`, `count`, `isSaved(id)`, `toggle(article)`. Commento d'interfaccia sul perché la lista resta vuota fino al montaggio, come in `useArticleFilters`.
+- [x] Commit: `feat(favorites): keep the saved articles in one shared list`
 
 ### Task 3 — Pulsante nella card e nel dettaglio
 
