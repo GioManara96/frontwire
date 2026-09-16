@@ -11,7 +11,8 @@ export type ArticleFilters = { category: Category | undefined; tags: TagId[] };
 /** A value of a router query: repeated keys give arrays, a key without `=` gives `null`. */
 type QueryValue = string | null | (string | null)[] | undefined;
 
-const CATEGORIES: readonly string[] = ["frontend", "ai"] satisfies Category[];
+/** The category vocabulary, for checking values that come from outside the app (a query, the browser storage). */
+export const CATEGORIES: readonly string[] = ["frontend", "ai"] satisfies Category[];
 const TAG_ORDER = Object.keys(TAGS) as TagId[];
 
 function isTagId(value: string): value is TagId {
