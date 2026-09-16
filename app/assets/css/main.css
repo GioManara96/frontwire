@@ -182,21 +182,31 @@
     @apply flex flex-col items-center gap-4 rounded-lg border border-border bg-surface p-8 text-center text-muted;
   }
 
-  /* —— Filter bar —— */
-  /* Sticks to the top while the archive scrolls. The negative margin and matching padding stretch its
-     background over the page padding, so cards never show through at the sides. */
+  /* —— Filters —— */
+  /* Two shapes for the same buttons. On a phone a bar stuck to the top, where the negative margin and the
+     matching padding stretch its background over the page padding so cards never show through at the sides.
+     From md up a column beside the archive, still in view while the page scrolls: a bar there would cost
+     a quarter of the screen together with the header. */
   .filter-bar {
-    @apply sticky top-0 z-20 -mx-5 mb-6 flex flex-col gap-3 border-b border-border bg-bg/95 px-5 py-3 backdrop-blur md:-mx-8 md:top-header md:px-8;
+    @apply sticky top-0 z-20 -mx-5 mb-6 flex flex-col gap-3 border-b border-border bg-bg/95 px-5 py-3 backdrop-blur;
+    @apply md:mx-0 md:mb-0 md:max-h-[calc(100vh-var(--spacing-header)-3rem)] md:gap-5 md:self-start md:overflow-y-auto md:border-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none;
+    @apply md:sticky md:top-[calc(var(--spacing-header)+1.5rem)];
+    /* The column scrolls on short screens; the tag cut off at the edge says there is more, as on the phone row. */
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
   }
 
   .filter-bar__categories {
-    @apply flex flex-wrap items-center gap-2;
+    @apply flex flex-wrap items-center gap-2 md:flex-col md:items-stretch;
   }
 
   /* One scrolling row on mobile, edge to edge; wraps from md up. The tag cut off at the edge shows there
      is more, so the scrollbar stays hidden. */
   .filter-bar__tags {
-    @apply -mx-5 flex gap-2 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:overflow-visible md:px-0;
+    @apply -mx-5 flex gap-2 overflow-x-auto px-5 md:mx-0 md:flex-col md:overflow-visible md:px-0;
     scrollbar-width: none;
   }
 
@@ -213,16 +223,17 @@
   }
 
   .filter-bar__clear {
-    @apply ms-auto min-h-11 px-2 font-mono text-xs uppercase tracking-wide text-accent;
+    @apply ms-auto min-h-11 px-2 font-mono text-xs uppercase tracking-wide text-accent md:ms-0 md:px-0 md:text-start;
   }
 
   .filter-bar__clear:hover {
     @apply underline;
   }
 
-  /* A filter button: category or tag. min-h-11 keeps the touch target at 44px. */
+  /* A filter button: category or tag. min-h-11 keeps the touch target at 44px on a phone; in the desktop
+     column a mouse-sized 32px lets the whole vocabulary fit without scrolling. */
   .filter {
-    @apply inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border bg-surface px-3 font-mono text-xs text-muted transition-colors;
+    @apply inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border bg-surface px-3 font-mono text-xs text-muted transition-colors md:min-h-8 md:w-full md:justify-start;
   }
 
   .filter:hover {
@@ -237,8 +248,14 @@
     @apply text-sm;
   }
 
+  /* In the column the counts line up on the right edge. */
   .filter__count {
-    @apply opacity-70;
+    @apply opacity-70 md:ms-auto;
+  }
+
+  /* The filters take a fixed column so the cards keep the same width whatever the tag labels are. */
+  .archive__layout {
+    @apply md:grid md:grid-cols-[12rem_1fr] md:gap-6;
   }
 
   .archive__grid {

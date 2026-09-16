@@ -26,17 +26,19 @@ watch(filters, () => {
       </p>
     </header>
     <p v-if="!articles?.length" class="archive__empty">No articles yet.</p>
-    <template v-else>
+    <div v-else class="archive__layout">
       <FilterBar :filters="filters" :tag-counts="tagCounts" @category="setCategory" @tag="toggleTag" @clear="clear" />
-      <div v-if="!visible.length" class="archive__empty">
-        <p>No articles match these filters.</p>
-        <button type="button" class="button button--ghost" @click="clear">Clear filters</button>
+      <div>
+        <div v-if="!visible.length" class="archive__empty">
+          <p>No articles match these filters.</p>
+          <button type="button" class="button button--ghost" @click="clear">Clear filters</button>
+        </div>
+        <ul v-else class="archive__grid">
+          <li v-for="article in visible" :key="article.id">
+            <ArticleCard :article="article" :active-tags="filters.tags" @tag="toggleTag" />
+          </li>
+        </ul>
       </div>
-      <ul v-else class="archive__grid">
-        <li v-for="article in visible" :key="article.id">
-          <ArticleCard :article="article" :active-tags="filters.tags" @tag="toggleTag" />
-        </li>
-      </ul>
-    </template>
+    </div>
   </div>
 </template>

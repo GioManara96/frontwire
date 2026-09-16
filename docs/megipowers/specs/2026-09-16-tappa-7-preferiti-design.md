@@ -57,7 +57,11 @@ In testa alla pagina, quando c'è almeno un salvato, un pulsante "Remove all". I
 
 Nell'header, accanto al link di GitHub, un segnalibro **nello stesso cerchio** del pulsante sulle copertine: sono la stessa cosa e devono somigliarsi. Il numero dei salvati sta appoggiato in alto a destra del cerchio, e compare solo dopo il montaggio e solo se è maggiore di zero: prima non c'è nulla da mostrare e uno zero a ogni caricamento sarebbe rumore.
 
-**Da `md` in su l'header è fisso** in cima e la barra dei filtri si incolla sotto di lui (`--spacing-header`, l'altezza dell'header). Così i preferiti restano a portata mentre si scorre l'archivio.
+**Da `md` in su l'header è fisso** in cima. Perché header e filtri insieme non tornino a pesare un quarto dello schermo, lì i filtri lasciano la barra orizzontale e diventano una **colonna a sinistra** larga 12rem, ferma sotto l'header mentre l'archivio scorre. Categorie e tag si impilano, i numeri si allineano a destra, e i pulsanti scendono da 44px a 32px: il bersaglio da pollice serve sul telefono, non col mouse. Così l'intero vocabolario (15 tag) sta in colonna senza scorrere su uno schermo da 900px; se un giorno non ci stesse, la colonna scorre per conto suo con la scrollbar nascosta, come la riga dei tag su mobile.
+
+Le card si stringono da ~370px a ~291px a 1280: il prezzo della colonna, pagato volentieri per avere in cima gli articoli invece dei filtri.
+
+`FilterBar` resta un solo componente con lo stesso markup: cambia solo il CSS.
 
 **Su mobile no:** header (75px) e barra dei filtri (125px) insieme prenderebbero 200px su 844, un quarto dello schermo. Lì l'header scorre via e al suo posto compare un **pulsante flottante** in basso a destra, col numero: più comodo per il pollice della cima dello schermo. Compare solo quando l'header è uscito, quando c'è almeno un salvato e quando non si è già in `/favorites`.
 
