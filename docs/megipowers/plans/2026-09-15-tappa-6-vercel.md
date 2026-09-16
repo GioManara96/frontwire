@@ -15,13 +15,13 @@
 
 ### Task 2 — Primo deploy · **Claude**
 
-- [ ] Deploy di produzione, build verde, sito raggiungibile su `*.vercel.app`: archivio, filtri, dettaglio, 404.
+- [x] Deploy di produzione, build verde, sito raggiungibile su `*.vercel.app`: archivio, filtri, dettaglio, 404.
 
 ### Task 3 — Dominio · **Claude**, poi **Giovanni**
 
 - [x] **Claude:** `vercel domains add frontwire.giovannimanara.dev frontwire`, e il record richiesto: `CNAME frontwire` → `3f1cdc9308962f7c.vercel-dns-017.com`, DNS only.
-- [ ] **Giovanni:** su Cloudflare, `CNAME frontwire` verso quel valore, **DNS only**.
-- [ ] **Claude:** dominio verificato, HTTPS valido.
+- [x] **Giovanni:** su Cloudflare, `CNAME frontwire` verso quel valore, **DNS only**.
+- [x] **Claude:** dominio verificato, HTTPS valido.
 
 ### Task 4 — Meta social · **Claude**
 
@@ -30,9 +30,9 @@
 
 ### Task 5 — Documentazione · **Claude**
 
-- [ ] `CLAUDE.md` aggiornato. Commit: `docs: update CLAUDE.md after stage 6`
+- [x] `CLAUDE.md` aggiornato. Commit: `docs: update CLAUDE.md after stage 6`
 
 ### Task 6 — Rilascio · con il via di Giovanni
 
-- [ ] Merge in `staging` e `main`, push: il deploy parte da solo dal push.
-- [ ] Sito vero aggiornato con i meta nuovi.
+- [x] Merge in `staging` e `main`, push: il deploy parte da solo dal push.
+- [x] Sito vero aggiornato con i meta nuovi.

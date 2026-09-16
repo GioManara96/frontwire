@@ -70,5 +70,5 @@
 
 ### Task 8 — Rilascio · con il via di Giovanni
 
-- [ ] Merge in `staging` e in `main`, push.
-- [ ] `staging` riallineato con `main` se il bot ha committato.
+- [x] Merge in `staging` e in `main`, push.
+- [x] `staging` riallineato con `main` se il bot ha committato.
