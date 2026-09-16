@@ -1,5 +1,17 @@
 [
   {
+    "id": "7609be22d808",
+    "title": "When CSS could run JavaScript",
+    "url": "https://frontendfoc.us/issues/758",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-09-16T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform",
+      "javascript"
+    ]
+  },
+  {
     "id": "25823e681aab",
     "title": "Gemini 3.8 Live and 3.8 Live Extended Thinking",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
@@ -348,17 +360,6 @@
     ],
     "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
     "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
-  },
-  {
-    "id": "33e5a07a6003",
-    "title": "The asteroid hitting frontend development",
-    "url": "https://frontendfoc.us/issues/755",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-08-26T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
   },
   {
     "id": "55b063bea3c1",
