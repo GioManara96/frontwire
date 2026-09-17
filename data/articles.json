@@ -1,5 +1,19 @@
 [
   {
+    "id": "08a56ffbb022",
+    "title": "Vue v3.5.43",
+    "url": "https://github.com/vuejs/core/releases/tag/v3.5.43",
+    "sourceId": "vue-releases",
+    "publishedAt": "2026-09-17T08:36:57.000Z",
+    "category": "frontend",
+    "tags": [
+      "vue",
+      "release"
+    ],
+    "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
+    "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
+  },
+  {
     "id": "38c7a610095f",
     "title": "This Week In React #297: DevTools, Motion, Apollo, React Router, Hook Form, shadcn lint | Shopify, Expo 58 beta, ExecuTorch, Screenmap, Voltra, SPM, Stim, Lynx, Metro, AI | pnpm, oj, Zod, Devframe, Safari, Webpack",
     "url": "https://thisweekinreact.com/newsletter/297",
