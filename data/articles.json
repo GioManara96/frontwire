@@ -1,5 +1,17 @@
 [
   {
+    "id": "1536c16acff7",
+    "title": "GPT-6 Astra Solves a WWI German Radio Cipher",
+    "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-19T06:41:44.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49763987"
+  },
+  {
     "id": "3d68ad8e1324",
     "title": "Claude Code now reads AGENTS.md if there is no Claude.md",
     "url": "https://code.claude.com/docs/en/changelog",
@@ -108,18 +120,6 @@
     ],
     "excerpt": "The following bug fixes have been backported. It does not include all pending features/changes on canary. next/image: Skip 0-byte entries when initializing disk LRU cache (#98185) next/image: Reject empty images when reading/writing to the disk cache (#98186) Emit whole-app server NFTs when…",
     "contentHtml": "<p>The following bug fixes have been backported. It does not include all pending features/changes on canary.</p>\n<ul>\n<li>next/image: Skip 0-byte entries when initializing disk LRU cache (<a href=\"https://github.com/vercel/next.js/pull/98185\">#98185</a>)</li>\n<li>next/image: Reject empty images when reading/writing to the disk cache (<a href=\"https://github.com/vercel/next.js/pull/98186\">#98186</a>)</li>\n<li>Emit whole-app server NFTs when <code>output: 'standalone'</code> is used with an adapter (<a href=\"https://github.com/vercel/next.js/pull/98167\">#98167</a>)</li>\n<li>Add CSP nonce to script tags of loading and template files (<a href=\"https://github.com/vercel/next.js/pull/98403\">#98403</a>)</li>\n<li>Fix <code>use cache</code> prerender signal retention (<a href=\"https://github.com/vercel/next.js/pull/98448\">#98448</a>)</li>\n</ul>"
-  },
-  {
-    "id": "3dffb20e2b3c",
-    "title": "OpenAI Agents API",
-    "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-10T19:43:22.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49649213"
   },
   {
     "id": "27d92b9e24d1",
@@ -397,19 +397,5 @@
       "nextjs"
     ],
     "excerpt": "The August 2026 security release for Next.js is now available"
-  },
-  {
-    "id": "4145f88bfc5e",
-    "title": "TypeScript v7.0.2",
-    "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.0.2",
-    "sourceId": "typescript-releases",
-    "publishedAt": "2026-08-20T18:09:49.000Z",
-    "category": "frontend",
-    "tags": [
-      "typescript",
-      "release"
-    ],
-    "excerpt": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/ This tag was originally released at: https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2",
-    "contentHtml": "<p><a href=\"https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/\">https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/</a></p>\n<p>This tag was originally released at: <a href=\"https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2\">https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2</a></p>"
   }
 ]
