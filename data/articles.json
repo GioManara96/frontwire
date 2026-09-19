@@ -1,5 +1,17 @@
 [
   {
+    "id": "3d68ad8e1324",
+    "title": "Claude Code now reads AGENTS.md if there is no Claude.md",
+    "url": "https://code.claude.com/docs/en/changelog",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-18T21:00:32.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49760187"
+  },
+  {
     "id": "08a56ffbb022",
     "title": "Vue v3.5.43",
     "url": "https://github.com/vuejs/core/releases/tag/v3.5.43",
@@ -108,18 +120,6 @@
       "openai"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=49649213"
-  },
-  {
-    "id": "ccf40ae115f1",
-    "title": "Shopify is moving from React Native back to Swift and Kotlin",
-    "url": "https://shopify.engineering/back-to-native",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-10T14:09:31.000Z",
-    "category": "frontend",
-    "tags": [
-      "react"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49643982"
   },
   {
     "id": "27d92b9e24d1",
@@ -411,19 +411,5 @@
     ],
     "excerpt": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/ This tag was originally released at: https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2",
     "contentHtml": "<p><a href=\"https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/\">https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/</a></p>\n<p>This tag was originally released at: <a href=\"https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2\">https://github.com/microsoft/typescript-go/releases/tag/typescript%2Fv7.0.2</a></p>"
-  },
-  {
-    "id": "b2265837e4df",
-    "title": "Vite v8.2.2",
-    "url": "https://github.com/vitejs/vite/releases/tag/v8.2.2",
-    "sourceId": "vite-releases",
-    "publishedAt": "2026-08-20T04:08:13.000Z",
-    "category": "frontend",
-    "tags": [
-      "vite",
-      "release"
-    ],
-    "excerpt": "Please refer to CHANGELOG.md for details.",
-    "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v8.2.2/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
   }
 ]
