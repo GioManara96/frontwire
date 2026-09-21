@@ -1,5 +1,17 @@
 [
   {
+    "id": "3c7477838dff",
+    "title": "Upcoming Next.js Security Update for a Critical Upstream Issue",
+    "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-09-21T20:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Next.js 16.3.6 and 15.5.26 are planned for a critical out-of-band security update on September 22, 2026."
+  },
+  {
     "id": "1536c16acff7",
     "title": "GPT-6 Astra Solves a WWI German Radio Cipher",
     "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
@@ -385,17 +397,5 @@
     ],
     "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
     "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
-  },
-  {
-    "id": "55b063bea3c1",
-    "title": "August 2026 Security Release",
-    "url": "https://nextjs.org/blog/august-2026-security-release",
-    "sourceId": "nextjs-blog",
-    "publishedAt": "2026-08-25T18:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs"
-    ],
-    "excerpt": "The August 2026 security release for Next.js is now available"
   }
 ]
