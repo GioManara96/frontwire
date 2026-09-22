@@ -1,5 +1,44 @@
 [
   {
+    "id": "7d355130cb2d",
+    "title": "Next.js v15.5.26",
+    "url": "https://github.com/vercel/next.js/releases/tag/v15.5.26",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-09-22T15:43:59.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "v15.5.26",
+    "contentHtml": "<p>v15.5.26</p>"
+  },
+  {
+    "id": "df93dab15cc9",
+    "title": "Next.js v16.3.6",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.3.6",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-09-22T15:41:35.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "v16.3.6",
+    "contentHtml": "<p>v16.3.6</p>"
+  },
+  {
+    "id": "61f2cc4cf013",
+    "title": "JavaScript desktop apps in under 10MB",
+    "url": "https://javascriptweekly.com/issues/803",
+    "sourceId": "javascript-weekly",
+    "publishedAt": "2026-09-22T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ]
+  },
+  {
     "id": "3c7477838dff",
     "title": "Upcoming Next.js Security Update for a Critical Upstream Issue",
     "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
@@ -347,17 +386,6 @@
     "category": "ai",
     "tags": [
       "huggingface"
-    ]
-  },
-  {
-    "id": "db14c2872829",
-    "title": "How to fit Minesweeper into 247 bytes",
-    "url": "https://javascriptweekly.com/issues/800",
-    "sourceId": "javascript-weekly",
-    "publishedAt": "2026-09-01T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript"
     ]
   },
   {
