@@ -49,6 +49,18 @@
     "excerpt": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
   },
   {
+    "id": "308053ac246a",
+    "title": "Claude Opus 5.5 Intelligence, Performance and Price Analysis (Max)",
+    "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-22T16:51:31.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49804316"
+  },
+  {
     "id": "70dd77e15b4f",
     "title": "Claude Opus 5.5",
     "url": "https://www.anthropic.com/claude-opus-5-5",
@@ -122,18 +134,6 @@
       "openai"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=49763987"
-  },
-  {
-    "id": "3d68ad8e1324",
-    "title": "Claude Code now reads AGENTS.md if there is no Claude.md",
-    "url": "https://code.claude.com/docs/en/changelog",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-18T21:00:32.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49760187"
   },
   {
     "id": "08a56ffbb022",
