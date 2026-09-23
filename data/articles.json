@@ -1,5 +1,40 @@
 [
   {
+    "id": "721de6922a1a",
+    "title": "Gemini 3.8 text-to-speech says hello",
+    "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-23T15:25:14.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "49da23d57daa",
+    "title": "Claude Code reads AGENTS.md only when telemetry is on [fixed]",
+    "url": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-23T12:15:33.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49814947"
+  },
+  {
+    "id": "f4eeeac37a39",
+    "title": "12 CSS features that can retire your dependencies",
+    "url": "https://frontendfoc.us/issues/759",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ]
+  },
+  {
     "id": "5b206843ef21",
     "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
     "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
@@ -122,18 +157,6 @@
       "nextjs"
     ],
     "excerpt": "Next.js 16.3.6 and 15.5.26 are planned for a critical out-of-band security update on September 22, 2026."
-  },
-  {
-    "id": "1536c16acff7",
-    "title": "GPT-6 Astra Solves a WWI German Radio Cipher",
-    "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-19T06:41:44.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49763987"
   },
   {
     "id": "08a56ffbb022",
@@ -367,17 +390,6 @@
     ]
   },
   {
-    "id": "9c7dcc449782",
-    "title": "htmx 4.0 takes HTML-driven apps further",
-    "url": "https://frontendfoc.us/issues/756",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-09-02T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
-  },
-  {
     "id": "af9cc98f65eb",
     "title": "Claude Fable 5.1 made me a really nice animated pelican",
     "url": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
@@ -411,18 +423,6 @@
       "svelte"
     ],
     "excerpt": "This month, Svelte 5.57 shipped with new SvelteMap methods and a few quality-of-life additions while SvelteKit 3 got closer to the finish line with its Release Candidate. The sv CLI also got a new ai-tools add-on that replaces the old mcp one, and sv@next now ships a task-based sveltekit-3…"
-  },
-  {
-    "id": "90ba20dc32b5",
-    "title": "Gemini Omni 1.1 Flash lets you build with more control",
-    "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-08-27T16:11:32.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
   },
   {
     "id": "f84615aa36ca",
