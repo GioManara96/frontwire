@@ -1,5 +1,18 @@
 [
   {
+    "id": "5b206843ef21",
+    "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
+    "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+    "sourceId": "simon-willison",
+    "publishedAt": "2026-09-22T23:46:41.000Z",
+    "category": "ai",
+    "tags": [
+      "openai",
+      "anthropic"
+    ],
+    "excerpt": "Yesterday was Grok 4.7 (pelicans) and MiMo v2.6 Flash/Pro (more pelicans). Today Anthropic released Claude Opus 5.5, and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna. It's going to take a while to get a good read on all of these new models, but here are my impressions so far…"
+  },
+  {
     "id": "f9027d80e820",
     "title": "Better prompt caching for GPT-6",
     "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
