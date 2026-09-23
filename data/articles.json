@@ -24,6 +24,18 @@
     "discussionUrl": "https://news.ycombinator.com/item?id=49814947"
   },
   {
+    "id": "7ecf428bd7f6",
+    "title": "This Week In React #298: Astro, Redux, img, Hotkeys, R3F, Next.js, AI, Redact | Reanimated, Worklets, Helix, Screens, SecondaryRuntime, Arrangement View, View Shot | TC39, Node, pnpm, Turborepo, jsdom, responsive iframes",
+    "url": "https://thisweekinreact.com/newsletter/298",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs"
+    ]
+  },
+  {
     "id": "f4eeeac37a39",
     "title": "12 CSS features that can retire your dependencies",
     "url": "https://frontendfoc.us/issues/759",
@@ -374,19 +386,6 @@
     "tags": [
       "deepmind",
       "gemini"
-    ]
-  },
-  {
-    "id": "594816747e85",
-    "title": "This Week In React #295: StyleX, browser(), Next.js, React Compiler, Vite, Bun, Astryx, Formisch, React-Aria, TanStack | C++ API, Margelo, Observe, Reanimated, Teleport, Nitro, Screen Transitions | Zod, pnpm, vgpu, Remix, Rspack, Webpack",
-    "url": "https://thisweekinreact.com/newsletter/295",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-09-02T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs",
-      "vite"
     ]
   },
   {
