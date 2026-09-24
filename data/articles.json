@@ -1,5 +1,31 @@
 [
   {
+    "id": "6add3dd62456",
+    "title": "Introducing Gemini 3.8 Live with Live Avatar",
+    "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-09-24T16:20:39.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "54b311940695",
+    "title": "Vite v8.3.1",
+    "url": "https://github.com/vitejs/vite/releases/tag/v8.3.1",
+    "sourceId": "vite-releases",
+    "publishedAt": "2026-09-24T12:23:55.000Z",
+    "category": "frontend",
+    "tags": [
+      "vite",
+      "release"
+    ],
+    "excerpt": "Bug Fixes deps: update all non-major dependencies (#23482) (3c752c8) deps: update all non-major dependencies (#23537) (e8990c4) deps: update rolldown-related dependencies (#23483) (9aecbbf) handle server.ws: false in mergeConfig (#23511) (f68c0d5) merge build.rolldownOptions.output.comments…",
+    "contentHtml": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23482\">#23482</a>) (<a href=\"https://github.com/vitejs/vite/commit/3c752c8932bc0599465ba4a6d8f44aaf1e934c3d\">3c752c8</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23537\">#23537</a>) (<a href=\"https://github.com/vitejs/vite/commit/e8990c4d6101dfaca2654ed8ab4d0574ee920248\">e8990c4</a>)</li>\n<li><strong>deps:</strong> update rolldown-related dependencies (<a href=\"https://github.com/vitejs/vite/issues/23483\">#23483</a>) (<a href=\"https://github.com/vitejs/vite/commit/9aecbbfa5fb5da4b9981c099cb9746a9fd210806\">9aecbbf</a>)</li>\n<li>handle <code>server.ws: false</code> in mergeConfig (<a href=\"https://github.com/vitejs/vite/issues/23511\">#23511</a>) (<a href=\"https://github.com/vitejs/vite/commit/f68c0d5a28c96555431413e3e2cbe644337b087f\">f68c0d5</a>)</li>\n<li>merge <code>build.rolldownOptions.output.comments</code> correctly (<a href=\"https://github.com/vitejs/vite/issues/23514\">#23514</a>) (<a href=\"https://github.com/vitejs/vite/commit/4aba8d8720e82e4c5b694a4b7877755a3f84fc57\">4aba8d8</a>)</li>\n<li><strong>optimizer:</strong> don't skip imports whose binding starts with type (<a href=\"https://github.com/vitejs/vite/issues/23540\">#23540</a>) (<a href=\"https://github.com/vitejs/vite/commit/39330f489a0ae08923557f0ce10a307d6662a3f5\">39330f4</a>)</li>\n<li><strong>optimizer:</strong> resolve pending discovered dep processing on close before init (<a href=\"https://github.com/vitejs/vite/issues/23567\">#23567</a>) (<a href=\"https://github.com/vitejs/vite/commit/5f894339d27882fedc86bf6b1076fa6d92e404f3\">5f89433</a>)</li>\n<li><strong>server:</strong> avoid reinitializing watcher when adding file after server close (<a href=\"https://github.com/vitejs/vite/issues/23572\">#23572</a>) (<a href=\"https://github.com/vitejs/vite/commit/6f831f9b58ebda77638b514042ad8d160edfb928\">6f831f9</a>)</li>\n<li><strong>sourcemap:</strong> skip URL source roots when injecting sources content (<a href=\"https://github.com/vitejs/vite/issues/23519\">#23519</a>) (<a href=\"https://github.com/vitejs/vite/commit/04fc30a4b91870e65a436b3420620a2e02a94a41\">04fc30a</a>)</li>\n</ul>\n<h3>Miscellaneous Chores</h3>\n<ul>\n<li>merge prereleases in changelog (<a href=\"https://github.com/vitejs/vite/issues/23466\">#23466</a>) (<a href=\"https://github.com/vitejs/vite/commit/99bd9d1d46153fa939f4a304cc0177db42e28776\">99bd9d1</a>)</li>\n<li><strong>optimizer:</strong> add debug log when waiting for dep before init (<a href=\"https://github.com/vitejs/vite/issues/23566\">#23566</a>) (<a href=\"https://github.com/vitejs/vite/commit/63567c73ac132e6384fef384e6b9f7e8d5a37fff\">63567c7</a>)</li>\n<li>update <code>optimizeDeps.include</code> comment (<a href=\"https://github.com/vitejs/vite/issues/23489\">#23489</a>) (<a href=\"https://github.com/vitejs/vite/commit/6a84c72100da4e4be4badb2d9a0026279b4df136\">6a84c72</a>)</li>\n</ul>\n<h3>Code Refactoring</h3>\n<ul>\n<li>assets regexp use non-capture (<a href=\"https://github.com/vitejs/vite/issues/23491\">#23491</a>) (<a href=\"https://github.com/vitejs/vite/commit/f4b4431a2f9097fd9bbb7aaebbf1b63c4b54dea1\">f4b4431</a>)</li>\n<li>remove duplicate configurations (<a href=\"https://github.com/vitejs/vite/issues/23532\">#23532</a>) (<a href=\"https://github.com/vitejs/vite/commit/9abd99bfdd3117149d6faf87fc37bc9899b1c998\">9abd99b</a>)</li>\n<li>replace <code>find</code> with <code>some</code> (<a href=\"https://github.com/vitejs/vite/issues/23554\">#23554</a>) (<a href=\"https://github.com/vitejs/vite/commit/af7cdf6964f124f58d66037e808fe687654948e2\">af7cdf6</a>)</li>\n</ul>"
+  },
+  {
     "id": "31fa76f66e5e",
     "title": "Upcoming Next.js September Security Release",
     "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-2026",
@@ -34,6 +60,18 @@
       "deepmind",
       "gemini"
     ]
+  },
+  {
+    "id": "2a3e3e3335c2",
+    "title": "GPT-6 Astra has gained the ability to drive a car",
+    "url": "https://drivingbench.com/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-23T15:14:22.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49817404"
   },
   {
     "id": "49da23d57daa",
@@ -118,18 +156,6 @@
       "openai"
     ],
     "excerpt": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
-  },
-  {
-    "id": "308053ac246a",
-    "title": "Claude Opus 5.5 Intelligence, Performance and Price Analysis (Max)",
-    "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-22T16:51:31.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49804316"
   },
   {
     "id": "7d355130cb2d",
@@ -374,18 +400,6 @@
     "category": "ai",
     "tags": [
       "huggingface"
-    ]
-  },
-  {
-    "id": "355be2cf6d2d",
-    "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
-    "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-09-02T16:18:31.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
     ]
   },
   {
