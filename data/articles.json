@@ -12,6 +12,18 @@
     "excerpt": "Next.js is preparing a scheduled September security release for September 30, 2026."
   },
   {
+    "id": "c99106a5c97c",
+    "title": "Gemini 3.8 text-to-speech",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-09-23T15:29:23.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49817615"
+  },
+  {
     "id": "721de6922a1a",
     "title": "Gemini 3.8 text-to-speech says hello",
     "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
@@ -118,18 +130,6 @@
       "anthropic"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=49804316"
-  },
-  {
-    "id": "70dd77e15b4f",
-    "title": "Claude Opus 5.5",
-    "url": "https://www.anthropic.com/claude-opus-5-5",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-22T16:29:05.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49803892"
   },
   {
     "id": "7d355130cb2d",
