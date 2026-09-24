@@ -1,5 +1,17 @@
 [
   {
+    "id": "31fa76f66e5e",
+    "title": "Upcoming Next.js September Security Release",
+    "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-2026",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-09-23T18:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Next.js is preparing a scheduled September security release for September 30, 2026."
+  },
+  {
     "id": "721de6922a1a",
     "title": "Gemini 3.8 text-to-speech says hello",
     "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
@@ -341,18 +353,6 @@
     "tags": [
       "javascript"
     ]
-  },
-  {
-    "id": "2bc63ecd7ddc",
-    "title": "How we closed 1,500 GitHub issues in one month",
-    "url": "https://nextjs.org/blog/how-we-closed-1500-github-issues",
-    "sourceId": "nextjs-blog",
-    "publishedAt": "2026-09-04T04:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs"
-    ],
-    "excerpt": "How the Next.js team used an agent to research old reports and work through the issue backlog."
   },
   {
     "id": "b5500bc65035",
