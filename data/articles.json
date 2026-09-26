@@ -436,19 +436,5 @@
       "svelte"
     ],
     "excerpt": "This month, Svelte 5.57 shipped with new SvelteMap methods and a few quality-of-life additions while SvelteKit 3 got closer to the finish line with its Release Candidate. The sv CLI also got a new ai-tools add-on that replaces the old mcp one, and sv@next now ships a task-based sveltekit-3…"
-  },
-  {
-    "id": "f84615aa36ca",
-    "title": "Vue v3.5.42",
-    "url": "https://github.com/vuejs/core/releases/tag/v3.5.42",
-    "sourceId": "vue-releases",
-    "publishedAt": "2026-08-27T05:47:42.000Z",
-    "category": "frontend",
-    "tags": [
-      "vue",
-      "release"
-    ],
-    "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
-    "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
   }
 ]
