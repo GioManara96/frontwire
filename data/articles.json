@@ -1,5 +1,19 @@
 [
   {
+    "id": "5e87648535bb",
+    "title": "Next.js v16.3.7",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.3.7",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-09-29T08:54:51.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "Note This release is backporting bug fixes. It does not include all pending features/changes on canary. Core Changes turbo-tasks-backend: fix strongly consistent read hanging on a canceled task (#98931) Credits Huge thanks to @lukesandberg for helping!",
+    "contentHtml": "<p>Note</p><p>This release is backporting bug fixes. It does <strong>not</strong> include all pending features/changes on canary.</p>\n\n<h3>Core Changes</h3>\n<ul>\n<li>turbo-tasks-backend: fix strongly consistent read hanging on a canceled task (<a href=\"https://github.com/vercel/next.js/pull/98931\">#98931</a>)</li>\n</ul>\n<h3>Credits</h3>\n<p>Huge thanks to <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> for helping!</p>"
+  },
+  {
     "id": "6add3dd62456",
     "title": "Introducing Gemini 3.8 Live with Live Avatar",
     "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
@@ -279,20 +293,6 @@
       "openai"
     ],
     "excerpt": "Here's a neat thing I had ChatGPT Work with GPT-6 Astra (Max) do this morning: I live at <my address>. Figure out 5K and 10K running routes from me that loop from my house. Use OSM data. It worked for 27 minutes and produced exactly what I'd asked for, as both an embedded visualization and…"
-  },
-  {
-    "id": "77e3de73fcba",
-    "title": "Next.js v16.3.5",
-    "url": "https://github.com/vercel/next.js/releases/tag/v16.3.5",
-    "sourceId": "nextjs-releases",
-    "publishedAt": "2026-09-11T19:15:50.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "release"
-    ],
-    "excerpt": "The following bug fixes have been backported. It does not include all pending features/changes on canary. next/image: Skip 0-byte entries when initializing disk LRU cache (#98185) next/image: Reject empty images when reading/writing to the disk cache (#98186) Emit whole-app server NFTs when…",
-    "contentHtml": "<p>The following bug fixes have been backported. It does not include all pending features/changes on canary.</p>\n<ul>\n<li>next/image: Skip 0-byte entries when initializing disk LRU cache (<a href=\"https://github.com/vercel/next.js/pull/98185\">#98185</a>)</li>\n<li>next/image: Reject empty images when reading/writing to the disk cache (<a href=\"https://github.com/vercel/next.js/pull/98186\">#98186</a>)</li>\n<li>Emit whole-app server NFTs when <code>output: 'standalone'</code> is used with an adapter (<a href=\"https://github.com/vercel/next.js/pull/98167\">#98167</a>)</li>\n<li>Add CSP nonce to script tags of loading and template files (<a href=\"https://github.com/vercel/next.js/pull/98403\">#98403</a>)</li>\n<li>Fix <code>use cache</code> prerender signal retention (<a href=\"https://github.com/vercel/next.js/pull/98448\">#98448</a>)</li>\n</ul>"
   },
   {
     "id": "27d92b9e24d1",
