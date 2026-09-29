@@ -1,5 +1,28 @@
 [
   {
+    "id": "afa8c33f8eb7",
+    "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+    "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-09-29T13:07:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
+    "id": "d6b9f5e651b1",
+    "title": "Introducing GPT-6.1 Sol",
+    "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-09-29T10:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices."
+  },
+  {
     "id": "5e87648535bb",
     "title": "Next.js v16.3.7",
     "url": "https://github.com/vercel/next.js/releases/tag/v16.3.7",
@@ -12,6 +35,17 @@
     ],
     "excerpt": "Note This release is backporting bug fixes. It does not include all pending features/changes on canary. Core Changes turbo-tasks-backend: fix strongly consistent read hanging on a canceled task (#98931) Credits Huge thanks to @lukesandberg for helping!",
     "contentHtml": "<p>Note</p><p>This release is backporting bug fixes. It does <strong>not</strong> include all pending features/changes on canary.</p>\n\n<h3>Core Changes</h3>\n<ul>\n<li>turbo-tasks-backend: fix strongly consistent read hanging on a canceled task (<a href=\"https://github.com/vercel/next.js/pull/98931\">#98931</a>)</li>\n</ul>\n<h3>Credits</h3>\n<p>Huge thanks to <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> for helping!</p>"
+  },
+  {
+    "id": "c9821fb6260d",
+    "title": "A-ha's Take on Me, recreated in pure JavaScript",
+    "url": "https://javascriptweekly.com/issues/804",
+    "sourceId": "javascript-weekly",
+    "publishedAt": "2026-09-29T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ]
   },
   {
     "id": "6add3dd62456",
@@ -309,18 +343,6 @@
     "contentHtml": "<h3>Features</h3>\n<ul>\n<li><strong>build:</strong> avoid settling seen preload dependencies for performance (<a href=\"https://github.com/vitejs/vite/issues/23446\">#23446</a>) (<a href=\"https://github.com/vitejs/vite/commit/e6f6b3e3119256daa837b2dc399058c8aa45b470\">e6f6b3e</a>)</li>\n</ul>\n<h3>Bug Fixes</h3>\n<ul>\n<li>handle CRLF line endings in code frame positions (<a href=\"https://github.com/vitejs/vite/issues/23219\">#23219</a>) (<a href=\"https://github.com/vitejs/vite/commit/9913672bee9c34a2df7fff4c2538783cd4f43b4e\">9913672</a>)</li>\n<li>only treat whole <code>node_modules</code> path segments as dependencies (fix <a href=\"https://github.com/vitejs/vite/issues/17467\">#17467</a>) (<a href=\"https://github.com/vitejs/vite/issues/23437\">#23437</a>) (<a href=\"https://github.com/vitejs/vite/commit/ef0dc17ada53d1169ae5a89cb8f6482831466755\">ef0dc17</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>proxy:</strong> pre-compile context matchers at server creation (<a href=\"https://github.com/vitejs/vite/issues/23263\">#23263</a>) (<a href=\"https://github.com/vitejs/vite/commit/8abf700eeb2411d8402d08f8e2696effafdbe774\">8abf700</a>)</li>\n</ul>"
   },
   {
-    "id": "b32e9b847135",
-    "title": "Introducing the Agents API",
-    "url": "https://openai.com/index/introducing-the-agents-api",
-    "sourceId": "openai-news",
-    "publishedAt": "2026-09-10T00:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "excerpt": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
-  },
-  {
     "id": "8a7cf4293a31",
     "title": "React v19.3.0",
     "url": "https://github.com/react/react/releases/tag/v19.3.0",
@@ -370,17 +392,6 @@
     ]
   },
   {
-    "id": "22032e701dc7",
-    "title": "When 8 chunks weigh more than 355",
-    "url": "https://javascriptweekly.com/issues/801",
-    "sourceId": "javascript-weekly",
-    "publishedAt": "2026-09-08T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript"
-    ]
-  },
-  {
     "id": "b5500bc65035",
     "title": "Training a coding model to paint watercolours with TRL and OpenEnv",
     "url": "https://huggingface.co/blog/train-to-paint-with-code",
@@ -413,17 +424,6 @@
       "anthropic"
     ],
     "excerpt": "Today is Claude Fable (and Mythos) 5.1 day. Anthropic say that Fable 5.1 \"sets a new standard for coding, knowledge work, and long-running problem-solving tasks\". Their announcement spends a notable amount of time on scientific research, boasting of a 52.6% score on the brand new…"
-  },
-  {
-    "id": "91dad0068ec2",
-    "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
-    "url": "https://huggingface.co/blog/webgpu-kernels",
-    "sourceId": "huggingface-blog",
-    "publishedAt": "2026-09-01T00:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "huggingface"
-    ]
   },
   {
     "id": "f4b81d01d240",
