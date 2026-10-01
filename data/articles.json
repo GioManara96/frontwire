@@ -424,17 +424,5 @@
       "anthropic"
     ],
     "excerpt": "Today is Claude Fable (and Mythos) 5.1 day. Anthropic say that Fable 5.1 \"sets a new standard for coding, knowledge work, and long-running problem-solving tasks\". Their announcement spends a notable amount of time on scientific research, boasting of a 52.6% score on the brand new…"
-  },
-  {
-    "id": "f4b81d01d240",
-    "title": "What’s new in Svelte: September 2026",
-    "url": "https://svelte.dev/blog/whats-new-in-svelte-september-2026",
-    "sourceId": "svelte-blog",
-    "publishedAt": "2026-09-01T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "svelte"
-    ],
-    "excerpt": "This month, Svelte 5.57 shipped with new SvelteMap methods and a few quality-of-life additions while SvelteKit 3 got closer to the finish line with its Release Candidate. The sv CLI also got a new ai-tools add-on that replaces the old mcp one, and sv@next now ships a task-based sveltekit-3…"
   }
 ]
