@@ -1,5 +1,17 @@
 [
   {
+    "id": "c38af6e5cae4",
+    "title": "A model guide for the GPT-6 family",
+    "url": "https://openai.com/index/practical-guide-building-gpt-6",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-10-02T16:15:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production."
+  },
+  {
     "id": "2ea857e7b3cc",
     "title": "Vite v8.3.2",
     "url": "https://github.com/vitejs/vite/releases/tag/v8.3.2",
@@ -305,18 +317,6 @@
       "nextjs"
     ],
     "excerpt": "The September 22, 2026 out-of-band security update for Next.js is now available"
-  },
-  {
-    "id": "73461b3e97af",
-    "title": "Introducing GPT-6 Sol and Luna",
-    "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
-    "sourceId": "openai-news",
-    "publishedAt": "2026-09-22T18:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "excerpt": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
   },
   {
     "id": "61f2cc4cf013",
