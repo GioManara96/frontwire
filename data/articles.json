@@ -26,6 +26,18 @@
     "excerpt": "Version 3.0 of SvelteKit, the official application framework for Svelte, is now available. If you’ve used earlier versions of SvelteKit, everything will feel very familiar — it’s the same framework with a little more polish, a little more type safety, and a little less junk. We’ve made migration…"
   },
   {
+    "id": "96f35251bb5d",
+    "title": "What’s new in Svelte: October 2026",
+    "url": "https://svelte.dev/blog/whats-new-in-svelte-october-2026",
+    "sourceId": "svelte-blog",
+    "publishedAt": "2026-10-01T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "svelte"
+    ],
+    "excerpt": "SvelteKit 3 is here! Check out the announcement post for the highlights, then run sv migrate to handle most of the upgrade for you. sv itself hit 1.0 on the same day, making the community add-on API official. Below you’ll find the last round of changes that landed before 3.0 - adapter API updates…"
+  },
+  {
     "id": "8a18dee8ca8f",
     "title": "Gemini 4 Argon",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
