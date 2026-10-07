@@ -1,5 +1,31 @@
 [
   {
+    "id": "5b45547a3e6f",
+    "title": "This Week In React #300: Next.js, TanStack, React Foundation, Compiler, Ink, Streamdown, Shaders | Skia, Live Activities, Lucent, Voltra, Apex, Coinbase, Stim Desktop, Unistyles | TC39, e2e, Effect, Remix, h3, SvelteKit, TypeScript",
+    "url": "https://thisweekinreact.com/newsletter/300",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-10-07T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs",
+      "svelte",
+      "typescript"
+    ]
+  },
+  {
+    "id": "153343ccc6fd",
+    "title": "Next.js 16.4",
+    "url": "https://nextjs.org/blog/next-16-4",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-10-06T20:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "Next.js 16.4 introduces lazy compilation, smaller Turbopack output, React 19.3 features, Cache Components improvements, and new developer tooling."
+  },
+  {
     "id": "fb176bf94b4a",
     "title": "Next.js v16.4.0",
     "url": "https://github.com/vercel/next.js/releases/tag/v16.4.0",
@@ -359,18 +385,6 @@
     "excerpt": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
   },
   {
-    "id": "35441a0721f4",
-    "title": "Next.js Security Update for a Critical Upstream Issue",
-    "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
-    "sourceId": "nextjs-blog",
-    "publishedAt": "2026-09-22T18:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs"
-    ],
-    "excerpt": "The September 22, 2026 out-of-band security update for Next.js is now available"
-  },
-  {
     "id": "61f2cc4cf013",
     "title": "JavaScript desktop apps in under 10MB",
     "url": "https://javascriptweekly.com/issues/803",
@@ -394,17 +408,6 @@
     ],
     "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
     "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
-  },
-  {
-    "id": "38c7a610095f",
-    "title": "This Week In React #297: DevTools, Motion, Apollo, React Router, Hook Form, shadcn lint | Shopify, Expo 58 beta, ExecuTorch, Screenmap, Voltra, SPM, Stim, Lynx, Metro, AI | pnpm, oj, Zod, Devframe, Safari, Webpack",
-    "url": "https://thisweekinreact.com/newsletter/297",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-09-16T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react"
-    ]
   },
   {
     "id": "7609be22d808",
