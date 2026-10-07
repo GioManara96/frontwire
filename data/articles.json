@@ -1,5 +1,29 @@
 [
   {
+    "id": "fdc864340b44",
+    "title": "Claude Haiku 5.5",
+    "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
+    "sourceId": "simon-willison",
+    "publishedAt": "2026-10-07T20:56:21.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "excerpt": "As previously promised, here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5. The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago, and was priced at $1/million input and $5/million output - relatively expensive even back then, and a full 10x…"
+  },
+  {
+    "id": "6b1b69f74c1f",
+    "title": "Claude Haiku 5.5",
+    "url": "https://www.anthropic.com/claude-haiku-5-5",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-07T18:01:32.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=49996437"
+  },
+  {
     "id": "5b45547a3e6f",
     "title": "This Week In React #300: Next.js, TanStack, React Foundation, Compiler, Ink, Streamdown, Shaders | Skia, Live Activities, Lucent, Voltra, Apex, Coinbase, Stim Desktop, Unistyles | TC39, e2e, Effect, Remix, h3, SvelteKit, TypeScript",
     "url": "https://thisweekinreact.com/newsletter/300",
@@ -12,6 +36,29 @@
       "svelte",
       "typescript"
     ]
+  },
+  {
+    "id": "6d00dc6bb0b7",
+    "title": "JPEG XL finally ships in Chrome",
+    "url": "https://frontendfoc.us/issues/761",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-10-07T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ]
+  },
+  {
+    "id": "a097ef0d441a",
+    "title": "GPT-6 and Intelligent UI for everyone",
+    "url": "https://openai.com/index/gpt-6-for-everyone",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-10-07T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
   },
   {
     "id": "153343ccc6fd",
@@ -325,18 +372,6 @@
     ]
   },
   {
-    "id": "2a3e3e3335c2",
-    "title": "GPT-6 Astra has gained the ability to drive a car",
-    "url": "https://drivingbench.com/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-09-23T15:14:22.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49817404"
-  },
-  {
     "id": "7ecf428bd7f6",
     "title": "This Week In React #298: Astro, Redux, img, Hotkeys, R3F, Next.js, AI, Redact | Reanimated, Worklets, Helix, Screens, SecondaryRuntime, Arrangement View, View Shot | TC39, Node, pnpm, Turborepo, jsdom, responsive iframes",
     "url": "https://thisweekinreact.com/newsletter/298",
@@ -373,18 +408,6 @@
     "excerpt": "Yesterday was Grok 4.7 (pelicans) and MiMo v2.6 Flash/Pro (more pelicans). Today Anthropic released Claude Opus 5.5, and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna. It's going to take a while to get a good read on all of these new models, but here are my impressions so far…"
   },
   {
-    "id": "f9027d80e820",
-    "title": "Better prompt caching for GPT-6",
-    "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-    "sourceId": "openai-news",
-    "publishedAt": "2026-09-22T21:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "excerpt": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
-  },
-  {
     "id": "61f2cc4cf013",
     "title": "JavaScript desktop apps in under 10MB",
     "url": "https://javascriptweekly.com/issues/803",
@@ -408,18 +431,6 @@
     ],
     "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
     "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
-  },
-  {
-    "id": "7609be22d808",
-    "title": "When CSS could run JavaScript",
-    "url": "https://frontendfoc.us/issues/758",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-09-16T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform",
-      "javascript"
-    ]
   },
   {
     "id": "e0bb328294c6",
