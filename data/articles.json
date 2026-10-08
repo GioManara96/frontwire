@@ -1,5 +1,19 @@
 [
   {
+    "id": "b124ed1280c1",
+    "title": "Vite v8.3.4",
+    "url": "https://github.com/vitejs/vite/releases/tag/v8.3.4",
+    "sourceId": "vite-releases",
+    "publishedAt": "2026-10-08T12:03:54.000Z",
+    "category": "frontend",
+    "tags": [
+      "vite",
+      "release"
+    ],
+    "excerpt": "Features bundled-dev: support import.meta.hot.acceptExports (#23463) (bc0f21c) Bug Fixes avoid mutating hmr defaults (fix #23575) (#23576) (574d5e3) build: correct preloads when chunkImportMap is enabled with non-root base (#23698) (2a8c0f0) build: wait for in-flight stylesheets in preload helper…",
+    "contentHtml": "<h3>Features</h3>\n<ul>\n<li><strong>bundled-dev:</strong> support <code>import.meta.hot.acceptExports</code> (<a href=\"https://github.com/vitejs/vite/issues/23463\">#23463</a>) (<a href=\"https://github.com/vitejs/vite/commit/bc0f21c56a2e003a4d2dd23ccb9da3ec8c706c4e\">bc0f21c</a>)</li>\n</ul>\n<h3>Bug Fixes</h3>\n<ul>\n<li>avoid mutating hmr defaults (fix <a href=\"https://github.com/vitejs/vite/issues/23575\">#23575</a>) (<a href=\"https://github.com/vitejs/vite/issues/23576\">#23576</a>) (<a href=\"https://github.com/vitejs/vite/commit/574d5e351905fe99891364d03c2440531378f7fd\">574d5e3</a>)</li>\n<li><strong>build:</strong> correct preloads when chunkImportMap is enabled with non-root base (<a href=\"https://github.com/vitejs/vite/issues/23698\">#23698</a>) (<a href=\"https://github.com/vitejs/vite/commit/2a8c0f05c76e35c43ab3560984a5103c8db8dbcd\">2a8c0f0</a>)</li>\n<li><strong>build:</strong> wait for in-flight stylesheets in preload helper (fix <a href=\"https://github.com/vitejs/vite/issues/23652\">#23652</a>) (<a href=\"https://github.com/vitejs/vite/issues/23662\">#23662</a>) (<a href=\"https://github.com/vitejs/vite/commit/036b74599b2fe1d8c61475371b856ceb88d26963\">036b745</a>)</li>\n<li><strong>bundled-dev:</strong> serve <code>/@vite/client</code> and stub <code>@vite/env</code> (<a href=\"https://github.com/vitejs/vite/issues/23664\">#23664</a>) (<a href=\"https://github.com/vitejs/vite/commit/5afc5a8876624888fc1e8f43fed1c85c4b0e830b\">5afc5a8</a>)</li>\n<li><strong>client:</strong> skip rewriting unchanged adopted styles (<a href=\"https://github.com/vitejs/vite/issues/23697\">#23697</a>) (<a href=\"https://github.com/vitejs/vite/commit/fa7146938b0ca703653c90c20907191a01c032ba\">fa71469</a>)</li>\n<li><strong>css:</strong> resolve imported preprocessors from their file path with lightningcss (<a href=\"https://github.com/vitejs/vite/issues/23688\">#23688</a>) (<a href=\"https://github.com/vitejs/vite/commit/cf52011c46409a4a45f3d74bba631b8f005c4bc9\">cf52011</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23648\">#23648</a>) (<a href=\"https://github.com/vitejs/vite/commit/8a4c19cfc035f2dd203f2fa6d00ab9256a5e77c9\">8a4c19c</a>)</li>\n<li><strong>deps:</strong> update rolldown-related dependencies (<a href=\"https://github.com/vitejs/vite/issues/23649\">#23649</a>) (<a href=\"https://github.com/vitejs/vite/commit/794516d50cff80e405bc9b3e5faac1c82987566c\">794516d</a>)</li>\n<li><strong>dev:</strong> a restart requested during a restart used to be dropped (fix <a href=\"https://github.com/vitejs/vite/issues/23392\">#23392</a>) (<a href=\"https://github.com/vitejs/vite/issues/23484\">#23484</a>) (<a href=\"https://github.com/vitejs/vite/commit/70d56ea1848909edab416934f3f68ce14343eb73\">70d56ea</a>)</li>\n<li>don't treat modules ending with js-like query as js (<a href=\"https://github.com/vitejs/vite/issues/23687\">#23687</a>) (<a href=\"https://github.com/vitejs/vite/commit/fcb6f1252a95857823d935f98554b938888d41a0\">fcb6f12</a>)</li>\n<li><strong>html:</strong> avoid adding filesystem root to watcher (<a href=\"https://github.com/vitejs/vite/issues/23689\">#23689</a>) (<a href=\"https://github.com/vitejs/vite/commit/3a7f2aea757d59bae66ad6edf6b321d26a7e6778\">3a7f2ae</a>)</li>\n<li><strong>html:</strong> skip caching CSS of chunks in a cycle (fix <a href=\"https://github.com/vitejs/vite/issues/23628\">#23628</a>) (<a href=\"https://github.com/vitejs/vite/issues/23636\">#23636</a>) (<a href=\"https://github.com/vitejs/vite/commit/15d82f7dc679ab9c18d5ce2c3711157c2365ddd1\">15d82f7</a>)</li>\n<li><strong>optimizer:</strong> scan deep imports with custom extensions (<a href=\"https://github.com/vitejs/vite/issues/23678\">#23678</a>) (<a href=\"https://github.com/vitejs/vite/commit/8579189bae8626b6ddab55a09325e209d62e027e\">8579189</a>)</li>\n<li>remove input option unescaping for now (<a href=\"https://github.com/vitejs/vite/issues/23694\">#23694</a>) (<a href=\"https://github.com/vitejs/vite/commit/facc2fb1fffce03d9e2dd7011d0bd0eeddc7d0f6\">facc2fb</a>)</li>\n<li><strong>server:</strong> match static aliases on path boundaries (<a href=\"https://github.com/vitejs/vite/issues/23643\">#23643</a>) (<a href=\"https://github.com/vitejs/vite/commit/b28db28e9e62d9866a9a0f1b22e74589cc180577\">b28db28</a>)</li>\n<li><strong>watcher:</strong> normalize file before root check in <code>ensureWatchedFile</code> (<a href=\"https://github.com/vitejs/vite/issues/23673\">#23673</a>) (<a href=\"https://github.com/vitejs/vite/commit/12bb28c22379c8d2fe90088fa0eefbfa2ab3fb80\">12bb28c</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>module-runner:</strong> skip cloning call sites that have no source map (<a href=\"https://github.com/vitejs/vite/issues/23646\">#23646</a>) (<a href=\"https://github.com/vitejs/vite/commit/3d674869a50a0bca84a8cc8dc55bd35d57100e37\">3d67486</a>)</li>\n</ul>\n<h3>Code Refactoring</h3>\n<ul>\n<li><strong>bundled-dev:</strong> import CSS HMR helpers from <code>/@vite/client</code> (<a href=\"https://github.com/vitejs/vite/issues/23674\">#23674</a>) (<a href=\"https://github.com/vitejs/vite/commit/182f5b2a65391da5bee05f9c3df1aeb3794e98d9\">182f5b2</a>)</li>\n</ul>"
+  },
+  {
     "id": "fdc864340b44",
     "title": "Claude Haiku 5.5",
     "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
@@ -113,20 +127,6 @@
     ],
     "excerpt": "Please refer to CHANGELOG.md for details.",
     "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v6.4.4/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
-  },
-  {
-    "id": "715e35a6764c",
-    "title": "Vite v7.3.7",
-    "url": "https://github.com/vitejs/vite/releases/tag/v7.3.7",
-    "sourceId": "vite-releases",
-    "publishedAt": "2026-10-06T05:07:26.000Z",
-    "category": "frontend",
-    "tags": [
-      "vite",
-      "release"
-    ],
-    "excerpt": "Please refer to CHANGELOG.md for details.",
-    "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v7.3.7/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
   },
   {
     "id": "e4f759ce24f4",
