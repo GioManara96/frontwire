@@ -1,5 +1,31 @@
 [
   {
+    "id": "0576b91efab9",
+    "title": "Vue v3.5.44",
+    "url": "https://github.com/vuejs/core/releases/tag/v3.5.44",
+    "sourceId": "vue-releases",
+    "publishedAt": "2026-10-13T07:43:25.000Z",
+    "category": "frontend",
+    "tags": [
+      "vue",
+      "release"
+    ],
+    "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
+    "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
+  },
+  {
+    "id": "97e026a93ef1",
+    "title": "Show HN: PS2 games statically recompiled to WebAssembly",
+    "url": "https://github.com/snuri00/ps2-web-recomp",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-12T06:46:53.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50052251"
+  },
+  {
     "id": "f5383a8be026",
     "title": "Nuxt v4.6.1",
     "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.1",
@@ -74,18 +100,6 @@
       "anthropic"
     ],
     "excerpt": "As previously promised, here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5. The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago, and was priced at $1/million input and $5/million output - relatively expensive even back then, and a full 10x…"
-  },
-  {
-    "id": "6b1b69f74c1f",
-    "title": "Claude Haiku 5.5",
-    "url": "https://www.anthropic.com/claude-haiku-5-5",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-07T18:01:32.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=49996437"
   },
   {
     "id": "5b45547a3e6f",
