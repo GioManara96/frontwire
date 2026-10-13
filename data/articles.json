@@ -1,5 +1,65 @@
 [
   {
+    "id": "20c731d2eb11",
+    "title": "This Week In React #301: TanStack Start, React Aria, Base UI, Satori, Next.js, Vitest RSC, MobX | RN Web, Tamagui, One, Skia, Observe, Screens, Hot Updater, Nano Icons | Deno, Bun, TS, JPEG XL, AsyncContext, Playwright, pnpm, Partytown",
+    "url": "https://thisweekinreact.com/newsletter/301",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-10-14T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs"
+    ]
+  },
+  {
+    "id": "1dc99b611b24",
+    "title": "Developing Gemini 4 Argon responsibly and safely",
+    "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-10-13T19:43:07.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "1b45a4f87bd4",
+    "title": "Gemini 4 Argon",
+    "url": "https://deepmind.google/models/gemini/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-13T16:03:16.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50073879"
+  },
+  {
+    "id": "d96a2391b623",
+    "title": "Gemini 4 Argon for Robotics",
+    "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-10-13T16:01:58.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "4e31b829ae68",
+    "title": "Gemini 4 Argon: Built to solve your hardest problems",
+    "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-10-13T16:01:52.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
     "id": "0576b91efab9",
     "title": "Vue v3.5.44",
     "url": "https://github.com/vuejs/core/releases/tag/v3.5.44",
@@ -12,6 +72,17 @@
     ],
     "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
     "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
+  },
+  {
+    "id": "ec4425944808",
+    "title": "Ryan Dahl: 'Why reimplement Node? It works.'",
+    "url": "https://javascriptweekly.com/issues/806",
+    "sourceId": "javascript-weekly",
+    "publishedAt": "2026-10-13T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ]
   },
   {
     "id": "97e026a93ef1",
@@ -76,18 +147,6 @@
       "anthropic"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50002665"
-  },
-  {
-    "id": "ee337b341c53",
-    "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
-    "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-08T00:14:48.000Z",
-    "category": "ai",
-    "tags": [
-      "deepseek"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50000488"
   },
   {
     "id": "fdc864340b44",
@@ -254,18 +313,6 @@
     "excerpt": "SvelteKit 3 is here! Check out the announcement post for the highlights, then run sv migrate to handle most of the upgrade for you. sv itself hit 1.0 on the same day, making the community add-on API official. Below you’ll find the last round of changes that landed before 3.0 - adapter API updates…"
   },
   {
-    "id": "b49099cde7e9",
-    "title": "Gemini 4 Argon: our next era of frontier intelligence",
-    "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-09-30T20:01:45.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
-  },
-  {
     "id": "64ebab624a7f",
     "title": "September 2026 Security Release",
     "url": "https://nextjs.org/blog/september-2026-security-release",
@@ -376,42 +423,6 @@
     "coverImageUrl": "https://nuxt.com/assets/blog/v4.6.png"
   },
   {
-    "id": "6add3dd62456",
-    "title": "Introducing Gemini 3.8 Live with Live Avatar",
-    "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-09-24T16:20:39.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
-  },
-  {
-    "id": "721de6922a1a",
-    "title": "Gemini 3.8 text-to-speech says hello",
-    "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-09-23T15:25:14.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
-  },
-  {
-    "id": "7ecf428bd7f6",
-    "title": "This Week In React #298: Astro, Redux, img, Hotkeys, R3F, Next.js, AI, Redact | Reanimated, Worklets, Helix, Screens, SecondaryRuntime, Arrangement View, View Shot | TC39, Node, pnpm, Turborepo, jsdom, responsive iframes",
-    "url": "https://thisweekinreact.com/newsletter/298",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-09-23T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs"
-    ]
-  },
-  {
     "id": "f4eeeac37a39",
     "title": "12 CSS features that can retire your dependencies",
     "url": "https://frontendfoc.us/issues/759",
@@ -434,17 +445,6 @@
       "anthropic"
     ],
     "excerpt": "Yesterday was Grok 4.7 (pelicans) and MiMo v2.6 Flash/Pro (more pelicans). Today Anthropic released Claude Opus 5.5, and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna. It's going to take a while to get a good read on all of these new models, but here are my impressions so far…"
-  },
-  {
-    "id": "61f2cc4cf013",
-    "title": "JavaScript desktop apps in under 10MB",
-    "url": "https://javascriptweekly.com/issues/803",
-    "sourceId": "javascript-weekly",
-    "publishedAt": "2026-09-22T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript"
-    ]
   },
   {
     "id": "08a56ffbb022",
