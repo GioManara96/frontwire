@@ -1,5 +1,75 @@
 [
   {
+    "id": "425729f66956",
+    "title": "React v19.3.1",
+    "url": "https://github.com/react/react/releases/tag/v19.3.1",
+    "sourceId": "react-releases",
+    "publishedAt": "2026-10-14T17:06:15.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "release"
+    ],
+    "excerpt": "React Server Components Improve transport protocol (#37845 by @unstubbable and @eps1lon)",
+    "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37845\">#37845</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
+  },
+  {
+    "id": "6d12a5e2ceec",
+    "title": "React v19.2.9",
+    "url": "https://github.com/react/react/releases/tag/v19.2.9",
+    "sourceId": "react-releases",
+    "publishedAt": "2026-10-14T17:06:10.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "release"
+    ],
+    "excerpt": "React Server Components Improve transport protocol (#37844 by @unstubbable and @eps1lon)",
+    "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37844\">#37844</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
+  },
+  {
+    "id": "dc3c5b50bca0",
+    "title": "React v19.1.10",
+    "url": "https://github.com/react/react/releases/tag/v19.1.10",
+    "sourceId": "react-releases",
+    "publishedAt": "2026-10-14T17:06:06.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "release"
+    ],
+    "excerpt": "React Server Components Improve transport protocol (#37843 by @unstubbable and @eps1lon)",
+    "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37843\">#37843</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
+  },
+  {
+    "id": "026847ce9221",
+    "title": "Next.js v15.5.28",
+    "url": "https://github.com/vercel/next.js/releases/tag/v15.5.28",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-10-14T15:42:32.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "v15.5.28",
+    "contentHtml": "<p>v15.5.28</p>"
+  },
+  {
+    "id": "2056cdcc51a5",
+    "title": "Next.js v16.4.1",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.4.1",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-10-14T15:39:54.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "v16.4.1",
+    "contentHtml": "<p>v16.4.1</p>"
+  },
+  {
     "id": "20c731d2eb11",
     "title": "This Week In React #301: TanStack Start, React Aria, Base UI, Satori, Next.js, Vitest RSC, MobX | RN Web, Tamagui, One, Skia, Observe, Screens, Hot Updater, Nano Icons | Deno, Bun, TS, JPEG XL, AsyncContext, Playwright, pnpm, Partytown",
     "url": "https://thisweekinreact.com/newsletter/301",
@@ -9,6 +79,17 @@
     "tags": [
       "react",
       "nextjs"
+    ]
+  },
+  {
+    "id": "9a5d651e4c5a",
+    "title": "The best way to use icons in Web UIs",
+    "url": "https://frontendfoc.us/issues/762",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-10-14T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
     ]
   },
   {
@@ -325,34 +406,6 @@
     "excerpt": "The September 2026 security release for Next.js is now available"
   },
   {
-    "id": "71fd0f01ee51",
-    "title": "Next.js v16.3.8",
-    "url": "https://github.com/vercel/next.js/releases/tag/v16.3.8",
-    "sourceId": "nextjs-releases",
-    "publishedAt": "2026-09-30T16:13:46.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "release"
-    ],
-    "excerpt": "This release contains security fixes for the following advisories: High: Server-Side Request Forgery in Image Optimization Medium: Information disclosure in Next.js App Router metadata image routes via dynamicParams bypass Cache poisoning of SSG and ISR pages in self-hosted Next.js applications…",
-    "contentHtml": "<p>This release contains security fixes for the following advisories:</p>\n<p>High:</p>\n<ul>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-cjq9-62q9-8jv4\">Server-Side Request Forgery in Image Optimization</a></li>\n</ul>\n<p>Medium:</p>\n<ul>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-f87g-xv8r-7p7x\">Information disclosure in Next.js App Router metadata image routes via dynamicParams bypass</a></li>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-4jqv-mc3x-m676\">Cache poisoning of SSG and ISR pages in self-hosted Next.js applications</a></li>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-mcj8-r9mp-w47p\">Cache poisoning in Next.js SSG/ISR rendering leads to cross-user content substitution and persistent denial of service</a></li>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-3w37-wq28-93x7\">Pending <code>use cache</code> fill can leak Draft Mode content into regular responses and persisted pages</a></li>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-h694-7cp9-m8p3\">Cache leak across root param values in nested 'use cache' functions</a></li>\n</ul>\n<p>Low:</p>\n<ul>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-39w2-rjm5-chcv\">Information disclosure in the Next.js development server's Model Context Protocol endpoint</a></li>\n</ul>"
-  },
-  {
-    "id": "5dafa5f97a5c",
-    "title": "Next.js v15.5.27",
-    "url": "https://github.com/vercel/next.js/releases/tag/v15.5.27",
-    "sourceId": "nextjs-releases",
-    "publishedAt": "2026-09-30T16:13:42.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "release"
-    ],
-    "excerpt": "This release contains security fixes for the following advisories: Medium: Information disclosure in Next.js App Router metadata image routes via dynamicParams bypass Cache poisoning of SSG and ISR pages in self-hosted Next.js applications Cache poisoning in Next.js SSG/ISR rendering leads to…",
-    "contentHtml": "<p>This release contains security fixes for the following advisories:</p>\n<p>Medium:</p>\n<ul>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-f87g-xv8r-7p7x\">Information disclosure in Next.js App Router metadata image routes via dynamicParams bypass</a></li>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-4jqv-mc3x-m676\">Cache poisoning of SSG and ISR pages in self-hosted Next.js applications</a></li>\n<li><a href=\"https://github.com/vercel/next.js/security/advisories/GHSA-mcj8-r9mp-w47p\">Cache poisoning in Next.js SSG/ISR rendering leads to cross-user content substitution and persistent denial of service</a></li>\n</ul>"
-  },
-  {
     "id": "140bf1c14712",
     "title": "This Week In React #299: Panda, Vinext, Next.js, Preact, Design Systems, RTK | Variable font, Activity Result, Lynx, Lucent, macOS, Plain Text, Navigation, Angular Native, Re.Pack | TC39, Composites, WebSkills, MSW, upm, pnpm",
     "url": "https://thisweekinreact.com/newsletter/299",
@@ -421,17 +474,6 @@
     ],
     "excerpt": "Nuxt 4.6 makes Nuxt server-agnostic with nuxt/server, rebuilds typed $fetch, adds sessions, Vue Vapor support and new dev error pages, and ships alongside Nuxt CLI v4.",
     "coverImageUrl": "https://nuxt.com/assets/blog/v4.6.png"
-  },
-  {
-    "id": "f4eeeac37a39",
-    "title": "12 CSS features that can retire your dependencies",
-    "url": "https://frontendfoc.us/issues/759",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-09-23T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
   },
   {
     "id": "5b206843ef21",
