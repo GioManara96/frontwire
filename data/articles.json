@@ -1,5 +1,30 @@
 [
   {
+    "id": "b4f60b2c05d1",
+    "title": "Next.js v16.4.2",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.4.2",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-10-15T20:44:37.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "What's Changed [lts-active] turbo-tasks snapshot consistency fixes (#99644, #99732, #99649) by @lukesandberg in #100002 [lts-active] Turbopack: backport Pages Router dev module graph chaining (#98823, #99910, #100091) by @sokra in #100008 [lts-active] fix(next-code-frame): snap visible window to…",
+    "contentHtml": "<h2>What's Changed</h2>\n<ul>\n<li>[lts-active] turbo-tasks snapshot consistency fixes (<a href=\"https://github.com/vercel/next.js/pull/99644\">#99644</a>, <a href=\"https://github.com/vercel/next.js/pull/99732\">#99732</a>, <a href=\"https://github.com/vercel/next.js/pull/99649\">#99649</a>) by <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> in <a href=\"https://github.com/vercel/next.js/pull/100002\">#100002</a></li>\n<li>[lts-active] Turbopack: backport Pages Router dev module graph chaining (<a href=\"https://github.com/vercel/next.js/pull/98823\">#98823</a>, <a href=\"https://github.com/vercel/next.js/pull/99910\">#99910</a>, <a href=\"https://github.com/vercel/next.js/pull/100091\">#100091</a>) by <a href=\"https://github.com/sokra\">@sokra</a> in <a href=\"https://github.com/vercel/next.js/pull/100008\">#100008</a></li>\n<li>[lts-active] fix(next-code-frame): snap visible window to char boundaries by <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> in <a href=\"https://github.com/vercel/next.js/pull/100212\">#100212</a></li>\n<li>[lts-active] [turbopack] Fix two GC paths that leave half-torn-down dependency edges by <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> in <a href=\"https://github.com/vercel/next.js/pull/100209\">#100209</a></li>\n<li>[lts-active] Turbopack: Ignore realpath errors during module resolution, matching node's behavior by <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> in <a href=\"https://github.com/vercel/next.js/pull/100217\">#100217</a></li>\n<li>[lts-active] Backport docs fixes since v16.4.0 by <a href=\"https://github.com/icyJoseph\">@icyJoseph</a> in <a href=\"https://github.com/vercel/next.js/pull/100246\">#100246</a></li>\n<li>[lts-active] Fix Turbopack lazy dynamic-import chunk-list collisions by <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> in <a href=\"https://github.com/vercel/next.js/pull/100211\">#100211</a></li>\n<li>[lts-active] Backport additional documentation fixes since v16.4.0 by <a href=\"https://github.com/aurorascharff\">@aurorascharff</a> in <a href=\"https://github.com/vercel/next.js/pull/100262\">#100262</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/vercel/next.js/compare/v16.4.1...v16.4.2\">v16.4.1...v16.4.2</a></p>"
+  },
+  {
+    "id": "ff0cf28c5d75",
+    "title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta",
+    "url": "https://huggingface.co/blog/meta-muse-spark-open",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-10-15T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
     "id": "7f8b4b243d12",
     "title": "Next.js Security Update for Upstream Vulnerabilities",
     "url": "https://nextjs.org/blog/nextjs-security-update-october-14-2026",
@@ -301,20 +326,6 @@
       "nextjs"
     ],
     "excerpt": "Next.js 16.4 introduces lazy compilation, smaller Turbopack output, React 19.3 features, Cache Components improvements, and new developer tooling."
-  },
-  {
-    "id": "fb176bf94b4a",
-    "title": "Next.js v16.4.0",
-    "url": "https://github.com/vercel/next.js/releases/tag/v16.4.0",
-    "sourceId": "nextjs-releases",
-    "publishedAt": "2026-10-06T17:57:47.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "release"
-    ],
-    "excerpt": "v16.4.0",
-    "contentHtml": "<p>v16.4.0</p>"
   },
   {
     "id": "57525db43070",
