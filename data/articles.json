@@ -1,5 +1,17 @@
 [
   {
+    "id": "5ed22449bc1d",
+    "title": "Improving navigation experience in v0 with Next.js 16.4",
+    "url": "https://nextjs.org/blog/improving-navigation-experience-in-v0-with-nextjs-16-4",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-10-16T15:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs"
+    ],
+    "excerpt": "How we used Partial Prefetching and a coding agent to improve navigation across v0 with Next.js 16.4."
+  },
+  {
     "id": "b4f60b2c05d1",
     "title": "Next.js v16.4.2",
     "url": "https://github.com/vercel/next.js/releases/tag/v16.4.2",
@@ -314,18 +326,6 @@
       "openai"
     ],
     "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
-  },
-  {
-    "id": "153343ccc6fd",
-    "title": "Next.js 16.4",
-    "url": "https://nextjs.org/blog/next-16-4",
-    "sourceId": "nextjs-blog",
-    "publishedAt": "2026-10-06T20:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs"
-    ],
-    "excerpt": "Next.js 16.4 introduces lazy compilation, smaller Turbopack output, React 19.3 features, Cache Components improvements, and new developer tooling."
   },
   {
     "id": "57525db43070",
