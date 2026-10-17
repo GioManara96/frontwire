@@ -1,5 +1,29 @@
 [
   {
+    "id": "bb7567bf1088",
+    "title": "DeepSeek: DeepSeek v4.1 Flash 1017",
+    "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-17T08:37:46.000Z",
+    "category": "ai",
+    "tags": [
+      "deepseek"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50129121"
+  },
+  {
+    "id": "cac24968e5aa",
+    "title": "DeepSeek-v4.1-Flash-1017",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-17T08:21:25.000Z",
+    "category": "ai",
+    "tags": [
+      "deepseek"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50129045"
+  },
+  {
     "id": "6d6f8ad07535",
     "title": "How the Claude Code team does code review",
     "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
@@ -180,18 +204,6 @@
     ]
   },
   {
-    "id": "1b45a4f87bd4",
-    "title": "Gemini 4 Argon",
-    "url": "https://deepmind.google/models/gemini/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-13T16:03:16.000Z",
-    "category": "ai",
-    "tags": [
-      "gemini"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50073879"
-  },
-  {
     "id": "d96a2391b623",
     "title": "Gemini 4 Argon for Robotics",
     "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
@@ -239,18 +251,6 @@
     "tags": [
       "javascript"
     ]
-  },
-  {
-    "id": "97e026a93ef1",
-    "title": "Show HN: PS2 games statically recompiled to WebAssembly",
-    "url": "https://github.com/snuri00/ps2-web-recomp",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-12T06:46:53.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50052251"
   },
   {
     "id": "f5383a8be026",
