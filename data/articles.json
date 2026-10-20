@@ -1,5 +1,17 @@
 [
   {
+    "id": "e216502887f6",
+    "title": "Announcing TypeScript 7.1 Beta",
+    "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
+    "sourceId": "typescript-blog",
+    "publishedAt": "2026-10-20T17:53:06.000Z",
+    "category": "frontend",
+    "tags": [
+      "typescript"
+    ],
+    "excerpt": "Today we’re excited to announce the beta release of TypeScript 7.1! npm install -D typescript@beta Let’s take a look at what’s new in TypeScript 7.1! Support for Import Attributes in Ambient Modules Import attributes are metadata that are attached to import statements. Typically, they’re meant to…"
+  },
+  {
     "id": "a75ed007481a",
     "title": "The up to 8x faster Rust port of TypeScript",
     "url": "https://javascriptweekly.com/issues/807",
@@ -331,6 +343,18 @@
     ]
   },
   {
+    "id": "6b1b69f74c1f",
+    "title": "Introducing Claude Haiku 5.5",
+    "url": "https://www.anthropic.com/claude-haiku-5-5",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-10-07T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "excerpt": "Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use."
+  },
+  {
     "id": "6d00dc6bb0b7",
     "title": "JPEG XL finally ships in Chrome",
     "url": "https://frontendfoc.us/issues/761",
@@ -489,6 +513,18 @@
     "excerpt": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices."
   },
   {
+    "id": "264dae8ef56c",
+    "title": "Introducing Claude Sonnet 5.5",
+    "url": "https://www.anthropic.com/claude-sonnet-5-5",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-09-28T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "excerpt": "Claude Sonnet 5.5 is a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work."
+  },
+  {
     "id": "fbf439070c6d",
     "title": "Nuxt 4.6",
     "url": "https://nuxt.com/blog/v4-6",
@@ -513,5 +549,17 @@
       "anthropic"
     ],
     "excerpt": "Yesterday was Grok 4.7 (pelicans) and MiMo v2.6 Flash/Pro (more pelicans). Today Anthropic released Claude Opus 5.5, and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna. It's going to take a while to get a good read on all of these new models, but here are my impressions so far…"
+  },
+  {
+    "id": "70dd77e15b4f",
+    "title": "Introducing Claude Opus 5.5",
+    "url": "https://www.anthropic.com/claude-opus-5-5",
+    "sourceId": "anthropic-news",
+    "publishedAt": "2026-09-22T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "excerpt": "Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads."
   }
 ]
