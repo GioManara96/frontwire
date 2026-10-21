@@ -12,6 +12,18 @@
     "excerpt": "Today we’re excited to announce the beta release of TypeScript 7.1! npm install -D typescript@beta Let’s take a look at what’s new in TypeScript 7.1! Support for Import Attributes in Ambient Modules Import attributes are metadata that are attached to import statements. Typically, they’re meant to…"
   },
   {
+    "id": "f4b3d479520d",
+    "title": "Tsrs: A Port of TypeScript to Rust",
+    "url": "https://blog.cloudflare.com/typescript-rust-port/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-20T13:18:07.000Z",
+    "category": "frontend",
+    "tags": [
+      "typescript"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50165953"
+  },
+  {
     "id": "a75ed007481a",
     "title": "The up to 8x faster Rust port of TypeScript",
     "url": "https://javascriptweekly.com/issues/807",
@@ -46,18 +58,6 @@
       "deepseek"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50129045"
-  },
-  {
-    "id": "6d6f8ad07535",
-    "title": "How the Claude Code team does code review",
-    "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-16T19:04:47.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50122951"
   },
   {
     "id": "138aa91610ba",
