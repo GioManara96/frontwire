@@ -1,5 +1,45 @@
 [
   {
+    "id": "594b04d2b558",
+    "title": "Vite v8.3.5",
+    "url": "https://github.com/vitejs/vite/releases/tag/v8.3.5",
+    "sourceId": "vite-releases",
+    "publishedAt": "2026-10-21T06:35:46.000Z",
+    "category": "frontend",
+    "tags": [
+      "vite",
+      "release"
+    ],
+    "excerpt": "Bug Fixes build: handle missing chunk import maps (#23777) (8d7623d) build: include preload dependencies to chunk import map hashing (#23793) (4d16e7c) bundled-dev: apply server.origin to asset URLs (#23683) (52ba877) bundled-dev: declare utf-8 charset in fallback page (#23846) (197daf6)…",
+    "contentHtml": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>build:</strong> handle missing chunk import maps (<a href=\"https://github.com/vitejs/vite/issues/23777\">#23777</a>) (<a href=\"https://github.com/vitejs/vite/commit/8d7623d9b5647714a5b20cbd787a5401ca846229\">8d7623d</a>)</li>\n<li><strong>build:</strong> include preload dependencies to chunk import map hashing (<a href=\"https://github.com/vitejs/vite/issues/23793\">#23793</a>) (<a href=\"https://github.com/vitejs/vite/commit/4d16e7c14d5e1c361f148238b1e81131238ab8e9\">4d16e7c</a>)</li>\n<li><strong>bundled-dev:</strong> apply <code>server.origin</code> to asset URLs (<a href=\"https://github.com/vitejs/vite/issues/23683\">#23683</a>) (<a href=\"https://github.com/vitejs/vite/commit/52ba877693c8633458d163117504a8259beb3cf5\">52ba877</a>)</li>\n<li><strong>bundled-dev:</strong> declare utf-8 charset in fallback page (<a href=\"https://github.com/vitejs/vite/issues/23846\">#23846</a>) (<a href=\"https://github.com/vitejs/vite/commit/197daf6c4c7bfdaa005bebcc41dd2ff22fa3a5b6\">197daf6</a>)</li>\n<li><strong>bundled-dev:</strong> ignore build.chunkImportMap (<a href=\"https://github.com/vitejs/vite/issues/23685\">#23685</a>) (<a href=\"https://github.com/vitejs/vite/commit/cfe917d67d279a13f20ae9449e3befa736b64b07\">cfe917d</a>)</li>\n<li><strong>bundled-dev:</strong> include user <code>import.meta.env.*</code> defines in the <code>import.meta.env</code> object (<a href=\"https://github.com/vitejs/vite/issues/23713\">#23713</a>) (<a href=\"https://github.com/vitejs/vite/commit/6019aa79975465516da7c6f532d568422b019a25\">6019aa7</a>)</li>\n<li><strong>bundled-dev:</strong> map forwarded error stacks through the bundle source maps (<a href=\"https://github.com/vitejs/vite/issues/23741\">#23741</a>) (<a href=\"https://github.com/vitejs/vite/commit/11fe1e46ff0c136cb90fbe263ba03993bc94df18\">11fe1e4</a>)</li>\n<li><strong>bundled-dev:</strong> normalize served output files (<a href=\"https://github.com/vitejs/vite/issues/23684\">#23684</a>) (<a href=\"https://github.com/vitejs/vite/commit/df4e02cc8317a62f21edefc79a9690571ffed1f3\">df4e02c</a>)</li>\n<li><strong>bundled-dev:</strong> stop hmr propagation at modules that are no longer imported (<a href=\"https://github.com/vitejs/vite/issues/23839\">#23839</a>) (<a href=\"https://github.com/vitejs/vite/commit/7471e8c3b32d3d55243590bb7713e602c9fb0212\">7471e8c</a>)</li>\n<li><strong>css:</strong> don't fail on a literal <code>%</code> in <code>url()</code> (<a href=\"https://github.com/vitejs/vite/issues/23676\">#23676</a>) (<a href=\"https://github.com/vitejs/vite/commit/50b382d31835b8b4bc8b6964738ac03146e44261\">50b382d</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23731\">#23731</a>) (<a href=\"https://github.com/vitejs/vite/commit/cf80aa552cac02eac0293330ccd5fde3c7ae8d29\">cf80aa5</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23826\">#23826</a>) (<a href=\"https://github.com/vitejs/vite/commit/77d8373510da1b26ce057eb2248e570b7f63fde9\">77d8373</a>)</li>\n<li><strong>deps:</strong> update rolldown-related dependencies (<a href=\"https://github.com/vitejs/vite/issues/23733\">#23733</a>) (<a href=\"https://github.com/vitejs/vite/commit/43f0d052e514c3ad2dea2f7dc44b0720e1f62f48\">43f0d05</a>)</li>\n<li><strong>deps:</strong> update rolldown-related dependencies (<a href=\"https://github.com/vitejs/vite/issues/23827\">#23827</a>) (<a href=\"https://github.com/vitejs/vite/commit/c2e04187e49aab7ab809989f0537b4906653acab\">c2e0418</a>)</li>\n<li><strong>optimizer:</strong> fall back to yarn.lock for lockfile hash (<a href=\"https://github.com/vitejs/vite/issues/23667\">#23667</a>) (<a href=\"https://github.com/vitejs/vite/commit/f20609630faa93026924275115d1426fdc08629e\">f206096</a>)</li>\n<li><strong>optimizer:</strong> scan <code>oxc.jsxInject</code> imports (<a href=\"https://github.com/vitejs/vite/issues/23758\">#23758</a>) (<a href=\"https://github.com/vitejs/vite/commit/38f3cb45b1490ed24775547ceafa677b91a57714\">38f3cb4</a>)</li>\n<li><strong>optimizer:</strong> skip patches dir check for yarn.lock fallback (<a href=\"https://github.com/vitejs/vite/issues/23725\">#23725</a>) (<a href=\"https://github.com/vitejs/vite/commit/8e890e1ce438bfbc07ea4931ce332e40589940fa\">8e890e1</a>)</li>\n<li><strong>optimizer:</strong> skip patches dir hash for nub lockfile (<a href=\"https://github.com/vitejs/vite/issues/23761\">#23761</a>) (<a href=\"https://github.com/vitejs/vite/commit/a7d56967ef0050a09c0507e63a18164bc7a0d486\">a7d5696</a>)</li>\n<li><strong>resolve:</strong> support subpath imports with multiple <code>#</code> (<a href=\"https://github.com/vitejs/vite/issues/23631\">#23631</a>) (<a href=\"https://github.com/vitejs/vite/commit/0d86b3485fbbd0fcb9a1f70a14adedfcb7a1fff1\">0d86b34</a>)</li>\n<li><strong>resolve:</strong> update resolve.exports to 2.0.4 (<a href=\"https://github.com/vitejs/vite/issues/23739\">#23739</a>) (<a href=\"https://github.com/vitejs/vite/commit/4ea708a3ae9a324c6aabca59fade4082bf72f3e5\">4ea708a</a>)</li>\n<li><strong>server:</strong> handle socket errors on upgrade requests not taken by the HMR server (<a href=\"https://github.com/vitejs/vite/issues/23728\">#23728</a>) (<a href=\"https://github.com/vitejs/vite/commit/c2c9ef4dcd05b3e4d88844ea3a13dc23819ca2a5\">c2c9ef4</a>)</li>\n<li><strong>server:</strong> only strip base when path matches a full segment (<a href=\"https://github.com/vitejs/vite/issues/23641\">#23641</a>) (<a href=\"https://github.com/vitejs/vite/commit/3dfde87b90a9f80b125d710e3e5d4fc795662db6\">3dfde87</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>ssr:</strong> extract inline source maps without a regexp (<a href=\"https://github.com/vitejs/vite/issues/23775\">#23775</a>) (<a href=\"https://github.com/vitejs/vite/commit/6a0278055d8501bbaf65b8d34ec094722b4e877a\">6a02780</a>)</li>\n</ul>\n<h3>Miscellaneous Chores</h3>\n<ul>\n<li>migrate to Oxlint (<a href=\"https://github.com/vitejs/vite/issues/23746\">#23746</a>) (<a href=\"https://github.com/vitejs/vite/commit/5b73935881424ed5919571036dd89d3868590f92\">5b73935</a>)</li>\n</ul>\n<h3>Code Refactoring</h3>\n<ul>\n<li><strong>deps:</strong> replace <code>@vercel/detect-agent</code> with <code>std-env</code> (<a href=\"https://github.com/vitejs/vite/issues/23744\">#23744</a>) (<a href=\"https://github.com/vitejs/vite/commit/ce4293f15cc5cd221c5ed60f5cd64e82ca5cbaf5\">ce4293f</a>)</li>\n<li><strong>dev:</strong> consolidate moduleURL to file path utilities (<a href=\"https://github.com/vitejs/vite/issues/23828\">#23828</a>) (<a href=\"https://github.com/vitejs/vite/commit/df7b40ee9d691e9f4e2413244f6665ef5482dce3\">df7b40e</a>)</li>\n<li><strong>dev:</strong> separate import resolution from URL conversion (<a href=\"https://github.com/vitejs/vite/issues/23791\">#23791</a>) (<a href=\"https://github.com/vitejs/vite/commit/611668983d4b717f5e5e66cf9f7125bd94f92bf7\">6116689</a>)</li>\n<li><strong>dev:</strong> share ModuleURL and BrowserURL conversions (<a href=\"https://github.com/vitejs/vite/issues/23790\">#23790</a>) (<a href=\"https://github.com/vitejs/vite/commit/446954c69c806795c83fe2f97c28ae8f9ef83731\">446954c</a>)</li>\n<li><strong>dev:</strong> use ModuleURLs throughout HTML transforms (<a href=\"https://github.com/vitejs/vite/issues/23815\">#23815</a>) (<a href=\"https://github.com/vitejs/vite/commit/a16299092c0f0f3f90e05d4bb5f0168b293c2b52\">a162990</a>)</li>\n</ul>"
+  },
+  {
+    "id": "2aea1bcb99d8",
+    "title": "Vite v6.4.5",
+    "url": "https://github.com/vitejs/vite/releases/tag/v6.4.5",
+    "sourceId": "vite-releases",
+    "publishedAt": "2026-10-21T05:31:06.000Z",
+    "category": "frontend",
+    "tags": [
+      "vite",
+      "release"
+    ],
+    "excerpt": "Please refer to CHANGELOG.md for details.",
+    "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v6.4.5/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
+  },
+  {
+    "id": "a71ada760e84",
+    "title": "The Future of CSS",
+    "url": "https://www.joshwcomeau.com/css/interop-2027/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-21T01:47:28.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50175070"
+  },
+  {
     "id": "e216502887f6",
     "title": "Announcing TypeScript 7.1 Beta",
     "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
@@ -46,18 +86,6 @@
       "deepseek"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50129121"
-  },
-  {
-    "id": "cac24968e5aa",
-    "title": "DeepSeek-v4.1-Flash-1017",
-    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-17T08:21:25.000Z",
-    "category": "ai",
-    "tags": [
-      "deepseek"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50129045"
   },
   {
     "id": "138aa91610ba",
@@ -376,34 +404,6 @@
       "openai"
     ],
     "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
-  },
-  {
-    "id": "57525db43070",
-    "title": "Vite v8.3.3",
-    "url": "https://github.com/vitejs/vite/releases/tag/v8.3.3",
-    "sourceId": "vite-releases",
-    "publishedAt": "2026-10-06T08:23:01.000Z",
-    "category": "frontend",
-    "tags": [
-      "vite",
-      "release"
-    ],
-    "excerpt": "Bug Fixes deps: update launch-editor to v2.14.2 (#23654) (22fd1d5) html: filename passed to transformIndexHtml should not include queries (#23653) (7dafd8e) server: check fs.serve for ?vite-wasm-instance (#23655) (ba8b7ab) server: store ids to safeModulePaths rather than URLs (#23656) (c3e06f9)",
-    "contentHtml": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>deps:</strong> update launch-editor to v2.14.2 (<a href=\"https://github.com/vitejs/vite/issues/23654\">#23654</a>) (<a href=\"https://github.com/vitejs/vite/commit/22fd1d5238cce2ee9db0eb4122f9e8feb6b06097\">22fd1d5</a>)</li>\n<li><strong>html:</strong> filename passed to transformIndexHtml should not include queries (<a href=\"https://github.com/vitejs/vite/issues/23653\">#23653</a>) (<a href=\"https://github.com/vitejs/vite/commit/7dafd8e56f152403a3230608fa4005273c2e9e17\">7dafd8e</a>)</li>\n<li><strong>server:</strong> check <code>fs.serve</code> for <code>?vite-wasm-instance</code> (<a href=\"https://github.com/vitejs/vite/issues/23655\">#23655</a>) (<a href=\"https://github.com/vitejs/vite/commit/ba8b7ab43b4afa5d0292ab4b6e3a7b5033cc9c73\">ba8b7ab</a>)</li>\n<li><strong>server:</strong> store ids to <code>safeModulePaths</code> rather than URLs (<a href=\"https://github.com/vitejs/vite/issues/23656\">#23656</a>) (<a href=\"https://github.com/vitejs/vite/commit/c3e06f92e969952466b4e2f5801e85e1e00cd905\">c3e06f9</a>)</li>\n</ul>"
-  },
-  {
-    "id": "3118ce70759e",
-    "title": "Vite v6.4.4",
-    "url": "https://github.com/vitejs/vite/releases/tag/v6.4.4",
-    "sourceId": "vite-releases",
-    "publishedAt": "2026-10-06T05:45:15.000Z",
-    "category": "frontend",
-    "tags": [
-      "vite",
-      "release"
-    ],
-    "excerpt": "Please refer to CHANGELOG.md for details.",
-    "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v6.4.4/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
   },
   {
     "id": "e4f759ce24f4",
