@@ -1,5 +1,17 @@
 [
   {
+    "id": "891b7e0bbf66",
+    "title": "Build more responsive apps with the Decisions API",
+    "url": "https://openai.com/index/decisions-api",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-10-22T19:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Fast, focused, low-cost decisions for any application."
+  },
+  {
     "id": "594b04d2b558",
     "title": "Vite v8.3.5",
     "url": "https://github.com/vitejs/vite/releases/tag/v8.3.5",
@@ -500,18 +512,6 @@
     "tags": [
       "huggingface"
     ]
-  },
-  {
-    "id": "d6b9f5e651b1",
-    "title": "Introducing GPT-6.1 Sol",
-    "url": "https://openai.com/index/introducing-gpt-6-1-sol",
-    "sourceId": "openai-news",
-    "publishedAt": "2026-09-29T10:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "excerpt": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices."
   },
   {
     "id": "264dae8ef56c",
