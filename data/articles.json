@@ -1,5 +1,19 @@
 [
   {
+    "id": "42c7fc7c6ee3",
+    "title": "Next.js v16.4.3",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.4.3",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-10-23T13:32:31.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "Note This release is backporting bug fixes. It does not include all pending features/changes on canary. Core Changes v16.4.2 [lts-active] Fix extensionless Google font URLs in both bundlers (#100277) [lts-active] Don't load the app-page runtime in proxy.ts (#100423) [lts-active] Revert \"Turbopack…",
+    "contentHtml": "<p>Note</p><p>This release is backporting bug fixes. It does <strong>not</strong> include all pending features/changes on canary.</p>\n\n<h3>Core Changes</h3>\n<ul>\n<li>v16.4.2</li>\n<li>[lts-active] Fix extensionless Google font URLs in both bundlers (<a href=\"https://github.com/vercel/next.js/pull/100277\">#100277</a>)</li>\n<li>[lts-active] Don't load the app-page runtime in proxy.ts (<a href=\"https://github.com/vercel/next.js/pull/100423\">#100423</a>)</li>\n<li>[lts-active] Revert \"Turbopack: loader change invalidation (<a href=\"https://github.com/vercel/next.js/pull/95732\">#95732</a>)\" (<a href=\"https://github.com/vercel/next.js/pull/100438\">#100438</a>)</li>\n<li>[lts-active][cd] Gate release bot credentials behind GitHub environments (<a href=\"https://github.com/vercel/next.js/pull/100123\">#100123</a>)</li>\n<li>[lts-active] test: Pin react-virtualized (<a href=\"https://github.com/vercel/next.js/pull/100545\">#100545</a>)</li>\n<li>[lts-active][cd] Move release un-draft to a follow-up job in bot-autonomous (<a href=\"https://github.com/vercel/next.js/pull/100572\">#100572</a>)</li>\n<li>[lts-active] Keep OpenTelemetry request traces together (<a href=\"https://github.com/vercel/next.js/pull/100349\">#100349</a>, <a href=\"https://github.com/vercel/next.js/pull/100294\">#100294</a>, <a href=\"https://github.com/vercel/next.js/pull/100324\">#100324</a>, <a href=\"https://github.com/vercel/next.js/pull/100350\">#100350</a>, <a href=\"https://github.com/vercel/next.js/pull/100552\">#100552</a>, <a href=\"https://github.com/vercel/next.js/pull/100583\">#100583</a>) (<a href=\"https://github.com/vercel/next.js/pull/100542\">#100542</a>)</li>\n<li>[lts-active] Avoid loading standalone React in server bootstrap (<a href=\"https://github.com/vercel/next.js/pull/100610\">#100610</a>)</li>\n</ul>\n<h3>Credits</h3>\n<p>Huge thanks to <a href=\"https://github.com/mischnic\">@mischnic</a>, <a href=\"https://github.com/lukesandberg\">@lukesandberg</a>, <a href=\"https://github.com/acdlite\">@acdlite</a>, <a href=\"https://github.com/eps1lon\">@eps1lon</a>, and <a href=\"https://github.com/sokra\">@sokra</a> for helping!</p>"
+  },
+  {
     "id": "891b7e0bbf66",
     "title": "Build more responsive apps with the Decisions API",
     "url": "https://openai.com/index/decisions-api",
@@ -241,20 +255,6 @@
     ],
     "excerpt": "v15.5.28",
     "contentHtml": "<p>v15.5.28</p>"
-  },
-  {
-    "id": "2056cdcc51a5",
-    "title": "Next.js v16.4.1",
-    "url": "https://github.com/vercel/next.js/releases/tag/v16.4.1",
-    "sourceId": "nextjs-releases",
-    "publishedAt": "2026-10-14T15:39:54.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "release"
-    ],
-    "excerpt": "v16.4.1",
-    "contentHtml": "<p>v16.4.1</p>"
   },
   {
     "id": "20c731d2eb11",
