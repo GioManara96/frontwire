@@ -1,5 +1,78 @@
 [
   {
+    "id": "fd1c96f7ee7f",
+    "title": "Ship less JavaScript in Next.js with your AI agent",
+    "url": "https://nextjs.org/blog/ship-less-javascript-with-ai",
+    "sourceId": "nextjs-blog",
+    "publishedAt": "2026-10-28T20:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "javascript"
+    ],
+    "excerpt": "Optimize your Next.js app's bundles with the next-bundle-optimizer agent skill, or explore them yourself with new Bundle Analyzer tools."
+  },
+  {
+    "id": "a92d7b7ef0e2",
+    "title": "Gemini 4 Carbon",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-28T17:01:23.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50276792"
+  },
+  {
+    "id": "3e32bae570ff",
+    "title": "Gemini 4 Carbon: Our next frontier model",
+    "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-10-28T17:00:58.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "5433a74cb23e",
+    "title": "This Week In React #303: TanStack, Next.js, Vinext, Motion, React Hook Form | Expo Desktop, Legend Spark, Nitro, Exact, Skia, Screens, Unistyles | Node.js, Bun, SWC, Content Mappers, pnpm, Biome",
+    "url": "https://thisweekinreact.com/newsletter/303",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-10-28T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs"
+    ]
+  },
+  {
+    "id": "82174d78655e",
+    "title": "The spyware hiding in old script tags",
+    "url": "https://frontendfoc.us/issues/764",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-10-28T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ]
+  },
+  {
+    "id": "988cbce51359",
+    "title": "Nuxt DevTools v4",
+    "url": "https://nuxt.com/blog/devtools-v4",
+    "sourceId": "nuxt-blog",
+    "publishedAt": "2026-10-28T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt"
+    ],
+    "excerpt": "Nuxt DevTools v4 is built on Devframe and Vite DevTools. It brings the full Vue DevTools and the wider devtools ecosystem to Nuxt.",
+    "coverImageUrl": "https://nuxt.com/assets/blog/nuxt-devtools-4.png"
+  },
+  {
     "id": "d6233f062ddc",
     "title": "Upcoming Next.js November Security Release",
     "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-november-2026",
@@ -163,18 +236,6 @@
     "excerpt": "Today we’re excited to announce the beta release of TypeScript 7.1! npm install -D typescript@beta Let’s take a look at what’s new in TypeScript 7.1! Support for Import Attributes in Ambient Modules Import attributes are metadata that are attached to import statements. Typically, they’re meant to…"
   },
   {
-    "id": "f4b3d479520d",
-    "title": "Tsrs: A Port of TypeScript to Rust",
-    "url": "https://blog.cloudflare.com/typescript-rust-port/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-20T13:18:07.000Z",
-    "category": "frontend",
-    "tags": [
-      "typescript"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50165953"
-  },
-  {
     "id": "a75ed007481a",
     "title": "The up to 8x faster Rust port of TypeScript",
     "url": "https://javascriptweekly.com/issues/807",
@@ -236,18 +297,6 @@
     "tags": [
       "huggingface"
     ]
-  },
-  {
-    "id": "7f8b4b243d12",
-    "title": "Next.js Security Update for Upstream Vulnerabilities",
-    "url": "https://nextjs.org/blog/nextjs-security-update-october-14-2026",
-    "sourceId": "nextjs-blog",
-    "publishedAt": "2026-10-14T18:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs"
-    ],
-    "excerpt": "The October 14, 2026 out-of-band security update for Next.js is now available"
   },
   {
     "id": "425729f66956",
@@ -353,18 +402,6 @@
     ]
   },
   {
-    "id": "4e31b829ae68",
-    "title": "Gemini 4 Argon: Built to solve your hardest problems",
-    "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-10-13T16:01:52.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
-  },
-  {
     "id": "0576b91efab9",
     "title": "Vue v3.5.44",
     "url": "https://github.com/vuejs/core/releases/tag/v3.5.44",
@@ -430,20 +467,6 @@
     "excerpt": "As previously promised, here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5. The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago, and was priced at $1/million input and $5/million output - relatively expensive even back then, and a full 10x…"
   },
   {
-    "id": "5b45547a3e6f",
-    "title": "This Week In React #300: Next.js, TanStack, React Foundation, Compiler, Ink, Streamdown, Shaders | Skia, Live Activities, Lucent, Voltra, Apex, Coinbase, Stim Desktop, Unistyles | TC39, e2e, Effect, Remix, h3, SvelteKit, TypeScript",
-    "url": "https://thisweekinreact.com/newsletter/300",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-10-07T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs",
-      "svelte",
-      "typescript"
-    ]
-  },
-  {
     "id": "6b1b69f74c1f",
     "title": "Introducing Claude Haiku 5.5",
     "url": "https://www.anthropic.com/claude-haiku-5-5",
@@ -454,17 +477,6 @@
       "anthropic"
     ],
     "excerpt": "Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use."
-  },
-  {
-    "id": "6d00dc6bb0b7",
-    "title": "JPEG XL finally ships in Chrome",
-    "url": "https://frontendfoc.us/issues/761",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-10-07T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
   },
   {
     "id": "a097ef0d441a",
