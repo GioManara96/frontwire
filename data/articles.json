@@ -479,6 +479,19 @@
     "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
   },
   {
+    "id": "fbf439070c6d",
+    "title": "Nuxt 4.6",
+    "url": "https://nuxt.com/blog/v4-6",
+    "sourceId": "nuxt-blog",
+    "publishedAt": "2026-10-05T23:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "nuxt"
+    ],
+    "excerpt": "Nuxt 4.6 makes Nuxt server-agnostic with nuxt/server, rebuilds typed $fetch, adds sessions, Vue Vapor support and new dev error pages, and ships alongside Nuxt CLI v4.",
+    "coverImageUrl": "https://nuxt.com/assets/blog/v4.6.png"
+  },
+  {
     "id": "817c31d46998",
     "title": "SvelteKit 3 is here",
     "url": "https://svelte.dev/blog/sveltekit-3-is-here",
