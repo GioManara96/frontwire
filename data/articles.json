@@ -1,5 +1,17 @@
 [
   {
+    "id": "94430ceaa839",
+    "title": "Claude Code regularly sends each background agent’s transcript to its model",
+    "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-29T03:33:42.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50284255"
+  },
+  {
     "id": "fd1c96f7ee7f",
     "title": "Ship less JavaScript in Next.js with your AI agent",
     "url": "https://nextjs.org/blog/ship-less-javascript-with-ai",
@@ -186,18 +198,6 @@
     ],
     "excerpt": "Please refer to CHANGELOG.md for details.",
     "contentHtml": "<p>Please refer to <a href=\"https://github.com/vitejs/vite/blob/v6.4.5/packages/vite/CHANGELOG.md\">CHANGELOG.md</a> for details.</p>"
-  },
-  {
-    "id": "a71ada760e84",
-    "title": "The Future of CSS",
-    "url": "https://www.joshwcomeau.com/css/interop-2027/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-21T01:47:28.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50175070"
   },
   {
     "id": "40e5f0368300",
