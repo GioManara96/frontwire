@@ -1,5 +1,17 @@
 [
   {
+    "id": "f61d3e32ca00",
+    "title": "Backdoors in official Claude Code extensions",
+    "url": "https://cyberplace.social/@GossiTheDog/117528831681803563",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-10-30T11:05:53.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50302334"
+  },
+  {
     "id": "5385485570aa",
     "title": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
     "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
@@ -35,18 +47,6 @@
       "javascript"
     ],
     "excerpt": "Optimize your Next.js app's bundles with the next-bundle-optimizer agent skill, or explore them yourself with new Bundle Analyzer tools."
-  },
-  {
-    "id": "a92d7b7ef0e2",
-    "title": "Gemini 4 Carbon",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-28T17:01:23.000Z",
-    "category": "ai",
-    "tags": [
-      "gemini"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50276792"
   },
   {
     "id": "3e32bae570ff",
