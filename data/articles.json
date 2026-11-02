@@ -1,5 +1,17 @@
 [
   {
+    "id": "967be99077d1",
+    "title": "The AI cost of JavaScript frameworks",
+    "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-01T06:06:19.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50323088"
+  },
+  {
     "id": "f61d3e32ca00",
     "title": "Backdoors in official Claude Code extensions",
     "url": "https://cyberplace.social/@GossiTheDog/117528831681803563",
@@ -22,18 +34,6 @@
       "anthropic"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50301983"
-  },
-  {
-    "id": "6edd96eae3e6",
-    "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
-    "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-30T07:09:12.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50300683"
   },
   {
     "id": "fd1c96f7ee7f",
