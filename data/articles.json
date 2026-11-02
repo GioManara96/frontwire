@@ -1,5 +1,19 @@
 [
   {
+    "id": "3c0fd78ab7cd",
+    "title": "Next.js v16.4.4",
+    "url": "https://github.com/vercel/next.js/releases/tag/v16.4.4",
+    "sourceId": "nextjs-releases",
+    "publishedAt": "2026-11-02T10:14:37.000Z",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "release"
+    ],
+    "excerpt": "v16.4.4",
+    "contentHtml": "<p>v16.4.4</p>"
+  },
+  {
     "id": "967be99077d1",
     "title": "The AI cost of JavaScript frameworks",
     "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
@@ -339,20 +353,6 @@
     ],
     "excerpt": "React Server Components Improve transport protocol (#37843 by @unstubbable and @eps1lon)",
     "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37843\">#37843</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
-  },
-  {
-    "id": "026847ce9221",
-    "title": "Next.js v15.5.28",
-    "url": "https://github.com/vercel/next.js/releases/tag/v15.5.28",
-    "sourceId": "nextjs-releases",
-    "publishedAt": "2026-10-14T15:42:32.000Z",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "release"
-    ],
-    "excerpt": "v15.5.28",
-    "contentHtml": "<p>v15.5.28</p>"
   },
   {
     "id": "20c731d2eb11",
