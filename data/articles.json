@@ -1,5 +1,29 @@
 [
   {
+    "id": "235ecb137012",
+    "title": "Safari will 'dark mode' your site for you",
+    "url": "https://frontendfoc.us/issues/765",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-11-04T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ]
+  },
+  {
+    "id": "38f57c52203d",
+    "title": "This Week In React #304: Next.js, Compiler, Redux Toolkit, Suspense, Resizable Panels, Preact, Redact | RN 0.89 RC, Vega OS, Screens, Hermes, WebView, Unistyles, tgfx, Pager View | Node.js, Parcel, Rspack, Actions, Vitest, jsdom, HTML-in-Canvas",
+    "url": "https://thisweekinreact.com/newsletter/304",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-11-04T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs",
+      "web-platform"
+    ]
+  },
+  {
     "id": "e11543d2135a",
     "title": "Next.js v16.4.5",
     "url": "https://github.com/vercel/next.js/releases/tag/v16.4.5",
@@ -381,29 +405,6 @@
     "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37843\">#37843</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
   },
   {
-    "id": "20c731d2eb11",
-    "title": "This Week In React #301: TanStack Start, React Aria, Base UI, Satori, Next.js, Vitest RSC, MobX | RN Web, Tamagui, One, Skia, Observe, Screens, Hot Updater, Nano Icons | Deno, Bun, TS, JPEG XL, AsyncContext, Playwright, pnpm, Partytown",
-    "url": "https://thisweekinreact.com/newsletter/301",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-10-14T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs"
-    ]
-  },
-  {
-    "id": "9a5d651e4c5a",
-    "title": "The best way to use icons in Web UIs",
-    "url": "https://frontendfoc.us/issues/762",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-10-14T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
-  },
-  {
     "id": "1dc99b611b24",
     "title": "Developing Gemini 4 Argon responsibly and safely",
     "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
@@ -490,18 +491,5 @@
       "openai"
     ],
     "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
-  },
-  {
-    "id": "fbf439070c6d",
-    "title": "Nuxt 4.6",
-    "url": "https://nuxt.com/blog/v4-6",
-    "sourceId": "nuxt-blog",
-    "publishedAt": "2026-10-05T23:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nuxt"
-    ],
-    "excerpt": "Nuxt 4.6 makes Nuxt server-agnostic with nuxt/server, rebuilds typed $fetch, adds sessions, Vue Vapor support and new dev error pages, and ships alongside Nuxt CLI v4.",
-    "coverImageUrl": "https://nuxt.com/assets/blog/v4.6.png"
   }
 ]
