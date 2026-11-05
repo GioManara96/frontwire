@@ -1,5 +1,43 @@
 [
   {
+    "id": "1750855042e8",
+    "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+    "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-11-05T17:05:16.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "e6318601f4a1",
+    "title": "Vue v3.5.45",
+    "url": "https://github.com/vuejs/core/releases/tag/v3.5.45",
+    "sourceId": "vue-releases",
+    "publishedAt": "2026-11-05T09:15:06.000Z",
+    "category": "frontend",
+    "tags": [
+      "vue",
+      "release"
+    ],
+    "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
+    "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
+  },
+  {
+    "id": "14e90e72d340",
+    "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+    "url": "https://openai.com/index/introducing-gpt-6-cyber",
+    "sourceId": "openai-news",
+    "publishedAt": "2026-11-05T09:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "excerpt": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
+  },
+  {
     "id": "7ecbe3e07c2c",
     "title": "Vite v8.3.6",
     "url": "https://github.com/vitejs/vite/releases/tag/v8.3.6",
@@ -12,6 +50,18 @@
     ],
     "excerpt": "Bug Fixes await overlapping plugin container close calls (#23935) (175bbeb) build: resolve dynamic imports with queries appended when collecting CSS dependencies (#23909) (df36558) build: use stable module ids in chunk import map hash signatures (fix #23975) (#23976) (8069835) bundled-dev: allow…",
     "contentHtml": "<h3>Bug Fixes</h3>\n<ul>\n<li>await overlapping plugin container close calls (<a href=\"https://github.com/vitejs/vite/issues/23935\">#23935</a>) (<a href=\"https://github.com/vitejs/vite/commit/175bbeb231fe8bbf260b0b3866b30080690c4f5e\">175bbeb</a>)</li>\n<li><strong>build:</strong> resolve dynamic imports with queries appended when collecting CSS dependencies (<a href=\"https://github.com/vitejs/vite/issues/23909\">#23909</a>) (<a href=\"https://github.com/vitejs/vite/commit/df365589738866363fff7335ed58948a5c440580\">df36558</a>)</li>\n<li><strong>build:</strong> use stable module ids in chunk import map hash signatures (fix <a href=\"https://github.com/vitejs/vite/issues/23975\">#23975</a>) (<a href=\"https://github.com/vitejs/vite/issues/23976\">#23976</a>) (<a href=\"https://github.com/vitejs/vite/commit/8069835ac32ae7682b34de55fdba6c5d2484bae0\">8069835</a>)</li>\n<li><strong>bundled-dev:</strong> allow named imports from Node built-ins (<a href=\"https://github.com/vitejs/vite/issues/23858\">#23858</a>) (<a href=\"https://github.com/vitejs/vite/commit/4260c756944a430e897f689efcfa4f8648953488\">4260c75</a>)</li>\n<li><strong>bundled-dev:</strong> reload when hmr cannot run an entry again (<a href=\"https://github.com/vitejs/vite/issues/23849\">#23849</a>) (<a href=\"https://github.com/vitejs/vite/commit/a236886026c3a5de0680ea616de7de830d7a90e7\">a236886</a>)</li>\n<li><strong>deps:</strong> update <code>@rollup/plugin-alias</code> to v6.0.1 (<a href=\"https://github.com/vitejs/vite/issues/23862\">#23862</a>) (<a href=\"https://github.com/vitejs/vite/commit/67c965b1df64249bceb747037e87d22f75b3e471\">67c965b</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23896\">#23896</a>) (<a href=\"https://github.com/vitejs/vite/commit/46b91c5bf9c2901b8511c893bc3fc38b8bba6e4f\">46b91c5</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/23966\">#23966</a>) (<a href=\"https://github.com/vitejs/vite/commit/b3cb0575aff63004a71301a1ec798aeea2aa05d7\">b3cb057</a>)</li>\n<li><strong>deps:</strong> update rolldown-related dependencies (<a href=\"https://github.com/vitejs/vite/issues/23868\">#23868</a>) (<a href=\"https://github.com/vitejs/vite/commit/a63eb8722e7d47d1efb710b6410c8d5e5a04a18f\">a63eb87</a>)</li>\n<li><strong>deps:</strong> update rolldown-related dependencies (<a href=\"https://github.com/vitejs/vite/issues/23967\">#23967</a>) (<a href=\"https://github.com/vitejs/vite/commit/0105733e610dd5b770bb5397e8d9fbc54a9f6312\">0105733</a>)</li>\n<li><strong>dev:</strong> escape ANSI escape sequence for <code>server.forwardConsole</code> (<a href=\"https://github.com/vitejs/vite/issues/23933\">#23933</a>) (<a href=\"https://github.com/vitejs/vite/commit/4f340fdb1b619089bbf8ae5dc56c2c0866224306\">4f340fd</a>)</li>\n<li><strong>html:</strong> remove adjacent module tags on the first line (<a href=\"https://github.com/vitejs/vite/issues/23823\">#23823</a>) (<a href=\"https://github.com/vitejs/vite/commit/eab1dc2752fcccf7f06427afc9915794e256e3bc\">eab1dc2</a>)</li>\n<li>ignore pnpm's .modules.yaml as a Vite Task input (<a href=\"https://github.com/vitejs/vite/issues/23634\">#23634</a>) (<a href=\"https://github.com/vitejs/vite/commit/95c2daf1352b3509ec93e6e08a0eaabe23a61b28\">95c2daf</a>)</li>\n<li><strong>optimizer:</strong> detect cache dir precisely (<a href=\"https://github.com/vitejs/vite/issues/23912\">#23912</a>) (<a href=\"https://github.com/vitejs/vite/commit/cc9bc2131d471bb4d60364614b326ada3ca7d10d\">cc9bc21</a>)</li>\n<li><strong>optimizer:</strong> resolve subpath imports (#) with Vite's resolver (<a href=\"https://github.com/vitejs/vite/issues/23959\">#23959</a>) (<a href=\"https://github.com/vitejs/vite/commit/0fdd81e9460dd44806b2b6290603ee2c8366a54e\">0fdd81e</a>)</li>\n<li>respect <code>build.sourcemap</code> from environment (<a href=\"https://github.com/vitejs/vite/issues/23879\">#23879</a>) (<a href=\"https://github.com/vitejs/vite/commit/82e7aa0374a15e1c67594557ab5893c91578f897\">82e7aa0</a>)</li>\n<li><strong>server:</strong> escape HTML attributes (<a href=\"https://github.com/vitejs/vite/issues/23995\">#23995</a>) (<a href=\"https://github.com/vitejs/vite/commit/a27039101e3726498063c9662da9c0c097016bd1\">a270391</a>)</li>\n<li><strong>server:</strong> preserve <code>$</code> patterns in static alias replacements (<a href=\"https://github.com/vitejs/vite/issues/23703\">#23703</a>) (<a href=\"https://github.com/vitejs/vite/commit/1b6ed05397c0670e6114e3e1380188f0313ae590\">1b6ed05</a>)</li>\n<li><strong>ssr:</strong> convert external require against built-in modules to import for <code>ssr.target=webworker</code> (<a href=\"https://github.com/vitejs/vite/issues/23759\">#23759</a>) (<a href=\"https://github.com/vitejs/vite/commit/a711f1c6328ca7f59857ed99e32853cf49b19a15\">a711f1c</a>)</li>\n<li>use top-level <code>input</code> for SSR build when <code>build.ssr: true</code> (<a href=\"https://github.com/vitejs/vite/issues/23898\">#23898</a>) (<a href=\"https://github.com/vitejs/vite/commit/90bc034a97e7eccd0f3cbc69904fffa625a4c34d\">90bc034</a>)</li>\n<li><strong>wasm:</strong> reject <code>.wasm</code> outside <code>server.fs</code> (<a href=\"https://github.com/vitejs/vite/issues/23914\">#23914</a>) (<a href=\"https://github.com/vitejs/vite/commit/64e24670e49900c33a3d3e3c701a5ec4d76573f2\">64e2467</a>)</li>\n<li>watch files that have a query or hash referenced with <code>new URL(..., import.meta.url)</code> (<a href=\"https://github.com/vitejs/vite/issues/23780\">#23780</a>) (<a href=\"https://github.com/vitejs/vite/commit/e954a9cda0b5254be495a937333a0be1b8503d8f\">e954a9c</a>)</li>\n<li><strong>worker:</strong> keep chunks conflicted with unused workers that are still used by a live worker (<a href=\"https://github.com/vitejs/vite/issues/23956\">#23956</a>) (<a href=\"https://github.com/vitejs/vite/commit/7139ef35cf6c9c0979385a467e8499fc19dfd099\">7139ef3</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>build:</strong> remove preload link listeners on settle (fix <a href=\"https://github.com/vitejs/vite/issues/23920\">#23920</a>) (<a href=\"https://github.com/vitejs/vite/issues/23922\">#23922</a>) (<a href=\"https://github.com/vitejs/vite/commit/8109efd30319704224db3b7e3b7090348999effb\">8109efd</a>)</li>\n<li><strong>css:</strong> index rendered modules once per output for <code>cssScopeTo</code> (<a href=\"https://github.com/vitejs/vite/issues/23889\">#23889</a>) (<a href=\"https://github.com/vitejs/vite/commit/1b905e562aed9b47c3ab5959149bb1566eb7a9a5\">1b905e5</a>)</li>\n</ul>\n<h3>Miscellaneous Chores</h3>\n<ul>\n<li>align charset case (<a href=\"https://github.com/vitejs/vite/issues/23863\">#23863</a>) (<a href=\"https://github.com/vitejs/vite/commit/a976df38815d00102bb1d9fa32e0fec7c05d210a\">a976df3</a>)</li>\n</ul>\n<h3>Build System</h3>\n<ul>\n<li>generate sourcemaps in import-meta-current-dirname plugin (<a href=\"https://github.com/vitejs/vite/issues/23904\">#23904</a>) (<a href=\"https://github.com/vitejs/vite/commit/20d355a00b036499f4b9fd5aa99ff754ca3d4d06\">20d355a</a>)</li>\n</ul>"
+  },
+  {
+    "id": "bf5e13e89249",
+    "title": "Lemmings CSS Animation",
+    "url": "https://markblah.github.io/lemmings/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-05T04:54:10.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50375354"
   },
   {
     "id": "235ecb137012",
@@ -140,18 +190,6 @@
       "javascript"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50323088"
-  },
-  {
-    "id": "f61d3e32ca00",
-    "title": "Backdoors in official Claude Code extensions",
-    "url": "https://cyberplace.social/@GossiTheDog/117528831681803563",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-10-30T11:05:53.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50302334"
   },
   {
     "id": "fd1c96f7ee7f",
@@ -431,18 +469,6 @@
     ]
   },
   {
-    "id": "d96a2391b623",
-    "title": "Gemini 4 Argon for Robotics",
-    "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-10-13T16:01:58.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
-  },
-  {
     "id": "0576b91efab9",
     "title": "Vue v3.5.44",
     "url": "https://github.com/vuejs/core/releases/tag/v3.5.44",
@@ -479,17 +505,5 @@
       "anthropic"
     ],
     "excerpt": "Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use."
-  },
-  {
-    "id": "a097ef0d441a",
-    "title": "GPT-6 and Intelligent UI for everyone",
-    "url": "https://openai.com/index/gpt-6-for-everyone",
-    "sourceId": "openai-news",
-    "publishedAt": "2026-10-07T00:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
   }
 ]
