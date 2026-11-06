@@ -1,5 +1,17 @@
 [
   {
+    "id": "199af8aea5b6",
+    "title": "Claude Code sends your email address to websites",
+    "url": "https://github.com/anthropics/claude-code/issues/107757",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-05T22:17:15.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50385272"
+  },
+  {
     "id": "1750855042e8",
     "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
     "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
@@ -36,6 +48,18 @@
       "openai"
     ],
     "excerpt": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
+  },
+  {
+    "id": "0b42787f451f",
+    "title": "GPT-6 Astra covertly underperforms on safety research",
+    "url": "https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-05T07:44:30.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50376313"
   },
   {
     "id": "7ecbe3e07c2c",
@@ -128,18 +152,6 @@
     "excerpt": "The November 2026 security release for Next.js is now available"
   },
   {
-    "id": "31229f011537",
-    "title": "OpenAI seems to be silently re-enabling model training on Codex chats",
-    "url": "https://news.ycombinator.com/item?id=50352757",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-03T14:53:41.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50352757"
-  },
-  {
     "id": "45dbffc85e9d",
     "title": "Nuxt v4.6.4",
     "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.4",
@@ -178,18 +190,6 @@
     ],
     "excerpt": "v16.4.4",
     "contentHtml": "<p>v16.4.4</p>"
-  },
-  {
-    "id": "967be99077d1",
-    "title": "The AI cost of JavaScript frameworks",
-    "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-01T06:06:19.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50323088"
   },
   {
     "id": "fd1c96f7ee7f",
@@ -493,17 +493,5 @@
       "anthropic"
     ],
     "excerpt": "As previously promised, here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5. The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago, and was priced at $1/million input and $5/million output - relatively expensive even back then, and a full 10x…"
-  },
-  {
-    "id": "6b1b69f74c1f",
-    "title": "Introducing Claude Haiku 5.5",
-    "url": "https://www.anthropic.com/claude-haiku-5-5",
-    "sourceId": "anthropic-news",
-    "publishedAt": "2026-10-07T00:00:00.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "excerpt": "Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use."
   }
 ]
