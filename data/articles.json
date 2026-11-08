@@ -1,5 +1,17 @@
 [
   {
+    "id": "10bdc73097cf",
+    "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+    "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-07T20:45:32.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50407882"
+  },
+  {
     "id": "485654c1f98a",
     "title": "Gemini Omni 1.2 Flash",
     "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
@@ -60,18 +72,6 @@
       "openai"
     ],
     "excerpt": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
-  },
-  {
-    "id": "0b42787f451f",
-    "title": "GPT-6 Astra covertly underperforms on safety research",
-    "url": "https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-05T07:44:30.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50376313"
   },
   {
     "id": "7ecbe3e07c2c",
