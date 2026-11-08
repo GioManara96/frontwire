@@ -1,5 +1,17 @@
 [
   {
+    "id": "79a426483352",
+    "title": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders",
+    "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-08T18:16:07.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50415628"
+  },
+  {
     "id": "10bdc73097cf",
     "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
     "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
@@ -22,18 +34,6 @@
       "gemini"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50392118"
-  },
-  {
-    "id": "199af8aea5b6",
-    "title": "Claude Code sends your email address to websites",
-    "url": "https://github.com/anthropics/claude-code/issues/107757",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-05T22:17:15.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50385272"
   },
   {
     "id": "1750855042e8",
