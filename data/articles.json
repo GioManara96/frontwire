@@ -14,6 +14,18 @@
     "contentHtml": "<p>Note</p><p>This release is backporting bug fixes. It does <strong>not</strong> include all pending features/changes on canary.</p>\n\n<h3>Core Changes</h3>\n<ul>\n<li>[lts-active] Pin Tailwind to 4.3.3 in create-next-app and tests (<a href=\"https://github.com/vercel/next.js/pull/101061\">#101061</a>, <a href=\"https://github.com/vercel/next.js/pull/101176\">#101176</a>) (<a href=\"https://github.com/vercel/next.js/pull/101307\">#101307</a>)</li>\n<li>[lts-active] Automatically compress route handler responses if not already compressed (<a href=\"https://github.com/vercel/next.js/pull/101280\">#101280</a>)</li>\n<li>[lts-active] Turbopack GC fixes for dev (<a href=\"https://github.com/vercel/next.js/pull/100279\">#100279</a>, <a href=\"https://github.com/vercel/next.js/pull/100370\">#100370</a>) (<a href=\"https://github.com/vercel/next.js/pull/101308\">#101308</a>)</li>\n</ul>\n<h3>Credits</h3>\n<p>Huge thanks to <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a> for helping!</p>"
   },
   {
+    "id": "fbdf36c6d0b0",
+    "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
+    "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-09T20:04:55.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50431144"
+  },
+  {
     "id": "36041da0d672",
     "title": "Vite v8.3.7",
     "url": "https://github.com/vitejs/vite/releases/tag/v8.3.7",
@@ -90,18 +102,6 @@
       "anthropic"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50407882"
-  },
-  {
-    "id": "485654c1f98a",
-    "title": "Gemini Omni 1.2 Flash",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-06T13:35:27.000Z",
-    "category": "ai",
-    "tags": [
-      "gemini"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50392118"
   },
   {
     "id": "1750855042e8",
