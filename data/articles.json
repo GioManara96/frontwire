@@ -1,5 +1,28 @@
 [
   {
+    "id": "55cb0588b3e8",
+    "title": "Gemini 4 Carbon is now available",
+    "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-11-10T16:03:47.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
+    "id": "00a3012896f8",
+    "title": "How X (Twitter) is rebuilding its web app",
+    "url": "https://javascriptweekly.com/issues/810",
+    "sourceId": "javascript-weekly",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ]
+  },
+  {
     "id": "23e3bda13c4d",
     "title": "Next.js v16.4.6",
     "url": "https://github.com/vercel/next.js/releases/tag/v16.4.6",
@@ -24,6 +47,20 @@
       "anthropic"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50431144"
+  },
+  {
+    "id": "6b6709b612e5",
+    "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+    "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-11-09T19:51:47.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ],
+    "excerpt": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
+    "coverImageUrl": "https://lh3.googleusercontent.com/F1CrVEYRb8lJOyyxGgcyow-Td1de-nkp7K8MZrhjrKPANJUc0EYB754Ninn-Yrppjdb54nolOWo6Rk8iDaRNuixWwLaEKc0K9ImGooxen9fj9IOh=w528-h297-n-nu-rw-lo"
   },
   {
     "id": "36041da0d672",
@@ -245,18 +282,6 @@
     "excerpt": "Optimize your Next.js app's bundles with the next-bundle-optimizer agent skill, or explore them yourself with new Bundle Analyzer tools."
   },
   {
-    "id": "3e32bae570ff",
-    "title": "Gemini 4 Carbon: Our next frontier model",
-    "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-10-28T17:00:58.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
-  },
-  {
     "id": "5433a74cb23e",
     "title": "This Week In React #303: TanStack, Next.js, Vinext, Motion, React Hook Form | Expo Desktop, Legend Spark, Nitro, Exact, Skia, Screens, Unistyles | Node.js, Bun, SWC, Content Mappers, pnpm, Biome",
     "url": "https://thisweekinreact.com/newsletter/303",
@@ -390,18 +415,6 @@
     "excerpt": "Today we’re excited to announce the beta release of TypeScript 7.1! npm install -D typescript@beta Let’s take a look at what’s new in TypeScript 7.1! Support for Import Attributes in Ambient Modules Import attributes are metadata that are attached to import statements. Typically, they’re meant to…"
   },
   {
-    "id": "a75ed007481a",
-    "title": "The up to 8x faster Rust port of TypeScript",
-    "url": "https://javascriptweekly.com/issues/807",
-    "sourceId": "javascript-weekly",
-    "publishedAt": "2026-10-20T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript",
-      "typescript"
-    ]
-  },
-  {
     "id": "138aa91610ba",
     "title": "Nuxt v4.6.2",
     "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.2",
@@ -467,18 +480,6 @@
     ],
     "excerpt": "React Server Components Improve transport protocol (#37843 by @unstubbable and @eps1lon)",
     "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37843\">#37843</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
-  },
-  {
-    "id": "1dc99b611b24",
-    "title": "Developing Gemini 4 Argon responsibly and safely",
-    "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-10-13T19:43:07.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
   },
   {
     "id": "0576b91efab9",
