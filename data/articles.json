@@ -14,6 +14,29 @@
     "contentHtml": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>build:</strong> keep <code>magicString</code> and <code>ast</code> in transform hook meta (<a href=\"https://github.com/vitejs/vite/issues/24012\">#24012</a>) (<a href=\"https://github.com/vitejs/vite/commit/a3b28e8744ffae9abd018696ad4fc01b27ac71ce\">a3b28e8</a>)</li>\n<li><strong>bundled-dev:</strong> emit assets referenced by inline workers during load (<a href=\"https://github.com/vitejs/vite/issues/23103\">#23103</a>) (<a href=\"https://github.com/vitejs/vite/commit/5e50bae4bdfa123c25c4f5afcbb27efd96fcf681\">5e50bae</a>)</li>\n<li><strong>config:</strong> skip native loader compat checks for type-only imports (<a href=\"https://github.com/vitejs/vite/issues/24021\">#24021</a>) (<a href=\"https://github.com/vitejs/vite/commit/e5542942715b281ca5803554c43d48448d72d7f2\">e554294</a>)</li>\n<li><strong>css:</strong> reject CSS entrypoints when <code>build.cssCodeSplit: false</code> (<a href=\"https://github.com/vitejs/vite/issues/23112\">#23112</a>) (<a href=\"https://github.com/vitejs/vite/commit/e4ad62ba6523e889f988b6e882d9d81be7f26711\">e4ad62b</a>)</li>\n<li><strong>deps:</strong> update all non-major dependencies (<a href=\"https://github.com/vitejs/vite/issues/24027\">#24027</a>) (<a href=\"https://github.com/vitejs/vite/commit/a13aa045d1cf2a28e9a5dd2bcb008236f4eaf19a\">a13aa04</a>)</li>\n<li>hide console window when running <code>yarn config get</code> on Windows (<a href=\"https://github.com/vitejs/vite/issues/24013\">#24013</a>) (<a href=\"https://github.com/vitejs/vite/commit/3f6c4cdae3b7984840cc32ff6752a45736025406\">3f6c4cd</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>css:</strong> import sass once instead of per file (<a href=\"https://github.com/vitejs/vite/issues/24041\">#24041</a>) (<a href=\"https://github.com/vitejs/vite/commit/db8b1190abbb7e30aad0055f97dde02d7ed504c7\">db8b119</a>)</li>\n<li>defer <code>net use</code> until a UNC path is resolved on Windows (<a href=\"https://github.com/vitejs/vite/issues/24014\">#24014</a>) (<a href=\"https://github.com/vitejs/vite/commit/b6430466c57f4783b707fd14a43c237082094081\">b643046</a>)</li>\n</ul>\n<h3>Miscellaneous Chores</h3>\n<ul>\n<li><strong>deps:</strong> update dependency @types/node to v26 (<a href=\"https://github.com/vitejs/vite/issues/24029\">#24029</a>) (<a href=\"https://github.com/vitejs/vite/commit/dd780cd761221a0c5fa4810335f0190ecb9c7294\">dd780cd</a>)</li>\n<li>enable vitest plugin in Oxlint (<a href=\"https://github.com/vitejs/vite/issues/24052\">#24052</a>) (<a href=\"https://github.com/vitejs/vite/commit/ce979e4c4be5f48c5862445ef124d863853e39b1\">ce979e4</a>)</li>\n<li>enable vitest style rules in Oxlint (<a href=\"https://github.com/vitejs/vite/issues/24053\">#24053</a>) (<a href=\"https://github.com/vitejs/vite/commit/b8c8270f3f01a9dbf02c336e7468bf6f1df0f5ad\">b8c8270</a>)</li>\n<li>revert \"fix(build): keep <code>magicString</code> and <code>ast</code> in transform hook meta (<a href=\"https://github.com/vitejs/vite/issues/24012\">#24012</a>)\" (<a href=\"https://github.com/vitejs/vite/issues/24065\">#24065</a>) (<a href=\"https://github.com/vitejs/vite/commit/afc44f0957f7ef52d27d5026200a289de374c215\">afc44f0</a>)</li>\n</ul>\n<h3>Code Refactoring</h3>\n<ul>\n<li><strong>optimizer:</strong> use non-capturing group for external types regex (<a href=\"https://github.com/vitejs/vite/issues/24048\">#24048</a>) (<a href=\"https://github.com/vitejs/vite/commit/ef2343355b29a3f389e4af51147b767331bd7a5b\">ef23433</a>)</li>\n</ul>\n<h3>Tests</h3>\n<ul>\n<li>avoid joining logs for assertion (<a href=\"https://github.com/vitejs/vite/issues/24057\">#24057</a>) (<a href=\"https://github.com/vitejs/vite/commit/fbb0a4e719fda240459aa54f872a89dc52473fe2\">fbb0a4e</a>)</li>\n</ul>"
   },
   {
+    "id": "0b89d13f6ff3",
+    "title": "Responsive design is more than resizing a window",
+    "url": "https://frontendfoc.us/issues/766",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-11-11T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ]
+  },
+  {
+    "id": "dce4eecd8ab7",
+    "title": "This Week In React #305: X, Forms, e18e, Next.js, TanStack Start, Storybook, MobX, Zustand, XState | Exact, Discord, Shopify, Expo Modules, Audio API, Bottom Sheet, Keychain, Gesture Handler | Node.js, Safari, Rolldown, Playwright",
+    "url": "https://thisweekinreact.com/newsletter/305",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-11-11T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs"
+    ]
+  },
+  {
     "id": "a4978faa7e16",
     "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
     "url": "https://github.com/GoogleChrome/modern-web-guidance",
@@ -377,30 +400,6 @@
       "openai"
     ],
     "excerpt": "Fast, focused, low-cost decisions for any application."
-  },
-  {
-    "id": "40e5f0368300",
-    "title": "Ten CSS features worth voting for",
-    "url": "https://frontendfoc.us/issues/763",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-10-21T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
-  },
-  {
-    "id": "fd93538de378",
-    "title": "This Week In React #302: Next.js, React Router, DevTools, Security, shadcn, Hydrogen, Vinext, Mutative, R3F | RN 0.88, Expo 58, Navigation, FastImage, Screens, Device Hub, Edge to Edge | TypeScript, PHP, CrUX, Rsdoctor, Astro",
-    "url": "https://thisweekinreact.com/newsletter/302",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-10-21T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs",
-      "typescript"
-    ]
   },
   {
     "id": "e216502887f6",
