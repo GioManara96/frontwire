@@ -1,5 +1,29 @@
 [
   {
+    "id": "d7c21c501eb2",
+    "title": "Gemini 4 Hydrogen",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-12T18:01:48.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50471431"
+  },
+  {
+    "id": "5b69826eead4",
+    "title": "Introducing Gemini 4 Hydrogen",
+    "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+    "sourceId": "deepmind-blog",
+    "publishedAt": "2026-11-12T18:00:50.000Z",
+    "category": "ai",
+    "tags": [
+      "deepmind",
+      "gemini"
+    ]
+  },
+  {
     "id": "02bfed5e7aa8",
     "title": "Gemini Decisions API",
     "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
@@ -98,18 +122,6 @@
     "contentHtml": "<p>Note</p><p>This release is backporting bug fixes. It does <strong>not</strong> include all pending features/changes on canary.</p>\n\n<h3>Core Changes</h3>\n<ul>\n<li>[lts-active] Pin Tailwind to 4.3.3 in create-next-app and tests (<a href=\"https://github.com/vercel/next.js/pull/101061\">#101061</a>, <a href=\"https://github.com/vercel/next.js/pull/101176\">#101176</a>) (<a href=\"https://github.com/vercel/next.js/pull/101307\">#101307</a>)</li>\n<li>[lts-active] Automatically compress route handler responses if not already compressed (<a href=\"https://github.com/vercel/next.js/pull/101280\">#101280</a>)</li>\n<li>[lts-active] Turbopack GC fixes for dev (<a href=\"https://github.com/vercel/next.js/pull/100279\">#100279</a>, <a href=\"https://github.com/vercel/next.js/pull/100370\">#100370</a>) (<a href=\"https://github.com/vercel/next.js/pull/101308\">#101308</a>)</li>\n</ul>\n<h3>Credits</h3>\n<p>Huge thanks to <a href=\"https://github.com/lukesandberg\">@lukesandberg</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a> for helping!</p>"
   },
   {
-    "id": "fbdf36c6d0b0",
-    "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
-    "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-09T20:04:55.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50431144"
-  },
-  {
     "id": "6b6709b612e5",
     "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
     "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
@@ -162,18 +174,6 @@
       "anthropic"
     ],
     "excerpt": "Our most capable models for daunting technical work, Claude Fable 5.2 and Claude Mythos 5.2 set a new bar in coding, finance, and the sciences."
-  },
-  {
-    "id": "1750855042e8",
-    "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
-    "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
-    "sourceId": "deepmind-blog",
-    "publishedAt": "2026-11-05T17:05:16.000Z",
-    "category": "ai",
-    "tags": [
-      "deepmind",
-      "gemini"
-    ]
   },
   {
     "id": "e6318601f4a1",
