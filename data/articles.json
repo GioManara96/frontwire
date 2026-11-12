@@ -1,5 +1,17 @@
 [
   {
+    "id": "02bfed5e7aa8",
+    "title": "Gemini Decisions API",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-11T18:32:42.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50456791"
+  },
+  {
     "id": "8fdfafd36292",
     "title": "Vite v8.3.8",
     "url": "https://github.com/vitejs/vite/releases/tag/v8.3.8",
@@ -150,18 +162,6 @@
       "anthropic"
     ],
     "excerpt": "Our most capable models for daunting technical work, Claude Fable 5.2 and Claude Mythos 5.2 set a new bar in coding, finance, and the sciences."
-  },
-  {
-    "id": "79a426483352",
-    "title": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders",
-    "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-08T18:16:07.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50415628"
   },
   {
     "id": "1750855042e8",
@@ -479,19 +479,5 @@
     ],
     "excerpt": "React Server Components Improve transport protocol (#37843 by @unstubbable and @eps1lon)",
     "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37843\">#37843</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
-  },
-  {
-    "id": "0576b91efab9",
-    "title": "Vue v3.5.44",
-    "url": "https://github.com/vuejs/core/releases/tag/v3.5.44",
-    "sourceId": "vue-releases",
-    "publishedAt": "2026-10-13T07:43:25.000Z",
-    "category": "frontend",
-    "tags": [
-      "vue",
-      "release"
-    ],
-    "excerpt": "For stable releases, please refer to CHANGELOG.md for details. For pre-releases, please refer to CHANGELOG.md of the minor branch.",
-    "contentHtml": "<p>For stable releases, please refer to <a href=\"https://github.com/vuejs/core/blob/main/CHANGELOG.md\">CHANGELOG.md</a> for details.<br />\nFor pre-releases, please refer to <a href=\"https://github.com/vuejs/core/blob/minor/CHANGELOG.md\">CHANGELOG.md</a> of the <code>minor</code> branch.</p>"
   }
 ]
