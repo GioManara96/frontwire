@@ -1,5 +1,17 @@
 [
   {
+    "id": "1a09f77a4836",
+    "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+    "url": "https://status.claude.com/incidents/nn11wk485zfn",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-13T10:18:13.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50481187"
+  },
+  {
     "id": "d7e80ea809e6",
     "title": "Gemini 4 Hydrogen and Orchestrator",
     "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
@@ -34,18 +46,6 @@
       "deepmind",
       "gemini"
     ]
-  },
-  {
-    "id": "02bfed5e7aa8",
-    "title": "Gemini Decisions API",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-11T18:32:42.000Z",
-    "category": "ai",
-    "tags": [
-      "gemini"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50456791"
   },
   {
     "id": "8fdfafd36292",
@@ -437,47 +437,5 @@
     "tags": [
       "huggingface"
     ]
-  },
-  {
-    "id": "425729f66956",
-    "title": "React v19.3.1",
-    "url": "https://github.com/react/react/releases/tag/v19.3.1",
-    "sourceId": "react-releases",
-    "publishedAt": "2026-10-14T17:06:15.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "release"
-    ],
-    "excerpt": "React Server Components Improve transport protocol (#37845 by @unstubbable and @eps1lon)",
-    "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37845\">#37845</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
-  },
-  {
-    "id": "6d12a5e2ceec",
-    "title": "React v19.2.9",
-    "url": "https://github.com/react/react/releases/tag/v19.2.9",
-    "sourceId": "react-releases",
-    "publishedAt": "2026-10-14T17:06:10.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "release"
-    ],
-    "excerpt": "React Server Components Improve transport protocol (#37844 by @unstubbable and @eps1lon)",
-    "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37844\">#37844</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
-  },
-  {
-    "id": "dc3c5b50bca0",
-    "title": "React v19.1.10",
-    "url": "https://github.com/react/react/releases/tag/v19.1.10",
-    "sourceId": "react-releases",
-    "publishedAt": "2026-10-14T17:06:06.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "release"
-    ],
-    "excerpt": "React Server Components Improve transport protocol (#37843 by @unstubbable and @eps1lon)",
-    "contentHtml": "<h2>React Server Components</h2>\n<ul>\n<li>Improve transport protocol (<a href=\"https://github.com/facebook/react/pull/37843\">#37843</a> by <a href=\"https://github.com/unstubbable\">@unstubbable</a> and <a href=\"https://github.com/eps1lon\">@eps1lon</a>)</li>\n</ul>"
   }
 ]
