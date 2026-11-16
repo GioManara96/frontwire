@@ -1,5 +1,16 @@
 [
   {
+    "id": "8ec21efa2c62",
+    "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+    "url": "https://huggingface.co/blog/openrouter",
+    "sourceId": "huggingface-blog",
+    "publishedAt": "2026-11-16T00:00:00.000Z",
+    "category": "ai",
+    "tags": [
+      "huggingface"
+    ]
+  },
+  {
     "id": "1a09f77a4836",
     "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
     "url": "https://status.claude.com/incidents/nn11wk485zfn",
