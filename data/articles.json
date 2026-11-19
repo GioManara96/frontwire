@@ -409,17 +409,5 @@
       "openai"
     ],
     "excerpt": "Bringing fast and capable computer use to everyone"
-  },
-  {
-    "id": "e216502887f6",
-    "title": "Announcing TypeScript 7.1 Beta",
-    "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
-    "sourceId": "typescript-blog",
-    "publishedAt": "2026-10-20T17:53:06.000Z",
-    "category": "frontend",
-    "tags": [
-      "typescript"
-    ],
-    "excerpt": "Today we’re excited to announce the beta release of TypeScript 7.1! npm install -D typescript@beta Let’s take a look at what’s new in TypeScript 7.1! Support for Import Attributes in Ambient Modules Import attributes are metadata that are attached to import statements. Typically, they’re meant to…"
   }
 ]
