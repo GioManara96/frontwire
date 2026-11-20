@@ -1,5 +1,17 @@
 [
   {
+    "id": "bda522de56a3",
+    "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+    "url": "https://git-aarvin.github.io/mei/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-19T23:35:35.000Z",
+    "category": "ai",
+    "tags": [
+      "gemini"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50568130"
+  },
+  {
     "id": "fd9bebbff7e6",
     "title": "Introducing Gemini 4 Neon",
     "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
@@ -103,18 +115,6 @@
       "anthropic"
     ],
     "discussionUrl": "https://news.ycombinator.com/item?id=50481187"
-  },
-  {
-    "id": "d7e80ea809e6",
-    "title": "Gemini 4 Hydrogen and Orchestrator",
-    "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-12T18:52:01.000Z",
-    "category": "ai",
-    "tags": [
-      "gemini"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50472260"
   },
   {
     "id": "5b69826eead4",
