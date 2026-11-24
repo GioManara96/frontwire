@@ -1,5 +1,16 @@
 [
   {
+    "id": "7ddb05bca20e",
+    "title": "Bundler-free npm imports in the browser",
+    "url": "https://javascriptweekly.com/issues/812",
+    "sourceId": "javascript-weekly",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "javascript"
+    ]
+  },
+  {
     "id": "afeac7d880ad",
     "title": "Nuxt v4.7.0",
     "url": "https://github.com/nuxt/nuxt/releases/tag/v4.7.0",
@@ -124,6 +135,18 @@
     "excerpt": "Introducing GPT‑6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API."
   },
   {
+    "id": "9a0aa0e71b45",
+    "title": "How the Claude Code team thinks about verification",
+    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-17T10:20:40.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50529612"
+  },
+  {
     "id": "bbd598c18d75",
     "title": "The top 10 things AI gets wrong in web development",
     "url": "https://javascriptweekly.com/issues/811",
@@ -144,18 +167,6 @@
     "tags": [
       "huggingface"
     ]
-  },
-  {
-    "id": "1a09f77a4836",
-    "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
-    "url": "https://status.claude.com/incidents/nn11wk485zfn",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-13T10:18:13.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50481187"
   },
   {
     "id": "5b69826eead4",
@@ -386,18 +397,6 @@
     ],
     "excerpt": "4.6.4 is a security release. It fixes eight advisories in Nuxt and pulls in nitropack 2.13.6, which fixes three more in Nitro. We recommend upgrading as soon as you can. ⚠️ Behaviour changes These probably won't affect most apps, but it's worth flagging anyway: Error details in production. When a…",
     "contentHtml": "<blockquote>\n<p>4.6.4 is a security release. It fixes <a href=\"https://github.com/nuxt/nuxt/security/advisories\">eight advisories in Nuxt</a> and pulls in <code>nitropack</code> 2.13.6, which fixes <a href=\"https://github.com/nitrojs/nitro/security/advisories\">three more in Nitro</a>. We recommend upgrading as soon as you can.</p>\n</blockquote>\n<h2>⚠️ Behaviour changes</h2>\n<p>These probably won't affect most apps, but it's worth flagging anyway:</p>\n<ol>\n<li><strong>Error details in production.</strong> When a page fails to render on the server, the error page and the payload now only carry message and data of errors you create with <code>createError</code>. Everything else is stripped.</li>\n<li><strong>Dev server <code>Host</code> checks.</strong> Webpack and rspack dev servers now reject requests with an unexpected <code>Host</code> header, as Vite already does. If you use a custom hostname or tunnel, you'll need to add it to the new <code>devServer.allowedHosts</code> option.</li>\n<li><strong><code>workspaceDir</code> detection.</strong> When <code>workspaceDir</code> isn't set, Nuxt now only widens it past <code>rootDir</code> to an explicit workspace root or the closest git repository.</li>\n<li><strong>Nitropack cached routes.</strong> <code>cache</code>, <code>swr</code> and <code>isr</code> route rules now only cache <code>GET</code> and <code>HEAD</code> requests, and no longer store responses that set a cookie or send <code>Cache-Control: private</code> or <code>no-store</code>. Wildcard <code>proxy</code> and <code>redirect</code> rules also reject requests whose resolved target would leave the rule's scope.</li>\n<li><strong>Route rules and encoded slashes.</strong> Route rules now match paths that contain encoded slashes, so <code>/api%2Fadmin</code> is covered by a <code>/api/**</code> rule.</li>\n</ol>\n<h2>👉 Changelog</h2>\n<p><a href=\"https://github.com/nuxt/nuxt/compare/v4.6.3...v4.6.4\">compare changes</a></p>\n<h3>🩹 Fixes</h3>\n<ul>\n<li><strong>nitro,nuxt:</strong> require unrouting 0.3.2 (<a href=\"https://github.com/nuxt/nuxt/commit/768d21368\"><code>768d21368</code></a>)</li>\n<li><strong>nitro:</strong> preserve wildcard tails in case-insensitive route rules (<a href=\"https://github.com/nuxt/nuxt/commit/bf31e4cd8\"><code>bf31e4cd8</code></a>)</li>\n<li><strong>nitro:</strong> require nitropack 2.13.6 (<a href=\"https://github.com/nuxt/nuxt/commit/1b13c6981\"><code>1b13c6981</code></a>)</li>\n<li><strong>nitro:</strong> keep leading double slash in renderer request path (<a href=\"https://github.com/nuxt/nuxt/commit/75c12c6fb\"><code>75c12c6fb</code></a>)</li>\n<li><strong>nuxt:</strong> use unambiguous encoding for island hash (<a href=\"https://github.com/nuxt/nuxt/commit/6f1b93c64\"><code>6f1b93c64</code></a>)</li>\n<li><strong>vite-server:</strong> resolve wildcard redirect tails from the matched segments (<a href=\"https://github.com/nuxt/nuxt/commit/1e7dfa6a7\"><code>1e7dfa6a7</code></a>)</li>\n<li><strong>nuxt:</strong> do not expose details of untrusted thrown errors (<a href=\"https://github.com/nuxt/nuxt/commit/8c56b71e4\"><code>8c56b71e4</code></a>)</li>\n<li><strong>nuxt:</strong> strip trailing slashes in linear time (<a href=\"https://github.com/nuxt/nuxt/commit/97424dd21\"><code>97424dd21</code></a>)</li>\n<li><strong>nitro,webpack:</strong> include hosts the CLI allows after loading the config (<a href=\"https://github.com/nuxt/nuxt/commit/8c11d965d\"><code>8c11d965d</code></a>)</li>\n<li><strong>webpack:</strong> skip hot middleware for forbidden dev requests (<a href=\"https://github.com/nuxt/nuxt/commit/3c9645326\"><code>3c9645326</code></a>)</li>\n<li><strong>rspack,webpack:</strong> reject unexpected Host headers in dev middleware (<a href=\"https://github.com/nuxt/nuxt/commit/f8d64c9aa\"><code>f8d64c9aa</code></a>)</li>\n<li><strong>schema,nitro,vite:</strong> add <code>devServer.allowedHosts</code> (<a href=\"https://github.com/nuxt/nuxt/commit/3e1c7964e\"><code>3e1c7964e</code></a>)</li>\n<li><strong>nitro,nuxt:</strong> match route rules for paths with encoded slashes (<a href=\"https://github.com/nuxt/nuxt/commit/084396b10\"><code>084396b10</code></a>)</li>\n<li><strong>schema:</strong> only widen workspace dir to a declared workspace root (<a href=\"https://github.com/nuxt/nuxt/commit/89d3306d1\"><code>89d3306d1</code></a>)</li>\n<li><strong>nitro:</strong> only trust <code>x-forwarded-proto</code> in when opted-in (<a href=\"https://github.com/nuxt/nuxt/pull/36818\">#36818</a>)</li>\n<li><strong>nitro:</strong> stream the body read through a <code>nuxt/server</code> handler (<a href=\"https://github.com/nuxt/nuxt/pull/36817\">#36817</a>)</li>\n<li><strong>kit:</strong> suggest the specific fix when loading falls back to jiti (<a href=\"https://github.com/nuxt/nuxt/commit/24d75659d\"><code>24d75659d</code></a>)</li>\n<li><strong>vite:</strong> use a single type checker (<a href=\"https://github.com/nuxt/nuxt/pull/36774\">#36774</a>)</li>\n<li><strong>nitro,vite:</strong> remove windows + virtual dev ssr css links after hydration (<a href=\"https://github.com/nuxt/nuxt/pull/36765\">#36765</a>)</li>\n<li><strong>nitro,vite:</strong> dedupe dev css by module node (<a href=\"https://github.com/nuxt/nuxt/pull/36420\">#36420</a>)</li>\n<li><strong>nuxt:</strong> avoid hoisting setup-only values from <code>definePageMeta</code> (<a href=\"https://github.com/nuxt/nuxt/pull/36751\">#36751</a>)</li>\n<li><strong>nuxt:</strong> only match hydration modifiers after lazy prefix (<a href=\"https://github.com/nuxt/nuxt/pull/36750\">#36750</a>)</li>\n<li><strong>kit,nitro,nuxt:</strong> make emitted tsconfig/types stable across reruns (<a href=\"https://github.com/nuxt/nuxt/pull/36747\">#36747</a>)</li>\n<li><strong>nuxt:</strong> render inlined component styles after stylesheet links (<a href=\"https://github.com/nuxt/nuxt/pull/36714\">#36714</a>)</li>\n<li><strong>webpack:</strong> use valid devtool for hidden client sourcemaps in dev (<a href=\"https://github.com/nuxt/nuxt/pull/36555\">#36555</a>)</li>\n</ul>\n<h3>📖 Documentation</h3>\n<ul>\n<li>clarify template dependency regeneration (<a href=\"https://github.com/nuxt/nuxt/pull/36766\">#36766</a>)</li>\n<li>revise README structure and headings (<a href=\"https://github.com/nuxt/nuxt/pull/36772\">#36772</a>)</li>\n<li>link the Nuxt DevTools docs on nuxt.com (<a href=\"https://github.com/nuxt/nuxt/pull/36769\">#36769</a>)</li>\n<li>warn against spreading untrusted objects onto server components (<a href=\"https://github.com/nuxt/nuxt/commit/1225ca7ff\"><code>1225ca7ff</code></a>)</li>\n<li>update anchors for flat heading ids (<a href=\"https://github.com/nuxt/nuxt/pull/36664\">#36664</a>)</li>\n</ul>\n<h3>🏡 Chore</h3>\n<ul>\n<li>add 1000-row listing routes to the benchmark (<a href=\"https://github.com/nuxt/nuxt/commit/c852d871f\"><code>c852d871f</code></a>)</li>\n<li>add client page weight and browser timing suites (<a href=\"https://github.com/nuxt/nuxt/pull/36788\">#36788</a>)</li>\n</ul>\n<h3>✅ Tests</h3>\n<ul>\n<li>update bundle size snapshot (<a href=\"https://github.com/nuxt/nuxt/commit/7528c3ce6\"><code>7528c3ce6</code></a>)</li>\n<li>list new main-only diagnostic codes (<a href=\"https://github.com/nuxt/nuxt/commit/545b5934c\"><code>545b5934c</code></a>)</li>\n<li>tolerate node 26 proxy inspect output (<a href=\"https://github.com/nuxt/nuxt/commit/40f72b40b\"><code>40f72b40b</code></a>)</li>\n<li>normalise rolldown comment (<a href=\"https://github.com/nuxt/nuxt/commit/861e153dd\"><code>861e153dd</code></a>)</li>\n<li>improve benchmark tests (<a href=\"https://github.com/nuxt/nuxt/pull/36745\">#36745</a>)</li>\n</ul>\n<h3>🤖 CI</h3>\n<ul>\n<li>check unversioned docs links against branch docs version (<a href=\"https://github.com/nuxt/nuxt/commit/d093c88b1\"><code>d093c88b1</code></a>)</li>\n<li>skip unneeded checks for release prs (<a href=\"https://github.com/nuxt/nuxt/commit/4b90681bd\"><code>4b90681bd</code></a>)</li>\n<li>skip benchmarks in merge groups (<a href=\"https://github.com/nuxt/nuxt/commit/6428070e0\"><code>6428070e0</code></a>)</li>\n<li>re-enable codspeed ⚡ (<a href=\"https://github.com/nuxt/nuxt/commit/bc17c03d1\"><code>bc17c03d1</code></a>)</li>\n</ul>\n<h3>❤️ Contributors</h3>\n<ul>\n<li>Daniel Roe (<a href=\"https://github.com/danielroe\">@danielroe</a>)</li>\n<li>Max (<a href=\"https://github.com/onmax\">@onmax</a>)</li>\n<li>Sébastien Chopin (<a href=\"https://github.com/atinux\">@atinux</a>)</li>\n<li>saini-25 (<a href=\"https://github.com/saini-25\">@saini-25</a>)</li>\n<li>Baptiste Leproux (<a href=\"https://github.com/larbish\">@larbish</a>)</li>\n</ul>"
-  },
-  {
-    "id": "18fde97f9ff0",
-    "title": "What Claude spends building with 12 JavaScript stacks",
-    "url": "https://javascriptweekly.com/issues/809",
-    "sourceId": "javascript-weekly",
-    "publishedAt": "2026-11-03T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "javascript",
-      "anthropic"
-    ]
   },
   {
     "id": "fd1c96f7ee7f",
