@@ -1,5 +1,52 @@
 [
   {
+    "id": "730f254505ef",
+    "title": "The things you can now do directly in the browser",
+    "url": "https://frontendfoc.us/issues/768",
+    "sourceId": "frontend-focus",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ]
+  },
+  {
+    "id": "91b32f91b934",
+    "title": "Celebrating ten years of Svelte",
+    "url": "https://svelte.dev/blog/ten-years-of-svelte",
+    "sourceId": "svelte-blog",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "svelte"
+    ],
+    "excerpt": "It started with a commit — specifically, this one. Ten years later, we’re far from done; software never is. But we’ve come an awful long way. Last week the community gathered in Ljubljana, at the third in-person Svelte Summit, to mark the anniversary. One of several cakes that were eaten at the…"
+  },
+  {
+    "id": "b3fbd494ae77",
+    "title": "This Week In React #307: Security, React Router, Next.js, TanStack Query, RTL, RTK, Styled Components, Talata, Pierre | Reanimated, Worklets, Expo, Skia, WebGPU, Unistyles, Legend List | TC39, Node.js, Parcel, Firefox, webpack, Nudeps",
+    "url": "https://thisweekinreact.com/newsletter/307",
+    "sourceId": "this-week-in-react",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "category": "frontend",
+    "tags": [
+      "react",
+      "nextjs"
+    ]
+  },
+  {
+    "id": "ac2f786b30f6",
+    "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+    "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-24T21:02:22.000Z",
+    "category": "ai",
+    "tags": [
+      "openai"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50634658"
+  },
+  {
     "id": "7ddb05bca20e",
     "title": "Bundler-free npm imports in the browser",
     "url": "https://javascriptweekly.com/issues/812",
@@ -133,18 +180,6 @@
       "openai"
     ],
     "excerpt": "Introducing GPT‑6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API."
-  },
-  {
-    "id": "9a0aa0e71b45",
-    "title": "How the Claude Code team thinks about verification",
-    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-17T10:20:40.000Z",
-    "category": "ai",
-    "tags": [
-      "anthropic"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50529612"
   },
   {
     "id": "bbd598c18d75",
@@ -319,30 +354,6 @@
       "openai"
     ],
     "excerpt": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
-  },
-  {
-    "id": "235ecb137012",
-    "title": "Safari will 'dark mode' your site for you",
-    "url": "https://frontendfoc.us/issues/765",
-    "sourceId": "frontend-focus",
-    "publishedAt": "2026-11-04T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "web-platform"
-    ]
-  },
-  {
-    "id": "38f57c52203d",
-    "title": "This Week In React #304: Next.js, Compiler, Redux Toolkit, Suspense, Resizable Panels, Preact, Redact | RN 0.89 RC, Vega OS, Screens, Hermes, WebView, Unistyles, tgfx, Pager View | Node.js, Parcel, Rspack, Actions, Vitest, jsdom, HTML-in-Canvas",
-    "url": "https://thisweekinreact.com/newsletter/304",
-    "sourceId": "this-week-in-react",
-    "publishedAt": "2026-11-04T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "react",
-      "nextjs",
-      "web-platform"
-    ]
   },
   {
     "id": "e11543d2135a",
