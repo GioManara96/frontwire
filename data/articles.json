@@ -433,18 +433,5 @@
       "javascript"
     ],
     "excerpt": "Optimize your Next.js app's bundles with the next-bundle-optimizer agent skill, or explore them yourself with new Bundle Analyzer tools."
-  },
-  {
-    "id": "988cbce51359",
-    "title": "Nuxt DevTools v4",
-    "url": "https://nuxt.com/blog/devtools-v4",
-    "sourceId": "nuxt-blog",
-    "publishedAt": "2026-10-28T00:00:00.000Z",
-    "category": "frontend",
-    "tags": [
-      "nuxt"
-    ],
-    "excerpt": "Nuxt DevTools v4 is built on Devframe and Vite DevTools. It brings the full Vue DevTools and the wider devtools ecosystem to Nuxt.",
-    "coverImageUrl": "https://nuxt.com/assets/blog/nuxt-devtools-4.png"
   }
 ]
