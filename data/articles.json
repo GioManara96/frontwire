@@ -1,5 +1,29 @@
 [
   {
+    "id": "82d791fb8b44",
+    "title": "Claude Code sabotage: preliminary benchmarking",
+    "url": "https://xinyadu.github.io/blog/claude-code-sabotage.html",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-28T10:37:40.000Z",
+    "category": "ai",
+    "tags": [
+      "anthropic"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50676390"
+  },
+  {
+    "id": "807ee2056220",
+    "title": "Unkernel: Real Linux kernel, compiled to WebAssembly",
+    "url": "https://unkernel.dev",
+    "sourceId": "hackernews",
+    "publishedAt": "2026-11-28T03:19:20.000Z",
+    "category": "frontend",
+    "tags": [
+      "web-platform"
+    ],
+    "discussionUrl": "https://news.ycombinator.com/item?id=50674218"
+  },
+  {
     "id": "b8e6d58ec1d2",
     "title": "Vite v8.4.0",
     "url": "https://github.com/vitejs/vite/releases/tag/v8.4.0",
@@ -73,18 +97,6 @@
     ]
   },
   {
-    "id": "ac2f786b30f6",
-    "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
-    "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-24T21:02:22.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50634658"
-  },
-  {
     "id": "7ddb05bca20e",
     "title": "Bundler-free npm imports in the browser",
     "url": "https://javascriptweekly.com/issues/812",
@@ -121,18 +133,6 @@
     ],
     "excerpt": "Nuxt 4.7 lets you try Nitro v3, adds experimental WebMCP support, shows type and lint problems in the dev overlay and validates runtime config.",
     "coverImageUrl": "https://nuxt.com/assets/blog/v4.7.png"
-  },
-  {
-    "id": "3c4b97052931",
-    "title": "GPT-6.2 Astra is the first model to beat Googlers' code golf records",
-    "url": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard",
-    "sourceId": "hackernews",
-    "publishedAt": "2026-11-22T16:44:48.000Z",
-    "category": "ai",
-    "tags": [
-      "openai"
-    ],
-    "discussionUrl": "https://news.ycombinator.com/item?id=50601280"
   },
   {
     "id": "90223235aa15",
